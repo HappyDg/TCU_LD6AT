@@ -1,0 +1,1064 @@
+<?xml version='1.0'?>
+<datamodel version="3.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/08/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd" >
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="EcuC" type="AR-PACKAGE">
+        <d:lst type="ELEMENTS">
+          <d:chc name="EcuC" type="AR-ELEMENT" value="MODULE-CONFIGURATION">
+            <d:ctr type="MODULE-CONFIGURATION">
+              <a:a name="DEF" value="ASPath:/TS_TxDxM5I0R0/EcuC"/>
+              <a:a name="IMPORTER_INFO" value="Unknown2"/>
+              <d:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+                <d:var name="ArMajorVersion" type="INTEGER" value="3"/>
+                <d:var name="ArMinorVersion" type="INTEGER" value="2"/>
+                <d:var name="ArPatchVersion" type="INTEGER" value="0"/>
+                <d:var name="SwMajorVersion" type="INTEGER" value="5"/>
+                <d:var name="SwMinorVersion" type="INTEGER" value="0"/>
+                <d:var name="SwPatchVersion" type="INTEGER" value="5"/>
+                <d:var name="ModuleId" type="INTEGER" value="10">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="VendorId" type="INTEGER" value="1">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="VendorApiInfix" type="STRING" value="">
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="Release" type="STRING" value="">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+              </d:ctr>
+              <d:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION" 
+                     value="VariantPostBuild">
+                <a:a name="IMPORTER_INFO" value="@DEF"/>
+              </d:var>
+              <d:ctr name="EcucPartitionCollection" type="IDENTIFIABLE">
+                <a:a name="ENABLE" value="false"/>
+                <d:lst name="EcucPartition" type="MAP"/>
+              </d:ctr>
+              <d:ctr name="EcucPduCollection" type="IDENTIFIABLE">
+                <a:a name="ENABLE" value="true"/>
+                <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                <d:var name="PduIdTypeEnum" type="ENUMERATION" value="UINT16">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="PduLengthTypeEnum" type="ENUMERATION" 
+                       value="UINT16">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:lst name="Pdu" type="MAP">
+                  <d:ctr name="PTEI_Brake_Apply_Status_190R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="6">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PTEI_Brake_Apply_Status/PduToFrame_PTEI_Brake_Apply_Status_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PPEI_Driven_Whl_Rotational_Stat_193R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="8">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PPEI_Driven_Whl_Rotational_Stat/PduToFrame_PPEI_Driven_Whl_Rotational_Stat_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PPEI_NonDrivn_Whl_Rotationl_Stat_197R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="8">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PPEI_NonDrivn_Whl_Rotationl_Stat/PduToFrame_PPEI_NonDrivn_Whl_Rotationl_Stat_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PPEI_Transmission_Otpt_Rot_Stat_199R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="4">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PPEI_Transmission_Otpt_Rot_Stat/PduToFrame_PPEI_Transmission_Otpt_Rot_Stat_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PPEI_Engine_General_Status_1_201R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="8">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PPEI_Engine_General_Status_1/PduToFrame_PPEI_Engine_General_Status_1_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PPEI_Brake_Apply_Status_241R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="6">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PPEI_Brake_Apply_Status/PduToFrame_PPEI_Brake_Apply_Status_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="System_Power_Mode_Backup_IPC_HS_290R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="1">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/System_Power_Mode_Backup_IPC_HS/PduToFrame_System_Power_Mode_Backup_IPC_HS_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="Battery_Voltage_292R" type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="7">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/Battery_Voltage/PduToFrame_Battery_Voltage_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="Body_Information_HS_298R" type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="8">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/Body_Information_HS/PduToFrame_Body_Information_HS_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="Antilock_Brake_and_TC_Status_HS_381R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="6">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/Antilock_Brake_and_TC_Status_HS/PduToFrame_Antilock_Brake_and_TC_Status_HS_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PTEI_Hybrid_Status_1_390T" type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="7">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PTEI_Hybrid_Status_1/PduToFrame_PTEI_Hybrid_Status_1_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PTEI_Transmission_Torque_Request_393R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="7">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PTEI_Transmission_Torque_Request/PduToFrame_PTEI_Transmission_Torque_Request_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PTEI_Engine_Torque_Status_398R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="8">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PTEI_Engine_Torque_Status/PduToFrame_PTEI_Engine_Torque_Status_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="ETEI_Engine_Torque_Status_401R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="8">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/ETEI_Engine_Torque_Status/PduToFrame_ETEI_Engine_Torque_Status_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="ETEI_Transmission_General_Status_413R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="8">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/ETEI_Transmission_General_Status/PduToFrame_ETEI_Transmission_General_Status_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="ETEI_Engine_General_Status_417R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="7">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/ETEI_Engine_General_Status/PduToFrame_ETEI_Engine_General_Status_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PTEI_Engine_Common_Use_1_419R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="1">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PTEI_Engine_Common_Use_1/PduToFrame_PTEI_Engine_Common_Use_1_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PTEI_Hybrid_Transmission_Req_421T" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="6">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PTEI_Hybrid_Transmission_Req/PduToFrame_PTEI_Hybrid_Transmission_Req_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PTEI_Hybrid_Trans_Status_2_422R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="4">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PTEI_Hybrid_Trans_Status_2/PduToFrame_PTEI_Hybrid_Trans_Status_2_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PTEI_Trans_General_Status_2_431R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="8">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PTEI_Trans_General_Status_2/PduToFrame_PTEI_Trans_General_Status_2_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PPEI_Torque_Request_Status_452R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="8">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PPEI_Torque_Request_Status/PduToFrame_PPEI_Torque_Request_Status_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PPEI_Propulsion_Gen_Stat_1_HS_479T" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="4">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PPEI_Propulsion_Gen_Stat_1_HS/PduToFrame_PPEI_Propulsion_Gen_Stat_1_HS_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PPEI_Cruise_Control_Sw_Status_481R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="7">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PPEI_Cruise_Control_Sw_Status/PduToFrame_PPEI_Cruise_Control_Sw_Status_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PPEI_Steering_Wheel_Angle_485R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="8">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PPEI_Steering_Wheel_Angle/PduToFrame_PPEI_Steering_Wheel_Angle_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PPEI_Chassis_General_Status_1_489R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="8">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PPEI_Chassis_General_Status_1/PduToFrame_PPEI_Chassis_General_Status_1_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PPEI_Platform_General_Status_497R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="8">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PPEI_Platform_General_Status/PduToFrame_PPEI_Platform_General_Status_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PPEI_Trans_General_Status_2_501R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="8">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PPEI_Trans_General_Status_2/PduToFrame_PPEI_Trans_General_Status_2_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="Starter_Generator_Status_3_688T" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="5">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/Starter_Generator_Status_3/PduToFrame_Starter_Generator_Status_3_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PPEI_Engine_Torque_Status_3_707R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="8">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PPEI_Engine_Torque_Status_3/PduToFrame_PPEI_Engine_Torque_Status_3_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PPEI_Chassis_General_Status_2_761R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="7">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PPEI_Chassis_General_Status_2/PduToFrame_PPEI_Chassis_General_Status_2_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="Driven_Wheel_Grnd_Velocity_HS_840R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="5">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/Driven_Wheel_Grnd_Velocity_HS/PduToFrame_Driven_Wheel_Grnd_Velocity_HS_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="NonDriven_Wheel_Grnd_Velocity_HS_842R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="5">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/NonDriven_Wheel_Grnd_Velocity_HS/PduToFrame_NonDriven_Wheel_Grnd_Velocity_HS_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PPEI_Engine_General_Status_2_977R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="8">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PPEI_Engine_General_Status_2/PduToFrame_PPEI_Engine_General_Status_2_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PPEI_Engine_BAS_Status_1_993T" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="7">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PPEI_Engine_BAS_Status_1/PduToFrame_PPEI_Engine_BAS_Status_1_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PPEI_Vehicle_Speed_and_Distance_1001R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="8">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PPEI_Vehicle_Speed_and_Distance/PduToFrame_PPEI_Vehicle_Speed_and_Distance_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PPEI_Platform_Eng_Cntrl_Requests_1009R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="8">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PPEI_Platform_Eng_Cntrl_Requests/PduToFrame_PPEI_Platform_Eng_Cntrl_Requests_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PPEI_Engine_General_Status_9_1016T" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="8">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PPEI_Engine_General_Status_9/PduToFrame_PPEI_Engine_General_Status_9_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PPEI_Engine_Fuel_Status_1019R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="2">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PPEI_Engine_Fuel_Status/PduToFrame_PPEI_Engine_Fuel_Status_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PPEI_Engine_Environmental_Status_1020R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="8">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PPEI_Engine_Environmental_Status/PduToFrame_PPEI_Engine_Environmental_Status_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PPEI_Gateway_LS_General_Info_1105R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="5">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PPEI_Gateway_LS_General_Info/PduToFrame_PPEI_Gateway_LS_General_Info_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PTEI_Engine_Position_PE_145R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    <d:var name="PduLength" type="INTEGER" value="2">
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PTEI_Engine_Position_PE/PduToFrame_PTEI_Engine_Position_PE_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PTEI_Hybrid_Motor_Torque_2_191T" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    <d:var name="PduLength" type="INTEGER" value="8">
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PTEI_Hybrid_Motor_Torque_2/PduToFrame_PTEI_Hybrid_Motor_Torque_2_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PTEI_Hyb_Commanded_Eng_Trq_385T" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    <d:var name="PduLength" type="INTEGER" value="8">
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PTEI_Hyb_Commanded_Eng_Trq/PduToFrame_PTEI_Hyb_Commanded_Eng_Trq_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PTEI_Hyb_Commanded_Crnkshft_Trq_387R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    <d:var name="PduLength" type="INTEGER" value="8">
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PTEI_Hyb_Commanded_Crnkshft_Trq/PduToFrame_PTEI_Hyb_Commanded_Crnkshft_Trq_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PTEI_Hyb_Eng_Trq_Stat_Wthout_Mtr_388R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    <d:var name="PduLength" type="INTEGER" value="8">
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PTEI_Hyb_Eng_Trq_Stat_Wthout_Mtr/PduToFrame_PTEI_Hyb_Eng_Trq_Stat_Wthout_Mtr_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PTEI_Hybrid_Engine_Status_1_391R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    <d:var name="PduLength" type="INTEGER" value="6">
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PTEI_Hybrid_Engine_Status_1/PduToFrame_PTEI_Hybrid_Engine_Status_1_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PTEI_Hybrid_Eng_Trq_Status_1_396R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    <d:var name="PduLength" type="INTEGER" value="8">
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PTEI_Hybrid_Eng_Trq_Status_1/PduToFrame_PTEI_Hybrid_Eng_Trq_Status_1_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PTEI_Hybrid_Engine_Spd_Capacity_397R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    <d:var name="PduLength" type="INTEGER" value="7">
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PTEI_Hybrid_Engine_Spd_Capacity/PduToFrame_PTEI_Hybrid_Engine_Spd_Capacity_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PTEI_Hybrid_Engine_Status_2_450R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    <d:var name="PduLength" type="INTEGER" value="8">
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PTEI_Hybrid_Engine_Status_2/PduToFrame_PTEI_Hybrid_Engine_Status_2_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="BMS_General_Status_1_472R" type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    <d:var name="PduLength" type="INTEGER" value="4">
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/BMS_General_Status_1/PduToFrame_BMS_General_Status_1_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="HV_Battery_Sensed_Output_HV_534R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    <d:var name="PduLength" type="INTEGER" value="7">
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/HV_Battery_Sensed_Output_HV/PduToFrame_HV_Battery_Sensed_Output_HV_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PTEI_Hybrid_Status_3_641T" type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    <d:var name="PduLength" type="INTEGER" value="7">
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PTEI_Hybrid_Status_3/PduToFrame_PTEI_Hybrid_Status_3_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PTEI_Hybrid_Status_2_657T" type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    <d:var name="PduLength" type="INTEGER" value="8">
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PTEI_Hybrid_Status_2/PduToFrame_PTEI_Hybrid_Status_2_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="High_Volt_Batt_Current_Stat_981R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    <d:var name="PduLength" type="INTEGER" value="3">
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/High_Volt_Batt_Current_Stat/PduToFrame_High_Volt_Batt_Current_Stat_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="High_Vlt_Battery_Vlt_Status_983R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    <d:var name="PduLength" type="INTEGER" value="8">
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/High_Vlt_Battery_Vlt_Status/PduToFrame_High_Vlt_Battery_Vlt_Status_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="High_Voltage_Batt_Chrg_Pwrs_986R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    <d:var name="PduLength" type="INTEGER" value="4">
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/High_Voltage_Batt_Chrg_Pwrs/PduToFrame_High_Voltage_Batt_Chrg_Pwrs_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="High_Volt_Batt_Dchrg_Pwrs_987R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    <d:var name="PduLength" type="INTEGER" value="4">
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/High_Volt_Batt_Dchrg_Pwrs/PduToFrame_High_Volt_Batt_Dchrg_Pwrs_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="High_Volt_Batt_Temp_Status_991R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    <d:var name="PduLength" type="INTEGER" value="5">
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/High_Volt_Batt_Temp_Status/PduToFrame_High_Volt_Batt_Temp_Status_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PTEI_Hybrid_Engine_Status_2_PE_1161R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    <d:var name="PduLength" type="INTEGER" value="2">
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PTEI_Hybrid_Engine_Status_2_PE/PduToFrame_PTEI_Hybrid_Engine_Status_2_PE_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="MASTER_CTRL_REQ_1360T" type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    <d:var name="PduLength" type="INTEGER" value="8">
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/MASTER_CTRL_REQ/PduToFrame_MASTER_CTRL_REQ_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="MASTER_CTRL_ESA_1362T" type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    <d:var name="PduLength" type="INTEGER" value="8">
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/MASTER_CTRL_ESA/PduToFrame_MASTER_CTRL_ESA_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="MASTER_CTRL_LIMITATION_1363T" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    <d:var name="PduLength" type="INTEGER" value="4">
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/MASTER_CTRL_LIMITATION/PduToFrame_MASTER_CTRL_LIMITATION_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="MASTER_CTRL_DISCHARGE_1365T" type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    <d:var name="PduLength" type="INTEGER" value="2">
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/MASTER_CTRL_DISCHARGE/PduToFrame_MASTER_CTRL_DISCHARGE_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="High_Volt_Contactor_Command_1440T" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    <d:var name="PduLength" type="INTEGER" value="1">
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/High_Volt_Contactor_Command/PduToFrame_High_Volt_Contactor_Command_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="BMS_Fault_Status_Fast_1441R" type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    <d:var name="PduLength" type="INTEGER" value="1">
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/BMS_Fault_Status_Fast/PduToFrame_BMS_Fault_Status_Fast_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="BMS_Fault_Status_Medium_1442R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    <d:var name="PduLength" type="INTEGER" value="1">
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/BMS_Fault_Status_Medium/PduToFrame_BMS_Fault_Status_Medium_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="SCU_DATA_STATUS_1472R" type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    <d:var name="PduLength" type="INTEGER" value="8">
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/SCU_DATA_STATUS/PduToFrame_SCU_DATA_STATUS_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="SCU_DATA_DIA_1473R" type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    <d:var name="PduLength" type="INTEGER" value="8">
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/SCU_DATA_DIA/PduToFrame_SCU_DATA_DIA_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="SCU_DATA_TORQUE_1474R" type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    <d:var name="PduLength" type="INTEGER" value="8">
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/SCU_DATA_TORQUE/PduToFrame_SCU_DATA_TORQUE_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="SCU_DIG_DATA_1475R" type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    <d:var name="PduLength" type="INTEGER" value="1">
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/SCU_DIG_DATA/PduToFrame_SCU_DIG_DATA_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="SCU_ANA_T_PM_1476R" type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    <d:var name="PduLength" type="INTEGER" value="5">
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/SCU_ANA_T_PM/PduToFrame_SCU_ANA_T_PM_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown2"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="Pdu_CCP_TX_1ff" type="IDENTIFIABLE">
+                    <d:var name="PduLength" type="INTEGER" value="8"/>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="Pdu_CCP_TX_200" type="IDENTIFIABLE">
+                    <d:var name="PduLength" type="INTEGER" value="8"/>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="Pdu_CCP_TX_201" type="IDENTIFIABLE">
+                    <d:var name="PduLength" type="INTEGER" value="8"/>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="Pdu_CCP_TX_302" type="IDENTIFIABLE">
+                    <d:var name="PduLength" type="INTEGER" value="8"/>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="Pdu_CCP_RX_301" type="IDENTIFIABLE">
+                    <d:var name="PduLength" type="INTEGER" value="8"/>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="Dcm_Phys_CanTpTxNSdu" type="IDENTIFIABLE">
+                    <d:var name="PduLength" type="INTEGER" value="128"/>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="Dcm_Phys_CanTpTxNPdu" type="IDENTIFIABLE">
+                    <d:var name="PduLength" type="INTEGER" value="8"/>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="Dcm_Phys_CanTpRxNSdu" type="IDENTIFIABLE">
+                    <d:var name="PduLength" type="INTEGER" value="128"/>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="Dcm_Phys_CanTpRxNPdu" type="IDENTIFIABLE">
+                    <d:var name="PduLength" type="INTEGER" value="8"/>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="Dcm_Phys_CanTpTxFcNPdu" type="IDENTIFIABLE">
+                    <d:var name="PduLength" type="INTEGER" value="8"/>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="Dcm_Func_CanTpRxNSdu" type="IDENTIFIABLE">
+                    <d:var name="PduLength" type="INTEGER" value="8"/>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="Dcm_Func_CanTpRxNPdu" type="IDENTIFIABLE">
+                    <d:var name="PduLength" type="INTEGER" value="8"/>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PPEI_Engine_General_Status_4_1217R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="8">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PPEI_Engine_General_Status_4/PduToFrame_PPEI_Engine_General_Status_4_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PPEI_Propulsion_Sys_Gen_Status_1223R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="3">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PPEI_Propulsion_Sys_Gen_Status/PduToFrame_PPEI_Propulsion_Sys_Gen_Status_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PPEI_Trans_General_Status_3_1225R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="7">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PPEI_Trans_General_Status_3/PduToFrame_PPEI_Trans_General_Status_3_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="PPEI_VIN_Digits_10_to_17_1249R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="8">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/PPEI_VIN_Digits_10_to_17/PduToFrame_PPEI_VIN_Digits_10_to_17_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="ETEI_Engine_Torque_Capability_1417R" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    <d:var name="PduLength" type="INTEGER" value="8">
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:var>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" 
+                           value="ASPath:/DBCImport/FRAMES/ETEI_Engine_Torque_Capability/PduToFrame_ETEI_Engine_Torque_Capability_0">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="IMPORTER_INFO" value="Unknown"/>
+                    </d:ref>
+                  </d:ctr>
+                  <d:ctr name="Dcm_Phys_Tx_CanTpRxFcNPdu" type="IDENTIFIABLE">
+                    <d:var name="PduLength" type="INTEGER" value="8"/>
+                    <d:ref name="SysTPduToFrameMappingRef" type="REFERENCE" >
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                  </d:ctr>
+                </d:lst>
+              </d:ctr>
+              <d:ctr name="EcucVariationResolver" type="IDENTIFIABLE">
+                <a:a name="ENABLE" value="false"/>
+                <d:lst name="PredefinedVariantRef">
+                  <d:ref type="REFERENCE" >
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:ref>
+                </d:lst>
+              </d:ctr>
+            </d:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>

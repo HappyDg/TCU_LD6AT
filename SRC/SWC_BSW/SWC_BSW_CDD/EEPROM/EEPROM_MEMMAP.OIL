@@ -1,0 +1,30 @@
+/**********************************************************************************************************************/
+/* !Layer           : HAL                                                                                             */
+/* !Component       : EEPROM                                                                                        */
+/* !Description     : EEPROM safe supply device management                                                          */
+/*                                                                                                                    */
+/* !File            : TLF35584_MEMMAP.OIL                                                                             */
+/* !Description     : MemMap section configuration of the EEPROM component                                          */
+/*                                                                                                                    */
+/* !Reference       :                                                                                                 */
+/*                                                                                                                    */
+/* Coding language  : OIL                                                                                             */
+/*                                                                                                                    */
+/* COPYRIGHT VALEO all rights reserved                                                                                */
+/**********************************************************************************************************************/
+/* Dimension Informations
+ * %PCMS_HEADER_SUBSTITUTION_START:%
+ * The PID has this format: <Product ID>:<Item ID>.<Variant>-<Item Type>;<Revision>
+ * %PID:%
+ * %PCMS_HEADER_SUBSTITUTION_END:%
+ **********************************************************************************************************************/
+
+MEMMAP_MSN EEPROM 
+{
+   SECTION = SEC_CODE;
+   SECTION = SEC_VAR_CLEARED_8BIT;
+   SECTION = SEC_VAR_CLEARED_16BIT;
+};
+
+/*--------------------------------------------------- END OF FILE ----------------------------------------------------*/
+

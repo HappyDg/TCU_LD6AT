@@ -1,0 +1,24 @@
+Nom_donnée|Type|Nom_module|Public|Nb_lignes|Nb_colonnes|Label_père|Offset|Masque_accès|Affichage|Unité|Fonction_transfert_ades|Coefficient_a|Coefficient_b|Groupe|Groupe_1|Groupe_2|Alias_1|Alias_2|Genre|Variable_indice_ligne|Variable_indice_colonne|Fonction_transfert_ligne|Fonction_transfert_colonne|Table_breakpoint_ligne|Table_breakpoint_colonne|Référence_spécification|Recuperable|Modifiable|Fournisseur|Responsable|Valeurs|Visualisable_ADES|Donnée_a_supprimer|Validation|Commentaires|Volatile|MinDecValue|MaxDecValue|MinPhysValue|MaxPhysValue|Def_Eval|MemSec
+SWTST_kbTle8242TstEnaC|uint8|SWTST|1|0|0|SWTST_kbTle8242TstEnaC|0|0|Phys|bool|2|0||Application|TST|PWM|SWTST_kbTle8242TstEnaC||1|||||||NONE|1|1|||0|1|0|0|Activate Dio tests|0|||||0|
+SWTST_u8TLE8242TstCase|uint8|SWTST|0|0|0|SWTST_u8TLE8242TstCase|0|0|Déci|-||||Application|SWTST|SWTST|SWTST_u8TLE8242TstCase||1||||||||0|1||||1|0|0|test case|0|||||0|
+TST_u8TLE8242CHIndex|uint8|SWTST|0|0|0|TST_u8TLE8242CHIndex|0|0|Déci|-||||Application|SWTST|SWTST|TST_u8TLE8242CHIndex||1||||||||0|1||||1|0|0|Channel index|0|0|7|||0|
+TST_f32TLE8242_Target|float32|SWTST|1|0|0|TST_f32TLE8242_Target|0|0|Phys|mA|1|1|0| |SWTST|SWTST|TST_f32TLE8242_Target||1|||||||NONE|0|1||||1|0|1|Target current |0||||||
+TST_f32TLE8242_PWMFrq|float32|SWTST|1|0|0|TST_f32TLE8242_PWMFrq|0|0|Phys|Hz|1|1|0| |SWTST|SWTST|TST_f32TLE8242_PWMFrq||1|||||||NONE|0|1||||1|0|1|Target current |0||||||
+TST_u16TLE8242_KP|uint16|SWTST|1|0|0|TST_u16TLE8242_KP|0|0|Déci|-|||||SWTST|SWTST|TST_u16TLE8242_KP||1|||||||NONE|0|1||||1|0|1||0||||||
+TST_u16TLE8242_KI|uint16|SWTST|1|0|0|TST_u16TLE8242_KI|0|0|Déci|-|||||SWTST|SWTST|TST_u16TLE8242_KI||1|||||||NONE|0|1||||1|0|1||0||||||
+TST_f32TLE8242_DitherAmpl|float32|SWTST|1|0|0|TST_f32TLE8242_DitherAmpl|0|0|Phys|mA|1|1|0| |SWTST|SWTST|TST_f32TLE8242_DitherAmpl||1|||||||NONE|0|1||||1|0|1|Target current |0||||||
+TST_f32TLE8242_DitherFreq|float32|SWTST|1|0|0|TST_f32TLE8242_DitherFreq|0|0|Phys|Hz|1|1|0| |SWTST|SWTST|TST_f32TLE8242_DitherFreq||1|||||||NONE|0|1||||1|0|1|Target current |0||||||
+TST_f32TLE8242_DutyCycle|float32|SWTST|1|0|0|TST_f32TLE8242_DutyCycle|0|0|Phys|A|1|1|0| |SWTST|SWTST|TST_f32TLE8242_DutyCycle||1|||||||NONE|0|1||||1|0|1|Target current |0||||||
+TST_f32TLE8242_DutyCycleC|float32|SWTST|1|0|0|TST_f32TLE8242_DutyCycleC|0|0|Phys|A|1|1|0| |SWTST|SWTST|TST_f32TLE8242_DutyCycleC||1|||||||NONE|0|1||||1|0|1|Target current |0||||||
+TST_u8TLE8242_OpenLoopC|uint8|SWTST|1|0|0|TST_u8TLE8242_OpenLoopC|0|0|Hexa|-|||||SWTST|SWTST|TST_u8TLE8242_OpenLoopC||1|||||||NONE|0|1||||1|0|1||0||||||
+
+TST_f32TLE8242Target|float32|SWTST|1|1|8|TST_f32TLE8242Target|0|0|Phys|A|1|1|0| |SWTST|SWTST|TST_f32TLE8242Target||1|||||||NONE|0|1||||1|0|1|Target current |0||||||
+TST_f32TLE8242PWMFrq|float32|SWTST|1|1|8|TST_f32TLE8242PWMFrq|0|0|Phys|A|1|1|0| |SWTST|SWTST|TST_f32TLE8242PWMFrq||1|||||||NONE|0|1||||1|0|1|Target current |0||||||
+TST_u16TLE8242KP|uint16|SWTST|1|1|8|TST_u16TLE8242KP|0|0|Hexa|-|||||SWTST|SWTST|TST_u16TLE8242KP||1|||||||NONE|0|1||||1|0|1||0||||||
+TST_u16TLE8242KI|uint16|SWTST|1|1|8|TST_u16TLE8242KI|0|0|Hexa|-|||||SWTST|SWTST|TST_u16TLE8242KI||1|||||||NONE|0|1||||1|0|1||0||||||
+TST_f32TLE8242DitherAmpl|float32|SWTST|1|1|8|TST_f32TLE8242DitherAmpl|0|0|Phys|A|1|1|0| |SWTST|SWTST|TST_f32TLE8242DitherAmpl||1|||||||NONE|0|1||||1|0|1|Target current |0||||||
+TST_f32TLE8242DitherFreq|float32|SWTST|1|1|8|TST_f32TLE8242DitherFreq|0|0|Phys|A|1|1|0| |SWTST|SWTST|TST_f32TLE8242DitherFreq||1|||||||NONE|0|1||||1|0|1|Target current |0||||||
+TST_f32TLE8242DutyCycle|float32|SWTST|1|1|8|TST_f32TLE8242DutyCycle|0|0|Phys|A|1|1|0| |SWTST|SWTST|TST_f32TLE8242DutyCycle||1|||||||NONE|0|1||||1|0|1|Target current |0||||||
+TST_f32TLE8242DutyCycleC|float32|SWTST|1|1|8|TST_f32TLE8242DutyCycleC|0|0|Phys|A|1|1|0| |SWTST|SWTST|TST_f32TLE8242DutyCycleC||1|||||||NONE|0|1||||1|0|1|Target current |0||||||
+TST_u8TLE8242OpenLoopC|uint8|SWTST|1|1|8|TST_u8TLE8242OpenLoopC|0|0|Hexa|-|||||SWTST|SWTST|TST_u8TLE8242OpenLoopC||1|||||||NONE|0|1||||1|0|1||0||||||
+

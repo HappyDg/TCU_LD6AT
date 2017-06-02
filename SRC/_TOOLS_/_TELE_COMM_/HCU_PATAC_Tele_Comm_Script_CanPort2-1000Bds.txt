@@ -1,0 +1,11 @@
+
+Config /Protocol:UDS /Device:CANVECTOR /DLC:FIX /Target:TRICORE /FunctionalAddress:7DF /AI:782_702 /Port:2 /BAUD:1000
+
+#Initialize communication
+InitCom
+
+# Download "mot, ulp, ..." file
+Download /ULP:TelecommInputFile.ulp /DWNL:128 /SERIAL:"1 2 3 4 5 6"
+
+#Close communication (using "End Of Communication" process)
+CloseCom

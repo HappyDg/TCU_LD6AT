@@ -1,0 +1,2815 @@
+/******************************************************************************/
+/* !Layer           : APPLI                                                   */
+/* !Component       : MEMMAP                                                  */
+/* !Description     :                                                         */
+/*                                                                            */
+/* !File            : APPLI_MEMMAP.oil                                        */
+/* !Description     : Applicative Mapping Section Configuration               */
+/*                                                                            */
+/* !Reference       :                                                         */
+/*                                                                            */
+/* Coding language  : OIL                                                     */
+/*                                                                            */
+/* COPYRIGHT VALEO all rights reserved                                        */
+/******************************************************************************/
+/* Dimension Informations
+ * %PCMS_HEADER_SUBSTITUTION_START:%
+ * The PID has this format: <Product ID>:<Item ID>.<Variant>-<Item Type>;<Revision>
+ * %PID:%
+ * %PCMS_HEADER_SUBSTITUTION_END:%
+ ******************************************************************************/
+
+/******************************************************************************/
+/* Refer to V01 INS 11 03564 for Autosar/Valeo memory mapping rules.          */
+/******************************************************************************/
+ 
+/******************************************************************************/
+/* COMPONENTS INCLUDED FILE                                                   */
+/******************************************************************************/
+#include "SWTST_MEMMAP.OIL"
+
+/******************************************************************************/
+/* MEMMAP_CFG                                                                 */
+/******************************************************************************/
+
+MEMMAP_CFG GENERAL_CFG
+{
+   OPTIMIZATION = SAFE;
+   GENERATE_MEMMAP_FILE_PER_MSN = TRUE;
+};
+
+/******************************************************************************/
+/* TST MEMMAP_MSN REALLOCATION                                                */
+/******************************************************************************/
+/*
+MEMMAP_MSN TST {
+                   SECTION = SEC_TST_VAR;
+                   SECTION = SEC_TST_CODE;
+                   SECTION = SEC_TST_CALIB;
+                   SECTION = SEC_TST_CONST;
+                   SECTION = SEC_TST_VAR_REPROG_REQ;
+                   SECTION = SEC_TST_VER_MAPPING;
+               };
+*/
+
+MEMMAP_MSN TCU_APP {
+                   SECTION = SEC_CODE;
+                   SECTION = SEC_CALIB_UNSPECIFIED;
+				   SECTION = SEC_VAR_UNSPECIFIED;
+               };
+
+MEMMAP_MSN TLE8242 {
+                   SECTION = SEC_CODE;
+                   SECTION = SEC_CALIB_UNSPECIFIED;
+				   SECTION = SEC_VAR_UNSPECIFIED;
+				   SECTION = SEC_CONST_UNSPECIFIED;
+               };
+
+/******************************************************************************/
+/* MEMMAP_MSN REALLOCATION                                                    */
+/******************************************************************************/
+MEMMAP_MSN CCP        {
+                         REALLOC = ENABLED
+                         {   
+                            SECTION = CODE;
+                            TO_SECTION = SEC_TST_CODE;
+                         };
+                         REALLOC = ENABLED
+                         {   
+                            SECTION = CONST_UNSPECIFIED;
+                            TO_SECTION = SEC_TST_CONST;
+                         };
+                         REALLOC = ENABLED
+                         {   
+                            SECTION = VAR_UNSPECIFIED;
+                            TO_SECTION = SEC_TST_VAR;
+                         };
+                      };
+
+/*
+MEMMAP_MSN MATHSRV    {
+                         REALLOC = ENABLED
+                         {   
+                            SECTION = CODE;
+                            TO_SECTION = SEC_TST_CODE;
+                         };
+                      };
+*/
+/*
+MEMMAP_MSN TST        {
+                         REALLOC = ENABLED
+                         {   
+                            SECTION = SEC_TST_CODE;
+                            TO_SECTION = SEC_TST_TMS_CODE;
+                         };
+                         REALLOC = ENABLED
+                         {   
+                            SECTION = SEC_TST_CALIB;
+                            TO_SECTION = SEC_TST_TMS_CALIB;
+                         };
+                      };
+
+MEMMAP_MSN TST_PWMHAL {
+                         REALLOC = ENABLED
+                         {   
+                            SECTION = SEC_TST_CODE;
+                            TO_SECTION = SEC_TST_TMS_CODE;
+                         };
+                         REALLOC = ENABLED
+                         {   
+                            SECTION = SEC_TST_CALIB;
+                            TO_SECTION = SEC_TST_TMS_CALIB;
+                         };
+                      };
+
+MEMMAP_MSN TST_DIOHAL {
+                         REALLOC = ENABLED
+                         {   
+                            SECTION = SEC_TST_CODE;
+                            TO_SECTION = SEC_TST_TMS_CODE;
+                         };
+                      };
+*/
+/*
+MEMMAP_MSN TST_DET    {
+                         REALLOC = ENABLED
+                         {   
+                            SECTION = SEC_TST_CODE;
+                            TO_SECTION = SEC_TST_TMS_CODE;
+                         };
+                      };
+
+*/
+MEMMAP_MSN FLS_17_PMU
+{
+   REALLOC = ENABLED {SECTION = SEC_VAR_32BIT;                 TO_SECTION = SEC_VAR_CLEARED_UNSPECIFIED_CPU0;};
+   REALLOC = ENABLED {SECTION = SEC_VAR_UNSPECIFIED;           TO_SECTION = SEC_VAR_CLEARED_UNSPECIFIED_CPU0;};
+};
+MEMMAP_MSN FLSLOADER
+{
+   REALLOC = ENABLED {SECTION = SEC_CONST_32BIT;               TO_SECTION = SEC_CONST_COPY_CALIB;};
+   REALLOC = ENABLED {SECTION = SEC_VAR_32BIT;                 TO_SECTION = SEC_VAR_CLEARED_32BIT_CPU1;};
+   REALLOC = ENABLED {SECTION = SEC_VAR_8BIT;                  TO_SECTION = SEC_VAR_CLEARED_8BIT_CPU1;};   
+   REALLOC = ENABLED {SECTION = SEC_WRITE_CODE;                TO_SECTION = SEC_CODE_COPY_CALIB;};
+   REALLOC = ENABLED {SECTION = SEC_CODE;                      TO_SECTION = SEC_CODE_COPY_CALIB;};
+};
+
+MEMMAP_MSN SWTST
+{
+   REALLOC = ENABLED {SECTION = SEC_CALIB_UNSPECIFIED;         TO_SECTION = SEC_TST_VAR;};   
+   REALLOC = ENABLED {SECTION = SEC_VAR_UNSPECIFIED;           TO_SECTION = SEC_TST_VAR;};
+   REALLOC = ENABLED {SECTION = SEC_CODE;                      TO_SECTION = SEC_TST_CODE;};
+};
+
+/******************************************************************************/
+/* ASW MEMMAP_PARENT LIST                                                     */
+/******************************************************************************/
+MEMMAP_PARENT SEC_TST_VAR
+{
+   START = "#pragma section \".data_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_TST_CODE
+{
+   //START = "#pragma section \".code\" ax";
+   START = "#pragma section \".text\" ax";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_TST_CALIB
+{
+   START = "#pragma section \".calib\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CALIB_CODE
+{
+   START = "#pragma section \".calib\" a";
+   STOP  = "#pragma section";
+};
+MEMMAP_PARENT SEC_TST_CONST
+{
+   START = "#pragma section \".const\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_TST_VAR_REPROG_REQ
+{
+   START = "#pragma section \".data_cpu1\" aw"; // may be changed
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_TST_TMS_CODE
+{
+   START = "#pragma section \"TMS_CODE\" ax";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_TST_TMS_CALIB
+{
+   START = "#pragma section \"TMS_CALIB\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_TST_VER_MAPPING
+{
+   //START = "#pragma section \".code\" ax";
+   START = "#pragma section \".text\" ax";
+   STOP  = "#pragma section";
+};
+
+/******************************************************************************/
+/* BSW MEMMAP_PARENT LIST                                                     */
+/******************************************************************************/
+
+/******************************************************************************/
+/* CODE SECTIONS                                                              */
+/******************************************************************************/
+
+MEMMAP_PARENT CODE
+{
+   //START = "#pragma section \".code\" ax";
+   START = "#pragma section \".text\" ax";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CODE
+{
+   //START = "#pragma section \".code\" ax";
+   START = "#pragma section \".text\" ax";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_JOBENDNOTIF_CODE
+{
+   //START = "#pragma section \".code\" ax";
+   START = "#pragma section \".text\" ax";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_JOBERRNOTIF_CODE
+{
+   //START = "#pragma section \".code\" ax";
+   START = "#pragma section \".text\" ax";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_ILLEGALNOTIF_CODE
+{
+   //START = "#pragma section \".code\" ax";
+   START = "#pragma section \".text\" ax";
+   STOP  = "#pragma section";
+};
+
+
+MEMMAP_PARENT SEC_CODE_FAST
+{
+   START = "#pragma section \".text\" ax";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CODE_SLOW
+{
+   START = "#pragma section \".text\" ax";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VECTORS
+{
+   START = "#pragma section \".text\" ax";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CODE_LIB
+{
+   START = "#pragma section \".text\" ax";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_SAFETY_CODE
+{
+   //START = "#pragma section \".code\" ax";
+   START = "#pragma section \".text\" ax";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CALLOUT_CODE
+{
+   //START = "#pragma section \".code\" ax";
+   START = "#pragma section \".text\" ax";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CODE_CPU0
+{
+   START = "#pragma section \".code_cpu0\" ax";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CODE_CC_BLOCK
+{
+   START = "#pragma section \".text\" ax";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_APPL_CODE
+{
+   START = "#pragma section \".text\" ax";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CODE_CPU0
+{
+   START = "#pragma section \".code_cpu0\" ax";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CODE_FAST_CPU0
+{
+   START = "#pragma section \".code_cached_cpu0\" ax";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CODE_FAST_CPU0
+{
+   START = "#pragma section \".code_cached_cpu0\" ax";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CODE_CPU1
+{
+   START = "#pragma section \".code_cpu1\" ax";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CODE_CPU1
+{
+   START = "#pragma section \".code_cpu1\" ax";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CODE_FAST_CPU1
+{
+   START = "#pragma section \".code_cached_cpu1\" ax";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CODE_FAST_CPU1
+{
+   START = "#pragma section \".code_cached_cpu1\" ax";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CODE_CPU2
+{
+   START = "#pragma section \".code_cpu2\" ax";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CODE_CPU2
+{
+   START = "#pragma section \".code_cpu2\" ax";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CODE_FAST_CPU2
+{
+   START = "#pragma section \".code_cached_cpu2\" ax";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CODE_FAST_CPU2
+{
+   START = "#pragma section \".code_cached_cpu2\" ax";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SPY_BUFFER
+{
+   START = "#pragma section \"SPY_BUFF\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_SPL_CODE_ERASECMD_BEGIN
+{
+   //START = "#pragma section \".code\" ax";
+   START = "#pragma section \".text\" ax";
+   STOP  = "#pragma section";
+};
+MEMMAP_PARENT SEC_SPL_CODE_WRITECMD_BEGIN
+{
+   //START = "#pragma section \".code\" ax";
+   START = "#pragma section \".text\" ax";
+   STOP  = "#pragma section";
+};
+/******************************************************************************/
+/* VARIABLES SECTIONS                                                         */
+/******************************************************************************/
+
+/******************************************************************************/
+/* DEFAULT CORE                                                               */
+/******************************************************************************/
+
+/******************************************************************************/
+/* AUTOSAR VAR NO_INIT                                                        */
+/******************************************************************************/
+
+MEMMAP_PARENT VAR_NO_INIT_BOOLEAN
+{
+   START = "#pragma section \".uncleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_NO_INIT_BOOLEAN
+{
+   START = "#pragma section \".uncleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_NO_INIT_8BIT
+{
+   START = "#pragma section \".uncleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_NO_INIT_8BIT
+{
+   START = "#pragma section \".uncleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_NO_INIT_8
+{
+   START = "#pragma section \".uncleared\" aw";
+   STOP  = "#pragma section";
+};
+MEMMAP_PARENT SEC_VAR_NOINIT_8
+{
+   START = "#pragma section \".uncleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_FAST_8BIT
+{
+   START = "#pragma section \".uncleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_NO_INIT_16BIT
+{
+   START = "#pragma section \".uncleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_NO_INIT_16BIT
+{
+   START = "#pragma section \".uncleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_NO_INIT_16
+{
+   START = "#pragma section \".uncleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_16
+{
+   START = "#pragma section \".uncleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_FAST_16BIT
+{
+   START = "#pragma section \".uncleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_NO_INIT_32BIT
+{
+   START = "#pragma section \".uncleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_NO_INIT_32BIT
+{
+   START = "#pragma section \".uncleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_NO_INIT_32
+{
+   START = "#pragma section \".uncleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_32
+{
+   START = "#pragma section \".uncleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_NO_INIT_UNSPECIFIED
+{
+   START = "#pragma section \".uncleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_NO_INIT_UNSPECIFIED
+{
+   START = "#pragma section \".uncleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_FAST_INIT_UNSPECIFIED
+{
+   START = "#pragma section \".uncleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_INTERNAL_VAR_POWER_ON_INIT_UNSPECIFIED
+{
+   START = "#pragma section \".uncleared\" aw";
+   STOP  = "#pragma section";
+};
+/******************************************************************************/
+/* AUTOSAR VAR CLEARED                                                        */
+/******************************************************************************/
+
+MEMMAP_PARENT VAR_CLEARED_BOOLEAN
+{
+   START = "#pragma section \".bss\" awB";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_CLEARED_BOOLEAN
+{
+   START = "#pragma section \".bss\" awB";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_CLEARED_8BIT
+{
+   START = "#pragma section \".bss\" awB";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_CLEARED_8BIT
+{
+   START = "#pragma section \".bss\" awB";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_CLEARED_16BIT
+{
+   START = "#pragma section \".bss\" awB";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_CLEARED_16BIT
+{
+   START = "#pragma section \".bss\" awB";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_CLEARED_32BIT
+{
+   START = "#pragma section \".bss\" awB";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_CLEARED_32BIT
+{
+   START = "#pragma section \".bss\" awB";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_FAST_32BIT
+{
+   START = "#pragma section \".bss\" awB";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_CLEARED_UNSPECIFIED
+{
+   START = "#pragma section \".bss\" awB";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_CLEARED_UNSPECIFIED
+{
+   START = "#pragma section \".bss\" awB";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_ASIL0_VAR_8BIT
+{
+   START = "#pragma section \".bss\" awB";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_ASIL0_VAR_32BIT
+{
+   START = "#pragma section \".bss\" awB";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_ASIL0_VAR_UNSPECIFIED
+{
+   START = "#pragma section \".bss\" awB";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_ASIL1_VAR_8BIT
+{
+   START = "#pragma section \".bss\" awB";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_ASIL1_VAR_32BIT
+{
+   START = "#pragma section \".bss\" awB";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_ASIL1_VAR_UNSPECIFIED
+{
+   START = "#pragma section \".bss\" awB";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_ASIL1_VAR_FAST_32BIT
+{
+   START = "#pragma section \".bss\" awB";
+   STOP  = "#pragma section";
+};
+
+/******************************************************************************/
+/* AUTOSAR VAR POWER_ON_CLEARED                                               */
+/******************************************************************************/
+
+MEMMAP_PARENT VAR_POWER_ON_CLEARED_BOOLEAN
+{
+   START = "#pragma section \".power_on_cleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_CLEARED_BOOLEAN
+{
+   START = "#pragma section \".power_on_cleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_POWER_ON_CLEARED_8BIT
+{
+   START = "#pragma section \".power_on_cleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_CLEARED_8BIT
+{
+   START = "#pragma section \".power_on_cleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_POWER_ON_CLEARED_16BIT
+{
+   START = "#pragma section \".power_on_cleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_CLEARED_16BIT
+{
+   START = "#pragma section \".power_on_cleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_POWER_ON_CLEARED_32BIT
+{
+   START = "#pragma section \".power_on_cleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_CLEARED_32BIT
+{
+   START = "#pragma section \".power_on_cleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_POWER_ON_CLEARED_UNSPECIFIED
+{
+   START = "#pragma section \".power_on_cleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_CLEARED_UNSPECIFIED
+{
+   START = "#pragma section \".power_on_cleared\" aw";
+   STOP  = "#pragma section";
+};
+
+/******************************************************************************/
+/* AUTOSAR VAR INIT                                                           */
+/******************************************************************************/
+
+MEMMAP_PARENT VAR_INIT_BOOLEAN
+{
+   START = "#pragma section \".data\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_INIT_BOOLEAN
+{
+   START = "#pragma section \".data\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_INIT_8BIT
+{
+   START = "#pragma section \".data\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_INIT_8BIT
+{
+   START = "#pragma section \".data\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_INIT_8
+{
+   START = "#pragma section \".data\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_INIT_16BIT
+{
+   START = "#pragma section \".data\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_INIT_16BIT
+{
+   START = "#pragma section \".data\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_INIT_16
+{
+   START = "#pragma section \".data\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_INIT_32BIT
+{
+   START = "#pragma section \".data\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_INIT_32BIT
+{
+   START = "#pragma section \".data\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_INIT_32
+{
+   START = "#pragma section \".data\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_INIT_UNSPECIFIED
+{
+   START = "#pragma section \".data\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_INIT_UNSPECIFIED
+{
+   START = "#pragma section \".data\" aw";
+   STOP  = "#pragma section";
+};
+
+/******************************************************************************/
+/* AUTOSAR VAR POWER_ON_INIT                                                  */
+/******************************************************************************/
+
+MEMMAP_PARENT VAR_POWER_ON_INIT_BOOLEAN
+{
+   START = "#pragma section \".power_on_init\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_INIT_BOOLEAN
+{
+   START = "#pragma section \".power_on_init\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_POWER_ON_INIT_8BIT
+{
+   START = "#pragma section \".power_on_init\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_INIT_8BIT
+{
+   START = "#pragma section \".power_on_init\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_INIT_8
+{
+   START = "#pragma section \".power_on_init\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_POWER_ON_INIT_16BIT
+{
+   START = "#pragma section \".power_on_init\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_INIT_16BIT
+{
+   START = "#pragma section \".power_on_init\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_POWER_ON_INIT_32BIT
+{
+   START = "#pragma section \".power_on_init\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_INIT_32BIT
+{
+   START = "#pragma section \".power_on_init\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_POWER_ON_INIT_UNSPECIFIED
+{
+   START = "#pragma section \".power_on_init\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+{
+   START = "#pragma section \".power_on_init\" aw";
+   STOP  = "#pragma section";
+};
+
+/******************************************************************************/
+/* CORE CPU0                                                                  */
+/******************************************************************************/
+
+/******************************************************************************/
+/* AUTOSAR VAR NO_INIT                                                        */
+/******************************************************************************/
+
+MEMMAP_PARENT VAR_NO_INIT_BOOLEAN_CPU0
+{
+   START = "#pragma section \".uncleared_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_NO_INIT_BOOLEAN_CPU0
+{
+   START = "#pragma section \".uncleared_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_NO_INIT_8BIT_CPU0
+{
+   START = "#pragma section \".uncleared_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_NO_INIT_8BIT_CPU0
+{
+   START = "#pragma section \".uncleared_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_NO_INIT_16BIT_CPU0
+{
+   START = "#pragma section \".uncleared_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_NO_INIT_16BIT_CPU0
+{
+   START = "#pragma section \".uncleared_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_NO_INIT_32BIT_CPU0
+{
+   START = "#pragma section \".uncleared_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_NO_INIT_32BIT_CPU0
+{
+   START = "#pragma section \".uncleared_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_NO_INIT_UNSPECIFIED_CPU0
+{
+   START = "#pragma section \".uncleared_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_NO_INIT_UNSPECIFIED_CPU0
+{
+   START = "#pragma section \".uncleared_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+/******************************************************************************/
+/* AUTOSAR VAR CLEARED                                                        */
+/******************************************************************************/
+
+MEMMAP_PARENT VAR_CLEARED_BOOLEAN_CPU0
+{
+   START = "#pragma section \".bss_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_CLEARED_BOOLEAN_CPU0
+{
+   START = "#pragma section \".bss_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_CLEARED_8BIT_CPU0
+{
+   START = "#pragma section \".bss_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_CLEARED_8BIT_CPU0
+{
+   START = "#pragma section \".bss_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_CLEARED_16BIT_CPU0
+{
+   START = "#pragma section \".bss_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_CLEARED_16BIT_CPU0
+{
+   START = "#pragma section \".bss_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_CLEARED_32BIT_CPU0
+{
+   START = "#pragma section \".bss_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_CLEARED_32BIT_CPU0
+{
+   START = "#pragma section \".bss_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_CLEARED_UNSPECIFIED_CPU0
+{
+   START = "#pragma section \".bss_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_CLEARED_UNSPECIFIED_CPU0
+{
+   START = "#pragma section \".bss_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+/******************************************************************************/
+/* AUTOSAR VAR POWER_ON_CLEARED                                               */
+/******************************************************************************/
+
+MEMMAP_PARENT VAR_POWER_ON_CLEARED_BOOLEAN_CPU0
+{
+   START = "#pragma section \".power_on_cleared_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_CLEARED_BOOLEAN_CPU0
+{
+   START = "#pragma section \".power_on_cleared_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_POWER_ON_CLEARED_8BIT_CPU0
+{
+   START = "#pragma section \".power_on_cleared_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_CLEARED_8BIT_CPU0
+{
+   START = "#pragma section \".power_on_cleared_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_POWER_ON_CLEARED_16BIT_CPU0
+{
+   START = "#pragma section \".power_on_cleared_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_CLEARED_16BIT_CPU0
+{
+   START = "#pragma section \".power_on_cleared_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_POWER_ON_CLEARED_32BIT_CPU0
+{
+   START = "#pragma section \".power_on_cleared_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_CLEARED_32BIT_CPU0
+{
+   START = "#pragma section \".power_on_cleared_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_POWER_ON_CLEARED_UNSPECIFIED_CPU0
+{
+   START = "#pragma section \".power_on_cleared_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_CLEARED_UNSPECIFIED_CPU0
+{
+   START = "#pragma section \".power_on_cleared_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+/******************************************************************************/
+/* AUTOSAR VAR INIT                                                           */
+/******************************************************************************/
+
+MEMMAP_PARENT VAR_INIT_BOOLEAN_CPU0
+{
+   START = "#pragma section \".data_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_INIT_BOOLEAN_CPU0
+{
+   START = "#pragma section \".data_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_INIT_8BIT_CPU0
+{
+   START = "#pragma section \".data_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_INIT_8BIT_CPU0
+{
+   START = "#pragma section \".data_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_INIT_16BIT_CPU0
+{
+   START = "#pragma section \".data_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_INIT_16BIT_CPU0
+{
+   START = "#pragma section \".data_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_INIT_32BIT_CPU0
+{
+   START = "#pragma section \".data_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_INIT_32BIT_CPU0
+{
+   START = "#pragma section \".data_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_INIT_UNSPECIFIED_CPU0
+{
+   START = "#pragma section \".data_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_INIT_UNSPECIFIED_CPU0
+{
+   START = "#pragma section \".data_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+/******************************************************************************/
+/* AUTOSAR VAR POWER_ON_INIT                                                  */
+/******************************************************************************/
+
+MEMMAP_PARENT VAR_POWER_ON_INIT_BOOLEAN_CPU0
+{
+   START = "#pragma section \".power_on_init_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_INIT_BOOLEAN_CPU0
+{
+   START = "#pragma section \".power_on_init_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_POWER_ON_INIT_8BIT_CPU0
+{
+   START = "#pragma section \".power_on_init_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_INIT_8BIT_CPU0
+{
+   START = "#pragma section \".power_on_init_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_POWER_ON_INIT_16BIT_CPU0
+{
+   START = "#pragma section \".power_on_init_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_INIT_16BIT_CPU0
+{
+   START = "#pragma section \".power_on_init_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_POWER_ON_INIT_32BIT_CPU0
+{
+   START = "#pragma section \".power_on_init_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_INIT_32BIT_CPU0
+{
+   START = "#pragma section \".power_on_init_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_POWER_ON_INIT_UNSPECIFIED_CPU0
+{
+   START = "#pragma section \".power_on_init_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_INIT_UNSPECIFIED_CPU0
+{
+   START = "#pragma section \".power_on_init_cpu0\" aw";
+   STOP  = "#pragma section";
+};
+
+/******************************************************************************/
+/* CORE CPU1                                                                  */
+/******************************************************************************/
+
+/******************************************************************************/
+/* AUTOSAR VAR NO_INIT                                                        */
+/******************************************************************************/
+
+MEMMAP_PARENT VAR_NO_INIT_BOOLEAN_CPU1
+{
+   START = "#pragma section \".uncleared_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_NO_INIT_BOOLEAN_CPU1
+{
+   START = "#pragma section \".uncleared_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_NO_INIT_8BIT_CPU1
+{
+   START = "#pragma section \".uncleared_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_NO_INIT_8BIT_CPU1
+{
+   START = "#pragma section \".uncleared_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_NO_INIT_16BIT_CPU1
+{
+   START = "#pragma section \".uncleared_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_NO_INIT_16BIT_CPU1
+{
+   START = "#pragma section \".uncleared_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_NO_INIT_32BIT_CPU1
+{
+   START = "#pragma section \".uncleared_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_NO_INIT_32BIT_CPU1
+{
+   START = "#pragma section \".uncleared_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_NO_INIT_UNSPECIFIED_CPU1
+{
+   START = "#pragma section \".uncleared_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_NO_INIT_UNSPECIFIED_CPU1
+{
+   START = "#pragma section \".uncleared_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+/******************************************************************************/
+/* AUTOSAR VAR CLEARED                                                        */
+/******************************************************************************/
+
+MEMMAP_PARENT VAR_CLEARED_BOOLEAN_CPU1
+{
+   START = "#pragma section \".bss_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_CLEARED_BOOLEAN_CPU1
+{
+   START = "#pragma section \".bss_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_CLEARED_8BIT_CPU1
+{
+   START = "#pragma section \".bss_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_CLEARED_8BIT_CPU1
+{
+   START = "#pragma section \".bss_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_CLEARED_16BIT_CPU1
+{
+   START = "#pragma section \".bss_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_CLEARED_16BIT_CPU1
+{
+   START = "#pragma section \".bss_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_CLEARED_32BIT_CPU1
+{
+   START = "#pragma section \".bss_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_CLEARED_32BIT_CPU1
+{
+   START = "#pragma section \".bss_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_CLEARED_UNSPECIFIED_CPU1
+{
+   START = "#pragma section \".bss_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_CLEARED_UNSPECIFIED_CPU1
+{
+   START = "#pragma section \".bss_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+/******************************************************************************/
+/* AUTOSAR VAR POWER_ON_CLEARED                                               */
+/******************************************************************************/
+
+MEMMAP_PARENT VAR_POWER_ON_CLEARED_BOOLEAN_CPU1
+{
+   START = "#pragma section \".power_on_cleared_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_CLEARED_BOOLEAN_CPU1
+{
+   START = "#pragma section \".power_on_cleared_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_POWER_ON_CLEARED_8BIT_CPU1
+{
+   START = "#pragma section \".power_on_cleared_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_CLEARED_8BIT_CPU1
+{
+   START = "#pragma section \".power_on_cleared_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_POWER_ON_CLEARED_16BIT_CPU1
+{
+   START = "#pragma section \".power_on_cleared_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_CLEARED_16BIT_CPU1
+{
+   START = "#pragma section \".power_on_cleared_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_POWER_ON_CLEARED_32BIT_CPU1
+{
+   START = "#pragma section \".power_on_cleared_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_CLEARED_32BIT_CPU1
+{
+   START = "#pragma section \".power_on_cleared_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_POWER_ON_CLEARED_UNSPECIFIED_CPU1
+{
+   START = "#pragma section \".power_on_cleared_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_CLEARED_UNSPECIFIED_CPU1
+{
+   START = "#pragma section \".power_on_cleared_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+/******************************************************************************/
+/* AUTOSAR VAR INIT                                                           */
+/******************************************************************************/
+
+MEMMAP_PARENT VAR_INIT_BOOLEAN_CPU1
+{
+   START = "#pragma section \".data_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_INIT_BOOLEAN_CPU1
+{
+   START = "#pragma section \".data_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_INIT_8BIT_CPU1
+{
+   START = "#pragma section \".data_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_INIT_8BIT_CPU1
+{
+   START = "#pragma section \".data_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_INIT_16BIT_CPU1
+{
+   START = "#pragma section \".data_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_INIT_16BIT_CPU1
+{
+   START = "#pragma section \".data_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_INIT_32BIT_CPU1
+{
+   START = "#pragma section \".data_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_INIT_32BIT_CPU1
+{
+   START = "#pragma section \".data_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_INIT_UNSPECIFIED_CPU1
+{
+   START = "#pragma section \".data_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_INIT_UNSPECIFIED_CPU1
+{
+   START = "#pragma section \".data_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+/******************************************************************************/
+/* AUTOSAR VAR POWER_ON_INIT                                                  */
+/******************************************************************************/
+
+MEMMAP_PARENT VAR_POWER_ON_INIT_BOOLEAN_CPU1
+{
+   START = "#pragma section \".power_on_init_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_INIT_BOOLEAN_CPU1
+{
+   START = "#pragma section \".power_on_init_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_POWER_ON_INIT_8BIT_CPU1
+{
+   START = "#pragma section \".power_on_init_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_INIT_8BIT_CPU1
+{
+   START = "#pragma section \".power_on_init_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_POWER_ON_INIT_16BIT_CPU1
+{
+   START = "#pragma section \".power_on_init_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_INIT_16BIT_CPU1
+{
+   START = "#pragma section \".power_on_init_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_POWER_ON_INIT_32BIT_CPU1
+{
+   START = "#pragma section \".power_on_init_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_INIT_32BIT_CPU1
+{
+   START = "#pragma section \".power_on_init_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_POWER_ON_INIT_UNSPECIFIED_CPU1
+{
+   START = "#pragma section \".power_on_init_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_INIT_UNSPECIFIED_CPU1
+{
+   START = "#pragma section \".power_on_init_cpu1\" aw";
+   STOP  = "#pragma section";
+};
+
+/******************************************************************************/
+/* CORE CPU2                                                                  */
+/******************************************************************************/
+
+/******************************************************************************/
+/* AUTOSAR VAR NO_INIT                                                        */
+/******************************************************************************/
+
+MEMMAP_PARENT VAR_NO_INIT_BOOLEAN_CPU2
+{
+   START = "#pragma section \".uncleared_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_NO_INIT_BOOLEAN_CPU2
+{
+   START = "#pragma section \".uncleared_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_NO_INIT_8BIT_CPU2
+{
+   START = "#pragma section \".uncleared_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_NO_INIT_8BIT_CPU2
+{
+   START = "#pragma section \".uncleared_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_NO_INIT_16BIT_CPU2
+{
+   START = "#pragma section \".uncleared_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_NO_INIT_16BIT_CPU2
+{
+   START = "#pragma section \".uncleared_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_NO_INIT_32BIT_CPU2
+{
+   START = "#pragma section \".uncleared_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_NO_INIT_32BIT_CPU2
+{
+   START = "#pragma section \".uncleared_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_NO_INIT_UNSPECIFIED_CPU2
+{
+   START = "#pragma section \".uncleared_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_NO_INIT_UNSPECIFIED_CPU2
+{
+   START = "#pragma section \".uncleared_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+/******************************************************************************/
+/* AUTOSAR VAR CLEARED                                                        */
+/******************************************************************************/
+
+MEMMAP_PARENT VAR_CLEARED_BOOLEAN_CPU2
+{
+   START = "#pragma section \".bss_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_CLEARED_BOOLEAN_CPU2
+{
+   START = "#pragma section \".bss_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_CLEARED_8BIT_CPU2
+{
+   START = "#pragma section \".bss_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_CLEARED_8BIT_CPU2
+{
+   START = "#pragma section \".bss_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_CLEARED_16BIT_CPU2
+{
+   START = "#pragma section \".bss_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_CLEARED_16BIT_CPU2
+{
+   START = "#pragma section \".bss_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_CLEARED_32BIT_CPU2
+{
+   START = "#pragma section \".bss_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_CLEARED_32BIT_CPU2
+{
+   START = "#pragma section \".bss_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_CLEARED_UNSPECIFIED_CPU2
+{
+   START = "#pragma section \".bss_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_CLEARED_UNSPECIFIED_CPU2
+{
+   START = "#pragma section \".bss_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+/******************************************************************************/
+/* AUTOSAR VAR POWER_ON_CLEARED                                               */
+/******************************************************************************/
+
+MEMMAP_PARENT VAR_POWER_ON_CLEARED_BOOLEAN_CPU2
+{
+   START = "#pragma section \".power_on_cleared_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_CLEARED_BOOLEAN_CPU2
+{
+   START = "#pragma section \".power_on_cleared_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_POWER_ON_CLEARED_8BIT_CPU2
+{
+   START = "#pragma section \".power_on_cleared_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_CLEARED_8BIT_CPU2
+{
+   START = "#pragma section \".power_on_cleared_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_POWER_ON_CLEARED_16BIT_CPU2
+{
+   START = "#pragma section \".power_on_cleared_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_CLEARED_16BIT_CPU2
+{
+   START = "#pragma section \".power_on_cleared_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_POWER_ON_CLEARED_32BIT_CPU2
+{
+   START = "#pragma section \".power_on_cleared_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_CLEARED_32BIT_CPU2
+{
+   START = "#pragma section \".power_on_cleared_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_POWER_ON_CLEARED_UNSPECIFIED_CPU2
+{
+   START = "#pragma section \".power_on_cleared_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_CLEARED_UNSPECIFIED_CPU2
+{
+   START = "#pragma section \".power_on_cleared_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+/******************************************************************************/
+/* AUTOSAR VAR INIT                                                           */
+/******************************************************************************/
+
+MEMMAP_PARENT VAR_INIT_BOOLEAN_CPU2
+{
+   START = "#pragma section \".data_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_INIT_BOOLEAN_CPU2
+{
+   START = "#pragma section \".data_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_INIT_8BIT_CPU2
+{
+   START = "#pragma section \".data_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_INIT_8BIT_CPU2
+{
+   START = "#pragma section \".data_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_INIT_16BIT_CPU2
+{
+   START = "#pragma section \".data_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_INIT_16BIT_CPU2
+{
+   START = "#pragma section \".data_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_INIT_32BIT_CPU2
+{
+   START = "#pragma section \".data_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_INIT_32BIT_CPU2
+{
+   START = "#pragma section \".data_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_INIT_UNSPECIFIED_CPU2
+{
+   START = "#pragma section \".data_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_INIT_UNSPECIFIED_CPU2
+{
+   START = "#pragma section \".data_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+/******************************************************************************/
+/* AUTOSAR VAR POWER_ON_INIT                                                  */
+/******************************************************************************/
+
+MEMMAP_PARENT VAR_POWER_ON_INIT_BOOLEAN_CPU2
+{
+   START = "#pragma section \".power_on_init_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_INIT_BOOLEAN_CPU2
+{
+   START = "#pragma section \".power_on_init_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_POWER_ON_INIT_8BIT_CPU2
+{
+   START = "#pragma section \".power_on_init_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_INIT_8BIT_CPU2
+{
+   START = "#pragma section \".power_on_init_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_POWER_ON_INIT_16BIT_CPU2
+{
+   START = "#pragma section \".power_on_init_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_INIT_16BIT_CPU2
+{
+   START = "#pragma section \".power_on_init_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_POWER_ON_INIT_32BIT_CPU2
+{
+   START = "#pragma section \".power_on_init_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_INIT_32BIT_CPU2
+{
+   START = "#pragma section \".power_on_init_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_POWER_ON_INIT_UNSPECIFIED_CPU2
+{
+   START = "#pragma section \".power_on_init_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_POWER_ON_INIT_UNSPECIFIED_CPU2
+{
+   START = "#pragma section \".power_on_init_cpu2\" aw";
+   STOP  = "#pragma section";
+};
+
+/******************************************************************************/
+/* Old VAR sections names                                                     */
+/******************************************************************************/
+
+MEMMAP_PARENT VAR_BOOLEAN
+{
+   START = "";
+   STOP  = "";  
+};
+
+MEMMAP_PARENT SEC_VAR_BOOLEAN
+{
+   START = "";
+   STOP  = "";  
+};
+
+MEMMAP_PARENT VAR_8BIT
+{
+   START = "";
+   STOP  = "";  
+};
+
+MEMMAP_PARENT SEC_VAR_8BIT
+{
+   START = "";
+   STOP  = "";  
+};
+
+MEMMAP_PARENT SEC_VAR_8
+{
+   START = "";
+   STOP  = "";  
+};
+
+MEMMAP_PARENT VAR_16BIT
+{
+   START = "";
+   STOP  = "";  
+};
+
+MEMMAP_PARENT SEC_VAR_16BIT
+{
+   START = "";
+   STOP  = "";  
+};
+
+MEMMAP_PARENT VAR_32BIT
+{
+   START = "";
+   STOP  = "";  
+};
+
+MEMMAP_PARENT SEC_VAR_32BIT
+{
+   START = "";
+   STOP  = "";  
+};
+
+MEMMAP_PARENT SEC_SPL_VAR_32BIT
+{
+   START = "";
+   STOP  = "";  
+};
+
+MEMMAP_PARENT CONFIG_DATA_APPL_DATA
+{
+   START = "";
+   STOP  = "";  
+};
+
+MEMMAP_PARENT SEC_VAR_APPL_DATA
+{
+   START = "";
+   STOP  = "";  
+};
+
+
+MEMMAP_PARENT VAR_UNSPECIFIED
+{
+   START = "";
+   STOP  = "";  
+};
+
+MEMMAP_PARENT SEC_VAR_UNSPECIFIED
+{
+   START = "";
+   STOP  = "";  
+};
+
+MEMMAP_PARENT SEC_VAR_FAST_UNSPECIFIED
+{
+   START = "";
+   STOP  = "";  
+};
+
+/******************************************************************************/
+/* VAR NOINIT that shall be renamed into POWER_ON_CLEARED or POWER_ON_INIT    */
+/******************************************************************************/
+
+MEMMAP_PARENT VAR_NOINIT_BOOLEAN
+{
+   START = "#pragma section \".power_on_cleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_NOINIT_BOOLEAN
+{
+   START = "#pragma section \".power_on_cleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_NOINIT_8BIT
+{
+   START = "#pragma section \".power_on_cleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_NOINIT_8BIT
+{
+   START = "#pragma section \".power_on_cleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_NOINIT_16BIT
+{
+   START = "#pragma section \".power_on_cleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_NOINIT_16BIT
+{
+   START = "#pragma section \".power_on_cleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_NOINIT_32BIT
+{
+   START = "#pragma section \".power_on_cleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_NOINIT_32BIT
+{
+   START = "#pragma section \".power_on_cleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT VAR_NOINIT_UNSPECIFIED
+{
+   START = "#pragma section \".power_on_cleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_NOINIT_UNSPECIFIED
+{
+   START = "#pragma section \".power_on_cleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_TRACE
+{
+   START = "#pragma section \".power_on_cleared\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_FAST_BOOLEAN
+{
+   START = "#pragma section \".power_on_cleared\" aw";
+   STOP  = "#pragma section";
+};
+
+/******************************************************************************/
+/* CONSTANT SECTIONS                                                          */
+/******************************************************************************/
+
+/******************************************************************************/
+/* AUTOSAR CONST                                                              */
+/******************************************************************************/
+
+/******************************************************************************/
+/* DEFAULT CORE                                                               */
+/******************************************************************************/
+
+MEMMAP_PARENT CONST_BOOLEAN
+{
+   START = "#pragma section \".const\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CONST_BOOLEAN
+{
+   START = "#pragma section \".const\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CONST_8BIT
+{
+   START = "#pragma section \".const\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CONST_8BIT
+{
+   START = "#pragma section \".const\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CONST_8
+{
+   START = "#pragma section \".const\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CONST_16BIT
+{
+   START = "#pragma section \".const\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CONST_16BIT
+{
+   START = "#pragma section \".const\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CONST_16
+{
+   START = "#pragma section \".const\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CONST_32BIT
+{
+   START = "#pragma section \".const\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CONST_32BIT
+{
+   START = "#pragma section \".const\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CONST_32
+{
+   START = "#pragma section \".const\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CONFIG_DATA_APPL_CONST 
+{ 
+   START = "#pragma section \".const\" a";
+   STOP  = "#pragma section"; 
+};
+
+
+MEMMAP_PARENT SEC_CALIB_SEC_CONST_32
+{
+   START = "#pragma section \".const\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CONST_UNSPECIFIED
+{
+   START = "#pragma section \".const\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CONST_UNSPECIFIED
+{
+   START = "#pragma section \".const\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CONST_FAST_UNSPECIFIED
+{
+   START = "#pragma section \".const\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT OS_SEC_CONST_UNSPECIFIED
+{
+   START = "";
+   STOP  = "";
+};
+
+MEMMAP_PARENT  OS_SEC_VAR_NOINIT_UNSPECIFIED
+{
+   START = "";
+   STOP  = "";
+};
+
+MEMMAP_PARENT  OS_SEC_VAR_POWER_ON_INIT_UNSPECIFIED
+{
+   START = "";
+   STOP  = "";
+};
+
+/******************************************************************************/
+/* CORE CPU0                                                                  */
+/******************************************************************************/
+
+MEMMAP_PARENT CONST_BOOLEAN_CPU0
+{
+   START = "#pragma section \".const_cpu0\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CONST_BOOLEAN_CPU0
+{
+   START = "#pragma section \".const_cpu0\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CONST_8BIT_CPU0
+{
+   START = "#pragma section \".const_cpu0\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CONST_8BIT_CPU0
+{
+   START = "#pragma section \".const_cpu0\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CONST_16BIT_CPU0
+{
+   START = "#pragma section \".const_cpu0\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CONST_16BIT_CPU0
+{
+   START = "#pragma section \".const_cpu0\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CONST_32BIT_CPU0
+{
+   START = "#pragma section \".const_cpu0\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CONST_32BIT_CPU0
+{
+   START = "#pragma section \".const_cpu0\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CONST_UNSPECIFIED_CPU0
+{
+   START = "#pragma section \".const_cpu0\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CONST_UNSPECIFIED_CPU0
+{
+   START = "#pragma section \".const_cpu0\" a";
+   STOP  = "#pragma section";
+};
+
+/******************************************************************************/
+/* CORE CPU1                                                                  */
+/******************************************************************************/
+
+MEMMAP_PARENT CONST_BOOLEAN_CPU1
+{
+   START = "#pragma section \".const_cpu1\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CONST_BOOLEAN_CPU1
+{
+   START = "#pragma section \".const_cpu1\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CONST_8BIT_CPU1
+{
+   START = "#pragma section \".const_cpu1\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CONST_8BIT_CPU1
+{
+   START = "#pragma section \".const_cpu1\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CONST_16BIT_CPU1
+{
+   START = "#pragma section \".const_cpu1\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CONST_16BIT_CPU1
+{
+   START = "#pragma section \".const_cpu1\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CONST_32BIT_CPU1
+{
+   START = "#pragma section \".const_cpu1\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CONST_32BIT_CPU1
+{
+   START = "#pragma section \".const_cpu1\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CONST_UNSPECIFIED_CPU1
+{
+   START = "#pragma section \".const_cpu1\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CONST_UNSPECIFIED_CPU1
+{
+   START = "#pragma section \".const_cpu1\" a";
+   STOP  = "#pragma section";
+};
+
+/******************************************************************************/
+/* CORE CPU2                                                                  */
+/******************************************************************************/
+
+MEMMAP_PARENT CONST_BOOLEAN_CPU2
+{
+   START = "#pragma section \".const_cpu2\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CONST_BOOLEAN_CPU2
+{
+   START = "#pragma section \".const_cpu2\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CONST_8BIT_CPU2
+{
+   START = "#pragma section \".const_cpu2\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CONST_8BIT_CPU2
+{
+   START = "#pragma section \".const_cpu2\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CONST_16BIT_CPU2
+{
+   START = "#pragma section \".const_cpu2\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CONST_16BIT_CPU2
+{
+   START = "#pragma section \".const_cpu2\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CONST_32BIT_CPU2
+{
+   START = "#pragma section \".const_cpu2\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CONST_32BIT_CPU2
+{
+   START = "#pragma section \".const_cpu2\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CONST_UNSPECIFIED_CPU2
+{
+   START = "#pragma section \".const_cpu2\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CONST_UNSPECIFIED_CPU2
+{
+   START = "#pragma section \".const_cpu2\" a";
+   STOP  = "#pragma section";
+};
+
+/******************************************************************************/
+/* Old CONST sections names                                                   */
+/******************************************************************************/
+
+MEMMAP_PARENT CONST
+{
+   START = "#pragma section \".const\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CONST
+{
+   START = "#pragma section \".const\" a";
+   STOP  = "#pragma section";
+};
+
+/******************************************************************************/
+/* AUTOSAR CALIB                                                              */
+/******************************************************************************/
+
+/******************************************************************************/
+/* DEFAULT CORE                                                               */
+/******************************************************************************/
+
+MEMMAP_PARENT CALIB_BOOLEAN
+{
+   START = "#pragma section \".calib\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CALIB_BOOLEAN
+{
+   START = "#pragma section \".calib\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CALIB_8BIT
+{
+   START = "#pragma section \".calib\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CALIB_8BIT
+{
+   START = "#pragma section \".calib\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CALIB_CONST_8
+{
+   START = "#pragma section \".calib\" a";
+   STOP  = "#pragma section";
+};
+MEMMAP_PARENT SEC_CALIB_DATA_NOINIT_8
+{
+   START = "#pragma section \".uncleared\" aw";
+   STOP  = "#pragma section";
+};
+MEMMAP_PARENT CALIB_16BIT
+{
+   START = "#pragma section \".calib\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CALIB_16BIT
+{
+   START = "#pragma section \".calib\" a";
+   STOP  = "#pragma section";
+};
+MEMMAP_PARENT SEC_CALIB_CONST_16
+{
+   START = "#pragma section \".calib\" a";
+   STOP  = "#pragma section";
+};
+MEMMAP_PARENT SEC_CALIB_DATA_NOINIT_16
+{
+   START = "#pragma section \".calib\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CALIB_32BIT
+{
+   START = "#pragma section \".calib\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CALIB_32BIT
+{
+   START = "#pragma section \".calib\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CALIB_CONST_32
+{
+   START = "#pragma section \".calib\" a";
+   STOP  = "#pragma section";
+};
+MEMMAP_PARENT SEC_CALIB_DATA_NOINIT_32
+{
+   START = "#pragma section \".uncleared\" aw";
+   STOP  = "#pragma section";
+};
+MEMMAP_PARENT CALIB_UNSPECIFIED
+{
+   START = "#pragma section \".calib\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CALIB_UNSPECIFIED
+{
+   START = "#pragma section \".calib\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CALIB_CONST_UNSPECIFIED
+{
+   START = "#pragma section \".calib\" a";
+   STOP  = "#pragma section";
+};
+MEMMAP_PARENT SEC_CALIB_DATA_NOINIT_UNSPECIFIED
+{
+   START = "#pragma section \".uncleared\" aw";
+   STOP  = "#pragma section";
+};
+MEMMAP_PARENT SEC_CALIB_DATA_UNSPECIFIED
+{
+   START = "#pragma section \".bss\" awB";
+   STOP  = "#pragma section";
+};
+MEMMAP_PARENT SEC_CALIB_DATA_8
+{
+   START = "#pragma section \".bss\" awB";
+   STOP  = "#pragma section";
+};
+MEMMAP_PARENT SEC_CALIB_DATA_16
+{
+   START = "#pragma section \".bss\" awB";
+   STOP  = "#pragma section";
+};
+/******************************************************************************/
+/* CORE CPU0                                                                  */
+/******************************************************************************/
+
+MEMMAP_PARENT CALIB_BOOLEAN_CPU0
+{
+   START = "#pragma section \".calib_cpu0\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CALIB_BOOLEAN_CPU0
+{
+   START = "#pragma section \".calib_cpu0\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CALIB_8BIT_CPU0
+{
+   START = "#pragma section \".calib_cpu0\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CALIB_8BIT_CPU0
+{
+   START = "#pragma section \".calib_cpu0\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CALIB_16BIT_CPU0
+{
+   START = "#pragma section \".calib_cpu0\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CALIB_16BIT_CPU0
+{
+   START = "#pragma section \".calib_cpu0\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CALIB_32BIT_CPU0
+{
+   START = "#pragma section \".calib_cpu0\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CALIB_32BIT_CPU0
+{
+   START = "#pragma section \".calib_cpu0\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CALIB_UNSPECIFIED_CPU0
+{
+   START = "#pragma section \".calib_cpu0\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CALIB_UNSPECIFIED_CPU0
+{
+   START = "#pragma section \".calib_cpu0\" a";
+   STOP  = "#pragma section";
+};
+
+/******************************************************************************/
+/* CORE CPU1                                                                  */
+/******************************************************************************/
+
+MEMMAP_PARENT CALIB_BOOLEAN_CPU1
+{
+   START = "#pragma section \".calib_cpu1\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CALIB_BOOLEAN_CPU1
+{
+   START = "#pragma section \".calib_cpu1\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CALIB_8BIT_CPU1
+{
+   START = "#pragma section \".calib_cpu1\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CALIB_8BIT_CPU1
+{
+   START = "#pragma section \".calib_cpu1\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CALIB_16BIT_CPU1
+{
+   START = "#pragma section \".calib_cpu1\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CALIB_16BIT_CPU1
+{
+   START = "#pragma section \".calib_cpu1\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CALIB_32BIT_CPU1
+{
+   START = "#pragma section \".calib_cpu1\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CALIB_32BIT_CPU1
+{
+   START = "#pragma section \".calib_cpu1\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CALIB_UNSPECIFIED_CPU1
+{
+   START = "#pragma section \".calib_cpu1\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CALIB_UNSPECIFIED_CPU1
+{
+   START = "#pragma section \".calib_cpu1\" a";
+   STOP  = "#pragma section";
+};
+
+/******************************************************************************/
+/* CORE CPU2                                                                  */
+/******************************************************************************/
+
+MEMMAP_PARENT CALIB_BOOLEAN_CPU2
+{
+   START = "#pragma section \".calib_cpu2\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CALIB_BOOLEAN_CPU2
+{
+   START = "#pragma section \".calib_cpu2\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CALIB_8BIT_CPU2
+{
+   START = "#pragma section \".calib_cpu2\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CALIB_8BIT_CPU2
+{
+   START = "#pragma section \".calib_cpu2\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CALIB_16BIT_CPU2
+{
+   START = "#pragma section \".calib_cpu2\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CALIB_16BIT_CPU2
+{
+   START = "#pragma section \".calib_cpu2\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CALIB_32BIT_CPU2
+{
+   START = "#pragma section \".calib_cpu2\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CALIB_32BIT_CPU2
+{
+   START = "#pragma section \".calib_cpu2\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT CALIB_UNSPECIFIED_CPU2
+{
+   START = "#pragma section \".calib_cpu2\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CALIB_UNSPECIFIED_CPU2
+{
+   START = "#pragma section \".calib_cpu2\" a";
+   STOP  = "#pragma section";
+};
+
+/******************************************************************************/
+/* AUTOSAR CONFIG_DATA                                                        */
+/******************************************************************************/
+
+MEMMAP_PARENT CONFIG_DATA_BOOLEAN
+{
+   START = "";
+   STOP  = "";  
+};
+
+MEMMAP_PARENT SEC_CONFIG_DATA_BOOLEAN
+{
+   START = "";
+   STOP  = "";  
+};
+
+MEMMAP_PARENT CONFIG_DATA_8BIT
+{
+   START = "";
+   STOP  = "";  
+};
+
+MEMMAP_PARENT SEC_CONFIG_DATA_8BIT
+{
+   START = "";
+   STOP  = "";  
+};
+
+MEMMAP_PARENT CONFIG_DATA_8
+{
+   START = "";
+   STOP  = "";  
+};
+MEMMAP_PARENT CONFIG_DATA_16BIT
+{
+   START = "";
+   STOP  = "";  
+};
+
+MEMMAP_PARENT SEC_CONFIG_DATA_16BIT
+{
+   START = "";
+   STOP  = "";  
+};
+
+MEMMAP_PARENT SEC_CONFIG_DATA_16
+{
+   START = "";
+   STOP  = "";  
+};
+
+MEMMAP_PARENT CONFIG_DATA_16
+{
+   START = "";
+   STOP  = "";  
+};
+MEMMAP_PARENT CONFIG_DATA_32BIT
+{
+   START = "";
+   STOP  = "";  
+};
+
+MEMMAP_PARENT SEC_CONFIG_DATA_32BIT
+{
+   START = "";
+   STOP  = "";  
+};
+MEMMAP_PARENT CONFIG_DATA_32
+{
+   START = "";
+   STOP  = "";  
+};
+
+MEMMAP_PARENT CONFIG_DATA_UNSPECIFIED
+{
+   START = "";
+   STOP  = "";  
+};
+
+MEMMAP_PARENT SEC_CONFIG_DATA_UNSPECIFIED
+{
+   START = "";
+   STOP  = "";  
+};
+
+/******************************************************************************/
+/* SPECIFIC SECTIONS                                                          */
+/******************************************************************************/
+
+MEMMAP_PARENT SEC_TMS_CODE_BEG
+{
+   START = "#pragma section \"TMS_CODE_BEG\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_TMS_CALIB_BEG
+{
+   START = "#pragma section \"TMS_CALIB_BEG\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_TMS_CODE_END
+{
+   START = "#pragma section \"TMS_CODE_END\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_TMS_CALIB_END
+{
+   START = "#pragma section \"TMS_CALIB_END\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_RTMCLD_ENDLESS_LOOP_CODE
+{
+   START = "#pragma section \".rtmcld_endless_loop\" ax";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_CSA
+{
+   START = "#pragma section \".csa_cpu0\" awB";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_STACK
+{
+   START = "#pragma section \".ustack_cpu0\" awB";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_POSTBUILDCFG                                               
+{
+   START = "#pragma section \".const\" a";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_VAR_DMA_ACCESS
+{
+   START = "#pragma section \".data\" aw";
+   STOP  = "#pragma section";
+};
+
+MEMMAP_PARENT SEC_WRITE_CODE
+{
+   START = "";
+   STOP  = "";
+};
+MEMMAP_PARENT SEC_CODE_COPY_CALIB
+{
+   START = "#pragma section \".code_copy_calib\" ax";
+   STOP  = "#pragma section";
+};
+MEMMAP_PARENT SEC_CONST_COPY_CALIB
+{
+   START = "#pragma section \".const_copy_calib\" a";
+   STOP  = "#pragma section";
+};
+/*------------------------------ end of file ---------------------------------*/

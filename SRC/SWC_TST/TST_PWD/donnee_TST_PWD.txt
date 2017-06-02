@@ -1,0 +1,38 @@
+Nom_donnée|Type|Nom_module|Public|Nb_lignes|Nb_colonnes|Label_père|Offset|Masque_accès|Affichage|Unité|Fonction_transfert_ades|Coefficient_a|Coefficient_b|Groupe|Groupe_1|Groupe_2|Alias_1|Alias_2|Genre|Variable_indice_ligne|Variable_indice_colonne|Fonction_transfert_ligne|Fonction_transfert_colonne|Table_breakpoint_ligne|Table_breakpoint_colonne|Référence_spécification|Recuperable|Modifiable|Fournisseur|Responsable|Valeurs|Visualisable_ADES|Donnée_a_supprimer|Validation|Commentaires|Volatile|MinDecValue|MaxDecValue|MinPhysValue|MaxPhysValue|Def_Eval|MemSec
+SWTST_kbPwdTstEnaC|uint8|SWTST|1|0|0|SWTST_kbPwdTstEnaC|0|0|Phys|bool|2|0||Application|TST|PWD|SWTST_kbPwdTstEnaC||1|||||||NONE|1|1|||0|1|0|0|Activate Dio tests|0|||||0|
+TST_PWD_u32_M_GEAR_POS_PWM_FRQ|uint32|SWTST|1|0|0|TST_PWD_u32_M_GEAR_POS_PWM_FRQ|0|0|Phys|Hz|1|1|0|Application|TST|PWD|TST_PWD_u32_M_GEAR_POS_PWM_FRQ||1||||||||0|1||||1|0|0||0|||||0
+TST_PWD_u32_M_GEAR_POS_PWM_DUTYCYC|uint32|SWTST|1|0|0|TST_PWD_u32_M_GEAR_POS_PWM_DUTYCYC|0|0|Phys|%|1|100*2^-14|0|Application|TST|PWD|TST_PWD_u32_M_GEAR_POS_PWM_DUTYCYC||1||||||||0|1||||1|0|0||0|||||0
+TST_PWD_u32_M_GEAR_POS_CHECK_PWM_FRQ|uint32|SWTST|1|0|0|TST_PWD_u32_M_GEAR_POS_CHECK_PWM_FRQ|0|0|Phys|Hz|1|1|0|Application|TST|PWD|TST_PWD_u32_M_GEAR_POS_CHECK_PWM_FRQ||1||||||||0|1||||1|0|0||0|||||0
+TST_PWD_u32_M_GEAR_POS_CHECK_PWM_DUTYCYC|uint32|SWTST|1|0|0|TST_PWD_u32_M_GEAR_POS_CHECK_PWM_DUTYCYC|0|0|Phys|%|1|100*2^-14|0|Application|TST|PWD|TST_PWD_u32_M_GEAR_POS_CHECK_PWM_DUTYCYC||1||||||||0|1||||1|0|0||0|||||0
+TST_PWD_u32_M_TOSS_PWM_FRQ|uint32|SWTST|1|0|0|TST_PWD_u32_M_TOSS_PWM_FRQ|0|0|Phys|Hz|1|1|0|Application|TST|PWD|TST_PWD_u32_M_TOSS_PWM_FRQ||1||||||||0|1||||1|0|0||0|||||0
+TST_PWD_u32_M_TOSS_PWM_DUTYCYC|uint32|SWTST|1|0|0|TST_PWD_u32_M_TOSS_PWM_DUTYCYC|0|0|Phys|%|1|100*2^-14|0|Application|TST|PWD|TST_PWD_u32_M_TOSS_PWM_DUTYCYC||1||||||||0|1||||1|0|0||0|||||0
+TST_PWD_u32_M_G4_SPD_SNS_PWM_FRQ|uint32|SWTST|1|0|0|TST_PWD_u32_M_G4_SPD_SNS_PWM_FRQ|0|0|Phys|Hz|1|1|0|Application|TST|PWD|TST_PWD_u32_M_G4_SPD_SNS_PWM_FRQ||1||||||||0|1||||1|0|0||0|||||0
+TST_PWD_u32_M_G4_SPD_SNS_PWM_DUTYCYC|uint32|SWTST|1|0|0|TST_PWD_u32_M_G4_SPD_SNS_PWM_DUTYCYC|0|0|Phys|%|1|100*2^-14|0|Application|TST|PWD|TST_PWD_u32_M_G4_SPD_SNS_PWM_DUTYCYC||1||||||||0|1||||1|0|0||0|||||0
+TST_PWD_u32_M_C4_SPD_SNS_PWM_FRQ|uint32|SWTST|1|0|0|TST_PWD_u32_M_C4_SPD_SNS_PWM_FRQ|0|0|Phys|Hz|1|1|0|Application|TST|PWD|TST_PWD_u32_M_C4_SPD_SNS_PWM_FRQ||1||||||||0|1||||1|0|0||0|||||0
+TST_PWD_u32_M_C4_SPD_SNS_PWM_DUTYCYC|uint32|SWTST|1|0|0|TST_PWD_u32_M_C4_SPD_SNS_PWM_DUTYCYC|0|0|Phys|%|1|100*2^-14|0|Application|TST|PWD|TST_PWD_u32_M_C4_SPD_SNS_PWM_DUTYCYC||1||||||||0|1||||1|0|0||0|||||0
+
+SWTST_kbPwdTstWrapperEnaC|uint8|SWTST|1|0|0|SWTST_kbPwdTstWrapperEnaC|0|0|Phys|bool|2|0||Application|TST|PWD|SWTST_kbPwdTstWrapperEnaC||1|||||||NONE|1|1|||0|1|0|0|Activate Dio tests|0|||||0|
+
+SWTST_kbPwdSpeedTstIdx|uint8|SWTST|1|0|0|SWTST_kbPwdSpeedTstIdx|0|0|Phys|count|1|1|0| |SWTST|SWTST|SWTST_kbPwdSpeedTstIdx||1|||||||NONE|0|1||||1|0|1||0||||||
+SWTST_kbPwdSpeedTstRPM|uint16|SWTST|1|0|0|SWTST_kbPwdSpeedTstRPM|0|0|Phys|bool|2|0||Application|TST|PWD|SWTST_kbPwdSpeedTstRPM||1|||||||NONE|1|1|||0|1|0|0|Activate Dio tests|0|||||0|
+SWTST_kbPwdSpeedTstDir|uint8|SWTST|1|0|0|SWTST_kbPwdSpeedTstDir|0|0|Phys|bool|2|0||Application|TST|PWD|SWTST_kbPwdSpeedTstDir||1|||||||NONE|1|1|||0|1|0|0|Activate Dio tests|0|||||0|
+
+SWTST_kbPwdPositionTstIdx|uint8|SWTST|1|0|0|SWTST_kbPwdPositionTstIdx|0|0|Phys|count|1|1|0| |SWTST|SWTST|SWTST_kbPwdPositionTstIdx||1|||||||NONE|0|1||||1|0|1||0||||||
+SWTST_kbPwdPositionTstDuty|uint16|SWTST|1|0|0|SWTST_kbPwdPositionTstDuty|0|0|Phys|bool|2|0||Application|TST|PWD|SWTST_kbPwdPositionTstDuty||1|||||||NONE|1|1|||0|1|0|0|Activate Dio tests|0|||||0|
+
+SWTST_kbADCAdValueTstIdx|uint8|SWTST|1|0|0|SWTST_kbADCAdValueTstIdx|0|0|Phys|count|1|1|0| |SWTST|SWTST|SWTST_kbADCAdValueTstIdx||1|||||||NONE|0|1||||1|0|1||0||||||
+SWTST_kbADCAdValueAdValue|uint16|SWTST|1|0|0|SWTST_kbADCAdValueAdValue|0|0|Phys|mV|1|0|0|Application|TST||SWTST_kbADCAdValueAdValue||1|||||||NONE|0|0||||1|0|0||0||||||
+
+SWTST_kbADCAdValueT30|uint16|SWTST|1|0|0|SWTST_kbADCAdValueT30|0|0|Phys|mV|1|0|0|Application|TST||SWTST_kbADCAdValueT30||1|||||||NONE|0|0||||1|0|0||0||||||
+
+SWTST_kbADCAdValueIG|uint16|SWTST|1|0|0|SWTST_kbADCAdValueIG|0|0|Phys|mV|1|0|0|Application|TST||SWTST_kbADCAdValueIG||1|||||||NONE|0|0||||1|0|0||0||||||
+SWTST_kbADCAdIGONOFF|boolean|SWTST|1|0|0|SWTST_kbADCAdIGONOFF|0|0|Phys|bool|2|0||Application|TST||SWTST_kbADCAdIGONOFF||1||||||||0|1||||1|0|0|State of input|1|||||0|
+
+SWTST_kbADCPressOil|uint32|SWTST|1|0|0|SWTST_kbADCPressOil|0|0|Phys|Hz|1|1|0|Application|TST|PWD|SWTST_kbADCPressOil||1||||||||0|1||||1|0|0||0|||||0
+SWTST_kbADCPressOilDiag|uint8|SWTST|1|0|0|SWTST_kbADCPressOilDiag|0|0|Phys|bool|2|0||Application|TST|PWD|SWTST_kbADCPressOilDiag||1|||||||NONE|1|1|||0|1|0|0|Activate Dio tests|0|||||0|
+
+SWTST_kbADCResistValue|uint32|SWTST|1|0|0|SWTST_kbADCResistValue|0|0|Phys|ohm|2|0||Application|TST|PWD|SWTST_kbADCResistValue||1|||||||NONE|1|1|||0|1|0|0|Activate Dio tests|0|||||0|
+
+SWTST_kbADCResistDiag|uint8|SWTST|1|0|0|SWTST_kbADCResistDiag|0|0|Phys|bool|2|0||Application|TST|PWD|SWTST_kbADCResistDiag||1|||||||NONE|1|1|||0|1|0|0|Activate Dio tests|0|||||0|
+
+SWTST_kbADCPCBTemp|sint16|SWTST|1|0|0|SWTST_kbADCPCBTemp|0|0|Phys|count|1|1|0| |SWTST|SWTST|SWTST_kbADCPCBTemp||1|||||||NONE|0|1||||1|0|1||0||||||

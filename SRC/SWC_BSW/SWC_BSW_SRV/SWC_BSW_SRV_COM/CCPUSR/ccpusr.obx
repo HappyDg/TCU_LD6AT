@@ -1,0 +1,33 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SRVL                                                    */
+/*                                                                            */
+/* !Component       : CCP                                                     */
+/*                                                                            */
+/* !Module          : CCPUSR                                                  */
+/* !Description     : Lsit of CCP User Configuration objects                  */
+/*                                                                            */
+/* !File            : CCPUSR.OBX                                              */
+/*                                                                            */
+/* !Scope           : Private                                                 */
+/*                                                                            */
+/* !Target          : Genecode Tool                                           */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : OIL                                                     */
+/*                                                                            */
+/* COPYRIGHT 2009 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::                                                                $*/
+/* $Revision::                                                               $*/
+/* $Author::                                          $$Date::               $*/
+/******************************************************************************/
+
+/* !Comment: the list of objects shall start with a comma                     */
+,CCP_WRITABLE_MEMORY_ZONE, CCP_READ_ONLY_MEMORY_ZONE, CCP_CALIBRATION_MAPPING
+
+/*-------------------------------- end of file -------------------------------*/

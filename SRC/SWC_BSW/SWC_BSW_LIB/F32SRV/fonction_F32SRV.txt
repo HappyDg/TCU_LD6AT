@@ -1,0 +1,10 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro
+F32SRV_bIsFinite|A|func_F32SRV_bIsFinite|2|F32SRV|1|V01 NT 08 06040||||0|0|0|0
+F32SRV_bIsNan|A|func_F32SRV_bIsNan|1|F32SRV|1|V01 NT 08 06040||||0|0|0|1
+F32SRV_s16F32ToSint16|A|func_F32SRV_s16F32ToSint16|7|F32SRV|1|V01 NT 08 06040||||0|0|0|0
+F32SRV_s32F32ToSint32|A|func_F32SRV_s32F32ToSint32|9|F32SRV|1|V01 NT 08 06040||||0|0|0|0
+F32SRV_s8F32ToSint8|A|func_F32SRV_s8F32ToSint8|5|F32SRV|1|V01 NT 08 06040||||0|0|0|0
+F32SRV_u16F32ToUint16|A|func_F32SRV_u16F32ToUint16|6|F32SRV|1|V01 NT 08 06040||||0|0|0|0
+F32SRV_u32F32ToUint32|A|func_F32SRV_u32F32ToUint32|8|F32SRV|1|V01 NT 08 06040||||0|0|0|0
+F32SRV_u8F32ToUint8|A|func_F32SRV_u8F32ToUint8|4|F32SRV|1|V01 NT 08 06040||||0|0|0|0
+F32SRV_vidInit|A|();|0|F32SRV|1|V01 NT 08 06040||||0|0|0|1

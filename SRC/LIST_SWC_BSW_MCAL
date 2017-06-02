@@ -1,0 +1,468 @@
+-|--------------------------------------------------------------------------------------------------------------------------|
+-|
+-| FILE NAME      : LIST_SWC_BSW_MCAL
+-| $Header:   P:/VE_Onduleur_Gen2_Sofraci/LOG/60_ComponentArchive/Archives/COMP_SWC_BSWTC17/LIST_SWC_BSW_MCAL.__v   1.5   06 Jun 2013 17:54:54   ogarot  $
+-|
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+-|                                     |                                     |                                              |
+-|           COMPONENT_LIST            |             MODULE_LIST             |              FILE_LIST                       |
+-|                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | DRV                                 |                                              |
+ |                                     |                                     | Compiler_Cfg.h                               |
+ |                                     |                                     | Dma.c                                        |
+ |                                     |                                     | Dma.h                                        |
+ |                                     |                                     | DRV_MEMMAP.OIL  -noil                        |
+ |                                     |                                     | Intrinsics.h                                 |
+ |                                     |                                     | IntrinsicsGnuc.h                             |
+ |                                     |                                     | QSpi.h                                       |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | EMEM                                |                                              |
+ |                                     |                                     | Emem.c                                       |
+ |                                     |                                     | Emem.h                                       |
+ |                                     |                                     | EMEM_MEMMAP.OIL  -noil                       |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | IFX -dmproj COTS_17:MCAL_TC23X -v AB_PB_BASE_V300#2 |                              |
+ |                                     |                                     | IFXCPU_MemMap.h          -nget               |
+ |                                     |                                     | IFXCPU_MEMMAP.OIL        -noil               |
+ |                                     |                                     | IFXSCU_MemMap.h          -nget               |
+ |                                     |                                     | IFXSCU_MEMMAP.OIL        -noil               |
+ |                                     |                                     | IFXSRC_MemMap.h          -nget               |
+ |                                     |                                     | IFXSRC_MEMMAP.OIL        -noil               |
+ |                                     |                                     | IFXSTM_MemMap.h          -nget               |
+ |                                     |                                     | IFXSTM_MEMMAP.OIL        -noil               |
+ |                                     |                                     | IfxAsclin_bf.h                               |
+ |                                     |                                     | IfxAsclin_reg.h                              |
+ |                                     |                                     | IfxAsclin_regdef.h                           |
+ |                                     |                                     | IfxCan_bf.h                                  |
+ |                                     |                                     | IfxCan_reg.h                                 |
+ |                                     |                                     | IfxCan_regdef.h                              |
+ |                                     |                                     | IfxCbs_bf.h                                  |
+ |                                     |                                     | IfxCbs_reg.h                                 |
+ |                                     |                                     | IfxCbs_regdef.h                              |
+ |                                     |                                     | IfxCcu6_bf.h                                 |
+ |                                     |                                     | IfxCcu6_reg.h                                |
+ |                                     |                                     | IfxCcu6_regdef.h                             |
+ |                                     |                                     | IfxCpu_bf.h                                  |
+ |                                     |                                     | IfxCpu_reg.h                                 |
+ |                                     |                                     | IfxCpu_regdef.h                              |
+ |                                     |                                     | IfxDma_bf.h                                  |
+ |                                     |                                     | IfxDma_reg.h                                 |
+ |                                     |                                     | IfxDma_regdef.h                              |
+ |                                     |                                     | IfxEbcu_bf.h                                 |
+ |                                     |                                     | IfxEbcu_reg.h                                |
+ |                                     |                                     | IfxEbcu_regdef.h                             |
+ |                                     |                                     | IfxEmem_bf.h                                 |
+ |                                     |                                     | IfxEmem_reg.h                                |
+ |                                     |                                     | IfxEmem_regdef.h                             |
+ |                                     |                                     | IfxEray_bf.h                                 |
+ |                                     |                                     | IfxEray_reg.h                                |
+ |                                     |                                     | IfxEray_regdef.h                             |
+ |                                     |                                     | IfxEth_bf.h                                  |
+ |                                     |                                     | IfxEth_reg.h                                 |
+ |                                     |                                     | IfxEth_regdef.h                              |
+ |                                     |                                     | IfxFft_bf.h                                  |
+ |                                     |                                     | IfxFft_reg.h                                 |
+ |                                     |                                     | IfxFft_regdef.h                              |
+ |                                     |                                     | IfxFlash_bf.h                                |
+ |                                     |                                     | IfxFlash_reg.h                               |
+ |                                     |                                     | IfxFlash_regdef.h                            |
+ |                                     |                                     | IfxGpt12_bf.h                                |
+ |                                     |                                     | IfxGpt12_reg.h                               |
+ |                                     |                                     | IfxGpt12_regdef.h                            |
+ |                                     |                                     | IfxGtm_bf.h                                  |
+ |                                     |                                     | IfxGtm_reg.h                                 |
+ |                                     |                                     | IfxGtm_regdef.h                              |
+ |                                     |                                     | IfxInt_bf.h                                  |
+ |                                     |                                     | IfxInt_reg.h                                 |
+ |                                     |                                     | IfxInt_regdef.h                              |
+ |                                     |                                     | IfxIom_bf.h                                  |
+ |                                     |                                     | IfxIom_reg.h                                 |
+ |                                     |                                     | IfxIom_regdef.h                              |
+ |                                     |                                     | IfxLmu_bf.h                                  |
+ |                                     |                                     | IfxLmu_reg.h                                 |
+ |                                     |                                     | IfxLmu_regdef.h                              |
+ |                                     |                                     | IfxMc_bf.h                                   |
+ |                                     |                                     | IfxMc_reg.h                                  |
+ |                                     |                                     | IfxMc_regdef.h                               |
+ |                                     |                                     | IfxMtu_bf.h                                  |
+ |                                     |                                     | IfxMtu_reg.h                                 |
+ |                                     |                                     | IfxMtu_regdef.h                              |
+ |                                     |                                     | IfxOvc_bf.h                                  |
+ |                                     |                                     | IfxOvc_reg.h                                 |
+ |                                     |                                     | IfxOvc_regdef.h                              |
+ |                                     |                                     | IfxPmu_bf.h                                  |
+ |                                     |                                     | IfxPmu_reg.h                                 |
+ |                                     |                                     | IfxPmu_regdef.h                              |
+ |                                     |                                     | IfxPort_bf.h                                 |
+ |                                     |                                     | IfxPort_reg.h                                |
+ |                                     |                                     | IfxPort_regdef.h                             |
+ |                                     |                                     | IfxQspi_bf.h                                 |
+ |                                     |                                     | IfxQspi_reg.h                                |
+ |                                     |                                     | IfxQspi_regdef.h                             |
+ |                                     |                                     | IfxSbcu_bf.h                                 |
+ |                                     |                                     | IfxSbcu_reg.h                                |
+ |                                     |                                     | IfxSbcu_regdef.h                             |
+ |                                     |                                     | IfxScu_bf.h                                  |
+ |                                     |                                     | IfxScu_reg.h                                 |
+ |                                     |                                     | IfxScu_regdef.h                              |
+ |                                     |                                     | IfxSent_bf.h                                 |
+ |                                     |                                     | IfxSent_reg.h                                |
+ |                                     |                                     | IfxSent_regdef.h                             |
+ |                                     |                                     | IfxSmu_bf.h                                  |
+ |                                     |                                     | IfxSmu_reg.h                                 |
+ |                                     |                                     | IfxSmu_regdef.h                              |
+ |                                     |                                     | IfxSrc_bf.h                                  |
+ |                                     |                                     | IfxSrc_reg.h                                 |
+ |                                     |                                     | IfxSrc_regdef.h                              |
+ |                                     |                                     | IfxStm_bf.h                                  |
+ |                                     |                                     | IfxStm_reg.h                                 |
+ |                                     |                                     | IfxStm_regdef.h                              |
+ |                                     |                                     | IfxVadc_bf.h                                 |
+ |                                     |                                     | IfxVadc_reg.h                                |
+ |                                     |                                     | IfxVadc_regdef.h                             |
+ |                                     |                                     | IfxXbar_bf.h                                 |
+ |                                     |                                     | IfxXbar_reg.h                                |
+ |                                     |                                     | IfxXbar_regdef.h                             |
+ |                                     |                                     | Ifx_reg.h                                    |
+ |                                     |                                     | Ifx_TypesReg.h                               |
+ |                                     |                                     |                                              |
+ |                                     | IFX                                 |                                              |
+ |                                     |                                     | IfxCpu.h                                     |
+ |                                     |                                     | IfxCpu_cfg.h                                 |
+ |                                     |                                     | IfxScuWdt.c                                  |
+ |                                     |                                     | IfxScuWdt.h                                  |
+ |                                     |                                     | IfxScuCcu.c                                  |
+ |                                     |                                     | IfxScuCcu.h                                  |
+ |                                     |                                     | IfxSrc.h                                     |
+ |                                     |                                     | IfxSrc_cfg.h                                 |
+ |                                     |                                     | IfxStm.c                                     |
+ |                                     |                                     | IfxStm.h                                     |
+ |                                     |                                     | IfxStm_cfg.c                                 |
+ |                                     |                                     | IfxStm_cfg.h                                 |
+ |                                     |                                     | Ifx_Types.h                                  |
+ |                                     |                                     | Ifx_TypesGnuc.h                              |
+ |                                     |                                     | Ifx_Cfg.h                                    |
+ |                                     |                                     | IfxScu_cfg.h                                 |
+ |                                     |                                     |                                              |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | ISR                -v F1_1.0.0#41 -dmproj  P2017_BSW:P2017_GEN_BSW                ||
+ |                                     |                                     | ISR_MemMap.h             -nget               |
+ |                                     |                                     | ISR_MEMMAP.oil           -noil               |
+ |                                     | ISR                                 |                                              |
+ |                                     |                                     | Can_Isr.c                                    |
+ |                                     |                                     | Gtm_Isr.c                                    |
+ |                                     |                                     | Spi_Isr.c                                    |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | MCAL -dmproj COTS_17:MCAL_TC23X -v AB_PB_BASE_V300#2 |                             |
+ |                                     |                                     | Mcal_DmaLib.c                                |
+ |                                     |                                     | Mcal_DmaLib.h                                |
+ |                                     |                                     | MCAL_DMALIB_MemMap.h     -nget               |
+ |                                     |                                     | MCAL_DMALIB_MEMMAP.OIL   -noil               |
+ |                                     |                                     | MCAL_MemMap.h            -nget               |
+ |                                     |                                     | MCAL_MEMMAP.OIL          -noil               |
+ |                                     |                                     | Mcal_Options.h                               |
+ |                                     |                                     | MCAL_TCLIB_MemMap.h      -nget               |
+ |                                     |                                     | MCAL_TCLIB_MEMMAP.OIL    -noil               |
+ |                                     |                                     | MCAL_WDGLIB_MemMap.h     -nget               |
+ |                                     |                                     | MCAL_WDGLIB_MEMMAP.OIL   -noil               |
+ |                                     |                                     |                                              |
+ |                                     | MCAL                                |                                              |
+ |                                     |                                     | Mcal.c                                       |
+ |                                     |                                     | Mcal.h                                       |
+ |                                     |                                     | Mcal_Compiler.h                              |
+ |                                     |                                     | Mcal_TcLib.c                                 |
+ |                                     |                                     | Mcal_TcLib.h                                 |
+ |                                     |                                     | Mcal_WdgLib.c                                |
+ |                                     |                                     | Mcal_WdgLib.h                                |
+ |                                     |                                     | McalOsConfig.h                               |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | MCAL_CFG                            |                                              |
+ |                                     |                                     | Can.xdm                                      |
+ |                                     |                                     | Can_17_MCanP_Aurix.7z                        |
+ |                                     |                                     | Can_17_MCanP_Cfg.h                           |
+ |                                     |                                     | Can_17_MCanP_PBCfg.c                         |
+ |                                     |                                     | Dio.xdm                                      |
+ |                                     |                                     | Dio_Aurix.7z                                 |
+ |                                     |                                     | Dio_Cfg.h                                    |
+ |                                     |                                     | Dio_PBCfg.c                                  |
+ |                                     |                                     | Fls.xdm                                      |
+ |                                     |                                     | FlsLoader.xdm                                |
+ |                                     |                                     | Flsloader_Aurix.7z                           |
+ |                                     |                                     | FlsLoader_Cfg.h                              |
+ |                                     |                                     | Fls_17_Pmu_Aurix.7z                          |
+ |                                     |                                     | Fls_17_Pmu_Cfg.h                             |
+ |                                     |                                     | Fls_17_Pmu_PBCfg.c                           |
+ |                                     |                                     | Gpt.xdm                                      |
+ |                                     |                                     | Gpt_Aurix.7z                                 |
+ |                                     |                                     | Gpt_Cfg.h                                    |
+ |                                     |                                     | Gpt_PBCfg.c                                  |
+ |                                     |                                     | Gtm_Cfg.h                                    |
+ |                                     |                                     | Gtm_LCfg.c                                   |
+ |                                     |                                     | Gtm_PBCfg.c                                  |
+ |                                     |                                     | Icu.xdm                                      |
+ |                                     |                                     | Icu_17_GtmCcu6_Aurix.7z                      |
+ |                                     |                                     | Icu_17_GtmCcu6_Cfg.h                         |
+ |                                     |                                     | Icu_17_GtmCcu6_PBCfg.c                       |
+ |                                     |                                     | Mcu.xdm                                      |
+ |                                     |                                     | Mcu_Aurix.7z                                 |
+ |                                     |                                     | Mcu_Cfg.h                                    |
+ |                                     |                                     | Mcu_PBCfg.c                                  |
+ |                                     |                                     | Port.xdm                                     |
+ |                                     |                                     | Port_Aurix.7z                                |
+ |                                     |                                     | Port_Cfg.h                                   |
+ |                                     |                                     | Port_PBCfg.c                                 |
+ |                                     |                                     | Pwm.xdm                                      |
+ |                                     |                                     | Pwm_17_Gtm_Aurix.7z                          |
+ |                                     |                                     | Pwm_17_Gtm_Cfg.h                             |
+ |                                     |                                     | Pwm_17_Gtm_PBCfg.c                           |
+ |                                     |                                     | Spi.xdm                                      |
+ |                                     |                                     | Spi_Aurix.7z                                 |
+ |                                     |                                     | Spi_Cfg.h                                    |
+ |                                     |                                     | Spi_PBCfg.c                                  |
+ |                                     |                                     | Wdg.xdm                                      |
+ |                                     |                                     | Wdg_17_Scu_Aurix.7z                          |
+ |                                     |                                     | Wdg_17_Scu_Cfg.h                             |
+ |                                     |                                     | Wdg_17_Scu_PBCfg.c                           |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | MCAL_TC23X_CAN -dmproj COTS_17:MCAL_TC23X -v AB_PB_COM_BASIC_V300#2 |              |
+ |                                     |                                     | Can_17_MCanP.c                               |
+ |                                     |                                     | Can_17_MCanP.h                               |
+ |                                     |                                     | Can_17_MCanP_Dbg.h                           |
+ |                                     |                                     | CAN_17_MCANP_MemMap.h    -nget               |
+ |                                     |                                     | Can_17_MCanP_MEMMAP.OIL  -noil               |
+ |                                     |                                     |                                              |
+ |                                     | MCAL_TC23X_CAN                      |                                              |
+ |                                     |                                     | Can.h                                        |
+ |                                     |                                     | Can_GeneralTypes.h                           |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | MCAL_TC23X_DIO -dmproj COTS_17:MCAL_TC23X -v AB_PB_BASE_V300#2 |                   |
+ |                                     |                                     | Dio.c                                        |
+ |                                     |                                     | Dio.h                                        |
+ |                                     |                                     | DIO_MemMap.h             -nget               |
+ |                                     |                                     | Dio_Ver.c                                    |
+ |                                     |                                     | Dio_Ver.h                                    |
+ |                                     |                                     |                                              |
+ |                                     | MCAL_TC23X_DIO                      |                                              | 
+ |                                     |                                     | DIO_MEMMAP.OIL           -noil               |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | MCAL_TC23X_FLSLOADER                |                                              |
+ |                                     |                                     | FlsLoader.c                                  |
+ |                                     |                                     | FlsLoader.h                                  |
+ |                                     |                                     | FlsLoader_Local.h                            |
+ |                                     |                                     | FLSLOADER_MemMap.h       -nget               |
+ |                                     |                                     | FLSLOADER_MEMMAP.OIL     -noil               |
+ |                                     |                                     | FlsLoader_Platform.c                         |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | MCAL_TC23X_FLS_PMU                  |                                              |
+ |                                     |                                     | Fls_17_Pmu.c                                 |
+ |                                     |                                     | Fls_17_Pmu.h                                 |
+ |                                     |                                     | Fls_17_Pmu_ac.c                              |
+ |                                     |                                     | Fls_17_Pmu_ac.h                              |
+ |                                     |                                     | Fls_17_Pmu_Dbg.h                             |
+ |                                     |                                     | Fls_17_Pmu_Local.h                           |
+ |                                     |                                     | FLS_17_PMU_MemMap.h      -nget               |
+ |                                     |                                     | FLS_17_PMU_MEMMAP.OIL    -noil               |
+ |                                     |                                     | Fls_17_Pmu_Ver.c                             |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | MCAL_TC23X_GPT -dmproj COTS_17:MCAL_TC23X -v AB_PB_BASE_V300#2 |                   |
+ |                                     |                                     | Gpt.c                                        |
+ |                                     |                                     | Gpt.h                                        |
+ |                                     |                                     | Gpt_Dbg.h                                    |
+ |                                     |                                     | Gpt_Local.h                                  |
+ |                                     |                                     | GPT_MemMap.h             -nget               |
+ |                                     |                                     | Gpt_Ver.c                                    |
+ |                                     |                                     |                                              |
+ |                                     | MCAL_TC23X_GPT                      |                                              | 
+ |                                     |                                     | GPT_MEMMAP.OIL           -noil               |
+ |                                     |                                     | GPT_OSEK_OS.OIL          -noil               |
+ |                                     |                                     | GPT_INTBSL.OIL           -noil               |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | MCAL_TC23X_ICU -dmproj COTS_17:MCAL_TC23X -v AB_PB_BASE_V300#2  |                  |
+ |                                     |                                     | Icu_17_GtmCcu6.c                             |
+ |                                     |                                     | Icu_17_GtmCcu6.h                             |
+ |                                     |                                     | Icu_17_GtmCcu6_Dbg.h                         |
+ |                                     |                                     | Icu_17_GtmCcu6_Local.h                       |
+ |                                     |                                     | ICU_17_GTMCCU6_MemMap.h            -nget     |
+ |                                     |                                     | Icu_17_GtmCcu6_Safe.c                        |
+ |                                     |                                     | Icu_17_GtmCcu6_Safe.h                        |
+ |                                     |                                     | Icu_17_GtmCcu6_Ver.h                         |
+ |                                     |                                     | Icu_17_GtmCcu6_Ver.c                         |
+ |                                     | MCAL_TC23X_ICU                      |                                              | 
+ |                                     |                                     | ICU_17_GTMCCU6_MEMMAP.OIL          -noil     |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | MCAL_TC23X_MCU -dmproj COTS_17:MCAL_TC23X -v AB_PB_BASE_V300#2 |                   |
+ |                                     |                                     |                                              |
+ |                                     |                                     | Mcu_MemMap.h             -nget               |
+ |                                     |                                     | Mcu.c                                        |
+ |                                     |                                     | Mcu.h                                        |
+ |                                     |                                     | Mcu_Crc.c                                    |
+ |                                     |                                     | Mcu_Dbg.h                                    |
+ |                                     |                                     | Mcu_Dma.c                                    |
+ |                                     |                                     | Mcu_Platform.c                               |
+ |                                     |                                     | Mcu_Ver.c                                    |
+ |                                     |                                     |                                              |
+ |                                     | MCAL_TC23X_MCU                      |                                              |
+ |                                     |                                     | Mcu_Local.h                                  |
+ |                                     |                                     | Mcu_Cont_Init.c                              |
+ |                                     |                                     | Mcu_Cont_Init.h                              |
+ |                                     |                                     | MCU_MEMMAP.OIL           -noil               |
+-|                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | MCAL_TC23X_GTM -dmproj COTS_17:MCAL_TC23X -v AB_PB_BASE_V300#2 |                   |
+ |                                     |                                     | Gtm.c                                        |
+ |                                     |                                     | Gtm.h                                        |
+ |                                     |                                     | Gtm_Local.h                                  |
+ |                                     |                                     | GTM_MemMap.h             -nget               |
+ |                                     |                                     | GTM_MEMMAP.OIL           -noil               |
+ |                                     |                                     | Gtm_Platform.c                               |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | MCAL_TC23X_PORT -dmproj COTS_17:MCAL_TC23X -v AB_PB_BASE_V300#2 |                  |
+ |                                     |                                     | Port.c                                       |
+ |                                     |                                     | Port.h                                       |
+ |                                     |                                     | Port_MemMap.h            -nget               |
+ |                                     |                                     | Port_Ver.h                                   |
+ |                                     | MCAL_TC23X_PORT                     |                                              |
+ |                                     |                                     | PORT_MEMMAP.OIL          -noil               |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | MCAL_TC23X_PWM -dmproj COTS_17:MCAL_TC23X -v AB_PB_BASE_V300#2 |                   |
+ |                                     |                                     | Pwm_17_Gtm.c                                 |
+ |                                     |                                     | Pwm_17_Gtm.h                                 |
+ |                                     |                                     | Pwm_17_Gtm_Ver.c                             |
+ |                                     |                                     | Pwm_17_Gtm_Ver.h                             |
+ |                                     |                                     | PWM_17_GTM_MemMap.h      -nget               |
+ |                                     | MCAL_TC23X_PWM                      |                                              |
+ |                                     |                                     | PWM_17_GTM_MEMMAP.OIL                        |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | MCAL_TC23X_SPI -dmproj COTS_17:MCAL_TC23X -v AB_PB_BASE_V300#2 |                   |
+ |                                     |                                     | Spi.c                                        |
+ |                                     |                                     | Spi.h                                        |
+ |                                     |                                     | Spi_Dbg.h                                    |
+ |                                     |                                     | Spi_Local.h                                  |
+ |                                     |                                     | Spi_MemMap.h            -nget                |
+ |                                     |                                     | Spi_Ver.c                                    |
+ |                                     |                                     | SpiSlave.c                                   |
+ |                                     |                                     | SpiSlave.h                                   |
+ |                                     | MCAL_TC23X_SPI                      |                                              |
+ |                                     |                                     | SPI_MEMMAP.OIL          -noil                |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | MCAL_TC23X_WDG -dmproj COTS_17:MCAL_TC23X -v AB_PB_BASE_V300#2 |                   |
+ |                                     |                                     | Wdg_17_Scu.c                                 |
+ |                                     |                                     | Wdg_17_Scu.h                                 |
+ |                                     |                                     | Wdg_17_Scu_Cbk.h                             |
+ |                                     |                                     | Wdg_17_Scu_Dbg.h                             |
+ |                                     |                                     | Wdg_17_Scu_Local.h                           |
+ |                                     |                                     | Wdg_17_Scu_MemMap.h      -nget               |
+ |                                     |                                     | Wdg_17_Scu_Safe.c                            |
+ |                                     |                                     | Wdg_17_Scu_Safe.h                            |
+ |                                     |                                     |                                              |
+ |                                     | MCAL_TC23X_WDG                      |                                              |
+ |                                     |                                     | WDG_17_SCU_MEMMAP.OIL    -noil               |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | OVC                                 |                                              |
+ |                                     |                                     | cfgbdd_ovc.txt                               |
+ |                                     |                                     | donnee_ovc.txt                               |
+ |                                     |                                     | fonction_ovc.txt                             |
+ |                                     |                                     | Ovc.c                                        |
+ |                                     |                                     | Ovc.h                                        |
+ |                                     |                                     | Ovc_cfg.c                                    |
+ |                                     |                                     | OVC_MEMMAP.OIL                               |
+ |                                     |                                     | refcdc_ovc.txt                               |
+ |                                     |                                     | requirements_ovc.txt                         |
+ |                                     |                                     | typedef_ovc.txt                              |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | PWD  -db_nexp                       |                                              |
+ |                                     |                                     | cfgbdd_PWD.txt                               |
+ |                                     |                                     | CFG_PWD.OIL                                  |
+ |                                     |                                     | CFG_PWD.STX                                  |
+ |                                     |                                     | donnee_PWD.txt           -nget               |
+ |                                     |                                     | DONNEE_PWD_TXT.TPL                           |
+ |                                     |                                     | fonction_PWD.txt                             |
+ |                                     |                                     | PWD.h                                        |
+ |                                     |                                     | PWD.obx                                      |
+ |                                     |                                     | PWD.OIL                  -noil               |
+ |                                     |                                     | PWD.STX                                      |
+ |                                     |                                     | PWD.tpx                                      |
+ |                                     |                                     | PWD_C.tpl                                    |
+ |                                     |                                     | PWD_DEF_C.tpl                                |
+ |                                     |                                     | PWD_DEF_H.tpl                                |
+ |                                     |                                     | PWD_MEMMAP.oil           -noil               |
+ |                                     |                                     | refcdc_PWD.txt                               |
+ |                                     |                                     | requirements_PWD.txt                         |
+ |                                     |                                     | typedef_PWD.txt                              |
+ |                                     |                                     | PWD.c                    -nget               |
+ |                                     |                                     | PWD_DEF.h                -nget               |
+ |                                     |                                     | PWD_DEF.c                -nget               |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | SCU  -db                            |                                              |
+ |                                     |                                     | cfgbdd_scu.txt                               |
+ |                                     |                                     | donnee_scu.txt                               |
+ |                                     |                                     | fonction_scu.txt                             |
+ |                                     |                                     | refcdc_scu.txt                               |
+ |                                     |                                     | requirements_scu.txt                         |
+ |                                     |                                     | Scu.c                                        |
+ |                                     |                                     | SCU_MEMMAP.OIL          -noil                |
+ |                                     |                                     | typedef_scu.txt                              |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | STARTUP                             |                                              |
+ |                                     |                                     | STARTUP.c                                    |
+ |                                     |                                     | STARTUP.h                                    |
+ |                                     |                                     | STARTUP_Core0.c                              |
+ |                                     |                                     | STARTUP_MEMMAP.h         -nget               |
+ |                                     |                                     | STARTUP_MEMMAP.OIL       -noil               |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     | VADC                                |                                              |
+ |                                     |                                     | Vadc.c                                       |
+ |                                     |                                     | VADC.h                                       |
+ |                                     |                                     | Vadc_cfg.c                                   |
+ |                                     |                                     | Vadc_cfg.h                                   |
+ |                                     |                                     | VADC_L.h                                     |
+ |                                     |                                     | Vadc_target.h                                |
+ |                                     |                                     | VADC_INTBSL.OIL       -noil                  |
+ |                                     |                                     | VADC_MEMMAP.OIL       -noil                  |
+ |                                     |                                     | VADC_OSEK_OS.OIL      -noil                  |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |

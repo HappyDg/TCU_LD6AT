@@ -1,0 +1,5 @@
+Nom_donnée|Type|Nom_module|Public|Nb_lignes|Nb_colonnes|Label_père|Offset|Masque_accès|Affichage|Unité|Fonction_transfert_ades|Coefficient_a|Coefficient_b|Groupe|Groupe_1|Groupe_2|Alias_1|Alias_2|Genre|Variable_indice_ligne|Variable_indice_colonne|Fonction_transfert_ligne|Fonction_transfert_colonne|Table_breakpoint_ligne|Table_breakpoint_colonne|Référence_spécification|Recuperable|Modifiable|Fournisseur|Responsable|Valeurs|Visualisable_ADES|Donnée_a_supprimer|Validation|Commentaires|Volatile|MinDecValue|MaxDecValue|MinPhysValue|MaxPhysValue|Def_Eval|MemSec
+RTMTSK_ku8TaskId|uint8|RTMTSK|0|0|0|RTMTSK_ku8TaskId|0|0|Hexa|-||||Noyau|Noyau||RTMTSK_ku8TaskId||2|||||||NONE|1|1||||1|0|0||0|||||0|
+RTMTSK_u32TaskDuration|uint32|RTMTSK|0|0|0|RTMTSK_u32TaskDuration|0|0|Phys|µs|1|0.01|0|Noyau|Noyau||RTMTSK_u32TaskDuration||1||||||||0|1||||1|0|0||0||||||
+RTMTSK_u32TaskStartTime|uint32|RTMTSK|0|0|0|RTMTSK_u32TaskStartTime|0|0|Déci|-||||Noyau|Noyau||RTMTSK_u32TaskStartTime||1||||||||0|1||||1|0|0||0||||||
+RTMTSK_u8TaskId|uint8|RTMTSK|0|0|0|RTMTSK_u8TaskId|0|0|Hexa|-||||Noyau|Noyau||RTMTSK_u8TaskId||1||||||||0|1||||1|0|0||0||||||

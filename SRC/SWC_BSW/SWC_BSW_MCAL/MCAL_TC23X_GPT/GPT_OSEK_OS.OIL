@@ -1,0 +1,27 @@
+/******************************************************************************/
+/* !Layer           : MCAL                                                    */
+/* !Component       : GPT                                                     */
+/* !Description     :                                                         */
+/*                                                                            */
+/* !File            : GPT_OSEK_OS.OIL                                         */
+/* !Description     : OSEK_OS configuration of the GPT component              */
+/*                                                                            */
+/* !Reference       :                                                         */
+/*                                                                            */
+/* Coding language  : OIL                                                     */
+/*                                                                            */
+/* COPYRIGHT VALEO all rights reserved                                        */
+/******************************************************************************/
+/* Dimension Informations
+ * %PCMS_HEADER_SUBSTITUTION_START:%
+ * The PID has this format: <Product ID>:<Item ID>.<Variant>-<Item Type>;<Revision>
+ * %PID:%
+ * %PCMS_HEADER_SUBSTITUTION_END:%
+ ******************************************************************************/
+ISR SRC_GTM_GTM0_TOM0_7_ISR
+{
+   INTBSL   = INT_SRC_GTM_GTM0_TOM0_15;
+   CATEGORY = 1;
+};
+
+/*------------------------------- end of file --------------------------------*/

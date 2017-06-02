@@ -1,0 +1,36 @@
+/**********************************************************************************************************************/
+/*                                                                                                                    */
+/* !Layer          : MCAL                                                                                              */
+/*                                                                                                                    */
+/* !Component      : MCAL_TCLIB                                                                                           */
+/* !Description    : Mapping section configuration of the module                                                      */
+/*                                                                                                                    */
+/* !File           : MCAL_TCLIB_MEMMAP.OIL                                                                                */
+/*                                                                                                                    */
+/* !Scope          : Public                                                                                           */
+/*                                                                                                                    */
+/* !Target         : Genecode Tool                                                                                    */
+/*                                                                                                                    */
+/* !Vendor         : Valeo                                                                                            */
+/*                                                                                                                    */
+/* Coding language : OIL                                                                                              */
+/*                                                                                                                    */
+/* COPYRIGHT VALEO                                                                                                    */
+/* all rights reserved                                                                                                */
+/*                                                                                                                    */
+/**********************************************************************************************************************/
+/* Dimension Informations                                                                                               
+/* %PCMS_HEADER_SUBSTITUTION_START:%                                                                                    
+/* The PID has this format: <Product ID>:<Item ID>.<Variant>-<Item Type>;<Revision>                                     
+/* %PID:%                                                                                                               
+/* %PCMS_HEADER_SUBSTITUTION_END:%                                                                                      
+/**********************************************************************************************************************/
+
+MEMMAP_MSN MCAL_TCLIB
+{
+   SECTION = SEC_CODE;
+   SECTION = SEC_CONST_32BIT;
+   SECTION = SEC_VAR_32BIT;
+};
+
+/*--------------------------------------------------- end of file ----------------------------------------------------*/

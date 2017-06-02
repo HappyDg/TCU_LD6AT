@@ -1,0 +1,24 @@
+/**********************************************************************************************************************/
+/* !Layer           : MCAL                                                                                            */
+/* !Component       : PWD                                                                                             */
+/* !Description     : Test application for PWD component                                                              */
+/*                                                                                                                    */
+/* !File            : PWD.obx                                                                                         */
+/* !Description     : PWD objects                                                                                     */
+/*                                                                                                                    */
+/* !Reference       :                                                                                                 */
+/*                                                                                                                    */
+/* Coding language  : OIL                                                                                             */
+/*                                                                                                                    */
+/* COPYRIGHT VALEO all rights reserved                                                                                */
+/**********************************************************************************************************************/
+/* Dimension Informations
+ * %PCMS_HEADER_SUBSTITUTION_START:%
+ * The PID has this format: <Product ID>:<Item ID>.<Variant>-<Item Type>;<Revision>
+ * %PID:%
+ * %PCMS_HEADER_SUBSTITUTION_END:%
+ **********************************************************************************************************************/
+
+PWD_CHANNEL
+
+/*------------------------------------------------- end of file ------------------------------------------------------*/

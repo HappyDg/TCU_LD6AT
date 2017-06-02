@@ -1,0 +1,47 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : APPLI                                                   */
+/*                                                                            */
+/* !Component       : MEMMAP_CFG                                              */
+/* !Description     : Mapping Section Configuration                           */
+/*                                                                            */
+/* !File            : MEMMAP_ADD.STX                                          */
+/*                                                                            */
+/* !Scope           : Public                                                  */
+/*                                                                            */
+/* !Target          : Genecode Tool                                           */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : C                                                       */
+/*                                                                            */
+/* COPYRIGHT 2009 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   I:/PROJETS/LIBEMB/LOG/DIVERS/MEMMAP/LOG/MEMMAP_ADD.STv       $*/
+/* $Revision::   1.4      $$Author::   lvoilmy        $$Date::   24 Nov 2011 $*/
+/******************************************************************************/
+
+
+
+MEMMAP_CFG
+{
+   UINT32 WITH_AUTO SECTIONS_COUNTER_LIST = AUTO :"REWRITABLE";
+} : "ADD_ON";
+
+MEMMAP_PARENT
+{
+   UINT32 WITH_AUTO INDEX = AUTO;
+   BOOLEAN WITH_AUTO CODE_TO_INCLUDE = AUTO;
+} : "ADD_ON";
+
+MEMMAP_MSN
+{
+   UINT32 WITH_AUTO MSN_COUNTER_LIST = AUTO :"REWRITABLE" ;
+   UINT32 WITH_AUTO INDEX = AUTO;
+   STRING WITH_AUTO PREFIX = AUTO;
+} : "ADD_ON";
+
+/*------------------------------- end of file --------------------------------*/

@@ -1,0 +1,37 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SRVL                                                    */
+/*                                                                            */
+/* !Component       : CCP                                                     */
+/*                                                                            */
+/* !Module          : CCPUSR                                                  */
+/* !Description     : List of CCP User Configuration check files              */
+/*                                                                            */
+/* !File            : CCPUSR.CHX                                              */
+/*                                                                            */
+/* !Scope           : Private                                                 */
+/*                                                                            */
+/* !Target          : Genecode Tool                                           */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : OIL                                                     */
+/*                                                                            */
+/* COPYRIGHT 2009 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::                                                                $*/
+/* $Revision::                                                               $*/
+/* $Author::                                          $$Date::               $*/
+/******************************************************************************/
+
+FILE = TPL
+{
+   PURPOSE = "CCPUSR_CHECK"; 
+   READ    = "ccpusr_chk.tpl";
+   WRITE   = "ccpusr_chk.res";
+};
+
+/*------------------------------ end of file ---------------------------------*/

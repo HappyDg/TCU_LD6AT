@@ -1,0 +1,191 @@
+<?xml version='1.0'?>
+<datamodel version="3.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/08/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd" >
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="Os" type="AR-PACKAGE">
+        <d:lst type="ELEMENTS">
+          <d:chc name="Os" type="AR-ELEMENT" value="MODULE-CONFIGURATION">
+            <d:ctr type="MODULE-CONFIGURATION">
+              <a:a name="DEF" value="ASPath:/ETAS_RTAOS/Os"/>
+              <d:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION" 
+                     value="VariantPreCompile">
+                <a:a name="IMPORTER_INFO" value="@DEF"/>
+              </d:var>
+              <d:lst name="OsAlarm" type="MAP"/>
+              <d:lst name="OsAppMode" type="MAP">
+                <d:ctr name="OSDEFAULTAPPMODE" type="IDENTIFIABLE"/>
+              </d:lst>
+              <d:lst name="OsApplication" type="MAP"/>
+              <d:lst name="OsCounter" type="MAP"/>
+              <d:lst name="OsEvent" type="MAP"/>
+              <d:ctr name="OsIoc" type="IDENTIFIABLE">
+                <a:a name="ENABLE" value="false"/>
+                <d:lst name="OsIocDataTypeIncludeHeader" type="MAP"/>
+                <d:lst name="OsIocCommunication" type="MAP"/>
+              </d:ctr>
+              <d:lst name="OsIsr" type="MAP"/>
+              <d:ctr name="OsOS" type="IDENTIFIABLE">
+                <d:var name="OsNumberOfCores" type="INTEGER" >
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="OsScalabilityClass" type="ENUMERATION" >
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="OsStackMonitoring" type="BOOLEAN" value="true"/>
+                <d:var name="OsStatus" type="ENUMERATION" value="STANDARD"/>
+                <d:var name="OsUseGetServiceId" type="BOOLEAN" value="true"/>
+                <d:var name="OsUseParameterAccess" type="BOOLEAN" value="true"/>
+                <d:var name="OsUseResScheduler" type="BOOLEAN" value="true">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="OsCyclesPerSecond" type="INTEGER" >
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="OsTicksPerSecond" type="INTEGER" >
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="OsDefaultInterrupt" type="STRING" >
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="OsSuppressVectorGen" type="BOOLEAN" value="false">
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="OsDefTaskStack" type="STRING" >
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="OsDefCat1Stack" type="STRING" >
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="OsDefCat2Stack" type="STRING" >
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:ctr name="OsHooks" type="IDENTIFIABLE">
+                  <d:var name="OsErrorHook" type="BOOLEAN" value="true"/>
+                  <d:var name="OsPostTaskHook" type="BOOLEAN" value="true"/>
+                  <d:var name="OsPreTaskHook" type="BOOLEAN" value="true"/>
+                  <d:var name="OsProtectionHook" type="BOOLEAN" >
+                    <a:a name="ENABLE" value="false"/>
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="OsShutdownHook" type="BOOLEAN" value="true"/>
+                  <d:var name="OsStartupHook" type="BOOLEAN" value="true"/>
+                  <d:var name="OsStackFaultHook" type="BOOLEAN" value="false">
+                    <a:a name="ENABLE" value="false"/>
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                </d:ctr>
+                <d:lst name="Param" type="MAP"/>
+              </d:ctr>
+              <d:lst name="OsResource" type="MAP"/>
+              <d:lst name="OsScheduleTable" type="MAP"/>
+              <d:lst name="OsSpinlock" type="MAP"/>
+              <d:lst name="OsTask" type="MAP"/>
+              <d:ctr name="OsRTATarget" type="IDENTIFIABLE">
+                <a:a name="ENABLE" value="false"/>
+                <d:var name="OsRTATargetName" type="STRING" >
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="OsRTATargetVersion" type="STRING" >
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="OsRTATargetVariant" type="STRING" >
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:lst name="Param" type="MAP"/>
+              </d:ctr>
+              <d:lst name="OsRegSet" type="MAP"/>
+              <d:ctr name="OsTrace" type="IDENTIFIABLE">
+                <a:a name="ENABLE" value="false"/>
+                <d:var name="OsTraceEnabled" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="OsTraceCompactID" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="OsTraceCompactTime" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="OsTraceTgtStack" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="OsTraceTgtTrigger" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="OsTraceAutoComms" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="OsTraceAutoRepeat" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="OsTraceBufferSize" type="INTEGER" >
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="OsTraceAuto" type="ENUMERATION" value="NONE">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:ctr name="OsEnumeration" type="IDENTIFIABLE">
+                  <a:a name="ENABLE" value="false"/>
+                  <d:lst name="Param" type="MAP"/>
+                </d:ctr>
+                <d:lst name="OsTraceTracepoint" type="MAP"/>
+                <d:lst name="OsTraceTaskTracepoint" type="MAP"/>
+                <d:lst name="OsInterval" type="MAP"/>
+                <d:lst name="Param" type="MAP"/>
+                <d:lst name="OsClass" type="MAP"/>
+                <d:lst name="OsCategory" type="MAP"/>
+              </d:ctr>
+              <d:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+                <d:var name="ArReleaseMajorVersion" type="INTEGER" value="4">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ArReleaseMinorVersion" type="INTEGER" value="0">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="ArReleaseRevisionVersion" type="INTEGER" value="2">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="SwMajorVersion" type="INTEGER" value="1"/>
+                <d:var name="SwMinorVersion" type="INTEGER" value="0"/>
+                <d:var name="SwPatchVersion" type="INTEGER" value="0"/>
+                <d:var name="ModuleId" type="INTEGER" value="0">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="VendorId" type="INTEGER" value="1">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="VendorApiInfix" type="STRING" value="">
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="Release" type="STRING" 
+                       value="$3SOFT_DELIVERY_VERSION_INFORMATION$">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+              </d:ctr>
+            </d:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>

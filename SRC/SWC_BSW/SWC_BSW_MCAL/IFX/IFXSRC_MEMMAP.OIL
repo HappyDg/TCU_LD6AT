@@ -1,0 +1,28 @@
+/******************************************************************************/
+/* !Layer           : MCAL                                                    */
+/* !Component       : Framework                                               */
+/* !Description     :                                                         */
+/*                                                                            */
+/* !File            : IFXSRC_MEMMAP.OIL                                       */
+/* !Description     : Mapping section configuration of the IFXSRC component   */
+/*                                                                            */
+/* !Reference       :                                                         */
+/*                                                                            */
+/* Coding language  : OIL                                                     */
+/*                                                                            */
+/* COPYRIGHT VALEO all rights reserved                                        */
+/******************************************************************************/
+/* Dimension Informations
+ * %PCMS_HEADER_SUBSTITUTION_START:%
+ * The PID has this format: <Product ID>:<Item ID>.<Variant>-<Item Type>;<Revision>
+ * %PID:%
+ * %PCMS_HEADER_SUBSTITUTION_END:%
+ ******************************************************************************/
+
+MEMMAP_MSN IFXSRC
+{
+   SECTION = SEC_CODE;
+};
+
+/*------------------------------- end of file --------------------------------*/
+

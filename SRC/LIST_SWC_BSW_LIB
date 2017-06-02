@@ -1,0 +1,79 @@
+-|--------------------------------------------------------------------------------------------------------------------------|
+-|
+-| FILE NAME      : LIST_SWC_BSW_LIB
+-|
+-| PVCS Informations
+-| $Header:     $
+-| Dimension Informations
+-| %PCMS_HEADER_SUBSTITUTION_START:%
+-| The PID has this format: <Product ID>:<Item ID>.<Variant>-<Item Type>;<Revision>
+-| %PID: XXX:A1137.A-SRC;20 %
+-| %PCMS_HEADER_SUBSTITUTION_END:%
+-|
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+-|                                     |                                     |                                              |
+-|           COMPONENT_LIST            |             MODULE_LIST             |              FILE_LIST                       |
+-|                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | F32SRV -db                          |                                              |
+ |                                     |                                     | cfgbdd_F32SRV.txt                            |
+ |                                     |                                     | donnee_F32SRV.txt                            |
+ |                                     |                                     | F32SRV_API.c                                 |
+ |                                     |                                     | F32SRV_E.h                                   |
+ |                                     |                                     | F32SRV_I.h                                   |
+ |                                     |                                     | F32SRV_MemMap.h          -nget               |
+ |                                     |                                     | F32SRV_MEMMAP.OIL        -noil               |
+ |                                     |                                     | fonction_F32SRV.txt                          |
+ |                                     |                                     | refcdc_F32SRV.txt                            |
+ |                                     |                                     | requirements_F32SRV.txt                      |
+ |                                     |                                     | typedef_F32SRV.txt                           |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | MATH                                |                                              |
+ |                                     |                                     | MATH_FIL.C                                   |
+ |                                     |                                     | MATH_FIL.H                                   |
+ |                                     |                                     | MATH_LIB.C                                   |
+ |                                     |                                     | MATH_LIB.H                                   |
+ |                                     |                                     | MATH_MemMap.h            -nget               |
+ |                                     |                                     | MATH_MEMMAP.OIL          -noil               |
+ |                                     |                                     | MATH_PRK.C                                   |
+ |                                     |                                     | MATH_PRK.H                                   |
+ |                                     |                                     | MATH_SC.C                                    |
+ |                                     |                                     | MATH_SC.H                                    |
+ |                                     |                                     | MATH_TAB.C                                   |
+ |                                     |                                     | MATH_TRI.C                                   |
+ |                                     |                                     | MATH_TRI.H                                   |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | MATHSRV            -v SH_2.1.2_DLV -dmproj LIBEMB:MATHSRV                         ||
+ |                                     |                                     | ar_mfx.h                                     |
+ |                                     |                                     | MATHSRV.h                                    |
+ |                                     |                                     | MATHSRV_ADD_32.c                             |
+ |                                     |                                     | MATHSRV_CALC_PARA.c                          |
+ |                                     |                                     | MATHSRV_Div.c                                |
+ |                                     |                                     | MATHSRV_E.h                                  |
+ |                                     |                                     | MATHSRV_I.h                                  |
+ |                                     |                                     | MATHSRV_INTERP_U16.c                         |
+ |                                     |                                     | MATHSRV_INTERP_U8.c                          |
+ |                                     |                                     | MATHSRV_MEDIAN_FILTER.c                      |
+ |                                     |                                     | MATHSRV_MemMap.h         -nget               |
+ |                                     |                                     | MATHSRV_MEMMAP.OIL       -noil               |
+ |                                     |                                     | MATHSRV_Mul.c                                |
+ |                                     |                                     | MATHSRV_MulDiv_16.c                          |
+ |                                     |                                     | MATHSRV_MulDiv_32.c                          |
+ |                                     |                                     | MATHSRV_Portability.h                        |
+ |                                     |                                     | MATHSRV_S16_FIRST_ORDER_FILTER_G_U16.c       |
+ |                                     |                                     | MATHSRV_S16_FIRST_ORDER_FILTER_G_U8.c        |
+ |                                     |                                     | MATHSRV_S16_SLEW_FILTER.c                    |
+ |                                     |                                     | MATHSRV_S8_SLEW_FILTER.c                     |
+ |                                     |                                     | MATHSRV_SCHMITT_TRIGGER.c                    |
+ |                                     |                                     | MATHSRV_Sub.c                                |
+ |                                     |                                     | MATHSRV_U16_FIRST_ORDER_FILTER_G_U16.c       |
+ |                                     |                                     | MATHSRV_U16_FIRST_ORDER_FILTER_G_U8.c        |
+ |                                     |                                     | MATHSRV_U16_SLEW_FILTER.c                    |
+ |                                     |                                     | MATHSRV_U8_SLEW_FILTER.c                     |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|

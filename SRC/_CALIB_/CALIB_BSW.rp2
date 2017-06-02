@@ -1,0 +1,64 @@
+RECUPVER v6.0 1.6 55E49D64	(null)
+C:\emoas\PROJETS\TCU_F8AT\SWA_BSW\2015_08_26\BUILD\VERSION CALCULATEUR
+Format: HEXA
+BSW_bSPYBenchOnC                :REVISION CALCULATEUR    :1508311931:BSW_bSPYBenchOnC                :WinAdes         :2:0:0:1:2:00
+EVP_ku16CurMaxThrdGrp0          :REVISION CALCULATEUR    :1508311931:EVP_ku16CurMaxThrdGrp0          :WinAdes         :1:0.0012219:0:2:2:0F3C
+EVP_ku16CurMaxThrdGrp1          :REVISION CALCULATEUR    :1508311931:EVP_ku16CurMaxThrdGrp1          :WinAdes         :1:0.0012219:0:2:2:0F3C
+EVP_ku16CurMaxThrdGrp2          :REVISION CALCULATEUR    :1508311931:EVP_ku16CurMaxThrdGrp2          :WinAdes         :1:0.0012219:0:2:2:0F3C
+EVP_ku16CurMaxThrdGrp3          :REVISION CALCULATEUR    :1508311931:EVP_ku16CurMaxThrdGrp3          :WinAdes         :1:0.0012219:0:2:2:0F3C
+MAIN_MSGRxBenchOnC              :34_9A_01#06             :1509211459:MAIN_MSGRxBenchOnC              :WinAdes         :2:0:0:1:2:00
+MAIN_MSGTxBenchOnC              :34_9A_01#06             :1509211459:MAIN_MSGTxBenchOnC              :WinAdes         :2:0:0:1:2:00
+RTMTSK_ku8TaskId                :REVISION CALCULATEUR    :1508311931:RTMTSK_ku8TaskId                :WinAdes         :0:1:0:1:2:00
+SWTST_aku16Duty                 :REVISION CALCULATEUR    :1508311931:SWTST_aku16Duty                 :WinAdes         :1:0.0265393:0:2:3:4:3:1:0000:0000:0000:                                :                                
+SWTST_aku16Duty                 :REVISION CALCULATEUR    :1508311931:SWTST_aku16Duty                 :WinAdes         :1:0.0265393:0:2:3:4:3:2:0000:0000:0000
+SWTST_aku16Duty                 :REVISION CALCULATEUR    :1508311931:SWTST_aku16Duty                 :WinAdes         :1:0.0265393:0:2:3:4:3:3:0000:0000:0000
+SWTST_aku16Duty                 :REVISION CALCULATEUR    :1508311931:SWTST_aku16Duty                 :WinAdes         :1:0.0265393:0:2:3:4:3:4:0000:0000:0000
+SWTST_kbDioTstEnaC              :REVISION CALCULATEUR    :1508311931:SWTST_kbDioTstEnaC              :WinAdes         :2:0:0:1:2:00
+SWTST_kbDioWrBtt6030Den1        :REVISION CALCULATEUR    :1508311931:SWTST_kbDioWrBtt6030Den1        :WinAdes         :2:0:0:1:2:00
+SWTST_kbDioWrBtt6030Den2        :REVISION CALCULATEUR    :1508311931:SWTST_kbDioWrBtt6030Den2        :WinAdes         :2:0:0:1:2:00
+SWTST_kbDioWrBtt6030Dsel1       :REVISION CALCULATEUR    :1508311931:SWTST_kbDioWrBtt6030Dsel1       :WinAdes         :2:0:0:1:2:00
+SWTST_kbDioWrBtt6030Dsel2       :REVISION CALCULATEUR    :1508311931:SWTST_kbDioWrBtt6030Dsel2       :WinAdes         :2:0:0:1:2:00
+SWTST_kbDioWrEngCrankEnCmd      :REVISION CALCULATEUR    :1508311931:SWTST_kbDioWrEngCrankEnCmd      :WinAdes         :2:0:0:1:2:00
+SWTST_kbDioWrMaxShdn            :REVISION CALCULATEUR    :1508311931:SWTST_kbDioWrMaxShdn            :WinAdes         :2:0:0:1:2:00
+SWTST_kbDioWrP9vSnsSupEn        :REVISION CALCULATEUR    :1508311931:SWTST_kbDioWrP9vSnsSupEn        :WinAdes         :2:0:0:1:2:00
+SWTST_kbDioWrPto1Cmd            :REVISION CALCULATEUR    :1508311931:SWTST_kbDioWrPto1Cmd            :WinAdes         :2:0:0:1:2:00
+SWTST_kbDioWrPto2Cmd            :REVISION CALCULATEUR    :1508311931:SWTST_kbDioWrPto2Cmd            :WinAdes         :2:0:0:1:2:00
+SWTST_kbDioWrPto3Cmd            :REVISION CALCULATEUR    :1508311931:SWTST_kbDioWrPto3Cmd            :WinAdes         :2:0:0:1:2:00
+SWTST_kbDioWrSolenoidHsCmd1     :REVISION CALCULATEUR    :1508311931:SWTST_kbDioWrSolenoidHsCmd1     :WinAdes         :2:0:0:1:2:00
+SWTST_kbDioWrSolenoidHsCmd2     :REVISION CALCULATEUR    :1508311931:SWTST_kbDioWrSolenoidHsCmd2     :WinAdes         :2:0:0:1:2:00
+SWTST_kbDioWrSolenoidHsCmd3     :REVISION CALCULATEUR    :1508311931:SWTST_kbDioWrSolenoidHsCmd3     :WinAdes         :2:0:0:1:2:00
+SWTST_kbDioWrSolenoidHsCmd4     :REVISION CALCULATEUR    :1508311931:SWTST_kbDioWrSolenoidHsCmd4     :WinAdes         :2:0:0:1:2:00
+SWTST_kbDioWrSupplyWdi          :REVISION CALCULATEUR    :1508311931:SWTST_kbDioWrSupplyWdi          :WinAdes         :2:0:0:1:2:00
+SWTST_kbEVPTstEnaC              :REVISION CALCULATEUR    :1508311931:SWTST_kbEVPTstEnaC              :WinAdes         :2:0:0:1:2:00
+SWTST_kbTle62202ndModeIndicator :REVISION CALCULATEUR    :1508311931:SWTST_kbTle62202ndModeIndicator :WinAdes         :2:0:0:1:2:00
+SWTST_kbTle6220AlternateGearStar:REVISION CALCULATEUR    :1508311931:SWTST_kbTle6220AlternateGearStar:WinAdes         :2:0:0:1:2:00
+SWTST_kbTle6220EngOverSpdIndicat:REVISION CALCULATEUR    :1508311931:SWTST_kbTle6220EngOverSpdIndicat:WinAdes         :2:0:0:1:2:00
+SWTST_kbTle6220GearIndicator    :REVISION CALCULATEUR    :1508311931:SWTST_kbTle6220GearIndicator    :WinAdes         :2:0:0:1:2:00
+SWTST_kbTle6220LockUpIndicator  :REVISION CALCULATEUR    :1508311931:SWTST_kbTle6220LockUpIndicator  :WinAdes         :2:0:0:1:2:00
+SWTST_kbTle6220LsdSpare1        :REVISION CALCULATEUR    :1508311931:SWTST_kbTle6220LsdSpare1        :WinAdes         :2:0:0:1:2:00
+SWTST_kbTle6220LsdSpare2        :REVISION CALCULATEUR    :1508311931:SWTST_kbTle6220LsdSpare2        :WinAdes         :2:0:0:1:2:00
+SWTST_kbTle6220LsdSpare3        :REVISION CALCULATEUR    :1508311931:SWTST_kbTle6220LsdSpare3        :WinAdes         :2:0:0:1:2:00
+SWTST_kbTle6220LsdSpare4        :REVISION CALCULATEUR    :1508311931:SWTST_kbTle6220LsdSpare4        :WinAdes         :2:0:0:1:2:00
+SWTST_kbTle6220LsdSpare5        :REVISION CALCULATEUR    :1508311931:SWTST_kbTle6220LsdSpare5        :WinAdes         :2:0:0:1:2:00
+SWTST_kbTle6220OutSpdIndicator  :REVISION CALCULATEUR    :1508311931:SWTST_kbTle6220OutSpdIndicator  :WinAdes         :2:0:0:1:2:00
+SWTST_kbTle6220OverTempIndicator:REVISION CALCULATEUR    :1508311931:SWTST_kbTle6220OverTempIndicator:WinAdes         :2:0:0:1:2:00
+SWTST_kbTle6220ReverseGearIndica:REVISION CALCULATEUR    :1508311931:SWTST_kbTle6220ReverseGearIndica:WinAdes         :2:0:0:1:2:00
+SWTST_kbTle6220ReverseIndicator :REVISION CALCULATEUR    :1508311931:SWTST_kbTle6220ReverseIndicator :WinAdes         :2:0:0:1:2:00
+SWTST_kbTle6220TransmissionServi:REVISION CALCULATEUR    :1508311931:SWTST_kbTle6220TransmissionServi:WinAdes         :2:0:0:1:2:00
+SWTST_kbTle6220TstEnaC          :REVISION CALCULATEUR    :1508311931:SWTST_kbTle6220TstEnaC          :WinAdes         :2:0:0:1:2:00
+SWTST_kbTle6220TwoSpdAxleOutput :REVISION CALCULATEUR    :1508311931:SWTST_kbTle6220TwoSpdAxleOutput :WinAdes         :2:0:0:1:2:00
+SWTST_ku8DioTstNrC              :REVISION CALCULATEUR    :1508311931:SWTST_ku8DioTstNrC              :WinAdes         :0:1:0:1:2:00
+SWTST_ku8EVPTstNrC              :REVISION CALCULATEUR    :1508311931:SWTST_ku8EVPTstNrC              :WinAdes         :0:1:0:1:2:00
+SWTST_ku8Tle6220TstNrC          :REVISION CALCULATEUR    :1508311931:SWTST_ku8Tle6220TstNrC          :WinAdes         :0:1:0:1:2:00
+TST_PWD_kudtTout_INPUT_SPD_PWM_V:REVISION CALCULATEUR    :1508311931:TST_PWD_kudtTout_INPUT_SPD_PWM_V:WinAdes         :1:0.0001:0:4:2:000F4240
+TST_PWD_kudtTout_LIMP_HOME_SAFE_:REVISION CALCULATEUR    :1508311931:TST_PWD_kudtTout_LIMP_HOME_SAFE_:WinAdes         :1:0.0001:0:4:2:000F4240
+TST_PWM_ku16Freq_AuxiliariesOnOf:REVISION CALCULATEUR    :1508311931:TST_PWM_ku16Freq_AuxiliariesOnOf:WinAdes         :1:1:0:2:2:0000
+TST_PWM_ku16Freq_DualAreaPistonS:REVISION CALCULATEUR    :1508311931:TST_PWM_ku16Freq_DualAreaPistonS:WinAdes         :1:1:0:2:2:0000
+TST_PWM_ku16Freq_LimpHomeSafeCmd:REVISION CALCULATEUR    :1508311931:TST_PWM_ku16Freq_LimpHomeSafeCmd:WinAdes         :1:1:0:2:2:0000
+TST_PWM_ku16Freq_RetarderAccumul:REVISION CALCULATEUR    :1508311931:TST_PWM_ku16Freq_RetarderAccumul:WinAdes         :1:1:0:2:2:0000
+TST_PWM_ku16Freq_SelCoolingCmd  :REVISION CALCULATEUR    :1508311931:TST_PWM_ku16Freq_SelCoolingCmd  :WinAdes         :1:1:0:2:2:0000
+TST_PWM_ku16Freq_SpeedometerCmd :REVISION CALCULATEUR    :1508311931:TST_PWM_ku16Freq_SpeedometerCmd :WinAdes         :1:1:0:2:2:0000
+VADC_aku16MaxThrdGrp            :REVISION CALCULATEUR    :1508311932:VADC_aku16MaxThrdGrp            :WinAdes         :1:0.0012219:0:2:3:1:8:1:0E63:0E63:0E63:0E63:0E63:0E63:0E63:0E63:                                
+VADC_aku16MinThrdGrp            :REVISION CALCULATEUR    :1508311932:VADC_aku16MinThrdGrp            :WinAdes         :1:0.0012219:0:2:3:1:8:1:0199:0199:0199:0199:0199:0199:0199:0199:                                
+VADC_ku16MaxThrdGlobal          :REVISION CALCULATEUR    :1508311931:VADC_ku16MaxThrdGlobal          :WinAdes         :1:0.0012219:0:2:2:0F3C
+VADC_ku16MinThrdGlobal          :REVISION CALCULATEUR    :1508311931:VADC_ku16MinThrdGlobal          :WinAdes         :1:0.0012219:0:2:2:00C8

@@ -1,0 +1,36 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SRVL                                                    */
+/*                                                                            */
+/* !Component       : CCP                                                     */
+/*                                                                            */
+/* !Module          : CCPUSR_ADD                                              */
+/* !Description     : Definition of objects for internal use                  */
+/*                                                                            */
+/* !File            : CCPUSR_ADD.STX                                          */
+/*                                                                            */
+/* !Scope           : Private                                                 */
+/*                                                                            */
+/* !Target          : Genecode Tool                                           */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : OIL                                                     */
+/*                                                                            */
+/* COPYRIGHT 2009 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::                                                                $*/
+/* $Revision::                                                               $*/
+/* $Author::                                          $$Date::               $*/
+/******************************************************************************/
+
+CCP
+{
+   STRING WITH_AUTO INCLUDE_FILES[];
+} : "ADD_ON";
+
+
+/*-------------------------------- end of file -------------------------------*/

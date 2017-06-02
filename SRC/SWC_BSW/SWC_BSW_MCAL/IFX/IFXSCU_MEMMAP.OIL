@@ -1,0 +1,29 @@
+/******************************************************************************/
+/* !Layer           : MCAL                                                    */
+/* !Component       : Framework                                               */
+/* !Description     :                                                         */
+/*                                                                            */
+/* !File            : IFXSCU_MEMMAP.OIL                                       */
+/* !Description     : Mapping section configuration of the IFXSCU component   */
+/*                                                                            */
+/* !Reference       :                                                         */
+/*                                                                            */
+/* Coding language  : OIL                                                     */
+/*                                                                            */
+/* COPYRIGHT VALEO all rights reserved                                        */
+/******************************************************************************/
+/* Dimension Informations
+ * %PCMS_HEADER_SUBSTITUTION_START:%
+ * The PID has this format: <Product ID>:<Item ID>.<Variant>-<Item Type>;<Revision>
+ * %PID:%
+ * %PCMS_HEADER_SUBSTITUTION_END:%
+ ******************************************************************************/
+
+MEMMAP_MSN IFXSCU
+{
+   SECTION = SEC_CODE;
+   SECTION = SEC_CONST_UNSPECIFIED;
+};
+
+/*------------------------------- end of file --------------------------------*/
+

@@ -1,0 +1,42 @@
+/**********************************************************************************************************************/
+/*                                                                                                                    */
+/* !Layer          : Router COM                                                                                       */
+/*                                                                                                                    */
+/* !Component      : PDUR                                                                                             */
+/* !Description    : Mapping section configuration of the module                                                      */
+/*                                                                                                                    */
+/* !File           : PDUR_MEMMAP.OIL                                                                                  */
+/*                                                                                                                    */
+/* !Scope          : Public                                                                                           */
+/*                                                                                                                    */
+/* !Target         : Genecode Tool                                                                                    */
+/*                                                                                                                    */
+/* !Vendor         : Valeo                                                                                            */
+/*                                                                                                                    */
+/* Coding language : OIL                                                                                              */
+/*                                                                                                                    */
+/* COPYRIGHT VALEO                                                                                                    */
+/* all rights reserved                                                                                                */
+/*                                                                                                                    */
+/**********************************************************************************************************************/
+/* Dimension Informations                                                                                               
+/* %PCMS_HEADER_SUBSTITUTION_START:%                                                                                    
+/* The PID has this format: <Product ID>:<Item ID>.<Variant>-<Item Type>;<Revision>                                     
+/* %PID:%                                                                                                               
+/* %PCMS_HEADER_SUBSTITUTION_END:%                                                                                      
+/**********************************************************************************************************************/
+
+MEMMAP_MSN PDUR
+{
+   SECTION = SEC_CODE;
+   SECTION = SEC_CODE_CC_BLOCK;
+   SECTION = SEC_VAR_INIT_UNSPECIFIED;
+   SECTION = SEC_VAR_FAST_INIT_UNSPECIFIED;
+   SECTION = SEC_CONST_UNSPECIFIED;
+   SECTION = SEC_CONST_8;
+   SECTION = SEC_CONST_32;
+   SECTION = CONFIG_DATA_UNSPECIFIED;
+   SECTION = SEC_VAR_NOINIT_UNSPECIFIED;
+};
+
+/*--------------------------------------------------- end of file ----------------------------------------------------*/

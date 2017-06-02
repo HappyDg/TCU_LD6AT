@@ -1,0 +1,71 @@
+#******************************************************************************/
+#*                                                                            */
+#* !Layer           : -                                                       */
+#*                                                                            */
+#* !Component       : -                                                       */
+#*                                                                            */
+#* !Description     : _FileSubPrj.hex generation                              */
+#*                  : Input  : _FileSubPrj.h86                                */
+#*                  : Input  : *.bd3                                          */
+#*                  : Output : _FileSubPrj_calib.hex                          */
+#*                  : Output : _FileSubPrj_code.hex                           */
+#*                  : Output : _FileSubPrj.hex                                */
+#*                                                                            */
+#* !File            : GeneUlp.tfm                                             */
+#*                                                                            */
+#* !Scope           : Public                                                  */
+#*                                                                            */
+#* !Target          : TC264                                                   */
+#*                                                                            */
+#* !Vendor          : Valeo                                                   */
+#*                                                                            */
+#* Coding language  : Transfor                                                */
+#*                                                                            */
+#* COPYRIGHT 2009 VALEO                                                       */
+#* all rights reserved                                                        */
+#*                                                                            */
+#******************************************************************************/
+#* PVCS Information                                                           */
+#* $Archive::   P:/CGCM/LOG/70_SubProject/Archives/BSW_TC1782/geneulp.tfv    $*/
+#* $Revision::   1.4      $$Author::   jbekaert       $$Date::   21 Mar 2012 $*/
+#******************************************************************************/
+/psa
+/cpu:intel
+
+#********************/
+# Open mot file (without calib)
+#********************/
+open     /buf_dest=1 /file_name=%ProjName%.hex
+#********************/
+# Get calib values
+#********************/
+get_hf3 /bdtype:bd3  /ignore_overlap /path:. /buf_dest:2 /vers_name:%CalibSet%
+extract /buf_src:2 /buf_dest:3 /addr_src:80060024 /size:FFDC
+move /buf_src:3  /buf_dest:4    /addr_src:80060024 /size:FFDC /addr_dest:80060024 /erase_origin
+
+#********************/
+# Insert calib in mot File (RAM)
+#********************/
+cat /buf_list:1,4 /buf_dest:5 /overlap
+
+#*********************************************************************************/
+# %ProjName%.BSW.%CalibSet%.ulp saving, renamed by geneulp.bat afterwards.
+# %ProjName%.BSW.FILLED.%CalibSet%.ulp saving, renamed by geneulp.bat afterwards.
+# (ULP content incompatible with Tele_Comm.exe)
+#*********************************************************************************/
+save /buf_src:5 /file_name:%ProjName%.BSW.%CalibSet%.ulp /format:mot
+fill_buf /buf_dest:6 /addr_src:80050000 /size:01B0000 /pattern:36
+cat /buf_list:6,5 /buf_dest:7 /overlap
+save /buf_src:7 /file_name:%ProjName%.BSW.FILLED.%CalibSet%.ulp /format:mot
+
+#*********************************************************************************/
+# %ProjName%.FBL.%CalibSet%.ulp saving, renamed by geneulp.bat afterwards.
+# %ProjName%.FBL.FILLED.%CalibSet%.ulp saving, renamed by geneulp.bat afterwards.
+# (ULP content compatible with Tele_Comm.exe)
+#*********************************************************************************/
+extract /buf_src:5 /buf_dest:8 /addr_src:80050000 /size:01B0000
+save /buf_src:8 /file_name:%ProjName%.FBL.%CalibSet%.ulp /format:mot
+extract /buf_src:7 /buf_dest:9 /addr_src:80050000 /size:01B0000
+save /buf_src:9 /file_name:%ProjName%.FBL.FILLED.%CalibSet%.ulp /format:mot
+
+

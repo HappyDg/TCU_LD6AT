@@ -1,0 +1,13 @@
+# ConvertCal
+# Create XXX.int with XXX_epmty.int and XXX.elf or XXX.h86 or ...
+# 
+# Revision history
+# V1.00 : adaptation pour TC264.
+#
+
+open /file_name=%ProjName%.hex /buf_dest=1
+
+open /file_name=memory_empty.int /buf_dest=4
+cat /buf_list:4,1 /buf_dest:5 /overlap
+
+save /buf_src:5 /file_name:%ProjName%.int /format:h86

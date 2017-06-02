@@ -1,0 +1,28 @@
+/******************************************************************************/
+/* !Layer           : SRV                                                     */
+/* !Component       : SUPSRV                                                  */
+/* !Description     : Supplier Services component                             */
+/*                                                                            */
+/* !File            : SUPSRV_MEMMAP.OIL                                       */
+/* !Description     : Mapping section configuration of the SUPSRV component   */
+/*                                                                            */
+/* !Reference       :                                                         */
+/*                                                                            */
+/* Coding language  : OIL                                                     */
+/*                                                                            */
+/* COPYRIGHT VALEO all rights reserved                                        */
+/******************************************************************************/
+/* Dimension Informations
+ * %PCMS_HEADER_SUBSTITUTION_START:%
+ * The PID has this format: <Product ID>:<Item ID>.<Variant>-<Item Type>;<Revision>
+ * %PID:%
+ * %PCMS_HEADER_SUBSTITUTION_END:%
+ ******************************************************************************/
+
+MEMMAP_MSN SUPSRV {
+                     SECTION = SEC_CODE;
+                     SECTION = SEC_VAR_INIT_UNSPECIFIED;
+                  };
+
+
+/*------------------------------- end of file --------------------------------*/

@@ -1,0 +1,32 @@
+/******************************************************************************/
+/* !Layer           : SRV                                                     */
+/* !Component       : OS_DRV                                                  */
+/* !Description     : Operating System                                        */
+/*                                                                            */
+/* !File            : OS_DRV_OSEK_OS.OIL                                      */
+/* !Description     : OSEK_OS configuration of the OS_DRV component           */
+/*                                                                            */
+/* !Reference       :                                                         */
+/*                                                                            */
+/* Coding language  : OIL                                                     */
+/*                                                                            */
+/* COPYRIGHT VALEO all rights reserved                                        */
+/******************************************************************************/
+/* Dimension Informations
+ * %PCMS_HEADER_SUBSTITUTION_START:%
+ * The PID has this format: <Product ID>:<Item ID>.<Variant>-<Item Type>;<Revision>
+ * %PID:%
+ * %PCMS_HEADER_SUBSTITUTION_END:%
+ ******************************************************************************/
+
+/******************************************************************************/
+/* INTERRUPTS                                                                 */
+/******************************************************************************/
+ISR ISR_GRP_0_END_OF_CONV
+{
+   INTBSL   = INT_VADC_GRP_0_SR;
+   CATEGORY = 1;
+};
+
+
+/*------------------------------- end of file --------------------------------*/

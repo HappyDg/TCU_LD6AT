@@ -1,0 +1,222 @@
+/******************************************************************************/
+/* !Layer           : SRVL                                                    */
+/* !Component       : CCP                                                     */
+/* !Description     : Can Calibration Protocol                                */
+/*                                                                            */
+/* !File            : CCP.OIL                                                 */
+/* !Description     : Configuration for CCP component                         */
+/*                                                                            */
+/* !Reference       :                                                         */
+/*                                                                            */
+/* Coding language  : OIL                                                     */
+/*                                                                            */
+/* COPYRIGHT VALEO all rights reserved                                        */
+/******************************************************************************/
+/* Dimension Informations
+ * %PCMS_HEADER_SUBSTITUTION_START:%
+ * The PID has this format: <Product ID>:<Item ID>.<Variant>-<Item Type>;<Revision>
+ * %PID:%
+ * %PCMS_HEADER_SUBSTITUTION_END:%
+ ******************************************************************************/
+
+CCP HCU_PATAC
+{
+   DEVICE_ID = INTERNAL_STRING {  VALUE = "HCU_PATAC"; };
+   DEVICE_ID_DATA_TYPE = 0x02;
+   
+   STATION_ADDRESS_CHECK = INTERNAL  /* LVOI : OK */
+   {
+      STATION_ADDRESS = 0x209;
+   };
+
+   CANIF_DTO_TX_ID        = "CanIf_CCP_DTO";
+   CANIF_DEVAID_DTO_TX_ID = "CanIf_CCP_DEVAID_DTO";
+
+   ASYNCHRONOUS_RESPONSE = FALSE;
+/*
+   ASYNCHRONOUS_RESPONSE = TRUE
+   {
+      CHECKSUM_SERVICE     = TRUE;
+      MOVE_SERVICE         = TRUE;
+      DOWNLOAD_SERVICE     = TRUE;
+      DOWNLOAD6_SERVICE    = TRUE;
+      UPLOAD_SERVICE       = TRUE;
+      SHORT_UPLOAD_SERVICE = TRUE;
+      PROGRAM_SERVICE      = TRUE;
+      CLEAR_MEMORY_SERVICE = TRUE;
+   };
+*/
+/*
+   SESSION_STATUS_SERVICES = FALSE;
+*/
+   SESSION_STATUS_SERVICES = TRUE
+   {
+      CHECK_CAL_STATUS   = TRUE;
+      CHECK_DAQ_STATUS   = TRUE;
+      CAL_STORE_FEATURE  = TRUE;
+      DAQ_RESUME_FEATURE = FALSE;
+      ADDITIONAL_STATUS  = FALSE;
+   };
+   TEST_SERVICE         = TRUE;
+   DOWNLOAD6_SERVICE    = TRUE;
+   SHORT_UPLOAD_SERVICE = TRUE;
+   MOVE_SERVICE         = FALSE; /* Not implemented */
+   PROGRAM_SERVICES     = FALSE; /* Not implemented */
+
+   CAL_PAGE_SERVICES    = TRUE;
+   DFLT_CALIB_PAGE_ADDR = 0x80060000;
+   DFLT_CALIB_PAGE_EXTN = 0;
+
+   CHECKSUM_SERVICE = TRUE
+   {
+      CHECKSUM_SIZE = U16;
+   };
+
+   PROTECTION_SERVICES = FALSE;
+/* LVOI: Shall we protect services ?
+   {
+      LOCKED_DAQ_LIST = TRUE;
+      LOCKED_CALIB    = TRUE;
+      LOCKED_PROGRAM  = TRUE;
+   };
+*/
+
+   DAQ_LIST_SERVICES = TRUE
+   {
+      MAX_DATA_SIZE       = U32;
+      LIST_ID_EQ_EVENT_ID = FALSE; //TRUE;
+      DAQ_DYNAMIC_CAN_ID = FALSE;
+/*
+      DAQ_DYNAMIC_CAN_ID = TRUE
+      {
+         DAQ_MANAGE_EXTENDED_CAN_ID = TRUE;
+      };
+*/
+   };
+   DAQ_LIST_FILLING_MODE = WHOLE_DAQ_LIST;
+};
+
+
+/******************************************************************************/
+/* DAQ DECLARATION                                                           */
+/******************************************************************************/
+
+DAQ_LIST DAQ_FAST
+{
+   NUMBER_OF_ODT = 6;
+   CANIF_TX_ID = "CanIf_CCP_FAST";
+   CANIF_DEVAID_TX_ID = "CanIf_CCP_DEVAID_FAST";
+   
+   CANIF_TX_CONF_ID        = "CDD_CCP_FAST";
+   CANIF_DEVAID_TX_CONF_ID = "CDD_CCP_DEVAID_FAST";
+
+   CANIF_TX_CONF_FCT        = "CCP_UsrTxConf_DAQ_FAST";
+   CANIF_DEVAID_TX_CONF_FCT = "CCP_UsrTxConf_Devaid_DAQ_FAST";
+};
+
+DAQ_LIST DAQ_MEDIUM
+{
+   NUMBER_OF_ODT = 28;
+   CANIF_TX_ID = "CanIf_CCP_MEDIUM";
+   CANIF_DEVAID_TX_ID = "CanIf_CCP_DEVAID_MEDIUM";
+
+   CANIF_TX_CONF_ID        = "CDD_CCP_MEDIUM";
+   CANIF_DEVAID_TX_CONF_ID = "CDD_CCP_DEVAID_MEDIUM";
+   
+   CANIF_TX_CONF_FCT        = "CCP_UsrTxConf_DAQ_MEDIUM";
+   CANIF_DEVAID_TX_CONF_FCT = "CCP_UsrTxConf_Devaid_DAQ_MEDIUM";
+};
+
+DAQ_LIST DAQ_SLOW
+{
+   NUMBER_OF_ODT = 40;
+   CANIF_TX_ID = "CanIf_CCP_SLOW";
+   CANIF_DEVAID_TX_ID = "CanIf_CCP_DEVAID_SLOW";
+
+   CANIF_TX_CONF_ID        = "CDD_CCP_SLOW";
+   CANIF_DEVAID_TX_CONF_ID = "CDD_CCP_DEVAID_SLOW";
+
+   CANIF_TX_CONF_FCT        = "CCP_UsrTxConf_DAQ_SLOW";
+   CANIF_DEVAID_TX_CONF_FCT = "CCP_UsrTxConf_Devaid_DAQ_SLOW";
+};
+
+DAQ_EVENT EVENT_FAST
+{
+};
+
+DAQ_EVENT EVENT_MEDIUM
+{
+};
+
+DAQ_EVENT EVENT_SLOW
+{
+};
+
+
+/******************************************************************************/
+/* CALIBRATION MEMORY CONFIGURATION                                           */
+/******************************************************************************/
+CCP_CALIBRATION_MAPPING HCU_PATAC
+{
+   /* TODO: use define generated by linker */
+    ADDRESS_START_IN_ROM = "0x80060000";  
+    ADDRESS_START_IN_RAM = "0x70000000";  /* Non cachable memory address */
+    CALIBRATION_SIZE     = "0x10000";
+};
+
+
+/******************************************************************************/
+/* CCP MEMORY CONFIGURATION                                                   */
+/******************************************************************************/
+
+CCP_WRITABLE_MEMORY_ZONE  ROM_CAL
+{
+    ADDRESS_START = "0x80060000";
+    ADDRESS_STOP  = "0x8006FFFF";
+};
+
+CCP_WRITABLE_MEMORY_ZONE  RAM_CPU0 /* corresponds to DSPR0 */
+{
+    ADDRESS_START = "0x70000000";
+    ADDRESS_STOP  = "0x7002DFFF";
+};
+
+CCP_WRITABLE_MEMORY_ZONE  LOCAL_RAM /* corresponds to LMU RAM */
+{
+    ADDRESS_START = "0xB0000000";
+    ADDRESS_STOP  = "0xB0008000";
+};
+
+CCP_WRITABLE_MEMORY_ZONE  EMEM /* corresponds to ED MEM */
+{
+    ADDRESS_START = "0xBF000000";
+    ADDRESS_STOP  = "0xBF100000";
+};
+
+CCP_WRITABLE_MEMORY_ZONE  REGISTERS /* corresponds to Segment 15 */
+{
+    ADDRESS_START = "0xF0000000";
+    ADDRESS_STOP  = "0xFF120000";
+};
+
+
+CCP_READ_ONLY_MEMORY_ZONE ROM_CACHED /* corresponds to PF0 & PF1 */
+{
+    ADDRESS_START = "0x80000000";
+    ADDRESS_STOP  = "0x801FFFFF";
+};
+
+CCP_READ_ONLY_MEMORY_ZONE  ROM  /* corresponds to PF0 & PF1 */
+{
+    ADDRESS_START = "0xA0000000";
+    ADDRESS_STOP  = "0xA01FFFFF";
+};
+
+CCP_READ_ONLY_MEMORY_ZONE  DATA_ROM_DF0 /* corresponds to DF0 */
+{
+    ADDRESS_START = "0xAF000000";
+    ADDRESS_STOP  = "0xAF100000";
+};
+
+
+/*-------------------------------- end of file -------------------------------*/

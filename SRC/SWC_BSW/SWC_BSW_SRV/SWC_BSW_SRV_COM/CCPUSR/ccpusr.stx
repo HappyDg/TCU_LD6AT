@@ -1,0 +1,74 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SRVL                                                    */
+/*                                                                            */
+/* !Component       : CCP                                                     */
+/*                                                                            */
+/* !Module          : CCPUSR                                                  */
+/* !Description     : Syntax of CCP User Configuration                        */
+/*                                                                            */
+/* !File            : CCPUSR.STX                                              */
+/*                                                                            */
+/* !Scope           : Public                                                  */
+/*                                                                            */
+/* !Target          : Genecode Tool                                           */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : OIL                                                     */
+/*                                                                            */
+/* COPYRIGHT 2009 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::                                                                $*/
+/* $Revision::                                                               $*/
+/* $Author::                                          $$Date::               $*/
+/******************************************************************************/
+
+CCP
+{
+   ENUM [PER_ODT, WHOLE_DAQ_LIST] DAQ_LIST_FILLING_MODE = PER_ODT;
+
+   UINT32 WITH_AUTO            DFLT_CALIB_PAGE_ADDR = AUTO;
+   UINT32 WITH_AUTO [0 .. 255] DFLT_CALIB_PAGE_EXTN = AUTO;
+   
+   STRING CANIF_DTO_TX_ID;
+   STRING CANIF_DEVAID_DTO_TX_ID = "";
+
+} : "ADD_ON";
+
+DAQ_LIST
+{
+   STRING CANIF_TX_ID;
+   STRING CANIF_DEVAID_TX_ID = "";
+   STRING CANIF_TX_CONF_ID;
+   STRING CANIF_DEVAID_TX_CONF_ID = "";
+   STRING CANIF_TX_CONF_FCT;
+   STRING CANIF_DEVAID_TX_CONF_FCT = "";
+} : "ADD_ON";
+
+
+CCP_WRITABLE_MEMORY_ZONE
+{
+    STRING ADDRESS_START;
+    STRING ADDRESS_STOP;
+};
+CCP_READ_ONLY_MEMORY_ZONE
+{
+    STRING ADDRESS_START;
+    STRING ADDRESS_STOP;
+};
+
+CCP_CALIBRATION_MAPPING
+{
+    STRING ADDRESS_START_IN_ROM;
+    STRING ADDRESS_START_IN_RAM;
+    STRING CALIBRATION_SIZE;
+};
+
+#include "ccpusr_add.stx"
+
+
+/*-------------------------------- end of file -------------------------------*/

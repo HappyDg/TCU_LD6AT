@@ -1,0 +1,5 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+MAIN_vidAdcCallBackGroup1|A|();|0|MAIN|1|NONE||||0|0|0|0|Main callback for EVP regulation.|<COMP>_START_SEC_CODE
+MAIN_vidAdcCallBackGroup2|A|();|0|MAIN|1|NONE||||0|0|0|0|Main callback for EVP regulation.|<COMP>_START_SEC_CODE
+MAIN_vidAdcCallBackGroup3|A|();|0|MAIN|1|NONE||||0|0|0|0|Main callback for EVP regulation.|<COMP>_START_SEC_CODE
+MAIN_vidAdcCallBackGroup4|A|();|0|MAIN|1|NONE||||0|0|0|0|Main callback for EVP regulation.|<COMP>_START_SEC_CODE

@@ -1,0 +1,3 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+EVP_vidInit|A|();|0|EVP|1|NONE||||0|0|0|0|Initialize EVP.|<COMP>_START_SEC_CODE
+EVP_bSetPwm|A|(uint8 u8GrpIdx, uint32 u32Prd, const uint16 * pu16Duty)boolean;|0|EVP|1|NONE||||0|0|0|0|Set period and duty cycles of a group.|<COMP>_START_SEC_CODE

@@ -1,0 +1,103 @@
+/**********************************************************************************************************************/
+/*                                                                                                                    */
+/* !Layer           : BSW                                                                                             */
+/*                                                                                                                    */
+/* !Component       : HAL                                                                                             */           
+/* !Description     : IOHAL Configuration                                                                             */
+/*                                                                                                                    */
+/* !File            : IOHAL.STX                                                                                       */
+/*                                                                                                                    */
+/* !Scope           : Public                                                                                          */
+/*                                                                                                                    */
+/* !Target          : Genecode Tool                                                                                   */
+/*                                                                                                                    */
+/* !Vendor          : Valeo                                                                                           */
+/*                                                                                                                    */
+/* Coding language  : OIL                                                                                             */
+/*                                                                                                                    */
+/* COPYRIGHT 2013 VALEO                                                                                               */
+/* all rights reserved                                                                                                */
+/*                                                                                                                    */
+/**********************************************************************************************************************/
+/* Dimension Informations
+ * %PCMS_HEADER_SUBSTITUTION_START:%
+ * The PID has this format: <Product ID>:<Item ID>.<Variant>-<Item Type>;<Revision>
+ * %PID:%
+ * %PCMS_HEADER_SUBSTITUTION_END:%
+**********************************************************************************************************************/
+         
+IOHAL_TYP
+{
+   STRING TYPE_NAME="uint16";
+   STRING TYPE_ABBR="u16";
+};
+
+IOHAL_CFG_RW
+{
+    STRING           MCAL_READ_FUNCTION_NAME;
+    STRING           MCAL_READ_ADDITIONAL_PARAMETERS;
+    IOHAL_TYP_TYPE   RETURN_TYP;
+    STRING           READ_FUNC_HEADER_FILE_DECLARATION;
+    STRING           MCAL_WRITE_FUNCTION_NAME;
+    STRING           MCAL_WRITE_ADDITIONAL_PARAMETERS;
+    IOHAL_TYP_TYPE   PARAM_TYP;
+    STRING           WRITE_FUNC_HEADER_FILE_DECLARATION;
+};
+
+IOHAL_CHANNEL
+{
+   ENUM
+   [
+      INPUT,
+      OUTPUT
+   ] DIRECTION;
+    
+   IOHAL_CFG_RW_TYPE   LINKTO;
+   STRING MCAL_CHANNEL_NAME = "";
+   STRING SIGNAL_TYP = "";
+
+   ENUM
+   [
+      ON
+      {
+         STRING MIN_VALUE  = "";
+         STRING MAX_VALUE  = "";
+      },
+      OFF
+   ] HAL_CLAMPING=OFF;
+
+   ENUM
+   [
+      ON
+      {
+         STRING READ_OFFSET    = "0";
+         STRING READ_FACTOR    = "1";
+         STRING READ_SHIFT     = "0";
+         STRING READ_MIN_IN    = "";
+         STRING READ_MAX_IN    = "";
+         STRING READ_MIN_OUT   = "";
+         STRING READ_MAX_OUT   = "";
+         STRING READ_FUNCTION  = "IOHAL_udtSCALE";
+         STRING WRITE_OFFSET   = "0";
+         STRING WRITE_FACTOR   = "1";
+         STRING WRITE_SHIFT    = "0";
+         STRING WRITE_FUNCTION = "IOHAL_udtSCALE";
+      },
+      OFF
+   ] HAL_SCALING=OFF;
+
+   ENUM
+   [
+      ON
+      {
+	     STRING COEFA = "1";
+		 STRING COEFB = "0";
+		 STRING UNIT  = "-";
+      },
+      OFF
+   ] DISPLAY=OFF;
+};
+
+#include "IOHAL_ADD.STX"
+
+/*--------------------------------------------------- end of file ----------------------------------------------------*/

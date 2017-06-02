@@ -1,0 +1,35 @@
+/******************************************************************************/
+/* !Layer           : SRV                                                     */
+/* !Component       : RSTSRV                                                  */
+/* !Description     :                                                         */
+/*                                                                            */
+/* !File            : RSTSRV_MEMMAP.oil                                       */
+/* !Description     : Mapping section configuration of the RSTSRV component   */
+/*                                                                            */
+/* !Reference       :                                                         */
+/*                                                                            */
+/* Coding language  : OIL                                                     */
+/*                                                                            */
+/* COPYRIGHT VALEO all rights reserved                                        */
+/******************************************************************************/
+/* Dimension Informations
+ * %PCMS_HEADER_SUBSTITUTION_START:%
+ * The PID has this format: <Product ID>:<Item ID>.<Variant>-<Item Type>;<Revision>
+ * %PID:%
+ * %PCMS_HEADER_SUBSTITUTION_END:%
+ ******************************************************************************/
+
+MEMMAP_MSN RSTSRV {
+                     SECTION = SEC_CODE;
+                     SECTION = SEC_VAR_CLEARED_BOOLEAN;
+                     SECTION = SEC_VAR_CLEARED_16BIT;
+                     SECTION = SEC_VAR_CLEARED_32BIT;
+                     SECTION = SEC_VAR_POWER_ON_CLEARED_BOOLEAN;
+                     SECTION = SEC_VAR_POWER_ON_CLEARED_16BIT;
+                     SECTION = SEC_CALIB_16BIT;
+                     SECTION = SEC_CONST_16BIT;
+                  };
+
+
+/*------------------------------- end of file --------------------------------*/
+

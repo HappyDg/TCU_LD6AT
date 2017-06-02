@@ -1,0 +1,884 @@
+<?xml version='1.0'?>
+<datamodel version="3.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/08/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd" >
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="EcuM" type="AR-PACKAGE">
+        <d:lst type="ELEMENTS">
+          <d:chc name="EcuM" type="AR-ELEMENT" value="MODULE-CONFIGURATION">
+            <d:ctr type="MODULE-CONFIGURATION">
+              <a:a name="CATEGORY" value="EcuM"/>
+              <a:a name="DEF" value="ASPath:/TS_TxDxM5I4R0/EcuM"/>
+              <a:a name="MODULE-DESCRIPTION-REF" 
+                   value="ASPath:/BswMd/BSWImpl_EcuM"/>
+              <d:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION" 
+                     value="VariantPostBuild"/>
+              <d:lst name="EcuMConfiguration" type="MAP">
+                <d:ctr name="EcuM_Config_0" type="IDENTIFIABLE">
+                  <d:ctr name="EcuMCommonConfiguration" type="IDENTIFIABLE">
+                    <a:a name="UUID" 
+                         value="DCE:b2b3997e-9e83-645d-b8b1-5c971366104f"/>
+                    <d:var name="EcuMConfigConsistencyHash" type="INTEGER" 
+                           value="100"/>
+                    <d:ref name="EcuMDefaultAppMode" type="REFERENCE" 
+                           value="ASPath:/Os/Os/OSDEFAULTAPPMODE"/>
+                    <d:lst name="EcuMOSResource">
+                      <d:ref type="REFERENCE" value="ASPath:/Os/EcuMOsResource"/>
+                    </d:lst>
+                    <d:ctr name="EcuMDemEventParameterRefs" type="IDENTIFIABLE">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="UUID" 
+                           value="DCE:aed003b1-8f7a-6740-b0f0-f67a624d0369"/>
+                      <d:ref name="ECUM_E_CONFIGURATION_DATA_INCONSISTENT" 
+                             type="REFERENCE" value="">
+                        <a:a name="ENABLE" value="false"/>
+                      </d:ref>
+                      <d:ref name="ECUM_E_RAM_CHECK_FAILED" type="REFERENCE" 
+                             value="">
+                        <a:a name="ENABLE" value="false"/>
+                      </d:ref>
+                      <d:ref name="ECUM_E_ALL_RUN_REQUESTS_KILLED" 
+                             type="REFERENCE" >
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:ref>
+                    </d:ctr>
+                    <d:ctr name="EcuMDefaultShutdownTarget" type="IDENTIFIABLE">
+                      <a:a name="UUID" 
+                           value="DCE:1e7c4e13-edf4-6725-885e-1e94f4ee10ff"/>
+                      <d:var name="EcuMDefaultState" type="ENUMERATION" 
+                             value="EcuMStateSleep"/>
+                      <d:ref name="EcuMDefaultSleepModeRef" type="REFERENCE" 
+                             value="ASPath:/EcuM/EcuM/EcuM_Config_0/EcuMCommonConfiguration/EcuMSleepMode">
+                        <a:a name="ENABLE" value="true"/>
+                      </d:ref>
+                      <d:ref name="EcuMDefaultResetModeRef" type="REFERENCE" >
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:ref>
+                    </d:ctr>
+                    <d:lst name="EcuMSleepMode" type="MAP">
+                      <d:ctr name="EcuMSleepMode" type="IDENTIFIABLE">
+                        <a:a name="UUID" 
+                             value="DCE:11ab292c-f386-6359-b193-9e0441d0ca81"/>
+                        <d:var name="EcuMSleepModeId" type="INTEGER" value="0"/>
+                        <d:var name="EcuMSleepModeSuspend" type="BOOLEAN" 
+                               value="true"/>
+                        <d:ref name="EcuMSleepModeMcuModeRef" type="REFERENCE" 
+                               value="ASPath:/Mcu/Mcu/McuModuleConfiguration_0/McuModeSettingConf_0"/>
+                        <d:lst name="EcuMWakeupSourceMask">
+                          <d:ref type="REFERENCE" 
+                                 value="ASPath:/EcuM/EcuM/EcuM_Config_0/EcuMCommonConfiguration/EcuMWakeupSource1"/>
+                        </d:lst>
+                      </d:ctr>
+                    </d:lst>
+                    <d:lst name="EcuMWakeupSource" type="MAP">
+                      <d:ctr name="ECUM_WKSOURCE_POWER" type="IDENTIFIABLE">
+                        <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                          <ad:ADMIN-DATA>
+                            <ad:SDGS>
+                              <ad:SDG GID="EcuMWakeupSourceId">
+                                <ad:SD GID="status">NOTGENERATED;NONE</ad:SD>
+                              </ad:SDG>
+                              <ad:SDG GID="EcuMWakeupSourcePolling">
+                                <ad:SD GID="status">NOTGENERATED;NONE</ad:SD>
+                              </ad:SDG>
+                              <ad:SDG GID="EcuMResetReasonRef">
+                                <ad:SD GID="status">NOTGENERATED;NONE</ad:SD>
+                              </ad:SDG>
+                            </ad:SDGS>
+                          </ad:ADMIN-DATA>
+                        </a:a>
+                        <a:a name="UUID" 
+                             value="8c99b8fb-e735-4cf1-9e2f-3ed817209814"/>
+                        <d:var name="EcuMValidationTimeout" type="FLOAT" 
+                               value="0.0">
+                          <a:a name="ENABLE" value="false"/>
+                        </d:var>
+                        <d:var name="EcuMWakeupSourceId" type="INTEGER" 
+                               value="0"/>
+                        <d:var name="EcuMWakeupSourcePolling" type="BOOLEAN" 
+                               value="false"/>
+                        <d:ref name="EcuMComMChannelRef" type="REFERENCE" >
+                          <a:a name="ENABLE" value="false"/>
+                        </d:ref>
+                        <d:ref name="EcuMResetReasonRef" type="REFERENCE" 
+                               value="ASPath:/Mcu/Mcu/McuPublishedInformation/MCU_POWER_ON_RESET">
+                          <a:a name="ENABLE" value="true"/>
+                        </d:ref>
+                      </d:ctr>
+                      <d:ctr name="ECUM_WKSOURCE_RESET" type="IDENTIFIABLE">
+                        <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                          <ad:ADMIN-DATA>
+                            <ad:SDGS>
+                              <ad:SDG GID="EcuMWakeupSourceId">
+                                <ad:SD GID="status">NOTGENERATED;NONE</ad:SD>
+                              </ad:SDG>
+                              <ad:SDG GID="EcuMWakeupSourcePolling">
+                                <ad:SD GID="status">NOTGENERATED;NONE</ad:SD>
+                              </ad:SDG>
+                              <ad:SDG GID="EcuMResetReasonRef">
+                                <ad:SD GID="status">NOTGENERATED;NONE</ad:SD>
+                              </ad:SDG>
+                            </ad:SDGS>
+                          </ad:ADMIN-DATA>
+                        </a:a>
+                        <a:a name="UUID" 
+                             value="adc0c495-f214-4361-a977-cdbd9fbe2855"/>
+                        <d:var name="EcuMValidationTimeout" type="FLOAT" 
+                               value="0.0">
+                          <a:a name="ENABLE" value="false"/>
+                        </d:var>
+                        <d:var name="EcuMWakeupSourceId" type="INTEGER" 
+                               value="1"/>
+                        <d:var name="EcuMWakeupSourcePolling" type="BOOLEAN" 
+                               value="false"/>
+                        <d:ref name="EcuMComMChannelRef" type="REFERENCE" >
+                          <a:a name="ENABLE" value="false"/>
+                        </d:ref>
+                        <d:ref name="EcuMResetReasonRef" type="REFERENCE" 
+                               value="ASPath:/Mcu/Mcu/McuPublishedInformation/MCU_SW_RESET">
+                          <a:a name="ENABLE" value="true"/>
+                        </d:ref>
+                      </d:ctr>
+                      <d:ctr name="ECUM_WKSOURCE_INTERNAL_RESET" 
+                             type="IDENTIFIABLE">
+                        <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                          <ad:ADMIN-DATA>
+                            <ad:SDGS>
+                              <ad:SDG GID="EcuMWakeupSourceId">
+                                <ad:SD GID="status">NOTGENERATED;NONE</ad:SD>
+                              </ad:SDG>
+                              <ad:SDG GID="EcuMWakeupSourcePolling">
+                                <ad:SD GID="status">NOTGENERATED;NONE</ad:SD>
+                              </ad:SDG>
+                              <ad:SDG GID="EcuMResetReasonRef">
+                                <ad:SD GID="status">NOTGENERATED;NONE</ad:SD>
+                              </ad:SDG>
+                            </ad:SDGS>
+                          </ad:ADMIN-DATA>
+                        </a:a>
+                        <a:a name="UUID" 
+                             value="dd9ca2ed-3ccd-441a-9d3d-8a17bc2c3bea"/>
+                        <d:var name="EcuMValidationTimeout" type="FLOAT" 
+                               value="0.0">
+                          <a:a name="ENABLE" value="false"/>
+                        </d:var>
+                        <d:var name="EcuMWakeupSourceId" type="INTEGER" 
+                               value="2"/>
+                        <d:var name="EcuMWakeupSourcePolling" type="BOOLEAN" 
+                               value="false"/>
+                        <d:ref name="EcuMComMChannelRef" type="REFERENCE" >
+                          <a:a name="ENABLE" value="false"/>
+                        </d:ref>
+                        <d:ref name="EcuMResetReasonRef" type="REFERENCE" 
+                               value="ASPath:/Mcu/Mcu/McuPublishedInformation/MCU_SW_RESET">
+                          <a:a name="ENABLE" value="true"/>
+                        </d:ref>
+                      </d:ctr>
+                      <d:ctr name="ECUM_WKSOURCE_INTERNAL_WDG" 
+                             type="IDENTIFIABLE">
+                        <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                          <ad:ADMIN-DATA>
+                            <ad:SDGS>
+                              <ad:SDG GID="EcuMWakeupSourceId">
+                                <ad:SD GID="status">NOTGENERATED;NONE</ad:SD>
+                              </ad:SDG>
+                              <ad:SDG GID="EcuMWakeupSourcePolling">
+                                <ad:SD GID="status">NOTGENERATED;NONE</ad:SD>
+                              </ad:SDG>
+                              <ad:SDG GID="EcuMResetReasonRef">
+                                <ad:SD GID="status">NOTGENERATED;NONE</ad:SD>
+                              </ad:SDG>
+                            </ad:SDGS>
+                          </ad:ADMIN-DATA>
+                        </a:a>
+                        <a:a name="UUID" 
+                             value="895fcc17-4dda-4259-bc38-adc98120ceb2"/>
+                        <d:var name="EcuMValidationTimeout" type="FLOAT" 
+                               value="0.0">
+                          <a:a name="ENABLE" value="false"/>
+                        </d:var>
+                        <d:var name="EcuMWakeupSourceId" type="INTEGER" 
+                               value="3"/>
+                        <d:var name="EcuMWakeupSourcePolling" type="BOOLEAN" 
+                               value="false"/>
+                        <d:ref name="EcuMComMChannelRef" type="REFERENCE" >
+                          <a:a name="ENABLE" value="false"/>
+                        </d:ref>
+                        <d:ref name="EcuMResetReasonRef" type="REFERENCE" 
+                               value="ASPath:/Mcu/Mcu/McuPublishedInformation/MCU_SUPPLY_WDOG_RESET">
+                          <a:a name="ENABLE" value="true"/>
+                        </d:ref>
+                      </d:ctr>
+                      <d:ctr name="ECUM_WKSOURCE_EXTERNAL_WDG" 
+                             type="IDENTIFIABLE">
+                        <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                          <ad:ADMIN-DATA>
+                            <ad:SDGS>
+                              <ad:SDG GID="EcuMWakeupSourceId">
+                                <ad:SD GID="status">NOTGENERATED;NONE</ad:SD>
+                              </ad:SDG>
+                              <ad:SDG GID="EcuMWakeupSourcePolling">
+                                <ad:SD GID="status">NOTGENERATED;NONE</ad:SD>
+                              </ad:SDG>
+                              <ad:SDG GID="EcuMResetReasonRef">
+                                <ad:SD GID="status">NOTGENERATED;NONE</ad:SD>
+                              </ad:SDG>
+                            </ad:SDGS>
+                          </ad:ADMIN-DATA>
+                        </a:a>
+                        <a:a name="UUID" 
+                             value="1ce5fc7b-710e-4c03-8595-edbe31af9ecd"/>
+                        <d:var name="EcuMValidationTimeout" type="FLOAT" 
+                               value="0.0">
+                          <a:a name="ENABLE" value="false"/>
+                        </d:var>
+                        <d:var name="EcuMWakeupSourceId" type="INTEGER" 
+                               value="4"/>
+                        <d:var name="EcuMWakeupSourcePolling" type="BOOLEAN" 
+                               value="false"/>
+                        <d:ref name="EcuMComMChannelRef" type="REFERENCE" >
+                          <a:a name="ENABLE" value="false"/>
+                        </d:ref>
+                        <d:ref name="EcuMResetReasonRef" type="REFERENCE" 
+                               value="ASPath:/Mcu/Mcu/McuPublishedInformation/MCU_SUPPLY_WDOG_RESET">
+                          <a:a name="ENABLE" value="true"/>
+                        </d:ref>
+                      </d:ctr>
+                      <d:ctr name="EcuMWakeupSource1" type="IDENTIFIABLE">
+                        <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                          <ad:ADMIN-DATA>
+                            <ad:SDGS>
+                              <ad:SDG GID="EcuMWakeupSourceId">
+                                <ad:SD GID="status">NOTGENERATED;HANDLEID</ad:SD>
+                              </ad:SDG>
+                              <ad:SDG GID="EcuMWakeupSourcePolling">
+                                <ad:SD GID="status">NOTGENERATED;NONE</ad:SD>
+                              </ad:SDG>
+                            </ad:SDGS>
+                          </ad:ADMIN-DATA>
+                        </a:a>
+                        <a:a name="UUID" 
+                             value="b01dd271-17ac-44dd-a5a8-5f5cebc0d004"/>
+                        <d:var name="EcuMWakeupSourceId" type="INTEGER" 
+                               value="5"/>
+                        <d:var name="EcuMWakeupSourcePolling" type="BOOLEAN" 
+                               value="false"/>
+                        <d:var name="EcuMValidationTimeout" type="FLOAT" 
+                               value="0.0">
+                          <a:a name="ENABLE" value="false"/>
+                        </d:var>
+                        <d:ref name="EcuMResetReasonRef" type="REFERENCE" 
+                               value="ASPath:/Mcu/Mcu/McuPublishedInformation/MCU_POWER_ON_RESET">
+                          <a:a name="ENABLE" value="true"/>
+                        </d:ref>
+                        <d:ref name="EcuMComMChannelRef" type="REFERENCE" 
+                               value="ASPath:/ComM/ComM/ComMConfigSet/PropulsionCANhs">
+                          <a:a name="ENABLE" value="false"/>
+                        </d:ref>
+                      </d:ctr>
+                      <d:ctr name="EcuMWakeupSource2" type="IDENTIFIABLE">
+                        <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                          <ad:ADMIN-DATA>
+                            <ad:SDGS>
+                              <ad:SDG GID="EcuMWakeupSourceId">
+                                <ad:SD GID="status">NOTGENERATED;HANDLEID</ad:SD>
+                              </ad:SDG>
+                            </ad:SDGS>
+                          </ad:ADMIN-DATA>
+                        </a:a>
+                        <a:a name="UUID" 
+                             value="8b48243c-b22c-4dbe-9d63-d797e9a60e3d"/>
+                        <d:var name="EcuMWakeupSourceId" type="INTEGER" 
+                               value="6"/>
+                        <d:var name="EcuMWakeupSourcePolling" type="BOOLEAN" 
+                               value="false"/>
+                        <d:var name="EcuMValidationTimeout" type="FLOAT" 
+                               value="0.0">
+                          <a:a name="ENABLE" value="true"/>
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:ref name="EcuMResetReasonRef" type="REFERENCE" 
+                               value="ASPath:/Mcu/Mcu/McuPublishedInformation/MCU_POWER_ON_RESET">
+                          <a:a name="ENABLE" value="true"/>
+                        </d:ref>
+                        <d:ref name="EcuMComMChannelRef" type="REFERENCE" 
+                               value="">
+                          <a:a name="ENABLE" value="false"/>
+                        </d:ref>
+                      </d:ctr>
+                    </d:lst>
+                    <d:ctr name="EcuMDriverInitListZero" type="IDENTIFIABLE">
+                      <a:a name="ENABLE" value="false"/>
+                      <a:a name="UUID" 
+                           value="DCE:dd2092bd-5fea-62a2-9c80-85abe7c8bd4f"/>
+                      <d:lst name="EcuMDriverInitItem" type="MAP">
+                        <d:ctr name="DetInit" type="IDENTIFIABLE">
+                          <a:a name="UUID" 
+                               value="bd327d11-6c44-4b3b-a649-fbd79ca87f4f"/>
+                          <d:var name="EcuMModuleID" type="STRING" value="Det"/>
+                          <d:var name="EcuMModuleService" type="STRING" 
+                                 value="Init"/>
+                          <d:var name="EcuMEnableVendorApiInfix" type="BOOLEAN" 
+                                 value="false">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="EcuMModuleHeaderFile" type="STRING" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                        </d:ctr>
+                        <d:ctr name="DetStart" type="IDENTIFIABLE">
+                          <d:var name="EcuMEnableVendorApiInfix" type="BOOLEAN" 
+                                 value="false">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="EcuMModuleHeaderFile" type="STRING" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="EcuMModuleID" type="STRING" value="Det"/>
+                          <d:var name="EcuMModuleService" type="STRING" 
+                                 value="Start"/>
+                        </d:ctr>
+                      </d:lst>
+                    </d:ctr>
+                    <d:ctr name="EcuMDriverRestartList" type="IDENTIFIABLE">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="UUID" 
+                           value="DCE:cc4938b6-e35f-6b57-b307-1d7b47ac4de7"/>
+                      <d:lst name="EcuMDriverInitItem" type="MAP">
+                        <d:ctr name="Mcu" type="IDENTIFIABLE">
+                          <a:a name="UUID" 
+                               value="DCE:13e51715-844c-67f6-ba12-c1f80563c564"/>
+                          <d:var name="EcuMModuleID" type="STRING" value="Mcu"/>
+                          <d:var name="EcuMModuleService" type="STRING" 
+                                 value="Init"/>
+                          <d:var name="EcuMEnableVendorApiInfix" type="BOOLEAN" 
+                                 value="false">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="EcuMModuleHeaderFile" type="STRING" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="EcuMModuleInitConfigStr" type="STRING" 
+                                 value="&amp;Mcu_ConfigRoot[0]">
+                            <a:a name="ENABLE" value="true"/>
+                          </d:var>
+                        </d:ctr>
+                        <d:ctr name="Port" type="IDENTIFIABLE">
+                          <a:a name="UUID" 
+                               value="DCE:3058ba8f-0774-6e32-8a63-ccf870f57a12"/>
+                          <d:var name="EcuMModuleID" type="STRING" value="Port"/>
+                          <d:var name="EcuMModuleService" type="STRING" 
+                                 value="Init"/>
+                          <d:var name="EcuMEnableVendorApiInfix" type="BOOLEAN" 
+                                 value="false">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="EcuMModuleHeaderFile" type="STRING" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="EcuMModuleInitConfigStr" type="STRING" 
+                                 value="&amp;Port_ConfigRoot[0]">
+                            <a:a name="ENABLE" value="true"/>
+                          </d:var>
+                        </d:ctr>
+                      </d:lst>
+                    </d:ctr>
+                    <d:ctr name="EcuMDriverInitListOne" type="IDENTIFIABLE">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="UUID" 
+                           value="DCE:13e0d10d-f5c0-68c9-9f00-87ceda59f251"/>
+                      <d:lst name="EcuMDriverInitItem" type="MAP">
+                        <d:ctr name="Dem_PreInit" type="IDENTIFIABLE">
+                          <a:a name="IMPORTER_INFO" value="@CALC"/>
+                          <d:var name="EcuMEnableVendorApiInfix" type="BOOLEAN" 
+                                 value="false">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="EcuMModuleHeaderFile" type="STRING" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="EcuMModuleID" type="STRING" value="Dem">
+                            <a:a name="IMPORTER_INFO" value="@CALC"/>
+                          </d:var>
+                          <d:var name="EcuMModuleInitConfigStr" type="STRING" >
+                            <a:a name="ENABLE" value="false"/>
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="EcuMModuleService" type="STRING" 
+                                 value="PreInit">
+                            <a:a name="IMPORTER_INFO" value="@CALC"/>
+                          </d:var>
+                        </d:ctr>
+                        <d:ctr name="Mcu" type="IDENTIFIABLE">
+                          <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                            <ad:ADMIN-DATA>
+                              <ad:SDGS>
+                                <ad:SDG GID="EcuMModuleInitPriority">
+                                  <ad:SD GID="status">NOTGENERATED;NONE</ad:SD>
+                                </ad:SDG>
+                              </ad:SDGS>
+                            </ad:ADMIN-DATA>
+                          </a:a>
+                          <a:a name="UUID" 
+                               value="DCE:173d7311-6f23-6581-97fa-f80e80967c0d"/>
+                          <d:var name="EcuMModuleID" type="STRING" value="Mcu"/>
+                          <d:var name="EcuMModuleService" type="STRING" 
+                                 value="Init"/>
+                          <d:var name="EcuMEnableVendorApiInfix" type="BOOLEAN" 
+                                 value="false">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="EcuMModuleHeaderFile" type="STRING" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="EcuMModuleInitConfigStr" type="STRING" 
+                                 value="&amp;Mcu_ConfigRoot[0]">
+                            <a:a name="ENABLE" value="true"/>
+                          </d:var>
+                        </d:ctr>
+                        <d:ctr name="Port" type="IDENTIFIABLE">
+                          <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                            <ad:ADMIN-DATA>
+                              <ad:SDGS>
+                                <ad:SDG GID="EcuMModuleInitPriority">
+                                  <ad:SD GID="status">NOTGENERATED;NONE</ad:SD>
+                                </ad:SDG>
+                              </ad:SDGS>
+                            </ad:ADMIN-DATA>
+                          </a:a>
+                          <a:a name="UUID" 
+                               value="DCE:76711caf-ec13-6ec6-95dd-efc26d7c2718"/>
+                          <d:var name="EcuMModuleID" type="STRING" value="Port"/>
+                          <d:var name="EcuMModuleService" type="STRING" 
+                                 value="Init"/>
+                          <d:var name="EcuMEnableVendorApiInfix" type="BOOLEAN" 
+                                 value="false">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="EcuMModuleHeaderFile" type="STRING" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="EcuMModuleInitConfigStr" type="STRING" 
+                                 value="&amp;Port_ConfigRoot[0]">
+                            <a:a name="ENABLE" value="true"/>
+                          </d:var>
+                        </d:ctr>
+                        <d:ctr name="Dio" type="IDENTIFIABLE">
+                          <d:var name="EcuMEnableVendorApiInfix" type="BOOLEAN" 
+                                 value="false">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="EcuMModuleHeaderFile" type="STRING" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="EcuMModuleID" type="STRING" value="Dio"/>
+                          <d:var name="EcuMModuleInitConfigStr" type="STRING" 
+                                 value="&amp;Dio_ConfigRoot[0]">
+                            <a:a name="ENABLE" value="true"/>
+                          </d:var>
+                          <d:var name="EcuMModuleService" type="STRING" 
+                                 value="Init"/>
+                        </d:ctr>
+                        <d:ctr name="Can" type="IDENTIFIABLE">
+                          <d:var name="EcuMEnableVendorApiInfix" type="BOOLEAN" 
+                                 value="false">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="EcuMModuleHeaderFile" type="STRING" 
+                                 value=""/>
+                          <d:var name="EcuMModuleID" type="STRING" 
+                                 value="Can_17_MCanP"/>
+                          <d:var name="EcuMModuleInitConfigStr" type="STRING" 
+                                 value="&amp;Can_17_MCanP_ConfigRoot[0]">
+                            <a:a name="ENABLE" value="true"/>
+                          </d:var>
+                          <d:var name="EcuMModuleService" type="STRING" 
+                                 value="Init"/>
+                        </d:ctr>
+                        <d:ctr name="Icu" type="IDENTIFIABLE">
+                          <a:a name="UUID" 
+                               value="9cda67a1-76f3-48f8-bf24-c883af912fb9"/>
+                          <d:var name="EcuMModuleID" type="STRING" 
+                                 value="Icu_17_GtmCcu6"/>
+                          <d:var name="EcuMModuleService" type="STRING" 
+                                 value="Init"/>
+                          <d:var name="EcuMEnableVendorApiInfix" type="BOOLEAN" 
+                                 value="false">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="EcuMModuleHeaderFile" type="STRING" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="EcuMModuleInitConfigStr" type="STRING" 
+                                 value="&amp;Icu_ConfigRoot[0]">
+                            <a:a name="ENABLE" value="true"/>
+                          </d:var>
+                        </d:ctr>
+                        <d:ctr name="Pwm" type="IDENTIFIABLE">
+                          <d:var name="EcuMEnableVendorApiInfix" type="BOOLEAN" 
+                                 value="false">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="EcuMModuleHeaderFile" type="STRING" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="EcuMModuleID" type="STRING" 
+                                 value="Pwm_17_Gtm"/>
+                          <d:var name="EcuMModuleInitConfigStr" type="STRING" 
+                                 value="&amp;Pwm_ConfigRoot[0]">
+                            <a:a name="ENABLE" value="true"/>
+                          </d:var>
+                          <d:var name="EcuMModuleService" type="STRING" 
+                                 value="Init"/>
+                        </d:ctr>
+                        <d:ctr name="Spi" type="IDENTIFIABLE">
+                          <a:a name="UUID" 
+                               value="5e756b31-5142-47ee-9ad0-9c5e0f413e38"/>
+                          <d:var name="EcuMModuleID" type="STRING" value="Spi"/>
+                          <d:var name="EcuMModuleService" type="STRING" 
+                                 value="Init"/>
+                          <d:var name="EcuMEnableVendorApiInfix" type="BOOLEAN" 
+                                 value="false">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="EcuMModuleHeaderFile" type="STRING" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="EcuMModuleInitConfigStr" type="STRING" 
+                                 value="&amp;Spi_ConfigRoot[0]">
+                            <a:a name="ENABLE" value="true"/>
+                          </d:var>
+                        </d:ctr>
+                        <d:ctr name="Wdg" type="IDENTIFIABLE">
+                          <d:var name="EcuMEnableVendorApiInfix" type="BOOLEAN" 
+                                 value="false">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="EcuMModuleHeaderFile" type="STRING" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="EcuMModuleID" type="STRING" value="Wdg"/>
+                          <d:var name="EcuMModuleInitConfigStr" type="STRING" 
+                                 value="&amp;Wdg_ConfigRoot[0]">
+                            <a:a name="ENABLE" value="true"/>
+                          </d:var>
+                          <d:var name="EcuMModuleService" type="STRING" 
+                                 value="Init"/>
+                        </d:ctr>
+                        <d:ctr name="Gpt" type="IDENTIFIABLE">
+                          <d:var name="EcuMEnableVendorApiInfix" type="BOOLEAN" 
+                                 value="false">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="EcuMModuleHeaderFile" type="STRING" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="EcuMModuleID" type="STRING" value="Gpt"/>
+                          <d:var name="EcuMModuleInitConfigStr" type="STRING" 
+                                 value="&amp;Gpt_ConfigRoot[0]">
+                            <a:a name="ENABLE" value="true"/>
+                          </d:var>
+                          <d:var name="EcuMModuleService" type="STRING" 
+                                 value="Init"/>
+                        </d:ctr>
+                        <d:ctr name="BSW" type="IDENTIFIABLE">
+                          <d:var name="EcuMEnableVendorApiInfix" type="BOOLEAN" 
+                                 value="false">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="EcuMModuleHeaderFile" type="STRING" 
+                                 value="bswsrv"/>
+                          <d:var name="EcuMModuleID" type="STRING" value="BSW"/>
+                          <d:var name="EcuMModuleInitConfigStr" type="STRING" >
+                            <a:a name="ENABLE" value="false"/>
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="EcuMModuleService" type="STRING" 
+                                 value="vidInit"/>
+                        </d:ctr>
+                      </d:lst>
+                    </d:ctr>
+                  </d:ctr>
+                  <d:ctr name="EcuMFlexConfiguration" type="IDENTIFIABLE">
+                    <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                      <ad:ADMIN-DATA>
+                        <ad:SDGS>
+                          <ad:SDG GID="EcuMFlexModuleConfigurationRef">
+                            <ad:SD GID="status">NOTGENERATED;NONE</ad:SD>
+                          </ad:SDG>
+                        </ad:SDGS>
+                      </ad:ADMIN-DATA>
+                    </a:a>
+                    <a:a name="UUID" 
+                         value="DCE:f502a026-05fa-689b-975a-952a95fe1519"/>
+                    <d:lst name="EcuMFlexModuleConfigurationRef">
+                      <d:ref type="REFERENCE" 
+                             value="ASPath:/Mcu/Mcu/McuModuleConfiguration_0"/>
+                      <d:ref type="REFERENCE" 
+                             value="ASPath:/Port/Port/PortConfigSet_0"/>
+                      <d:ref type="REFERENCE" 
+                             value="ASPath:/Dio/Dio/DioConfig_0"/>
+                      <d:ref type="REFERENCE" 
+                             value="ASPath:/Can/Can/CanConfigSet"/>
+                      <d:ref type="REFERENCE" 
+                             value="ASPath:/Icu/Icu/IcuConfigSet_0"/>
+                      <d:ref type="REFERENCE" 
+                             value="ASPath:/Spi/Spi/Spi_ConfigData"/>
+                      <d:ref type="REFERENCE" 
+                             value="ASPath:/Pwm/Pwm/PwmChannelConfigSet_0"/>
+                      <d:ref type="REFERENCE" 
+                             value="ASPath:/Wdg/Wdg/WdgSettingsConfig_0"/>
+                      <d:ref type="REFERENCE" 
+                             value="ASPath:/Gpt/Gpt/GptChannelConfigSet_0"/>
+                      <d:ref type="REFERENCE" 
+                             value="ASPath:/Dem/Dem/DemConfigSet_0">
+                        <a:a name="IMPORTER_INFO" value="@CALC"/>
+                      </d:ref>
+                    </d:lst>
+                    <d:ref name="EcuMNormalMcuModeRef" type="REFERENCE" 
+                           value="ASPath:/Mcu/Mcu/McuModuleConfiguration_0/McuModeSettingConf_0"/>
+                    <d:lst name="EcuMAlarmClock" type="MAP">
+                      <d:ctr name="EcuMAlarmClock" type="IDENTIFIABLE">
+                        <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                          <ad:ADMIN-DATA>
+                            <ad:SDGS>
+                              <ad:SDG GID="EcuMAlarmClockId">
+                                <ad:SD GID="status">GENERATED;HANDLEID</ad:SD>
+                              </ad:SDG>
+                            </ad:SDGS>
+                          </ad:ADMIN-DATA>
+                        </a:a>
+                        <a:a name="UUID" 
+                             value="DCE:9ae02ede-c3aa-65e9-afdd-2ae5c293688b"/>
+                        <d:var name="EcuMAlarmClockId" type="INTEGER" value="0"/>
+                        <d:var name="EcuMAlarmClockTimeOut" type="FLOAT" 
+                               value="3.0"/>
+                        <d:ref name="EcuMAlarmClockUser" type="REFERENCE" 
+                               value="ASPath:/EcuM/EcuM/EcuMConfiguration/EcuMFlexConfiguration/EcuMFlexUserConfig"/>
+                      </d:ctr>
+                    </d:lst>
+                    <d:lst name="EcuMFlexUserConfig" type="MAP">
+                      <d:ctr name="EcuMFlexUserConfig" type="IDENTIFIABLE">
+                        <a:a name="UUID" 
+                             value="DCE:0221f86b-0290-66e6-b1e1-ce68558132a6"/>
+                        <d:var name="EcuMFlexUser" type="INTEGER" value="0"/>
+                        <d:ref name="EcuMFlexEcucPartitionRef" type="REFERENCE" >
+                          <a:a name="ENABLE" value="false"/>
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:ref>
+                      </d:ctr>
+                    </d:lst>
+                    <d:lst name="EcuMResetMode" type="MAP">
+                      <d:ctr name="EcuMResetMode" type="IDENTIFIABLE">
+                        <a:a name="UUID" 
+                             value="DCE:c290d9b1-f2f1-6e1f-ad66-6a282e410f9f"/>
+                        <d:var name="EcuMResetModeId" type="INTEGER" value="0"/>
+                      </d:ctr>
+                    </d:lst>
+                    <d:lst name="EcuMShutdownCause" type="MAP">
+                      <d:ctr name="EcuMShutdownCause" type="IDENTIFIABLE">
+                        <a:a name="UUID" 
+                             value="DCE:c925aec1-9846-6783-9085-f51ca59872ba"/>
+                        <d:var name="EcuMShutdownCauseId" type="INTEGER" 
+                               value="0"/>
+                      </d:ctr>
+                      <d:ctr name="ECUM_CAUSE_ECU_STATE" type="IDENTIFIABLE">
+                        <d:var name="EcuMShutdownCauseId" type="INTEGER" 
+                               value="1">
+                          <a:a name="IMPORTER_INFO">
+                            <a:v>@DEF</a:v>
+                            <a:v>@CALC</a:v>
+                          </a:a>
+                        </d:var>
+                      </d:ctr>
+                      <d:ctr name="ECUM_CAUSE_WDGM" type="IDENTIFIABLE">
+                        <d:var name="EcuMShutdownCauseId" type="INTEGER" 
+                               value="2">
+                          <a:a name="IMPORTER_INFO">
+                            <a:v>@DEF</a:v>
+                            <a:v>@CALC</a:v>
+                          </a:a>
+                        </d:var>
+                      </d:ctr>
+                      <d:ctr name="ECUM_CAUSE_DCM" type="IDENTIFIABLE">
+                        <d:var name="EcuMShutdownCauseId" type="INTEGER" 
+                               value="3">
+                          <a:a name="IMPORTER_INFO">
+                            <a:v>@DEF</a:v>
+                            <a:v>@CALC</a:v>
+                          </a:a>
+                        </d:var>
+                      </d:ctr>
+                    </d:lst>
+                    <d:lst name="EcuMShutdownTarget" type="MAP">
+                      <d:ctr name="EcuMShutdownTarget" type="IDENTIFIABLE">
+                        <a:a name="UUID" 
+                             value="DCE:fc4ec24a-f174-69f7-9267-348e99dad18f"/>
+                        <d:var name="EcuMShutdownTargetId" type="INTEGER" 
+                               value="0"/>
+                      </d:ctr>
+                    </d:lst>
+                    <d:ctr name="EcuMSetClockAllowedUsers" type="IDENTIFIABLE">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="UUID" 
+                           value="DCE:1038f53f-3c2a-6e1e-ba55-81aabbfdd681"/>
+                      <d:lst name="EcuMSetClockAllowedUserRef">
+                        <d:ref type="REFERENCE" 
+                               value="ASPath:/EcuM/EcuM/EcuMConfiguration/EcuMFlexConfiguration/EcuMFlexUserConfig"/>
+                      </d:lst>
+                    </d:ctr>
+                    <d:ctr name="EcuMGoDownAllowedUsers" type="IDENTIFIABLE">
+                      <a:a name="ENABLE" value="true"/>
+                      <a:a name="UUID" 
+                           value="a92982b1-900d-4501-98c6-215eacc1c0e5"/>
+                      <d:lst name="EcuMGoDownAllowedUserRef">
+                        <d:ref type="REFERENCE" 
+                               value="ASPath:/EcuM/EcuM/EcuMConfiguration/EcuMFlexConfiguration/EcuMFlexUserConfig"/>
+                      </d:lst>
+                    </d:ctr>
+                  </d:ctr>
+                  <d:ctr name="EcuMFixedConfiguration" type="IDENTIFIABLE">
+                    <a:a name="ENABLE" value="false"/>
+                    <d:var name="EcuMRunMinimumDuration" type="FLOAT" 
+                           value="0.0">
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                    <d:lst name="EcuMFixedUserConfig" type="MAP"/>
+                  </d:ctr>
+                </d:ctr>
+              </d:lst>
+              <d:ctr name="EcuMGeneral" type="IDENTIFIABLE">
+                <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                  <ad:ADMIN-DATA>
+                    <ad:SDGS>
+                      <ad:SDG GID="EcuMMainFunctionPeriod">
+                        <ad:SD GID="status">NOTGENERATED;NONE</ad:SD>
+                      </ad:SDG>
+                    </ad:SDGS>
+                  </ad:ADMIN-DATA>
+                </a:a>
+                <d:var name="EcuMDevErrorDetect" type="BOOLEAN" value="false"/>
+                <d:var name="EcuMIncludeDem" type="BOOLEAN" value="false"/>
+                <d:var name="EcuMIncludeDet" type="BOOLEAN" value="false"/>
+                <d:var name="EcuMMainFunctionPeriod" type="FLOAT" value="0.02"/>
+                <d:var name="EcuMVersionInfoApi" type="BOOLEAN" value="true"/>
+                <d:var name="EcuMProvideShutdownHook" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="EcuMRteUsage" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="EcuMUseBoottargetSec" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:ctr name="EcuMServiceAPI" type="IDENTIFIABLE">
+                  <d:var name="EcuMEnableASR32ServiceAPI" type="BOOLEAN" 
+                         value="false">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="EcuMEnableASR40ServiceAPI" type="BOOLEAN" 
+                         value="false">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                  <d:var name="EcuMDefaultASRServiceAPI" type="ENUMERATION" 
+                         value="AUTOSAR_40">
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:var>
+                </d:ctr>
+              </d:ctr>
+              <d:ctr name="EcuMFlexGeneral" type="IDENTIFIABLE">
+                <d:var name="EcuMAlarmClockPresent" type="BOOLEAN" value="true"/>
+                <d:var name="EcuMResetLoopDetection" type="BOOLEAN" 
+                       value="false"/>
+                <d:var name="EcuMEnableDefBehaviour" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="ENABLE" value="true"/>
+                </d:var>
+                <d:ref name="EcuMAlarmWakeupSource" type="REFERENCE" >
+                  <a:a name="ENABLE" value="false"/>
+                </d:ref>
+                <d:var name="EcuMStoredShutdownOperations" type="INTEGER" 
+                       value="1">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+              </d:ctr>
+              <d:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+                <d:var name="ArMajorVersion" type="INTEGER" value="3"/>
+                <d:var name="ArMinorVersion" type="INTEGER" value="0"/>
+                <d:var name="ArPatchVersion" type="INTEGER" value="0"/>
+                <d:var name="SwMajorVersion" type="INTEGER" value="5"/>
+                <d:var name="SwMinorVersion" type="INTEGER" value="4"/>
+                <d:var name="SwPatchVersion" type="INTEGER" value="17"/>
+                <d:var name="ModuleId" type="INTEGER" value="10">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="VendorId" type="INTEGER" value="1">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="VendorApiInfix" type="STRING" value="">
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="Release" type="STRING" value="">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+              </d:ctr>
+              <d:ctr name="ReportToDem" type="IDENTIFIABLE">
+                <d:var name="EcuMRamChkFailedReportToDem" type="ENUMERATION" 
+                       value="DISABLE"/>
+                <d:var name="EcuMRamChkFailedReportToDemDetErrorId" 
+                       type="INTEGER" value="30">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="EcuMCfgDataInconsistentReportToDem" 
+                       type="ENUMERATION" value="DISABLE">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="EcuMCfgDataInconsistentReportToDemDetErrorId" 
+                       type="INTEGER" value="32">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+              </d:ctr>
+              <d:ctr name="EcuMDefensiveProgramming" type="IDENTIFIABLE">
+                <d:var name="EcuMDefProgEnabled" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="EcuMPrecondAssertEnabled" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="EcuMPostcondAssertEnabled" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="EcuMStaticAssertEnabled" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="EcuMUnreachAssertEnabled" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="EcuMInvariantAssertEnabled" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+              </d:ctr>
+            </d:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>

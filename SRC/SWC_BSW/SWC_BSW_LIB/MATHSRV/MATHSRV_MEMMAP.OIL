@@ -1,0 +1,27 @@
+/******************************************************************************/
+/* !Layer           : SRV                                                     */
+/* !Component       : MATHSRV                                                 */
+/* !Description     : MATH SERVICES                                           */
+/*                                                                            */
+/* !File            : MATHSRV_MEMMAP.OIL                                      */
+/* !Description     : Mapping section configuration of the MATHSRV component  */
+/*                                                                            */
+/* !Reference       : PTS_DOC_5405229                                         */
+/*                                                                            */
+/* Coding language  : OIL                                                     */
+/*                                                                            */
+/* COPYRIGHT VALEO all rights reserved                                        */
+/******************************************************************************/
+/* Dimension Informations
+ * %PCMS_HEADER_SUBSTITUTION_START:%
+ * The PID has this format: <Product ID>:<Item ID>.<Variant>-<Item Type>;<Revision>
+ * %PID:%
+ * %PCMS_HEADER_SUBSTITUTION_END:%
+ ******************************************************************************/
+
+MEMMAP_MSN MATHSRV { 
+                      SECTION = CODE;
+                   };
+
+/*------------------------------- end of file --------------------------------*/
+

@@ -1,0 +1,972 @@
+/**********************************************************************************************************************/
+/*                                                                                                                    */
+/* !Layer           : BSW                                                                                             */
+/*                                                                                                                    */
+/* !Component       : HAL                                                                                             */
+/* !Description     : IOHAL Configuration                                                                             */
+/*                                                                                                                    */
+/* !File            : IOHAL.OIL                                                                                       */
+/*                                                                                                                    */
+/* !Scope           : Public                                                                                          */
+/*                                                                                                                    */
+/* !Target          : Genecode Tool                                                                                   */
+/*                                                                                                                    */
+/* !Vendor          : Valeo                                                                                           */
+/*                                                                                                                    */
+/* Coding language  : OIL                                                                                             */
+/*                                                                                                                    */
+/* COPYRIGHT 2015 VALEO                                                                                               */
+/* all rights reserved                                                                                                */
+/*                                                                                                                    */
+/**********************************************************************************************************************/
+/* Dimension Informations
+ * %PCMS_HEADER_SUBSTITUTION_START:%
+ * The PID has this format: <Product ID>:<Item ID>.<Variant>-<Item Type>;<Revision>
+ * %PID:%
+ * %PCMS_HEADER_SUBSTITUTION_END:%
+**********************************************************************************************************************/
+
+/** README *************************************************************************************************************
+ **       To add a channel to IOHAL, the first step is to define the IOHAL_CFG_RW and IOHAL_TYP objects              ***
+ **          that are needed for the new channel.                                                                    ***
+ **       Then, create the IOHAL_CHANNEL object.                                                                     ***
+ **       If you need scaling, you will have to set HAL_SCALING to ON,                                               ***
+ **       and implement the Scale function for this channel in the IOHAL_Cfg.c file.                                 ***
+ **********************************************************************************************************************/
+
+/*******************************************************TYPES**********************************************************/
+/* IOHAL_TYP are used to define types of the signals handled by IOHAL in IOHAL_CFG_RW objects *************************/
+/**********************************************************************************************************************/
+
+IOHAL_TYP VOID_T
+{
+   TYPE_NAME = "void";
+   TYPE_ABBR = "vid";
+};
+
+IOHAL_TYP BOOLEAN_T
+{
+   TYPE_NAME = "boolean";
+   TYPE_ABBR = "b";
+};
+
+IOHAL_TYP UINT8_T
+{
+   TYPE_NAME = "uint8";
+   TYPE_ABBR = "u8";
+};
+
+IOHAL_TYP UINT16_T
+{
+   TYPE_NAME = "uint16";
+   TYPE_ABBR = "u16";
+};
+
+IOHAL_TYP UINT32_T
+{
+   TYPE_NAME = "uint32";
+   TYPE_ABBR = "u32";
+};
+
+IOHAL_TYP SINT8_T
+{
+   TYPE_NAME = "sint8";
+   TYPE_ABBR = "s8";
+};
+
+IOHAL_TYP SINT16_T
+{
+   TYPE_NAME = "sint16";
+   TYPE_ABBR = "s16";
+};
+
+IOHAL_TYP SINT32_T
+{
+   TYPE_NAME = "sint32";
+   TYPE_ABBR = "s32";
+};
+
+IOHAL_TYP FLOAT32_T
+{
+   TYPE_NAME = "float32";
+   TYPE_ABBR = "f32";
+};
+
+IOHAL_TYP STUB_T;
+
+/******************************************************MODULES*********************************************************/
+/* IOHAL_CFG_RW defines the interface with the SWC_BSW module *********************************************************/
+/* RETURN_TYP and PARAM_TYP are links to IOHAL_TYP objects ************************************************************/
+/**********************************************************************************************************************/
+
+IOHAL_CFG_RW STUB
+{
+   MCAL_READ_FUNCTION_NAME            = "IOHAL_udtStubRead";
+   MCAL_READ_ADDITIONAL_PARAMETERS    = "";
+   RETURN_TYP                         = STUB_T;
+   READ_FUNC_HEADER_FILE_DECLARATION  = "IOHAL.h";
+   MCAL_WRITE_FUNCTION_NAME           = "IOHAL_vidStubWrite";
+   MCAL_WRITE_ADDITIONAL_PARAMETERS   = "";
+   PARAM_TYP                          = STUB_T;
+   WRITE_FUNC_HEADER_FILE_DECLARATION = "IOHAL.h";
+};
+
+IOHAL_CFG_RW DIO
+{
+   MCAL_READ_FUNCTION_NAME            = "Dio_ReadChannel";
+   MCAL_READ_ADDITIONAL_PARAMETERS    = "";
+   RETURN_TYP                         = BOOLEAN_T;
+   READ_FUNC_HEADER_FILE_DECLARATION  = "Dio.h";
+   MCAL_WRITE_FUNCTION_NAME           = "Dio_WriteChannel";
+   MCAL_WRITE_ADDITIONAL_PARAMETERS   = "";
+   PARAM_TYP                          = BOOLEAN_T;
+   WRITE_FUNC_HEADER_FILE_DECLARATION = "Dio.h";
+};
+
+
+IOHAL_CFG_RW PWD_DUTY
+{
+   MCAL_READ_FUNCTION_NAME            = "PWD_ReadDutyChannel";
+   MCAL_READ_ADDITIONAL_PARAMETERS    = "";
+   RETURN_TYP                         = UINT32_T;
+   READ_FUNC_HEADER_FILE_DECLARATION  = "PWD.h";
+   MCAL_WRITE_FUNCTION_NAME           = "";
+   MCAL_WRITE_ADDITIONAL_PARAMETERS   = "";
+   PARAM_TYP                          = UINT32_T;
+   WRITE_FUNC_HEADER_FILE_DECLARATION = "PWD.h";
+};
+
+IOHAL_CFG_RW PWD_FRQ
+{
+   MCAL_READ_FUNCTION_NAME            = "PWD_ReadFreqChannel";
+   MCAL_READ_ADDITIONAL_PARAMETERS    = "";
+   RETURN_TYP                         = UINT32_T;
+   READ_FUNC_HEADER_FILE_DECLARATION  = "PWD.h";
+   MCAL_WRITE_FUNCTION_NAME           = "";
+   MCAL_WRITE_ADDITIONAL_PARAMETERS   = "";
+   PARAM_TYP                          = UINT32_T;
+   WRITE_FUNC_HEADER_FILE_DECLARATION = "PWD.h";
+};
+
+IOHAL_CFG_RW PWD_TON
+{
+   MCAL_READ_FUNCTION_NAME            = "PWD_ReadTonChannel";
+   MCAL_READ_ADDITIONAL_PARAMETERS    = "";
+   RETURN_TYP                         = UINT32_T;
+   READ_FUNC_HEADER_FILE_DECLARATION  = "PWD.h";
+   MCAL_WRITE_FUNCTION_NAME           = "";
+   MCAL_WRITE_ADDITIONAL_PARAMETERS   = "";
+   PARAM_TYP                          = UINT32_T;
+   WRITE_FUNC_HEADER_FILE_DECLARATION = "PWD.h";
+};
+
+IOHAL_CFG_RW ADC
+{
+   MCAL_READ_FUNCTION_NAME            = "VADC_u16READ_VALUE";
+   MCAL_READ_ADDITIONAL_PARAMETERS    = "";
+   RETURN_TYP                         = UINT16_T;
+   READ_FUNC_HEADER_FILE_DECLARATION  = "VADC.h";
+   MCAL_WRITE_FUNCTION_NAME           = "";
+   MCAL_WRITE_ADDITIONAL_PARAMETERS   = "";
+   PARAM_TYP                          = UINT16_T;
+   WRITE_FUNC_HEADER_FILE_DECLARATION = "VADC.h";
+};
+
+IOHAL_CFG_RW PWM_PRD
+{
+   MCAL_READ_FUNCTION_NAME            = "";
+   MCAL_READ_ADDITIONAL_PARAMETERS    = "";
+   RETURN_TYP                         = UINT16_T;
+   READ_FUNC_HEADER_FILE_DECLARATION  = "Pwm_17_Gtm.h";
+   MCAL_WRITE_FUNCTION_NAME           = "Pwm_17_Gtm_Stub";
+   MCAL_WRITE_ADDITIONAL_PARAMETERS   = "";
+   PARAM_TYP                          = UINT16_T;
+   WRITE_FUNC_HEADER_FILE_DECLARATION = "Pwm_17_Gtm.h";
+};
+
+IOHAL_CFG_RW PWM_DUTY
+{
+   MCAL_READ_FUNCTION_NAME            = "";
+   MCAL_READ_ADDITIONAL_PARAMETERS    = "";
+   RETURN_TYP                         = UINT16_T;
+   READ_FUNC_HEADER_FILE_DECLARATION  = "Pwm_17_Gtm.h";
+   MCAL_WRITE_FUNCTION_NAME           = "Pwm_17_Gtm_Stub";
+   MCAL_WRITE_ADDITIONAL_PARAMETERS   = "";
+   PARAM_TYP                          = UINT16_T;
+   WRITE_FUNC_HEADER_FILE_DECLARATION = "Pwm_17_Gtm.h";
+};
+
+IOHAL_CFG_RW PWM_ENA_PRD_DUTY_M_TLE8242_CLK
+{
+   MCAL_READ_FUNCTION_NAME            = "";
+   MCAL_READ_ADDITIONAL_PARAMETERS    = "";
+   RETURN_TYP                         = BOOLEAN_T;
+   READ_FUNC_HEADER_FILE_DECLARATION  = "Pwm_17_Gtm.h";
+   MCAL_WRITE_FUNCTION_NAME           = "Pwm_17_Gtm_SetEnablePeriodAndDuty";
+   MCAL_WRITE_ADDITIONAL_PARAMETERS   = ",IOHAL_u16VarWrite_PWM_FRQ_M_TLE8242_CLK,IOHAL_u16VarWrite_PWM_DUTY_M_TLE8242_CLK";
+   PARAM_TYP                          = BOOLEAN_T;
+   WRITE_FUNC_HEADER_FILE_DECLARATION = "Pwm_17_Gtm.h";
+};
+IOHAL_CFG_RW SCU
+{
+   MCAL_READ_FUNCTION_NAME            = "SCU_Read";
+   MCAL_READ_ADDITIONAL_PARAMETERS    = "";
+   RETURN_TYP                         = UINT16_T;
+   READ_FUNC_HEADER_FILE_DECLARATION  = "SCU.h";
+   MCAL_WRITE_FUNCTION_NAME           = "";
+   MCAL_WRITE_ADDITIONAL_PARAMETERS   = "";
+   PARAM_TYP                          = UINT16_T;
+   WRITE_FUNC_HEADER_FILE_DECLARATION = "SCU.h";
+};
+
+IOHAL_CFG_RW FRT
+{
+   MCAL_READ_FUNCTION_NAME            = "FRT_u32Read_VALUE";
+   MCAL_READ_ADDITIONAL_PARAMETERS    = "";
+   RETURN_TYP                         = UINT32_T;
+   READ_FUNC_HEADER_FILE_DECLARATION  = "IOHAL_Cfg.h";
+   MCAL_WRITE_FUNCTION_NAME           = "";
+   MCAL_WRITE_ADDITIONAL_PARAMETERS   = "";
+   PARAM_TYP                          = UINT32_T;
+   WRITE_FUNC_HEADER_FILE_DECLARATION = "IOHAL_Cfg.h";
+};
+
+/*----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+/* STUB                                                                       */
+/*----------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
+/* DIO                                                                        */
+/*----------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------*/
+/* Discrete Input                                                             */
+/*----------------------------------------------------------------------------*/
+
+IOHAL_CHANNEL M_MANUAL_DOWN                                       
+{ 
+   DIRECTION = INPUT; 
+   LINKTO = DIO;           
+   MCAL_CHANNEL_NAME = "DioConf_DioChannel_M_MANUAL_DOWN";
+   HAL_SCALING       = OFF;
+   DISPLAY           = ON;
+};
+
+IOHAL_CHANNEL M_FOOT_BRAKE                                       
+{ 
+   DIRECTION = INPUT; 
+   LINKTO = DIO;           
+   MCAL_CHANNEL_NAME = "DioConf_DioChannel_M_FOOT_BRAKE";
+   HAL_SCALING       = OFF;
+   DISPLAY           = ON;   
+};
+
+IOHAL_CHANNEL M_SNOW_MODE                            
+{ 
+   DIRECTION = INPUT; 
+   LINKTO = DIO;           
+   MCAL_CHANNEL_NAME = "DioConf_DioChannel_M_SNOW_MODE"; 
+   HAL_SCALING       = OFF;
+   DISPLAY           = ON;
+};
+
+
+IOHAL_CHANNEL M_SPORT_MODE               
+{ 
+   DIRECTION = INPUT; 
+   LINKTO = DIO;           
+   MCAL_CHANNEL_NAME = "DioConf_DioChannel_M_SPORT_MODE";
+   HAL_SCALING       = OFF;
+   DISPLAY           = ON;   
+};
+
+IOHAL_CHANNEL M_HAND_BRAKE                                       
+{ 
+   DIRECTION = INPUT; 
+   LINKTO = DIO;           
+   MCAL_CHANNEL_NAME = "DioConf_DioChannel_M_HAND_BRAKE";
+   HAL_SCALING       = OFF;
+   DISPLAY           = ON;   
+};
+
+IOHAL_CHANNEL M_RESERVED_SW_1                                        
+{ 
+   DIRECTION = INPUT; 
+   LINKTO = DIO;           
+   MCAL_CHANNEL_NAME = "DioConf_DioChannel_M_RESERVED_SW_1";
+   HAL_SCALING       = OFF;
+   DISPLAY           = ON;   
+};
+
+IOHAL_CHANNEL M_RESERVED_SW_2                                        
+{ 
+   DIRECTION = INPUT; 
+   LINKTO = DIO;           
+   MCAL_CHANNEL_NAME = "DioConf_DioChannel_M_RESERVED_SW_2";
+   HAL_SCALING       = OFF;
+   DISPLAY           = ON;   
+};
+
+IOHAL_CHANNEL M_RESERVED_SW_3                                        
+{ 
+   DIRECTION = INPUT; 
+   LINKTO = DIO;           
+   MCAL_CHANNEL_NAME = "DioConf_DioChannel_M_RESERVED_SW_3";
+   HAL_SCALING       = OFF;
+   DISPLAY           = ON;   
+};
+
+IOHAL_CHANNEL M_RESERVED_SW_4                                        
+{ 
+   DIRECTION = INPUT; 
+   LINKTO = DIO;           
+   MCAL_CHANNEL_NAME = "DioConf_DioChannel_M_RESERVED_SW_4";
+   HAL_SCALING       = OFF;
+   DISPLAY           = ON;   
+};
+
+IOHAL_CHANNEL M_REV_LAMP_REL_DIAG                                       
+{ 
+   DIRECTION = INPUT; 
+   LINKTO = DIO;           
+   MCAL_CHANNEL_NAME = "DioConf_DioChannel_M_REV_LAMP_REL_DIAG";
+   HAL_SCALING       = OFF;
+   DISPLAY           = ON;   
+};
+
+IOHAL_CHANNEL M_STARTER_REL_DIAG                                        
+{ 
+   DIRECTION = INPUT; 
+   LINKTO = DIO;           
+   MCAL_CHANNEL_NAME = "DioConf_DioChannel_M_STARTER_REL_DIAG";
+   HAL_SCALING       = OFF;
+   DISPLAY           = ON;   
+};
+
+IOHAL_CHANNEL M_IGN_INPUT                                      
+{ 
+   DIRECTION = INPUT; 
+   LINKTO = DIO;           
+   MCAL_CHANNEL_NAME = "DioConf_DioChannel_M_IGN_INPUT";
+   HAL_SCALING       = OFF;
+   DISPLAY           = ON;   
+};
+
+IOHAL_CHANNEL M_SUPPLY_SAFE_STATE                                        
+{ 
+   DIRECTION = INPUT; 
+   LINKTO = DIO;           
+   MCAL_CHANNEL_NAME = "DioConf_DioChannel_M_SUPPLY_SAFE_STATE";
+   HAL_SCALING       = OFF;
+   DISPLAY           = ON;   
+};
+
+IOHAL_CHANNEL M_SUBROM_R                                        
+{ 
+   DIRECTION = INPUT; 
+   LINKTO = DIO;           
+   MCAL_CHANNEL_NAME = "DioConf_DioChannel_M_SUBROM_R";
+   HAL_SCALING       = OFF;
+   DISPLAY           = ON;   
+};
+
+IOHAL_CHANNEL M_TLE8242_FAULT                                        
+{ 
+   DIRECTION = INPUT; 
+   LINKTO = DIO;           
+   MCAL_CHANNEL_NAME = "DioConf_DioChannel_M_TLE8242_FAULT";
+   HAL_SCALING       = OFF;
+   DISPLAY           = ON;   
+};
+
+IOHAL_CHANNEL M_MANUAL_UP                                        
+{ 
+   DIRECTION = INPUT; 
+   LINKTO = DIO;           
+   MCAL_CHANNEL_NAME = "DioConf_DioChannel_M_MANUAL_UP";
+   HAL_SCALING       = OFF;
+   DISPLAY           = ON;   
+};
+
+IOHAL_CHANNEL M_MANUAL_MODE                                        
+{ 
+   DIRECTION = INPUT; 
+   LINKTO = DIO;           
+   MCAL_CHANNEL_NAME = "DioConf_DioChannel_M_MANUAL_MODE";
+   HAL_SCALING       = OFF;
+   DISPLAY           = ON;   
+};
+
+IOHAL_CHANNEL M_SHIFT_LOCK_DIAG                                        
+{ 
+   DIRECTION = INPUT; 
+   LINKTO = DIO;           
+   MCAL_CHANNEL_NAME = "DioConf_DioChannel_M_SHIFT_LOCK_DIAG";
+   HAL_SCALING       = OFF;
+   DISPLAY           = ON;   
+};
+
+IOHAL_CHANNEL M_KEY_LOCK_DIAG                                        
+{ 
+   DIRECTION = INPUT; 
+   LINKTO = DIO;           
+   MCAL_CHANNEL_NAME = "DioConf_DioChannel_M_KEY_LOCK_DIAG";
+   HAL_SCALING       = OFF;
+   DISPLAY           = ON;   
+};
+
+/*----------------------------------------------------------------------------*/
+/* Discrete Output                                                            */
+/*----------------------------------------------------------------------------*/
+
+
+IOHAL_CHANNEL M_SOL_HS_DEN_1         
+{ 
+   DIRECTION = OUTPUT;  
+   LINKTO = DIO;         
+   MCAL_CHANNEL_NAME = "DioConf_DioChannel_M_SOL_HS_DEN_1";
+   HAL_SCALING       = OFF;
+   DISPLAY           = ON;   
+};
+
+IOHAL_CHANNEL M_SOL_HS_CMD_1                              
+{ 
+   DIRECTION = OUTPUT;  
+   LINKTO = DIO;         
+   MCAL_CHANNEL_NAME = "DioConf_DioChannel_M_SOL_HS_CMD_1";
+   HAL_SCALING       = OFF;
+   DISPLAY           = ON;   
+};
+
+IOHAL_CHANNEL M_KEY_LOCK_CMD                           
+{ 
+   DIRECTION = OUTPUT;  
+   LINKTO = DIO;         
+   MCAL_CHANNEL_NAME = "DioConf_DioChannel_M_KEY_LOCK_CMD";
+   HAL_SCALING       = OFF;
+   DISPLAY           = ON;   
+};
+
+IOHAL_CHANNEL M_SHIFT_LOCK_CMD                                
+{ 
+   DIRECTION = OUTPUT;  
+   LINKTO = DIO;         
+   MCAL_CHANNEL_NAME = "DioConf_DioChannel_M_SHIFT_LOCK_CMD";
+   HAL_SCALING       = OFF;
+   DISPLAY           = ON;   
+};
+
+IOHAL_CHANNEL M_SOL_HS_DEN_2                             
+{ 
+   DIRECTION = OUTPUT;
+   LINKTO = DIO;         
+   MCAL_CHANNEL_NAME = "DioConf_DioChannel_M_SOL_HS_DEN_2";
+   HAL_SCALING       = OFF;
+   DISPLAY           = ON;   
+};
+
+IOHAL_CHANNEL M_SOL_HS_CMD_2                              
+{ 
+   DIRECTION = OUTPUT;  
+   LINKTO = DIO;         
+   MCAL_CHANNEL_NAME = "DioConf_DioChannel_M_SOL_HS_CMD_2";
+   HAL_SCALING       = OFF;
+   DISPLAY           = ON;   
+};
+
+IOHAL_CHANNEL M_REV_LAMP_REL_CMD                               
+{ 
+   DIRECTION = OUTPUT;  
+   LINKTO = DIO;         
+   MCAL_CHANNEL_NAME = "DioConf_DioChannel_M_REV_LAMP_REL_CMD";
+   HAL_SCALING       = OFF;
+   DISPLAY           = ON;   
+};
+
+IOHAL_CHANNEL M_STARTER_REL_CMD                                
+{ 
+   DIRECTION = OUTPUT;  
+   LINKTO = DIO;         
+   MCAL_CHANNEL_NAME = "DioConf_DioChannel_M_STARTER_REL_CMD";
+   HAL_SCALING       = OFF;
+   DISPLAY           = ON;   
+};
+
+IOHAL_CHANNEL M_SBC_WAK                               
+{ 
+   DIRECTION = OUTPUT;  
+   LINKTO = DIO;         
+   MCAL_CHANNEL_NAME = "DioConf_DioChannel_M_SBC_WAK";
+   HAL_SCALING       = OFF;
+   DISPLAY           = ON;   
+};
+
+IOHAL_CHANNEL M_SUPPLY_WDI                             
+{ 
+   DIRECTION = OUTPUT;   
+   LINKTO = DIO;         
+   MCAL_CHANNEL_NAME = "DioConf_DioChannel_M_SUPPLY_WDI"; 
+   HAL_SCALING       = OFF; 
+   DISPLAY           = ON;    
+}; 
+
+ IOHAL_CHANNEL M_SUPPLY_ERROR                               
+{  
+   DIRECTION = OUTPUT;   
+   LINKTO = DIO;         
+   MCAL_CHANNEL_NAME = "DioConf_DioChannel_M_SUPPLY_ERROR"; 
+   HAL_SCALING       = OFF; 
+   DISPLAY           = ON;   
+ }; 
+
+IOHAL_CHANNEL M_SUBROM_W                               
+{ 
+   DIRECTION = OUTPUT;  
+   LINKTO = DIO;         
+   MCAL_CHANNEL_NAME = "DioConf_DioChannel_M_SUBROM_W";
+   HAL_SCALING       = OFF;
+   DISPLAY           = ON;   
+};
+
+IOHAL_CHANNEL M_SUBROM_CS                               
+{ 
+   DIRECTION = OUTPUT;  
+   LINKTO = DIO;         
+   MCAL_CHANNEL_NAME = "DioConf_DioChannel_M_SUBROM_CS";
+   HAL_SCALING       = OFF;
+   DISPLAY           = ON;   
+};
+
+IOHAL_CHANNEL M_SUBROM_CLK                               
+{ 
+   DIRECTION = OUTPUT;  
+   LINKTO = DIO;         
+   MCAL_CHANNEL_NAME = "DioConf_DioChannel_M_SUBROM_CLK";
+   HAL_SCALING       = OFF;
+   DISPLAY           = ON;   
+};
+
+IOHAL_CHANNEL M_TLE8242_ENA                               
+{ 
+   DIRECTION = OUTPUT;  
+   LINKTO = DIO;         
+   MCAL_CHANNEL_NAME = "DioConf_DioChannel_M_TLE8242_ENA";
+   HAL_SCALING       = OFF;
+   DISPLAY           = ON;   
+};
+
+IOHAL_CHANNEL M_TLE8242_PHASE_SYNC                               
+{ 
+   DIRECTION = OUTPUT;  
+   LINKTO = DIO;         
+   MCAL_CHANNEL_NAME = "DioConf_DioChannel_M_TLE8242_PHASE_SYNC";
+   HAL_SCALING       = OFF;
+   DISPLAY           = ON;   
+};
+/*----------------------------------------------------------------------------*/
+/* Discrete Output TLE6220                                                    */
+/*----------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------*/
+/* Analog Input                                                               */
+/*----------------------------------------------------------------------------*/
+
+IOHAL_CHANNEL AN_DIAG_SOL_SW_2 
+{ 
+   DIRECTION = INPUT; 
+   LINKTO = ADC; 
+   MCAL_CHANNEL_NAME = "AN_DIAG_SOL_SW_2"; 
+   SIGNAL_TYP="FLOAT32_T"; 
+   DISPLAY = ON{COEFA = "5/4095"; COEFB = "0"; UNIT = "V";};
+   HAL_SCALING = ON{READ_FACTOR = "5/1023";}; 
+};
+
+IOHAL_CHANNEL AN_DIAG_SOL_SW_1                                  
+{ 
+   DIRECTION = INPUT;  
+   LINKTO = ADC;          
+   MCAL_CHANNEL_NAME = "AN_DIAG_SOL_SW_1";                                               
+   SIGNAL_TYP="UINT16_T"; 
+   DISPLAY = ON{COEFA = "5/4095"; COEFB = "0"; UNIT  = "V";}; 
+};
+
+IOHAL_CHANNEL AN_TOSS                         
+{ 
+   DIRECTION = INPUT;  
+   LINKTO = ADC;          
+   MCAL_CHANNEL_NAME = "AN_TOSS";                                        
+   SIGNAL_TYP="UINT16_T"; 
+   DISPLAY = ON{COEFA = "5/4095"; COEFB = "0"; UNIT  = "V";};
+};
+IOHAL_CHANNEL AN_C4_SPD_SNS                                 
+{ 
+   DIRECTION = INPUT;  
+   LINKTO = ADC;          
+   MCAL_CHANNEL_NAME = "AN_C4_SPD_SNS";                                                 
+   SIGNAL_TYP="UINT16_T"; 
+   DISPLAY = ON{COEFA = "5/4095"; COEFB = "0"; UNIT  = "V";};
+};
+
+IOHAL_CHANNEL AN_RESERVED_TEMP_1                             
+{ 
+   DIRECTION = INPUT;  
+   LINKTO = ADC;          
+   MCAL_CHANNEL_NAME = "AN_RESERVED_TEMP_1";                                        
+   SIGNAL_TYP="UINT16_T"; 
+   DISPLAY = ON{COEFA = "5/4095"; COEFB = "0"; UNIT  = "V";};
+};
+
+IOHAL_CHANNEL AN_PRI_OIL_TEMP                              
+{ 
+   DIRECTION = INPUT;  
+   LINKTO = ADC;          
+   MCAL_CHANNEL_NAME = "AN_PRI_OIL_TEMP";                                                 
+   SIGNAL_TYP="UINT16_T"; 
+   DISPLAY = ON{COEFA = "5/4095"; COEFB = "0"; UNIT  = "V";}; 
+};
+
+IOHAL_CHANNEL AN_TMP_PCB                                 
+{ 
+   DIRECTION = INPUT;  
+   LINKTO = ADC;          
+   MCAL_CHANNEL_NAME = "AN_TMP_PCB";                                        
+   SIGNAL_TYP="UINT16_T"; 
+   DISPLAY = ON{COEFA = "5/4095"; COEFB = "0"; UNIT  = "V";}; 
+};
+
+IOHAL_CHANNEL AN_G4_SPD_SNS                                 
+{ 
+   DIRECTION = INPUT;  
+   LINKTO = ADC;          
+   MCAL_CHANNEL_NAME = "AN_G4_SPD_SNS";                                                 
+   SIGNAL_TYP="UINT16_T"; 
+   DISPLAY = ON{COEFA = "5/4095"; COEFB = "0"; UNIT  = "V";}; 
+};
+
+IOHAL_CHANNEL AN_P5V_INTERNAL                             
+{ 
+   DIRECTION = INPUT;  
+   LINKTO = ADC;          
+   MCAL_CHANNEL_NAME = "AN_P5V_INTERNAL";                                        
+   SIGNAL_TYP="UINT16_T"; 
+   DISPLAY = ON{COEFA = "5/4095"; COEFB = "0"; UNIT  = "V";}; 
+};
+
+IOHAL_CHANNEL AN_P5V_SNS_SUP_1                             
+{ 
+   DIRECTION = INPUT;  
+   LINKTO = ADC;          
+   MCAL_CHANNEL_NAME = "AN_P5V_SNS_SUP_1";                                                 
+   SIGNAL_TYP="UINT16_T"; 
+   DISPLAY = ON{COEFA = "5/4095"; COEFB = "0"; UNIT  = "V";}; 
+};
+
+IOHAL_CHANNEL AN_VCC_3V3_SUP                              
+{ 
+   DIRECTION = INPUT;  
+   LINKTO = ADC;          
+   MCAL_CHANNEL_NAME = "AN_VCC_3V3_SUP";                                        
+   SIGNAL_TYP="UINT16_T"; 
+   DISPLAY = ON{COEFA = "5/4095"; COEFB = "0"; UNIT  = "V";}; 
+};
+
+IOHAL_CHANNEL AN_P9V_SNS_SUP                               
+{ 
+   DIRECTION = INPUT;  
+   LINKTO = ADC;          
+   MCAL_CHANNEL_NAME = "AN_P9V_SNS_SUP";                                                 
+   SIGNAL_TYP="UINT16_T"; 
+   DISPLAY = ON{COEFA = "5/4095"; COEFB = "0"; UNIT  = "V";}; 
+};
+
+IOHAL_CHANNEL AN_VBAT_P_SW_SUP                              
+{ 
+   DIRECTION = INPUT;  
+   LINKTO = ADC;          
+   MCAL_CHANNEL_NAME = "AN_VBAT_P_SW_SUP";                                        
+   SIGNAL_TYP="UINT16_T"; 
+   DISPLAY = ON{COEFA = "5/4095"; COEFB = "0"; UNIT  = "V";}; 
+};
+
+IOHAL_CHANNEL AN_T30_BATT                              
+{ 
+   DIRECTION = INPUT;  
+   LINKTO = ADC;          
+   MCAL_CHANNEL_NAME = "AN_T30_BATT";                                        
+   SIGNAL_TYP="UINT16_T"; 
+   DISPLAY = ON{COEFA = "5/4095"; COEFB = "0"; UNIT  = "V";}; 
+};
+
+IOHAL_CHANNEL AN_T15_IGN                                
+{ 
+   DIRECTION = INPUT;  
+   LINKTO = ADC;          
+   MCAL_CHANNEL_NAME = "AN_T15_IGN";                                                 
+   SIGNAL_TYP="UINT16_T"; 
+   DISPLAY = ON{COEFA = "5/4095"; COEFB = "0"; UNIT  = "V";}; 
+};
+
+IOHAL_CHANNEL AN_RESERVED_2                                
+{ 
+   DIRECTION = INPUT;  
+   LINKTO = ADC;          
+   MCAL_CHANNEL_NAME = "AN_RESERVED_2";                                                 
+   SIGNAL_TYP="UINT16_T"; 
+   DISPLAY = ON{COEFA = "5/4095"; COEFB = "0"; UNIT  = "V";}; 
+};
+
+IOHAL_CHANNEL AN_RESERVED_1                                
+{ 
+   DIRECTION = INPUT;  
+   LINKTO = ADC;          
+   MCAL_CHANNEL_NAME = "AN_RESERVED_1";                                                 
+   SIGNAL_TYP="UINT16_T"; 
+   DISPLAY = ON{COEFA = "5/4095"; COEFB = "0"; UNIT  = "V";}; 
+};
+
+IOHAL_CHANNEL AN_PRI_OIL_PRES                                
+{ 
+   DIRECTION = INPUT;  
+   LINKTO = ADC;          
+   MCAL_CHANNEL_NAME = "AN_PRI_OIL_PRES";                                                 
+   SIGNAL_TYP="UINT16_T"; 
+   DISPLAY = ON{COEFA = "5/4095"; COEFB = "0"; UNIT  = "V";}; 
+};
+
+
+
+/*----------------------------------------------------------------------------*/
+/* Analog Input Temp                                                          */
+/*----------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------*/
+/* PWM FRQ                                                                    */
+/*----------------------------------------------------------------------------*/
+IOHAL_CHANNEL PWM_FRQ_M_TLE8242_CLK                     
+{ 
+   DIRECTION = OUTPUT;  
+   LINKTO = PWM_PRD;     
+   MCAL_CHANNEL_NAME = "Pwm_17_GtmConf_PwmChannel_M_TLE8242_CLK";                
+   SIGNAL_TYP="FLOAT32_T"; 
+   DISPLAY = ON;  
+   HAL_CLAMPING = ON{MIN_VALUE="0.01f";}; 
+   HAL_SCALING = ON{WRITE_FUNCTION="IOHAL_fSCAL_PRD_kHz";}; 
+};
+
+
+IOHAL_CHANNEL PWM_FRQ_ACCUMULATOR_SOLENOID_DRIVE              
+{ 
+   DIRECTION = OUTPUT;  
+   LINKTO = PWM_PRD;     
+   MCAL_CHANNEL_NAME = "Pwm_17_GtmConf_PwmChannel_ACCUMULATOR_SOLENOID_DRIVE";         
+   SIGNAL_TYP="FLOAT32_T"; 
+   DISPLAY = ON;  
+   HAL_CLAMPING = ON{MIN_VALUE="0.01f";}; 
+   HAL_SCALING = ON{WRITE_FUNCTION="IOHAL_fSCAL_PRD_kHz";}; 
+};
+
+/*----------------------------------------------------------------------------*/
+/* PWM DC                                                                     */
+/*----------------------------------------------------------------------------*/
+IOHAL_CHANNEL PWM_DUTY_DCDC_ISETD                   
+{ 
+   DIRECTION = OUTPUT;  
+   LINKTO = PWM_DUTY;    
+   MCAL_CHANNEL_NAME = "Pwm_17_GtmConf_PwmChannel_DCDC_ISETD";                
+   SIGNAL_TYP="SINT16_T"; 
+   DISPLAY = ON; 
+   HAL_CLAMPING = ON{MIN_VALUE="0";}; 
+   HAL_SCALING = ON{WRITE_SHIFT = "0";}; 
+};
+
+IOHAL_CHANNEL PWM_DUTY_DCDC_SYNC                    
+{ 
+   DIRECTION = OUTPUT;  
+   LINKTO = PWM_DUTY;    
+   MCAL_CHANNEL_NAME = "Pwm_17_GtmConf_PwmChannel_DCDC_SYNC";                 
+   SIGNAL_TYP="SINT16_T"; 
+   DISPLAY = ON; 
+   HAL_CLAMPING = ON{MIN_VALUE="0";}; 
+   HAL_SCALING = ON{WRITE_SHIFT = "0";}; 
+};
+
+
+IOHAL_CHANNEL PWM_DUTY_ACCUMULATOR_SOLENOID_DRIVE             
+{ 
+   DIRECTION = OUTPUT;  
+   LINKTO = PWM_DUTY;    
+   MCAL_CHANNEL_NAME = "Pwm_17_GtmConf_PwmChannel_ACCUMULATOR_SOLENOID_DRIVE";          
+   SIGNAL_TYP="SINT16_T"; 
+   DISPLAY = ON; 
+   HAL_CLAMPING = ON{MIN_VALUE="0";}; 
+   HAL_SCALING = ON{WRITE_SHIFT = "1";}; 
+};
+
+IOHAL_CHANNEL PWM_DUTY_M_TLE8242_CLK                  
+{ 
+   DIRECTION = OUTPUT;  
+   LINKTO = PWM_DUTY;    
+   MCAL_CHANNEL_NAME = "Pwm_17_GtmConf_PwmChannel_M_TLE8242_CLK";                
+   SIGNAL_TYP="SINT16_T"; 
+   DISPLAY = ON; 
+   HAL_CLAMPING = ON{MIN_VALUE="0";}; 
+   HAL_SCALING = ON{WRITE_SHIFT = "0";}; 
+};
+/*----------------------------------------------------------------------------*/
+/* PWM ENA                                                                    */
+/*----------------------------------------------------------------------------*/
+
+IOHAL_CHANNEL PWM_ENA_M_TLE8242_CLK              
+{ 
+   DIRECTION = OUTPUT;  
+   LINKTO = PWM_ENA_PRD_DUTY_M_TLE8242_CLK;         
+   MCAL_CHANNEL_NAME = "Pwm_17_GtmConf_PwmChannel_M_TLE8242_CLK";
+   HAL_SCALING       = OFF;
+   DISPLAY           = ON;   
+};
+/*----------------------------------------------------------------------------*/
+/* PWM DUTY EVP                                                               */
+/*----------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------*/
+/* PWM FRQ EVP                                                                */
+/*----------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------*/
+/* PWD FRQ                                                                    */
+/*----------------------------------------------------------------------------*/    
+
+IOHAL_CHANNEL M_GEAR_POS_CHECK_PWM_FRQ      
+{ 
+   DIRECTION = INPUT;  
+   LINKTO = PWD_FRQ; 
+   SIGNAL_TYP="UINT32_T"; 
+   HAL_CLAMPING = ON{MIN_VALUE="1"; MAX_VALUE="200000";}; 
+   MCAL_CHANNEL_NAME = "M_GEAR_POS_CHECK";               
+   DISPLAY = ON; 
+};
+
+IOHAL_CHANNEL M_GEAR_POS_PWM_FRQ      
+{ 
+   DIRECTION = INPUT;  
+   LINKTO = PWD_FRQ; 
+   SIGNAL_TYP="UINT32_T"; 
+   HAL_CLAMPING = ON{MIN_VALUE="1"; MAX_VALUE="200000";}; 
+   MCAL_CHANNEL_NAME = "M_GEAR_POS";               
+   DISPLAY = ON; 
+};
+
+IOHAL_CHANNEL M_TOSS_PWM_FRQ      
+{ 
+   DIRECTION = INPUT;  
+   LINKTO = PWD_FRQ; 
+   SIGNAL_TYP="UINT32_T"; 
+   HAL_CLAMPING = ON{MIN_VALUE="1"; MAX_VALUE="200000";}; 
+   MCAL_CHANNEL_NAME = "M_TOSS";               
+   DISPLAY = ON; 
+};
+
+IOHAL_CHANNEL M_G4_SPD_SNS_PWM_FRQ      
+{ 
+   DIRECTION = INPUT;  
+   LINKTO = PWD_FRQ; 
+   SIGNAL_TYP="UINT32_T"; 
+   HAL_CLAMPING = ON{MIN_VALUE="1"; MAX_VALUE="200000";}; 
+   MCAL_CHANNEL_NAME = "M_G4_SPD_SNS";               
+   DISPLAY = ON; 
+};
+
+IOHAL_CHANNEL M_C4_SPD_SNS_PWM_FRQ      
+{ 
+   DIRECTION = INPUT;  
+   LINKTO = PWD_FRQ; 
+   SIGNAL_TYP="UINT32_T"; 
+   HAL_CLAMPING = ON{MIN_VALUE="1"; MAX_VALUE="200000";}; 
+   MCAL_CHANNEL_NAME = "M_C4_SPD_SNS";               
+   DISPLAY = ON; 
+};
+
+
+/*----------------------------------------------------------------------------*/
+/* PWD DUTYCYC                                                                */
+/*----------------------------------------------------------------------------*/
+
+IOHAL_CHANNEL M_GEAR_POS_CHECK_PWM_DUTYCYC  
+{ 
+   DIRECTION = INPUT;  
+   LINKTO = PWD_DUTY; 
+   SIGNAL_TYP="UINT32_T"; 
+   HAL_CLAMPING = ON{MAX_VALUE="16384";}; 
+   HAL_SCALING = ON{ READ_SHIFT = "-1";}; 
+   MCAL_CHANNEL_NAME = "M_GEAR_POS_CHECK";              
+   DISPLAY = ON; 
+};
+
+IOHAL_CHANNEL M_GEAR_POS_PWM_DUTYCYC  
+{ 
+   DIRECTION = INPUT;  
+   LINKTO = PWD_DUTY; 
+   SIGNAL_TYP="UINT32_T"; 
+   HAL_CLAMPING = ON{MAX_VALUE="16384";}; 
+   HAL_SCALING = ON{ READ_SHIFT = "-1";}; 
+   MCAL_CHANNEL_NAME = "M_GEAR_POS";              
+   DISPLAY = ON; 
+};
+
+IOHAL_CHANNEL M_TOSS_PWM_DUTYCYC  
+{ 
+   DIRECTION = INPUT;  
+   LINKTO = PWD_DUTY; 
+   SIGNAL_TYP="UINT32_T"; 
+   HAL_CLAMPING = ON{MAX_VALUE="16384";}; 
+   HAL_SCALING = ON{ READ_SHIFT = "-1";}; 
+   MCAL_CHANNEL_NAME = "M_TOSS";              
+   DISPLAY = ON; 
+};
+
+IOHAL_CHANNEL M_G4_SPD_SNS_PWM_DUTYCYC  
+{ 
+   DIRECTION = INPUT;  
+   LINKTO = PWD_DUTY; 
+   SIGNAL_TYP="UINT32_T"; 
+   HAL_CLAMPING = ON{MAX_VALUE="16384";}; 
+   HAL_SCALING = ON{ READ_SHIFT = "-1";}; 
+   MCAL_CHANNEL_NAME = "M_G4_SPD_SNS";              
+   DISPLAY = ON; 
+};
+
+IOHAL_CHANNEL M_C4_SPD_SNS_PWM_DUTYCYC  
+{ 
+   DIRECTION = INPUT;  
+   LINKTO = PWD_DUTY; 
+   SIGNAL_TYP="UINT32_T"; 
+   HAL_CLAMPING = ON{MAX_VALUE="16384";}; 
+   HAL_SCALING = ON{ READ_SHIFT = "-1";}; 
+   MCAL_CHANNEL_NAME = "M_C4_SPD_SNS";              
+   DISPLAY = ON; 
+};
+
+
+/*----------------------------------------------------------------------------*/
+/* PWD TON                                                                    */
+/*----------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------*/
+/* FRT                                                                    */
+/*----------------------------------------------------------------------------*/
+IOHAL_CHANNEL TM1msGlbCnt                                        { DIRECTION = INPUT; LINKTO = FRT;           MCAL_CHANNEL_NAME = "TM1msGlbCnt";    };
+IOHAL_CHANNEL TM5msGlbCnt                                        { DIRECTION = INPUT; LINKTO = FRT;           MCAL_CHANNEL_NAME = "TM5msGlbCnt";    };
+IOHAL_CHANNEL TM10msGlbCnt                                       { DIRECTION = INPUT; LINKTO = FRT;           MCAL_CHANNEL_NAME = "TM10msGlbCnt";    };
+IOHAL_CHANNEL TM30msGlbCnt                                       { DIRECTION = INPUT; LINKTO = FRT;           MCAL_CHANNEL_NAME = "TM30msGlbCnt";    };
+IOHAL_CHANNEL TM100msGlbCnt                                      { DIRECTION = INPUT; LINKTO = FRT;           MCAL_CHANNEL_NAME = "TM100msGlbCnt";    };
+IOHAL_CHANNEL TM500msGlbCnt                                      { DIRECTION = INPUT; LINKTO = FRT;           MCAL_CHANNEL_NAME = "TM500msGlbCnt";    };
+IOHAL_CHANNEL TM1sGlbCnt                                         { DIRECTION = INPUT; LINKTO = FRT;           MCAL_CHANNEL_NAME = "TM1sGlbCnt";    };
+
+/*------------------------------ end of file ---------------------------------*/
+
+

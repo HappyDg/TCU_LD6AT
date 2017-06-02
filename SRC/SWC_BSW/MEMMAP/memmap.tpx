@@ -1,0 +1,42 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : NONE                                                    */
+/*                                                                            */
+/* !Component       : MEMMAP_CFG                                              */
+/* !Description     : MEMMAP Configuration                                    */
+/*                                                                            */
+/* !File            : MEMMAP.TPX                                              */
+/*                                                                            */
+/* !Scope           : Public                                                  */
+/*                                                                            */
+/* !Target          : Genecode Tool                                           */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : C                                                       */
+/*                                                                            */
+/* COPYRIGHT 2005 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   I:/PROJETS/LIBEMB/LOG/DIVERS/MEMMAP/LOG/memmap.tpv           $*/
+/* $Revision::   1.2      $$Author::   lvoilmy        $$Date::   10 Oct 2012 $*/
+/******************************************************************************/
+
+
+    FILE = TPL
+    {
+        PURPOSE = "MemMap_H";
+        READ =    "MEMMAP_H.tpl";
+        WRITE =   "MemMap.H";
+    };
+	
+	FILE = TPL
+	{
+		PURPOSE = "MSN_MemMap_H";
+		READ    = "MSN_MEMMAP_H.TPL";
+		WRITE   = "MSN_MemMap_H.res";
+	};
+
+/*------------------------------- end of file --------------------------------*/

@@ -1,0 +1,6 @@
+Nom_donnée|Type|Nom_module|Public|Nb_lignes|Nb_colonnes|Label_père|Offset|Masque_accès|Affichage|Unité|Fonction_transfert_ades|Coefficient_a|Coefficient_b|Groupe|Groupe_1|Groupe_2|Alias_1|Alias_2|Genre|Variable_indice_ligne|Variable_indice_colonne|Fonction_transfert_ligne|Fonction_transfert_colonne|Table_breakpoint_ligne|Table_breakpoint_colonne|Référence_spécification|Recuperable|Modifiable|Fournisseur|Responsable|Valeurs|Visualisable_ADES|Donnée_a_supprimer|Validation|Commentaires|Volatile|MinDecValue|MaxDecValue|MinPhysValue|MaxPhysValue|Def_Eval|MemSec
+TST_DET_u16ModuleId|uint16|TSTVAR|1|0|0|TST_DET_u16ModuleId|0|0|Déci|-||||TST|TST||TST_DET_u16ModuleId||1||||||||0|1||||1|0|0||0|||||0
+TST_DET_u16NbOfRecordToAdd|uint16|TSTVAR|1|0|0|TST_DET_u16NbOfRecordToAdd|0|0|Déci|-||||TST|TST||TST_DET_u16NbOfRecordToAdd||1||||||||0|1||||1|0|0||0|||||0
+TST_DET_u8ApiId|uint8|TSTVAR|1|0|0|TST_DET_u8ApiId|0|0|Déci|-||||TST|TST||TST_DET_u8ApiId||1||||||||0|1||||1|0|0||0|||||0
+TST_DET_u8ErrorId|uint8|TSTVAR|1|0|0|TST_DET_u8ErrorId|0|0|Déci|-||||TST|TST||TST_DET_u8ErrorId||1||||||||0|1||||1|0|0||0|||||0
+TST_DET_u8InstanceId|uint8|TSTVAR|1|0|0|TST_DET_u8InstanceId|0|0|Déci|-||||TST|TST||TST_DET_u8InstanceId||1||||||||0|1||||1|0|0||0|||||0

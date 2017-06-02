@@ -1,0 +1,41 @@
+/**********************************************************************************************************************/
+/*                                                                                                                    */
+/* !Layer          : MCAL                                                                                             */
+/*                                                                                                                    */
+/* !Component      : PWM_17_GTM                                                                                       */
+/* !Description    : Mapping section configuration of the module                                                      */
+/*                                                                                                                    */
+/* !File           : PWM_17_GTM_MEMMAP.OIL                                                                            */
+/*                                                                                                                    */
+/* !Scope          : Public                                                                                           */
+/*                                                                                                                    */
+/* !Target         : Genecode Tool                                                                                    */
+/*                                                                                                                    */
+/* !Vendor         : Valeo                                                                                            */
+/*                                                                                                                    */
+/* Coding language : OIL                                                                                              */
+/*                                                                                                                    */
+/* COPYRIGHT VALEO                                                                                                    */
+/* all rights reserved                                                                                                */
+/*                                                                                                                    */
+/**********************************************************************************************************************/
+/* Dimension Informations                                                                                               
+/* %PCMS_HEADER_SUBSTITUTION_START:%                                                                                    
+/* The PID has this format: <Product ID>:<Item ID>.<Variant>-<Item Type>;<Revision>                                     
+/* %PID:%                                                                                                               
+/* %PCMS_HEADER_SUBSTITUTION_END:%                                                                                      
+/**********************************************************************************************************************/
+
+MEMMAP_MSN PWM_17_GTM
+{
+   SECTION = SEC_ASIL0_VAR_32BIT;
+   SECTION = SEC_CALLOUT_CODE;
+   SECTION = SEC_CODE;
+   SECTION = SEC_CONST_32BIT;
+   SECTION = SEC_POSTBUILDCFG;
+   SECTION = SEC_VAR_32BIT;
+   SECTION = SEC_VAR_8BIT;
+   SECTION = SEC_VAR_FAST_32BIT;
+};
+
+/*--------------------------------------------------- end of file ----------------------------------------------------*/

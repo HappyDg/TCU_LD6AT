@@ -1,0 +1,161 @@
+<?xml version='1.0'?>
+<datamodel version="3.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/08/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd" >
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="BswM" type="AR-PACKAGE">
+        <d:lst type="ELEMENTS">
+          <d:chc name="BswM" type="AR-ELEMENT" value="MODULE-CONFIGURATION">
+            <d:ctr type="MODULE-CONFIGURATION">
+              <a:a name="DEF" value="ASPath:/TS_TxDxM1I3R0/BswM"/>
+              <d:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION" 
+                     value="VariantPreCompile">
+                <a:a name="IMPORTER_INFO" value="@DEF"/>
+              </d:var>
+              <d:ctr name="BswMConfig" type="IDENTIFIABLE">
+                <d:ctr name="BswMArbitration" type="IDENTIFIABLE">
+                  <d:lst name="BswMLogicalExpression" type="MAP"/>
+                  <d:lst name="BswMModeCondition" type="MAP">
+                    <d:ctr name="BswMModeCondition_0" type="IDENTIFIABLE">
+                      <d:var name="BswMConditionType" type="ENUMERATION" 
+                             value="BSWM_EQUALS"/>
+                      <d:ref name="BswMConditionMode" type="REFERENCE" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:ref>
+                      <d:chc name="BswMConditionValue" type="IDENTIFIABLE" 
+                             value="BswMBswMode">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        <d:ctr name="BswMBswMode" type="IDENTIFIABLE">
+                          <d:var name="BswMBswRequestedMode" type="STRING" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                        </d:ctr>
+                        <d:ctr name="BswMModeDeclaration" type="IDENTIFIABLE">
+                          <d:ref name="BswMModeValueRef" type="REFERENCE" >
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:ref>
+                        </d:ctr>
+                      </d:chc>
+                    </d:ctr>
+                  </d:lst>
+                  <d:lst name="BswMModeRequestPort" type="MAP"/>
+                  <d:lst name="BswMRule" type="MAP"/>
+                </d:ctr>
+                <d:ctr name="BswMDataTypeMappingSets" type="IDENTIFIABLE">
+                  <a:a name="ENABLE" value="false"/>
+                  <d:lst name="BswMDataTypeMappingSetRef">
+                    <d:ref type="REFERENCE" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:ref>
+                  </d:lst>
+                </d:ctr>
+                <d:ctr name="BswMModeControl" type="IDENTIFIABLE">
+                  <d:lst name="BswMAction" type="MAP"/>
+                  <d:lst name="BswMActionList" type="MAP"/>
+                  <d:lst name="BswMSwitchPort" type="MAP"/>
+                </d:ctr>
+              </d:ctr>
+              <d:ctr name="BswMGeneral" type="IDENTIFIABLE">
+                <d:var name="BswMCanSMEnabled" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="BswMComMEnabled" type="BOOLEAN" value="true"/>
+                <d:var name="BswMDcmEnabled" type="BOOLEAN" value="true"/>
+                <d:var name="BswMDevErrorDetect" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="BswMEcuMEnabled" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="BswMEthSMEnabled" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="BswMFrSMEnabled" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="BswMGenericRequestEnabled" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="BswMLinSMEnabled" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="BswMLinTPEnabled" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="BswMMainFunctionPeriod" type="FLOAT" value="0.0">
+                  <a:a name="ENABLE" value="true"/>
+                </d:var>
+                <d:var name="BswMNvMEnabled" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="BswMRteUsage" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="BswMSchMEnabled" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="BswMSdEnabled" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="BswMVersionInfoApi" type="BOOLEAN" value="true">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="BswMWdgMEnabled" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:ctr name="BswMUserIncludeFiles" type="IDENTIFIABLE">
+                  <a:a name="ENABLE" value="false"/>
+                  <d:lst name="BswMUserIncludeFile">
+                    <d:var type="STRING" >
+                      <a:a name="IMPORTER_INFO" value="@DEF"/>
+                    </d:var>
+                  </d:lst>
+                </d:ctr>
+              </d:ctr>
+              <d:ctr name="ReportToDem" type="IDENTIFIABLE">
+                <d:var name="BswMActionFailedReportToDem" type="ENUMERATION" 
+                       value="DISABLE">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="BswMActionFailedReportToDemDetErrorId" 
+                       type="INTEGER" value="15">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+              </d:ctr>
+              <d:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+                <d:var name="ArMajorVersion" type="INTEGER" value="1"/>
+                <d:var name="ArMinorVersion" type="INTEGER" value="2"/>
+                <d:var name="ArPatchVersion" type="INTEGER" value="0"/>
+                <d:var name="SwMajorVersion" type="INTEGER" value="1"/>
+                <d:var name="SwMinorVersion" type="INTEGER" value="3"/>
+                <d:var name="SwPatchVersion" type="INTEGER" value="23"/>
+                <d:var name="ModuleId" type="INTEGER" value="42">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="VendorId" type="INTEGER" value="1">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="VendorApiInfix" type="STRING" value="">
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="Release" type="STRING" value="">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+              </d:ctr>
+            </d:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>

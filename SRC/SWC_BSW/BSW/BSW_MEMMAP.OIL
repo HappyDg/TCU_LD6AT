@@ -1,0 +1,34 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer          : BSW                                                      */
+/*                                                                            */
+/* !Module         : BSW                                                      */
+/* !Description    : Mapping section configuration of the MAIN module         */
+/*                                                                            */
+/* !File           : BSW_MEMMAP.OIL                                           */
+/*                                                                            */
+/* !Scope          : Public                                                   */
+/*                                                                            */
+/* !Target         : Genecode Tool                                            */
+/*                                                                            */
+/* !Vendor         : Valeo                                                    */
+/*                                                                            */
+/* Coding language : OIL                                                      */
+/*                                                                            */
+/* COPYRIGHT 2006 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive:   P:/VE_Onduleur_Gen2_Sofraci/LOG/70_SubProject/Archives/GEN2_SWA_BSWSH72/main_memmap.oiv  $ */
+/* $Revision::   1.3       $$Author::   ogarot        $$Date::   05 Dec 2011 $*/
+/******************************************************************************/
+
+MEMMAP_MSN BSW {
+                SECTION = SEC_CODE;
+                SECTION = SEC_CALIB_UNSPECIFIED;
+                SECTION = SEC_VAR_UNSPECIFIED;
+               };
+
+/*------------------------------- end of file --------------------------------*/
+

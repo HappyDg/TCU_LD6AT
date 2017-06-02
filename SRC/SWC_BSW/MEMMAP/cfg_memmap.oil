@@ -1,0 +1,44 @@
+/******************************************************************************/
+/* !Layer           : SRV                                                     */
+/* !Component       : MEMMAP                                                  */
+/* !Description     : Mapping Section Configuration                           */
+/*                                                                            */
+/* !File            : CFG_MEMMAP.OIL                                          */
+/* !Description     : Mapping Section Configuration                           */
+/*                                                                            */
+/* !Reference       :                                                         */
+/*                                                                            */
+/* Coding language  : OIL                                                     */
+/*                                                                            */
+/* COPYRIGHT VALEO 2014 all rights reserved                                   */
+/*                                                                            */
+/******************************************************************************/
+/* Dimension Informations
+ * %PCMS_HEADER_SUBSTITUTION_START:%
+ * The PID has this format: <Product ID>:<Item ID>.<Variant>-<Item Type>;<Revision>
+ * %PID:%
+ * %PCMS_HEADER_SUBSTITUTION_END:%
+ ******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::                                                                $*/
+/* $Revision::            $$Author::                  $$Date::               $*/
+/******************************************************************************/
+
+
+#include "CFG_MEMMAP.STX"
+
+CPU APPLICATION
+{
+   #include "APPLI_MEMMAP.OIL"
+   #include "PROJ_BSW_MEMMAP.OIL"
+
+   TRADOIL
+   { 
+      #include "MEMMAP.CHX"
+
+      #include "MEMMAP.TPX"
+   };
+};
+
+
+/*------------------------------- end of file --------------------------------*/

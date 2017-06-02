@@ -1,0 +1,115 @@
+-|--------------------------------------------------------------------------------------------------------------------------|
+-|
+-| FILE NAME      : LIST_SWA_BSW
+-|
+-| PVCS Informations
+-| $Header: $
+-| Dimension Informations
+-| %PCMS_HEADER_SUBSTITUTION_START:%
+-| The PID has this format: <Product ID>:<Item ID>.<Variant>-<Item Type>;<Revision>
+-| %PID: XXX:A1137.A-SRC;20 %
+-| %PCMS_HEADER_SUBSTITUTION_END:%
+-|
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+-|                                     |                                     |                                              |
+-|           COMPONENT_LIST            |             MODULE_LIST             |              FILE_LIST                       |
+-|                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ | SWC_BSW -w -lib                     |                                     |                                              |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ | SWC_TST -w                          |                                     |                                              |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | _CALIB_                             |                                              |
+ |                                     |                                     | CALIB_BSW.rp2                                |
+ |                                     |                                     | INITIAL.rp2                                  |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | _DELIV_                             |                                              |
+ |                                     |                                     | DELIV_BSW.mk          -ncomp                 |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | _DELIV_\SWC_BSW_DUMMY               |                                              |
+ |                                     |                                     | SWC_BSW_MAIN.c         -ncomp                |
+ |                                     |                                     | SWC_BSW_MAIN.h         -ncomp                |
+ |                                     |                                     | SWC_BSW_MAIN_DEF.c     -ncomp                |
+ |                                     |                                     | SWC_BSW_MAIN_L.h       -ncomp                |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | _PRJ_   -w                          |                                              |
+ |                                     |                                     | ccid.tpl                                     |
+ |                                     |                                     | cfgbdd_PRJ.txt                               |
+ |                                     |                                     | CheckFileName.pl                             |
+ |                                     |                                     | compiler_opt.mk                              |
+ |                                     |                                     | convertcal.tfm                               |
+ |                                     |                                     | env_proj.ini                                 |
+ |                                     |                                     | geneulp.tfm                                  |
+ |                                     |                                     | libdnk_c.a      -ncomp                       |
+ |                                     |                                     | LinkerDef.ld                                 |
+ |                                     |                                     | MALL.MK                                      |
+ |                                     |                                     | memory_empty.int                             |
+ |                                     |                                     | SWA_BSW.INI                                  |
+ |                                     |                                     | warning.csv                                  |
+ |                                     |                                     | warning.pl                                   |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | _TOOLS_\_TELE_COMM_                 |                                              |
+ |                                     |                                     | HCU_PATAC_TeleComm_CanPort1.bat              |
+ |                                     |                                     | HCU_PATAC_TeleComm_CanPort2.bat              |
+ |                                     |                                     | HCU_PATAC_Tele_Comm_Script_CanPort1-1000Bds.txt |
+ |                                     |                                     | HCU_PATAC_Tele_Comm_Script_CanPort2-1000Bds.txt |
+ |                                     |                                     | HCU_PATAC_Tele_Comm_Script_CanPort1-1000Bds_encrypted.txt |
+ |                                     |                                     | HCU_PATAC_Tele_Comm_Script_CanPort2-1000Bds_encrypted.txt |
+ |                                     |                                     | Telecomm_2_7_1.zip -uz                       |
+ |                                     | _TOOLS_\_WINADES_                   |                                              |
+ |                                     |                                     | CfgWinAdes_CAN1.cfg                          |
+ |                                     |                                     | CfgWinAdes_CAN2.cfg                          |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | MAIN -w  -db                        |                                              |
+ |                                     |                                     | cfgbdd_main.txt                              |
+ |                                     |                                     | donnee_main.txt                              |
+ |                                     |                                     | fonction_main.txt                            |
+ |                                     |                                     | IDENT_MemMap.h           -nget               |
+ |                                     |                                     | IDENT_MEMMAP.OIL         -noil               |
+ |                                     |                                     | main_memmap.h            -nget               |
+ |                                     |                                     | MAIN_MEMMAP.OIL          -noil               |
+ |                                     |                                     | MAIN_tsk.c                                   |
+ |                                     |                                     | MAIN_Msg.c                                   |
+ |                                     |                                     | MAIN_Msg.h                                   |
+ |                                     |                                     | refcdc_main.txt                              |
+ |                                     |                                     | requirements_main.txt                        |
+ |                                     |                                     | typedef_main.txt                             |
+ |                                     |                                     | MAIN_WriteCan.h                              |
+ |                                     |                                     | MAIN_WriteIohal.h                            |
+ |                                     |                                     | fixunssfdi.c             -ncomp              |
+ |                                     |                                     | DIO_WrapAPI.c                                |
+ |                                     |                                     | DIO_WrapAPI.h                                |
+ |                                     |                                     | TLE8242_wrapper.c                            |
+ |                                     |                                     | TLE8242_wrapper.h                            |
+ |                                     |                                     | MAIN_WriteDcdcApi.h                          |
+ |                                     |                                     |                                              |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | SWC_SWA            -v 5E_AC_01#0F -dmproj VE_OC180KW:OC140_SWA_BSWTC26            ||
+ |                                     |                                     | rtwtypes.h                                   |
+ |                                     |                                     | std_type.h                                   |
+ |                                     |                                     | SWC_FS_MemMap.h          -nget               |
+ |                                     |                                     | SWC_FS_MEMMAP.OIL        -noil               |
+ |                                     |                                     | SWC_FT_MemMap.h          -nget               |
+ |                                     |                                     | SWC_FT_MEMMAP.OIL        -noil               |
+ |                                     |                                     | SWC_RTWSRV_MemMap.h      -nget               |
+ |                                     |                                     | SWC_RTWSRV_MEMMAP.OIL    -noil               |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |

@@ -1,0 +1,36 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : MCAL                                                    */
+/*                                                                            */
+/* !Component       : CCP                                                     */
+/* !Description     : MEMMAP Configuration for CCP component                  */
+/*                                                                            */
+/* !File            : CCP_MEMMAP.OIL                                          */
+/*                                                                            */
+/* !Scope           : Public                                                  */
+/*                                                                            */
+/* !Target          : Genecode Tool                                           */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : OIL                                                     */
+/*                                                                            */
+/* COPYRIGHT 2010 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   I:/PROJETS/LIBEMB/LOG/COM/CANBSL/LOG/canbsl_memmap.oiv       $*/
+/* $Revision::   1.0      $$Author::   lvoilmy        $$Date::   01 Aug 2006 $*/
+/******************************************************************************/
+
+
+MEMMAP_MSN CCP
+{
+   SECTION = CODE;
+   SECTION = CONST_UNSPECIFIED;
+   SECTION = VAR_UNSPECIFIED;
+
+};
+
+/*------------------------------- end of file --------------------------------*/

@@ -1,0 +1,32 @@
+/**********************************************************************************************************************/
+/*                                                                                                                    */
+/* !Layer           : BSW                                                                                             */
+/*                                                                                                                    */
+/* !Component       : HAL                                                                                             */
+/* !Description     : IOHAL Configuration                                                                             */         
+/*                                                                                                                    */
+/* !File            : IOHAL.OBX                                                                                       */
+/*                                                                                                                    */
+/* !Scope           : Public                                                                                          */
+/*                                                                                                                    */
+/* !Target          : Genecode Tool                                                                                   */
+/*                                                                                                                    */
+/* !Vendor          : Valeo                                                                                           */
+/*                                                                                                                    */
+/* Coding language  : OIL                                                                                             */
+/*                                                                                                                    */
+/* COPYRIGHT 2013 VALEO                                                                                               */
+/* all rights reserved                                                                                                */
+/*                                                                                                                    */
+/**********************************************************************************************************************/
+/* Dimension Informations
+ * %PCMS_HEADER_SUBSTITUTION_START:%
+ * The PID has this format: <Product ID>:<Item ID>.<Variant>-<Item Type>;<Revision>
+ * %PID:%
+ * %PCMS_HEADER_SUBSTITUTION_END:%
+**********************************************************************************************************************/
+
+IOHAL_CFG_RW, IOHAL_CHANNEL, IOHAL_TYP
+
+
+/*--------------------------------------------------- end of file ----------------------------------------------------*/

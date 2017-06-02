@@ -1,0 +1,161 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SRVL                                                    */
+/*                                                                            */
+/* !Component       : CCP                                                     */
+/*                                                                            */
+/* !Module          : CCP                                                     */
+/* !Description     : Syntax of CCP Configuration                             */
+/*                                                                            */
+/* !File            : CCP.STX                                                 */
+/*                                                                            */
+/* !Scope           : Public                                                  */
+/*                                                                            */
+/* !Target          : Genecode Tool                                           */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : OIL                                                     */
+/*                                                                            */
+/* COPYRIGHT 2009 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::                                                                $*/
+/* $Revision::                                                               $*/
+/* $Author::                                          $$Date::               $*/
+/******************************************************************************/
+
+CCP
+{
+   ENUM
+   [
+      INTERNAL_UINT8
+      {
+         UINT32 [0 .. 255] VALUE;
+      },
+      INTERNAL_UINT16
+      {
+         UINT32 [0 .. 65535] VALUE;
+      },
+      INTERNAL_UINT32
+      {
+         UINT32 VALUE;
+      },
+      INTERNAL_ARRAY_UINT8
+      {
+         UINT32 [0 .. 255] VALUE[];
+      },
+      INTERNAL_STRING
+      {
+         STRING VALUE;
+      },
+      EXTERNAL:"Use a callback to get DEVICE ID information"
+   ] DEVICE_ID;
+   UINT32 [0 .. 255] DEVICE_ID_DATA_TYPE = 0:"Data type of DEVICE ID (optional)";
+
+   ENUM
+   [
+      INTERNAL
+      {
+         UINT32 [0 .. 65535] STATION_ADDRESS;
+      },
+      EXTERNAL:"Use a callback to check station address"
+   ] STATION_ADDRESS_CHECK;
+
+   BOOLEAN
+   [
+      TRUE
+      {
+         BOOLEAN LOCKED_DAQ_LIST = FALSE;
+         BOOLEAN LOCKED_CALIB    = FALSE;
+         BOOLEAN LOCKED_PROGRAM  = FALSE;
+      },
+      FALSE
+   ] PROTECTION_SERVICES;
+
+   BOOLEAN TEST_SERVICE;
+
+   BOOLEAN DOWNLOAD6_SERVICE;
+
+   BOOLEAN SHORT_UPLOAD_SERVICE;
+
+   BOOLEAN
+   [
+      TRUE
+      {
+         BOOLEAN CHECK_CAL_STATUS;
+         BOOLEAN CHECK_DAQ_STATUS;
+
+         BOOLEAN CAL_STORE_FEATURE;
+         BOOLEAN DAQ_RESUME_FEATURE;
+
+         BOOLEAN ADDITIONAL_STATUS = FALSE;
+      },
+      FALSE
+   ] SESSION_STATUS_SERVICES;
+
+   BOOLEAN CAL_PAGE_SERVICES;
+
+   BOOLEAN
+   [
+      TRUE
+      {
+         ENUM [U8, U16, U32] CHECKSUM_SIZE;
+      },
+      FALSE
+   ] CHECKSUM_SERVICE;
+
+   BOOLEAN MOVE_SERVICE;
+
+   BOOLEAN PROGRAM_SERVICES;
+
+   BOOLEAN
+   [
+      TRUE
+      {
+         BOOLEAN CHECKSUM_SERVICE     = FALSE;
+         BOOLEAN MOVE_SERVICE         = FALSE;
+         BOOLEAN DOWNLOAD_SERVICE     = FALSE;
+         BOOLEAN DOWNLOAD6_SERVICE    = FALSE;
+         BOOLEAN UPLOAD_SERVICE       = FALSE;
+         BOOLEAN SHORT_UPLOAD_SERVICE = FALSE;
+         BOOLEAN PROGRAM_SERVICE      = FALSE;
+         BOOLEAN CLEAR_MEMORY_SERVICE = FALSE;
+      },
+      FALSE
+   ] ASYNCHRONOUS_RESPONSE = FALSE;
+
+   BOOLEAN
+   [
+      TRUE
+      {
+         ENUM [U8, U16, U32] MAX_DATA_SIZE = U32;
+         BOOLEAN CHECK_DAQ_INITIALISATION_STATUS = FALSE;
+         BOOLEAN LIST_ID_EQ_EVENT_ID = FALSE;
+         BOOLEAN
+         [
+            TRUE
+            {
+               BOOLEAN DAQ_MANAGE_EXTENDED_CAN_ID = FALSE;
+            },
+            FALSE
+         ] DAQ_DYNAMIC_CAN_ID = FALSE;
+      },
+      FALSE
+   ] DAQ_LIST_SERVICES;
+};
+
+DAQ_EVENT
+{
+};
+
+DAQ_LIST
+{
+   UINT32 [1 .. 253] NUMBER_OF_ODT;
+};
+
+#include "CCPUSR.STX"
+
+/*-------------------------------- end of file -------------------------------*/

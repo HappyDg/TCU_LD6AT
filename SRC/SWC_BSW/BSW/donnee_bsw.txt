@@ -1,0 +1,49 @@
+Nom_donnée|Type|Nom_module|Public|Nb_lignes|Nb_colonnes|Label_père|Offset|Masque_accès|Affichage|Unité|Fonction_transfert_ades|Coefficient_a|Coefficient_b|Groupe|Groupe_1|Groupe_2|Alias_1|Alias_2|Genre|Variable_indice_ligne|Variable_indice_colonne|Fonction_transfert_ligne|Fonction_transfert_colonne|Table_breakpoint_ligne|Table_breakpoint_colonne|Référence_spécification|Recuperable|Modifiable|Fournisseur|Responsable|Valeurs|Visualisable_ADES|Donnée_a_supprimer|Validation|Commentaires|Volatile|MinDecValue|MaxDecValue|MinPhysValue|MaxPhysValue|Def_Eval|MemSec
+BSW_bCAN0BusOff|boolean|BSW|1|0|0|BSW_bCAN0BusOff|0|0|Phys|bool|2|0||Developpement|Developpement||BSW_bCAN0BusOff||1||||||||0|1||||1|0|0||0|||||0|
+BSW_bCAN1BusOff|boolean|BSW|1|0|0|BSW_bCAN1BusOff|0|0|Phys|bool|2|0||Developpement|Developpement||BSW_bCAN1BusOff||1||||||||0|1||||1|0|0||0|||||0|
+BSW_bCAN2BusOff|boolean|BSW|1|0|0|BSW_bCAN2BusOff|0|0|Phys|bool|2|0||Developpement|Developpement||BSW_bCAN2BusOff||1||||||||0|1||||1|0|0||0|||||0|
+BSW_bSPYBenchOnC|boolean|BSW|1|0|0|BSW_bSPYBenchOnC|0|0|Phys|bool|2|0||BSW|BSW||BSW_bSPYBenchOnC||2|||||||NONE|1|1||||1|0|0|SPY activation
+BSW_u16Var1|uint16|BSW|0|0|0|BSW_u16Var1|0|0|Déci|-||||BSW|BSW||BSW_u16Var1||1||||||||0|1||||1|0|0||0|||||0|
+BSW_u8TestVar1|uint8|BSW|0|0|0|BSW_u8TestVar1|0|0|Déci|-||||BSW|BSW||BSW_u8TestVar1||1||||||||0|1||||1|0|0||0|||||0|
+BSW_u8CAN0BusOffCounter|uint32|BSW|1|0|0|BSW_u8CAN0BusOffCounter|0|0|Déci|-||||Diagnostic|Diagnostic||BSW_u8CAN0BusOffCounter||1|||||||NONE|0|1||||1|0|0||0||||||
+BSW_u8CAN1BusOffCounter|uint32|BSW|1|0|0|BSW_u8CAN1BusOffCounter|0|0|Déci|-||||Diagnostic|Diagnostic||BSW_u8CAN1BusOffCounter||1|||||||NONE|0|1||||1|0|0||0||||||
+BSW_u8CAN2BusOffCounter|uint32|BSW|1|0|0|BSW_u8CAN2BusOffCounter|0|0|Déci|-||||Diagnostic|Diagnostic||BSW_u8CAN2BusOffCounter||1|||||||NONE|0|1||||1|0|0||0||||||
+BSW_u32FrtTM1msGlbCnt|uint32|BSW|1|0|0|BSW_u32FrtTM1msGlbCnt|0|0|Déci|-||||BSW|BSW||BSW_u32FrtTM1msGlbCnt||1||*||*||*|NONE|0|1||||1|0|1||0|0|4294967295|||0|
+BSW_u32FrtTM5msGlbCnt|uint32|BSW|1|0|0|BSW_u32FrtTM5msGlbCnt|0|0|Déci|-||||BSW|BSW||BSW_u32FrtTM5msGlbCnt||1||*||*||*|NONE|0|1||||1|0|1||0|0|4294967295|||0|
+BSW_u32FrtTM10msGlbCnt|uint32|BSW|1|0|0|BSW_u32FrtTM10msGlbCnt|0|0|Déci|-||||BSW|BSW||BSW_u32FrtTM10msGlbCnt||1||*||*||*|NONE|0|1||||1|0|1||0|0|4294967295|||0|
+BSW_u32FrtTM30msGlbCnt|uint32|BSW|1|0|0|BSW_u32FrtTM30msGlbCnt|0|0|Déci|-||||BSW|BSW||BSW_u32FrtTM30msGlbCnt||1||*||*||*|NONE|0|1||||1|0|1||0|0|4294967295|||0|
+BSW_u32FrtTM100msGlbCnt|uint32|BSW|1|0|0|BSW_u32FrtTM100msGlbCnt|0|0|Déci|-||||BSW|BSW||BSW_u32FrtTM100msGlbCnt||1||*||*||*|NONE|0|1||||1|0|1||0|0|4294967295|||0|
+BSW_u32FrtTM500msGlbCnt|uint32|BSW|1|0|0|BSW_u32FrtTM500msGlbCnt|0|0|Déci|-||||BSW|BSW||BSW_u32FrtTM500msGlbCnt||1||*||*||*|NONE|0|1||||1|0|1||0|0|4294967295|||0|
+BSW_u32FrtTM1sGlbCnt|uint32|BSW|1|0|0|BSW_u32FrtTM1sGlbCnt|0|0|Déci|-||||BSW|BSW||BSW_u32FrtTM1sGlbCnt||1||*||*||*|NONE|0|1||||1|0|1||0|0|4294967295|||0|
+BSW_u32FrtTemp3Cnt|uint32|BSW|1|0|0|BSW_u32FrtTemp3Cnt|0|0|Déci|-||||BSW|BSW||BSW_u32FrtTemp3Cnt||1||*||*||*|NONE|0|1||||1|0|1||0|0|4294967295|||0|
+BSW_u32FrtTemp5Cnt|uint32|BSW|1|0|0|BSW_u32FrtTemp5Cnt|0|0|Déci|-||||BSW|BSW||BSW_u32FrtTemp5Cnt||1||*||*||*|NONE|0|1||||1|0|1||0|0|4294967295|||0|
+Presence_devaid|uint16|BSW|1|0|0|Presence_devaid|0|0|Hexa|-||||BSW|BSW||Presence_devaid||1|||||||NONE|0|1||||1|0|0||0||||||
+
+BSW_bCbkRxTOutFlag_SGABS1|boolean|BSW|1|0|0|BSW_bCbkRxTOutFlag_SGABS1|0|0|Phys|bool|2|0||Developpement|Developpement||BSW_bCbkRxTOutFlag_SGABS1||1||||||||0|1||||1|0|0|Timeout Flag for frame ABS1|0|||||0|
+BSW_bCbkRxTOutFlag_SGABS2|boolean|BSW|1|0|0|BSW_bCbkRxTOutFlag_SGABS2|0|0|Phys|bool|2|0||Developpement|Developpement||BSW_bCbkRxTOutFlag_SGABS2||1||||||||0|1||||1|0|0|Timeout Flag for frame ABS2|0|||||0|
+BSW_bCbkRxTOutFlag_SGECM1|boolean|BSW|1|0|0|BSW_bCbkRxTOutFlag_SGECM1|0|0|Phys|bool|2|0||Developpement|Developpement||BSW_bCbkRxTOutFlag_SGECM1||1||||||||0|1||||1|0|0|Timeout Flag for frame ECM1|0|||||0|
+BSW_bCbkRxTOutFlag_SGECM2|boolean|BSW|1|0|0|BSW_bCbkRxTOutFlag_SGECM2|0|0|Phys|bool|2|0||Developpement|Developpement||BSW_bCbkRxTOutFlag_SGECM2||1||||||||0|1||||1|0|0|Timeout Flag for frame ECM2|0|||||0|
+BSW_bCbkRxTOutFlag_SGESC1|boolean|BSW|1|0|0|BSW_bCbkRxTOutFlag_SGESC1|0|0|Phys|bool|2|0||Developpement|Developpement||BSW_bCbkRxTOutFlag_SGESC1||1||||||||0|1||||1|0|0|Timeout Flag for frame ESC1|0|||||0|
+BSW_bCbkRxTOutFlag_SGECM3|boolean|BSW|1|0|0|BSW_bCbkRxTOutFlag_SGECM3|0|0|Phys|bool|2|0||Developpement|Developpement||BSW_bCbkRxTOutFlag_SGECM3||1||||||||0|1||||1|0|0|Timeout Flag for frame ECM3|0|||||0|
+BSW_bCbkRxTOutFlag_SGIP1|boolean|BSW|1|0|0|BSW_bCbkRxTOutFlag_SGIP1|0|0|Phys|bool|2|0||Developpement|Developpement||BSW_bCbkRxTOutFlag_SGIP1||1||||||||0|1||||1|0|0|Timeout Flag for frame IP1|0|||||0|
+BSW_u32CbkRxTOutCnt_SGABS1|uint32|BSW|1|0|0|BSW_u32CbkRxTOutCnt_SGABS1|0|0|Déci|-||||Diagnostic|Diagnostic||BSW_u32CbkRxTOutCnt_SGABS1||1|||||||NONE|0|1||||1|0|0|Timeout Counter for frame ABS1|0||||||
+BSW_u32CbkRxTOutCnt_SGABS2|uint32|BSW|1|0|0|BSW_u32CbkRxTOutCnt_SGABS2|0|0|Déci|-||||Diagnostic|Diagnostic||BSW_u32CbkRxTOutCnt_SGABS2||1|||||||NONE|0|1||||1|0|0|Timeout Counter for frame ABS2|0||||||
+BSW_u32CbkRxTOutCnt_SGECM1|uint32|BSW|1|0|0|BSW_u32CbkRxTOutCnt_SGECM1|0|0|Déci|-||||Diagnostic|Diagnostic||BSW_u32CbkRxTOutCnt_SGECM1||1|||||||NONE|0|1||||1|0|0|Timeout Counter for frame ECM1|0||||||
+BSW_u32CbkRxTOutCnt_SGECM2|uint32|BSW|1|0|0|BSW_u32CbkRxTOutCnt_SGECM2|0|0|Déci|-||||Diagnostic|Diagnostic||BSW_u32CbkRxTOutCnt_SGECM2||1|||||||NONE|0|1||||1|0|0|Timeout Counter for frame ECM2|0||||||
+BSW_u32CbkRxTOutCnt_SGESC1|uint32|BSW|1|0|0|BSW_u32CbkRxTOutCnt_SGESC1|0|0|Déci|-||||Diagnostic|Diagnostic||BSW_u32CbkRxTOutCnt_SGESC1||1|||||||NONE|0|1||||1|0|0|Timeout Counter for frame ESC1|0||||||
+BSW_u32CbkRxTOutCnt_SGECM3|uint32|BSW|1|0|0|BSW_u32CbkRxTOutCnt_SGECM3|0|0|Déci|-||||Diagnostic|Diagnostic||BSW_u32CbkRxTOutCnt_SGECM3||1|||||||NONE|0|1||||1|0|0|Timeout Counter for frame ECM3|0||||||
+BSW_u32CbkRxTOutCnt_SGIP1|uint32|BSW|1|0|0|BSW_u32CbkRxTOutCnt_SGIP1|0|0|Déci|-||||Diagnostic|Diagnostic||BSW_u32CbkRxTOutCnt_SGIP1||1|||||||NONE|0|1||||1|0|0|Timeout Counter for frame IP1|0||||||
+BSW_u32CbkRxAckCnt_SGABS1|uint32|BSW|1|0|0|BSW_u32CbkRxAckCnt_SGABS1|0|0|Déci|-||||Diagnostic|Diagnostic||BSW_u32CbkRxAckCnt_SGABS1||1|||||||NONE|0|1||||1|0|0|Rx Counter for frame ABS1|0||||||
+BSW_u32CbkRxAckCnt_SGABS2|uint32|BSW|1|0|0|BSW_u32CbkRxAckCnt_SGABS2|0|0|Déci|-||||Diagnostic|Diagnostic||BSW_u32CbkRxAckCnt_SGABS2||1|||||||NONE|0|1||||1|0|0|Rx Counter for frame ABS2|0||||||
+BSW_u32CbkRxAckCnt_SGECM1|uint32|BSW|1|0|0|BSW_u32CbkRxAckCnt_SGECM1|0|0|Déci|-||||Diagnostic|Diagnostic||BSW_u32CbkRxAckCnt_SGECM1||1|||||||NONE|0|1||||1|0|0|Rx Counter for frame ECM1|0||||||
+BSW_u32CbkRxAckCnt_SGECM2|uint32|BSW|1|0|0|BSW_u32CbkRxAckCnt_SGECM2|0|0|Déci|-||||Diagnostic|Diagnostic||BSW_u32CbkRxAckCnt_SGECM2||1|||||||NONE|0|1||||1|0|0|Rx Counter for frame ECM2|0||||||
+BSW_u32CbkRxAckCnt_SGESC1|uint32|BSW|1|0|0|BSW_u32CbkRxAckCnt_SGESC1|0|0|Déci|-||||Diagnostic|Diagnostic||BSW_u32CbkRxAckCnt_SGESC1||1|||||||NONE|0|1||||1|0|0|Rx Counter for frame ESC1|0||||||
+BSW_u32CbkRxAckCnt_SGECM3|uint32|BSW|1|0|0|BSW_u32CbkRxAckCnt_SGECM3|0|0|Déci|-||||Diagnostic|Diagnostic||BSW_u32CbkRxAckCnt_SGECM3||1|||||||NONE|0|1||||1|0|0|Rx Counter for frame ECM3|0||||||
+BSW_u32CbkRxAckCnt_SGIP1|uint32|BSW|1|0|0|BSW_u32CbkRxAckCnt_SGIP1|0|0|Déci|-||||Diagnostic|Diagnostic||BSW_u32CbkRxAckCnt_SGIP1||1|||||||NONE|0|1||||1|0|0|Rx Counter for frame IP1|0||||||
+BSW_bTle8242Flag|uint8|BSW|1|0|0|BSW_bTle8242Flag|0|0|Phys|bool|2|0||Application|BSW|BSW|BSW_bTle8242Flag||1|||||||NONE|1|1|||0|1|0|0|Activate Dio tests|0|||||0|
+BSW_u8TLE8242CHIndex_Temp|uint8|BSW|1|0|0|BSW_u8TLE8242CHIndex_Temp|0|0|Déci|-||||Application|BSW|BSW|BSW_u8TLE8242CHIndex_Temp||1||||||||0|1||||1|0|0|Channel index|0|0|7|||0|
+BSW_f32TLE8242_Target_Temp|float32|BSW|1|0|0|BSW_f32TLE8242_Target_Temp|0|0|Phys|mA|1|1|0| |BSW|BSW|BSW_f32TLE8242_Target_Temp||1|||||||NONE|0|1||||1|0|1|Target current |0||||||
+BSW_f32TLE8242_PWMFrq_Temp|float32|BSW|1|0|0|BSW_f32TLE8242_PWMFrq_Temp|0|0|Phys|Hz|1|1|0| |BSW|BSW|BSW_f32TLE8242_PWMFrq_Temp||1|||||||NONE|0|1||||1|0|1|Target current |0||||||
+BSW_f32TLE8242_DitherAmpl_Temp|float32|BSW|1|0|0|BSW_f32TLE8242_DitherAmpl_Temp|0|0|Phys|mA|1|1|0| |BSW|BSW|BSW_f32TLE8242_DitherAmpl_Temp||1|||||||NONE|0|1||||1|0|1|Target current |0||||||
+BSW_f32TLE8242_DitherFreq_Temp|float32|BSW|1|0|0|BSW_f32TLE8242_DitherFreq_Temp|0|0|Phys|Hz|1|1|0| |BSW|BSW|BSW_f32TLE8242_DitherFreq_Temp||1|||||||NONE|0|1||||1|0|1|Target current |0||||||
+BSW_u8TLE8242Mode_Temp|uint8|BSW|1|0|0|BSW_u8TLE8242Mode_Temp|0|0|Déci|-||||Application|BSW|BSW|BSW_u8TLE8242Mode_Temp||1||||||||0|1||||1|0|0|Channel index|0|0|7|||0|

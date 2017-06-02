@@ -1,0 +1,36 @@
+Nom_donnée|Type|Nom_module|Public|Nb_lignes|Nb_colonnes|Label_père|Offset|Masque_accès|Affichage|Unité|Fonction_transfert_ades|Coefficient_a|Coefficient_b|Groupe|Groupe_1|Groupe_2|Alias_1|Alias_2|Genre|Variable_indice_ligne|Variable_indice_colonne|Fonction_transfert_ligne|Fonction_transfert_colonne|Table_breakpoint_ligne|Table_breakpoint_colonne|Référence_spécification|Recuperable|Modifiable|Fournisseur|Responsable|Valeurs|Visualisable_ADES|Donnée_a_supprimer|Validation|Commentaires|Volatile|MinDecValue|MaxDecValue|MinPhysValue|MaxPhysValue|Def_Eval|MemSec
+UDS_SecurAccessBenchOnC|boolean|UDS|1|0|0|UDS_SecurAccessBenchOnC|0|0|Phys|bool|2|0||Developpement|Developpement||UDS_SecurAccessBenchOnC||2|||||||NONE|1|1||||1|0|0|Deactivate the security access protection|0|||||0|
+UDS_u16ActiveDiagInfo|uint16|UDS|1|0|0|UDS_u16ActiveDiagInfo|0|0|Phys|-|1|1|0|BSW|BSW||UDS_u16ActiveDiagInfo||1||||||||0|1||||1|0|0|DID F100 -> UDS protocol version|0|||||0|
+UDS_u16ProductLineNum|uint16|UDS|1|0|0|UDS_u16ProductLineNum|0|0|Phys|-|1|1|0|BSW|BSW||UDS_u16ProductLineNum||1||||||||0|1||||1|0|0|DID F18C -> Production Line Number|0|||||0|
+UDS_u16ProgYearNvm|uint16|UDS|1|0|0|UDS_u16ProgYearNvm|0|0|Phys|-|1|1|0|BSW|BSW||UDS_u16ProgYearNvm||1||||||||0|1||||1|0|0|DID F199 -> ProgrammingDateDataId|0|||||0|
+UDS_u16ReprogAttemptNb|uint16|UDS|1|0|0|UDS_u16ReprogAttemptNb|0|0|Phys|-|1|1|0|BSW|BSW||UDS_u16ReprogAttemptNb||1||||||||0|1||||1|0|0|DID 0201 -> Reprogramming attempt counter|0|||||0|
+UDS_u16SuccessReprogNb|uint16|UDS|1|0|0|UDS_u16SuccessReprogNb|0|0|Phys|-|1|1|0|BSW|BSW||UDS_u16SuccessReprogNb||1||||||||0|1||||1|0|0|DID 0200 -> successfully reprogramming counter|0|||||0|
+UDS_u32ProductSerialNum|uint32|UDS|1|0|0|UDS_u32ProductSerialNum|0|0|Phys|-|1|1|0|BSW|BSW||UDS_u32ProductSerialNum||1||||||||0|1||||1|0|0|DID F18C -> Product Serial Number|0|||||0|
+UDS_u8AppDataId|uint8|UDS|1|1|5|UDS_u8AppDataId|0|0|Phys|-|1|1|0|BSW|BSW||UDS_u8AppDataId||1||*||*||*||0|1||||1|0|0|DID F182 -> ApplicationDataIdentificationDataIdentifier|0|||||0|
+UDS_u8AppSoftId|uint8|UDS|1|1|17|UDS_u8AppSoftId|0|0|Phys|-|1|1|0|BSW|BSW||UDS_u8AppSoftId||1||*||*||*||0|1||||1|0|0|DID F181 -> ApplicationSoftwareDataIdentifier|0|||||0|
+UDS_u8BootSoftId|uint8|UDS|1|1|17|UDS_u8BootSoftId|0|0|Phys|-|1|1|0|BSW|BSW||UDS_u8BootSoftId||1||*||*||*||0|1||||1|0|0|DID F180 -> bootSoftwareIdentification|0|||||0|
+UDS_u8CalibSoftId|uint8|UDS|1|1|17|UDS_u8CalibSoftId|0|0|Phys|-|1|1|0|BSW|BSW||UDS_u8CalibSoftId||1||*||*||*||0|1||||1|0|0|DID F1B2 -> CalibrationSoftwareIdentification|0|||||0|
+UDS_u8DiagPerfReqStand|uint8|UDS|1|0|0|UDS_u8DiagPerfReqStand|0|0|Phys|-|1|1|0|BSW|BSW||UDS_u8DiagPerfReqStand||1||||||||0|1||||1|0|0|DID F10D -> Diagnostic Performance Requirements Standard|0|||||0|
+UDS_u8DiagSpecVersion|uint8|UDS|1|0|0|UDS_u8DiagSpecVersion|0|0|Phys|-|1|1|0|BSW|BSW||UDS_u8DiagSpecVersion||1||||||||0|1||||1|0|0|DID F10D -> GAC Diagnostic Speicification Version|0|||||0|
+UDS_u8EcuHardVersNum|uint8|UDS|1|1|17|UDS_u8EcuHardVersNum|0|0|Phys|-|1|1|0|BSW|BSW||UDS_u8EcuHardVersNum||1||*||*||*||0|1||||1|0|0|DID F17F -> GACECUHardwareVersionNumberDataIdentifier|0|||||0|
+UDS_u8EcuSoftVersNum|uint8|UDS|1|1|17|UDS_u8EcuSoftVersNum|0|0|Phys|-|1|1|0|BSW|BSW||UDS_u8EcuSoftVersNum||1||*||*||*||0|1||||1|0|0|DID F189 -> GACECUSoftwareVersionNumberDataIdentifier|0|||||0|
+UDS_u8EcuVinNvm|uint8|UDS|1|1|17|UDS_u8EcuVinNvm|0|0|Phys|-|1|1|0|BSW|BSW||UDS_u8EcuVinNvm||1||*||*||*||0|1||||1|0|0|DID F190 -> Vehicle identification number|0|||||0|
+UDS_u8GACKitAssemPartNb|uint8|UDS|1|1|14|UDS_u8GACKitAssemPartNb|0|0|Phys|-|1|1|0|BSW|BSW||UDS_u8GACKitAssemPartNb||1||*||*||*||0|1||||1|0|0|DID F18E -> GACKitAssemblyPartNumber|0|||||0|
+UDS_u8ManufactoryMode|uint8|UDS|1|0|0|UDS_u8ManufactoryMode|0|0|Phys|-|1|1|0|BSW|BSW||UDS_u8ManufactoryMode||1||||||||0|1||||1|0|0|DID 0110 -> Manufactory mode|0|||||0|
+UDS_u8MtocNvm|uint8|UDS|1|1|17|UDS_u8MtocNvm|0|0|Phys|-|1|1|0|BSW|BSW||UDS_u8MtocNvm||1||*||*||*||0|1||||1|0|0|DID F102 -> MTOC|0|||||0|
+UDS_u8PartNumber|uint8|UDS|1|1|14|UDS_u8PartNumber|0|0|Phys|-|1|1|0|BSW|BSW||UDS_u8PartNumber||1||*||*||*||0|1||||1|0|0|DID F187 -> Part Number|0|||||0|
+UDS_u8ProdDate|uint8|UDS|1|1|3|UDS_u8ProdDate|0|0|Phys|-|1|1|0|BSW|BSW||UDS_u8ProdDate||1||*||*||*||0|1||||1|0|0|DID F18C -> ECUSerialNumberDataIdentifier|0|||||0|
+UDS_u8ProgDayNvm|uint8|UDS|1|0|0|UDS_u8ProgDayNvm|0|0|Phys|-|1|1|0|BSW|BSW||UDS_u8ProgDayNvm||1||||||||0|1||||1|0|0|DID F199 -> ProgrammingDateDataId|0|||||0|
+UDS_u8ProgFingerPrintDateNvm|uint8|UDS|1|1|3|UDS_u8ProgFingerPrintDateNvm|0|0|Phys|-|1|1|0|BSW|BSW||UDS_u8ProgFingerPrintDateNvm||1||*||*||*||0|1||||1|0|0|DID F184 -> programmingDate|0|||||0|
+UDS_u8ProgMonthNvm|uint8|UDS|1|0|0|UDS_u8ProgMonthNvm|0|0|Phys|-|1|1|0|BSW|BSW||UDS_u8ProgMonthNvm||1||||||||0|1||||1|0|0|DID F199 -> ProgrammingDateDataId|0|||||0|
+UDS_u8ReprogReqSpecVers|uint8|UDS|1|0|0|UDS_u8ReprogReqSpecVers|0|0|Phys|-|1|1|0|BSW|BSW||UDS_u8ReprogReqSpecVers||1||||||||0|1||||1|0|0|DID F10D ->ECU Reprogramming requirements_Specification version|0|||||0|
+UDS_u8ResetRequestedMode|uint8|UDS|1|0|0|UDS_u8ResetRequestedMode|0|0|Phys|-|1|1|0|BSW|BSW||UDS_u8ResetRequestedMode||1||||||||0|1||||1|0|0|Type of reset requested to be able to done the associated reset after sending the response frame|0|||||0|
+UDS_u8SystemName|uint8|UDS|1|1|20|UDS_u8SystemName|0|0|Phys|-|1|1|0|BSW|BSW||UDS_u8SystemName||1||*||*||*||0|1||||1|0|0|DID F197 -> SystemNameOrEngineTypeDataId|0|||||0|
+UDS_u8TesterSerialNbNvm|uint8|UDS|1|1|6|UDS_u8TesterSerialNbNvm|0|0|Phys|-|1|1|0|BSW|BSW||UDS_u8TesterSerialNbNvm||1||*||*||*||0|1||||1|0|0|DID F184 -> ApplicationSoftwareFingerprintDataId|0|||||0|
+UDS_u8ToolSupplierIdNvm|uint8|UDS|1|0|0|UDS_u8ToolSupplierIdNvm|0|0|Phys|-|1|1|0|BSW|BSW||UDS_u8ToolSupplierIdNvm||1||||||||0|1||||1|0|0|DID F184 -> ApplicationSoftwareFingerprintDataId|0|||||0|
+UDS_u32Spare1Nvm|uint32|UDS|1|0|0|UDS_u32Spare1Nvm|0|0|Phys|-|1|1|0|BSW|BSW||UDS_u32Spare1Nvm||1||||||||0|1||||1|0|0|Spare variable in NVM for UDS|0|||||0|
+UDS_u32Spare2Nvm|uint32|UDS|1|0|0|UDS_u32Spare2Nvm|0|0|Phys|-|1|1|0|BSW|BSW||UDS_u32Spare2Nvm||1||||||||0|1||||1|0|0|Spare variable in NVM for UDS|0|||||0|
+UDS_u32Spare3Nvm|uint32|UDS|1|0|0|UDS_u32Spare3Nvm|0|0|Phys|-|1|1|0|BSW|BSW||UDS_u32Spare3Nvm||1||||||||0|1||||1|0|0|Spare variable in NVM for UDS|0|||||0|
+UDS_u32Spare4Nvm|uint32|UDS|1|0|0|UDS_u32Spare4Nvm|0|0|Phys|-|1|1|0|BSW|BSW||UDS_u32Spare4Nvm||1||||||||0|1||||1|0|0|Spare variable in NVM for UDS|0|||||0|
+UDS_u32Spare5Nvm|uint32|UDS|1|0|0|UDS_u32Spare5Nvm|0|0|Phys|-|1|1|0|BSW|BSW||UDS_u32Spare5Nvm||1||||||||0|1||||1|0|0|Spare variable in NVM for UDS|0|||||0|
+UDS_u32Spare6Nvm|uint32|UDS|1|0|0|UDS_u32Spare6Nvm|0|0|Phys|-|1|1|0|BSW|BSW||UDS_u32Spare6Nvm||1||||||||0|1||||1|0|0|Spare variable in NVM for UDS|0|||||0|

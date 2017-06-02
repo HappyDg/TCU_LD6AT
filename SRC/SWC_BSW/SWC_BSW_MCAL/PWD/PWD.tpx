@@ -1,0 +1,55 @@
+/**********************************************************************************************************************/
+/* !Layer           : MCAL                                                                                            */
+/* !Component       : PWD                                                                                             */
+/* !Description     : Test Code For PWD Component                                                                     */
+/*                                                                                                                    */
+/* !File            : PWD.tpx                                                                                         */
+/* !Description     : Configuration files                                                                             */
+/*                                                                                                                    */
+/* !Reference       :                                                                                                 */
+/*                                                                                                                    */
+/* Coding language  : OIL                                                                                             */
+/*                                                                                                                    */
+/* COPYRIGHT VALEO all rights reserved                                                                                */
+/**********************************************************************************************************************/
+/**********************************************************************************************************************/
+/* Dimension Informations
+ * %PCMS_HEADER_SUBSTITUTION_START:%
+ * The PID has this format: <Product ID>:<Item ID>.<Variant>-<Item Type>;<Revision>
+ * %PID:%
+ * %PCMS_HEADER_SUBSTITUTION_END:%
+ **********************************************************************************************************************/
+
+FILE = TPL
+{
+    PURPOSE = "PWD";
+    READ    = "PWD_C.tpl";
+    WRITE   = "PWD.c";
+};
+FILE = TPL
+{
+    PURPOSE = "PWD";
+    READ    = "PWD_DEF_H.tpl";
+    WRITE   = "PWD_DEF.h";
+};
+FILE = TPL
+{
+    PURPOSE = "PWD";
+    READ    = "PWD_DEF_C.tpl";
+    WRITE   = "PWD_DEF.c";
+};
+FILE = TPL
+{
+    PURPOSE = "PWD";
+    READ    = "PWD_C.tpl";
+    WRITE   = "PWD.c";
+};
+FILE = TPL
+{
+    PURPOSE = "PWD";
+    READ    = "DONNEE_PWD_TXT.TPL";
+    WRITE   = "DONNEE_PWD.TXT";
+};
+
+
+/*------------------------------ end of file ---------------------------------*/

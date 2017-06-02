@@ -1,0 +1,4 @@
+Implement|ArgumentOrder|ItemType|Star|MasterType|ItemName|DimX|DimY|typedef_a_supprimer|Validation|Module|Public|Kind_of_export
+struct|0|uw|0|PWD_tudtDutyCycle||0|0|0|1|TYPEDEF|1|None
+struct|0|u4|0|PWD_tudtPeriod||0|0|0|1|TYPEDEF|1|None
+struct|0|u4|0|PWD_tudtActiveDuration||0|0|0|1|TYPEDEF|1|None

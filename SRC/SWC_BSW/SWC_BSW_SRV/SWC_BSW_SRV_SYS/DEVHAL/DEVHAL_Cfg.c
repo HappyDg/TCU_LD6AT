@@ -1,0 +1,54 @@
+/******************************************************************************/
+/* !Layer           : HAL                                                     */
+/* !Component       : DEVHAL                                                  */
+/* !Description     : DEVHAL Component                                        */
+/*                                                                            */
+/* !File            : DEVHAL_Cfg.c                                            */
+/* !Description     : DEVHAL configuration                                    */
+/*                                                                            */
+/* !Reference       :                                                         */
+/*                                                                            */
+/* Coding language  : C                                                       */
+/*                                                                            */
+/* COPYRIGHT VALEO all rights reserved                                        */
+/******************************************************************************/
+/* Dimension Informations
+ * %PCMS_HEADER_SUBSTITUTION_START:%
+ * The PID has this format: <Product ID>:<Item ID>.<Variant>-<Item Type>;<Revision>
+ * %PID: %
+ * %PCMS_HEADER_SUBSTITUTION_END:%
+ ******************************************************************************/
+
+#include "Std_Types.h"
+#include "DEVHAL_Cfg.h"
+#include "Dio.h"
+
+#define DEVHAL_START_SEC_CODE
+#include "DEVHAL_MemMap.h"
+
+/******************************************************************************/
+/* !FuncName    : DEVHAL_bWaitProtectionCond                                  */
+/* !Description : Return the DEVAID protection state.                         */
+/*                                                                            */
+/* !LastAuthor  : L. Baglin                                                   */
+/******************************************************************************/
+boolean DEVHAL_bWaitProtectionCond(void)
+{
+   return(TRUE);
+}
+
+/******************************************************************************/
+/* !FuncName    : DEVHAL_bCheckReprogCond                                     */
+/* !Description : Returns ECU state for devaid reprog authorization.          */
+/*                                                                            */
+/* !LastAuthor  : L. Baglin                                                   */
+/******************************************************************************/
+boolean DEVHAL_bCheckReprogCond(void)
+{
+   return(TRUE);
+}
+
+#define DEVHAL_STOP_SEC_CODE
+#include "DEVHAL_MemMap.h"
+
+/*-------------------------------- end of file -------------------------------*/

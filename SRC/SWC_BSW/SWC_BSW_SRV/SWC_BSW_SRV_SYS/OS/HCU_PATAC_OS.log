@@ -1,0 +1,19 @@
+Start at 2/16/2017 9:43:09 AM
+Running pre-build checks...
+OS Applications are configured in an SC1 system
+Creating directory E:\lliu27\PROJETS\ShengruiTCU\TCU_init_SourceCode_20170214\SRC\SWC_BSW\SWC_BSW_SRV\SWC_BSW_SRV_SYS\OS\Samples\AdditionalHooks
+Creating directory E:\lliu27\PROJETS\ShengruiTCU\TCU_init_SourceCode_20170214\SRC\SWC_BSW\SWC_BSW_SRV\SWC_BSW_SRV_SYS\OS\Samples\ErrorHook
+Creating directory E:\lliu27\PROJETS\ShengruiTCU\TCU_init_SourceCode_20170214\SRC\SWC_BSW\SWC_BSW_SRV\SWC_BSW_SRV_SYS\OS\Samples\PostTaskHook
+Creating directory E:\lliu27\PROJETS\ShengruiTCU\TCU_init_SourceCode_20170214\SRC\SWC_BSW\SWC_BSW_SRV\SWC_BSW_SRV_SYS\OS\Samples\PreTaskHook
+Compiling GetApplicationState.c
+Compiling Os_Cfg.c
+Compiling Os_Cfg_Counters.c
+Compiling ShutdownOS.c
+Compiling StartOS.c
+Compiling ValidateCounter.c
+Compiling ValidateISR.c
+Compiling ValidateResource.c
+Compiling ValidateScheduleTable.c
+Compiling ValidateTask.c
+Compiling Os_SrcInit.c
+Stop at 2/16/2017 9:43:40 AM

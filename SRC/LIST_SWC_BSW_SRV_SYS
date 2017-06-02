@@ -1,0 +1,309 @@
+-|--------------------------------------------------------------------------------------------------------------------------|
+-|
+-| FILE NAME      : LIST_SWC_BSW_SRV_SYS
+-|
+-| PVCS Informations
+-| $Header:     $
+-| Dimension Informations
+-| %PCMS_HEADER_SUBSTITUTION_START:%
+-| The PID has this format: <Product ID>:<Item ID>.<Variant>-<Item Type>;<Revision>
+-| %PID: XXX:A1137.A-SRC;20 %
+-| %PCMS_HEADER_SUBSTITUTION_END:%
+-|
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+-|                                     |                                     |                                              |
+-|           COMPONENT_LIST            |             MODULE_LIST             |              FILE_LIST                       |
+-|                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | DEVHAL     -db_nexp                 |                                              |
+ |                                     |                                     | cfgbdd_devhal.txt                            |
+ |                                     |                                     | DEVHAL.h                                     |
+ |                                     |                                     | DEVHAL_Api.c                                 |
+ |                                     |                                     | DEVHAL_Cfg.c                                 |
+ |                                     |                                     | DEVHAL_Cfg.h                                 |
+ |                                     |                                     | DEVHAL_Def.c                                 |
+ |                                     |                                     | DEVHAL_Def.h                                 |
+ |                                     |                                     | DEVHAL_FlsLoader.c                           |
+ |                                     |                                     | DEVHAL_FlsLoader.h                           |
+ |                                     |                                     | DEVHAL_I.h                                   |
+ |                                     |                                     | DEVHAL_MemMap.h          -nget               |
+ |                                     |                                     | DEVHAL_MEMMAP.OIL        -noil               |
+ |                                     |                                     | donnee_devhal.txt                            |
+ |                                     |                                     | fonction_devhal.txt                          |
+ |                                     |                                     | refcdc_devhal.txt                            |
+ |                                     |                                     | requirements_devhal.txt                      |
+ |                                     |                                     | typedef_devhal.txt                           |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | FBL_INTF                            |                                              |
+ |                                     |                                     | applvect.c                                   |
+ |                                     |                                     | applvect.h                                   |
+ |                                     |                                     | FBL_APPLVECT_MEMMAP.H   -nget                |
+ |                                     |                                     | fbl_ap.h                                     |
+ |                                     |                                     | fbl_assert.h                                 |
+ |                                     |                                     | fbl_cfg.h                                    |
+ |                                     |                                     | fbl_def.h                                    |
+ |                                     |                                     | FBL_INTF.c                                   |
+ |                                     |                                     | FBL_INTF.h                                   |
+ |                                     |                                     | FBL_INTF_Cfg.h                               |
+ |                                     |                                     | FBL_INTF_MemMap.h       -nget                |
+ |                                     |                                     | FBL_INTF_MEMMAP.OIL     -noil                |
+ |                                     |                                     | SecM_cfg.h                                   |
+ |                                     |                                     | v_cfg.h                                      |
+ |                                     |                                     | v_def.h                                      |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | MEMSRV             -v F1_3.0.0_DLV -dmproj LIBEMB:MEMSRV                          ||
+ |                                     |                                     | MEMSRV.c                                     |
+ |                                     |                                     | MEMSRV.h                                     |
+ |                                     |                                     | MEMSRV_MemMap.h          -nget               |
+ |                                     |                                     | MEMSRV_MEMMAP.OIL        -noil               |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | OS                                  |                                              |
+ |                                     |                                     | Configuration Summary.css                    |
+ |                                     |                                     | Configuration Summary.html                   |
+ |                                     |                                     | HCU_PATAC_OS.arxml                           |
+ |                                     |                                     | HCU_PATAC_OS.log                             |
+ |                                     |                                     | HCU_PATAC_OS.rtaos                           |
+ |                                     |                                     | HCU_PATAC_OS.rtaos.arxml                     |
+ |                                     |                                     | HCU_PATAC_OS.stack.TriCoreHighTec.arxml      |
+ |                                     |                                     | HCU_PATAC_OS.timing_model.arxml              |
+ |                                     |                                     | HCU_PATAC_OS.timing_model.TriCoreHighTec.arxml |
+ |                                     |                                     | HCU_PATAC_OS.trace.arxml                     |
+ |                                     |                                     | HCU_PATAC_OS.TriCoreHighTec.arxml            |
+ |                                     |                                     | Misra Deviations.css                         |
+ |                                     |                                     | Misra Deviations.html                        |
+ |                                     |                                     | OS API Reference.css                         |
+ |                                     |                                     | OS API Reference.html                        |
+ |                                     |                                     | OS Size Information.css                      |
+ |                                     |                                     | OS Size Information.html                     |
+ |                                     |                                     | Os.h                                         |
+ |                                     |                                     | Os_Cfg.h                                     |
+ |                                     |                                     | Os_Compiler_Cfg.h                            |
+ |                                     |                                     | Os_DisableInterrupts.h                       |
+ |                                     |                                     | OS_MEMMAP.OIL                                |
+ |                                     |                                     | RTAOS.a -ncomp                               |
+ |                                     |                                     | Stack Usage.css                              |
+ |                                     |                                     | Stack Usage.html                             |
+ |                                     |                                     | Os_api.h                                     |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | RSTSRV     -db                      |                                              |
+ |                                     |                                     | cfgbdd_rstsrv.txt                            |
+ |                                     |                                     | donnee_rstsrv.txt                            |
+ |                                     |                                     | fonction_rstsrv.txt                          |
+ |                                     |                                     | refcdc_rstsrv.txt                            |
+ |                                     |                                     | requirements_rstsrv.txt                      |
+ |                                     |                                     | RSTSRV.h                                     |
+ |                                     |                                     | RSTSRV_API.c                                 |
+ |                                     |                                     | RSTSRV_Def.c                                 |
+ |                                     |                                     | RSTSRV_1.c                                   |
+ |                                     |                                     | RSTSRV_MemMap.h          -nget               |
+ |                                     |                                     | RSTSRV_MEMMAP.oil        -noil               |
+ |                                     |                                     | RSTSRV_Private.h                             |
+ |                                     |                                     | RSTSRV_Typ.h                                 |
+ |                                     |                                     | typedef_rstsrv.txt                           |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | RTMCLD     -db     -v F1_1.0.0_DLV -dmproj  LIBEMB:RTMCLD                         ||
+ |                                     |                                     | refcdc_rtmcld.txt    -arch refcdc.txt        |
+ |                                     |                                     | requirements_rtmcld.txt  -arch requirements.txt  |
+ |                                     |                                     | RTMCLD.CHX                                   |
+ |                                     |                                     | RTMCLD.OBX                                   |
+ |                                     |                                     | RTMCLD.STX                                   |
+ |                                     |                                     | RTMCLD.TPX                                   |
+ |                                     |                                     | RTMCLD_ADD.STX                               |
+ |                                     |                                     | rtmcld_cfg.h             -nget               |
+ |                                     |                                     | RTMCLD_CFG_H.TPL                             |
+ |                                     |                                     | RTMCLD_CHK.TPL                               |
+ |                                     |                                     | RTMCLD_Co.h              -nget               |
+ |                                     |                                     | RTMCLD_Co_H.TPL                              |
+ |                                     |                                     | RTMCLD_DONNEE_TXT.TPL                        |
+ |                                     |                                     | RTMCLD_EndlessLoop.h     -nget               |
+ |                                     |                                     | RTMCLD_EndlessLoop_H.TPL                     |
+ |                                     |                                     | RTMCLD_EndlessLoop_SH725xx.h                 |
+ |                                     |                                     | RTMCLD_EndlessLoop_Tricore.h                 |
+ |                                     |                                     | RTMCLD_MemMap.h          -nget               |
+ |                                     |                                     | RTMCLD_MEMMAP.OIL        -noil               |
+ |                                     | RTMCLD             -v F1_1.0.0#41 -dmproj  P2017_BSW:P2017_GEN_BSW                ||
+ |                                     |                                     | CFG_RTMCLD.OIL                               |
+ |                                     |                                     | CFG_RTMCLD.STX                               |
+ |                                     | RTMCLD                              |                                              |
+ |                                     |                                     | cfgbdd_rtmcld.txt                            |
+ |                                     |                                     | donnee_rtmcld.txt                            |
+ |                                     |                                     | fonction_rtmcld.txt                          |
+ |                                     |                                     | typedef_rtmcld.txt                           |
+ |                                     |                                     | RTMCLD_MACRO.h                               |
+ |                                     |                                     | rtmcld_api.c                                 |
+ |                                     |                                     | RTMCLD.h                                     |
+ |                                     |                                     | rtmcld_def.c                                 |
+ |                                     |                                     | rtmcld_def.h                                 |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | RTMTSK     -db                      |                                              |
+ |                                     |                                     | cfgbdd_rtmtsk.txt                            |
+ |                                     |                                     | donnee_rtmtsk.txt                            |
+ |                                     |                                     | fonction_rtmtsk.txt                          |
+ |                                     |                                     | refcdc_rtmtsk.txt                            |
+ |                                     |                                     | requirements_rtmtsk.txt                      |
+ |                                     |                                     | RTMTSK.c                                     |
+ |                                     |                                     | RTMTSK_Cfg.h                                 |
+ |                                     |                                     | RTMTSK_MemMap.h          -nget               |
+ |                                     |                                     | RTMTSK_MEMMAP.OIL        -noil               |
+ |                                     |                                     | typedef_rtmtsk.txt                           |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | SchM               -v F1_1.0.0#41 -dmproj P2017_BSW:P2017_GEN_BSW                 ||
+ |                                     |                                     | SchM_Can_17_MCanP.h                          |
+ |                                     |                                     | SchM_Det.h                                   |
+ |                                     |                                     | SchM_Mcal_WdgLib.h                           |
+ |                                     |                                     | SchM_RSTSRV.h                                |
+ |                                     | SchM                                |                                              |
+ |                                     |                                     | SchM_17_McalCfg.h                            |
+ |                                     |                                     | SchM_FlsLoader.h                             |
+ |                                     |                                     | SchM_Icu_17_GtmCcu6.h                        |
+ |                                     |                                     | SchM_Spi.h                                   |
+ |                                     |                                     | SchM_Wdg_17_Scu.h                            |
+ |                                     |                                     | SchM_CanIf.h                                 |
+ |                                     |                                     | SchM_CanIfType.h                             |
+ |                                     |                                     | SchM_CanTp.h                                 |
+ |                                     |                                     | SchM_CanTpType.h                             |
+ |                                     |                                     | SchM_Com.h                                   |
+ |                                     |                                     | SchM_ComType.h                               |
+ |                                     |                                     | SchM_ComM.h                                  |
+ |                                     |                                     | SchM_ComMType.h                              |
+ |                                     |                                     | SchM_Dcm.h                                   |
+ |                                     |                                     | SchM_DcmType.h                               |
+ |                                     |                                     | SchM_PduR.h                                  |
+ |                                     |                                     | SchM_EcuM.h                                  |
+ |                                     |                                     | SchM_EcuMType.h                              |
+ |                                     |                                     | SchM_NvM.h                                   |
+ |                                     |                                     | SchM_Dem.h                                   |
+ |                                     |                                     | SchM_FiM.h                                   |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | SUPSRV                              |                                              |
+ |                                     |                                     | SUPSRV.h                                     |
+ |                                     |                                     | SUPSRV_Api.c                                 |
+ |                                     |                                     | SUPSRV_Cfg.h                                 |
+ |                                     |                                     | SUPSRV_MemMap.h          -nget               |
+ |                                     |                                     | SUPSRV_MEMMAP.OIL        -noil               |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | SWFAIL     -db     -v 1.0.0#04 -dmproj LIBEMB:SWFAIL_TC27X                        ||
+ |                                     |                                     | donnee_swfail.txt    -arch donnee.txt        |
+ |                                     |                                     | fonction_swfail.txt  -arch fonction.txt      |
+ |                                     |                                     | refcdc_swfail.txt    -arch refcdc.txt        |
+ |                                     |                                     | requirements_swfail.txt  -arch requirements.txt  |
+ |                                     |                                     | SWFAIL.h                                     |
+ |                                     |                                     | SWFAIL_Def.c                                 |
+ |                                     |                                     | SWFAIL_MemMap.h          -nget               |
+ |                                     |                                     | SWFAIL_MEMMAP.OIL        -noil               |
+ |                                     |                                     | SWFAIL_Private.asm                           |
+ |                                     |                                     | SWFAIL_Private.h                             |
+ |                                     |                                     | SWFAIL_Types.h                               |
+ |                                     | SWFAIL                              |                                              |
+ |                                     |                                     | cfgbdd_swfail.txt                            |
+ |                                     |                                     | typedef_swfail.txt                           |
+ |                                     |                                     | SWFAIL.c                                     |
+ |                                     |                                     | SWFAIL_Trap.c                                |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | WDG                                 |                                              |
+ |                                     |                                     | Wdg.h                                        |
+ |                                     |                                     | Wdg_Add_On.c                                 |
+ |                                     |                                     | Wdg_Add_On.h                                 |
+ |                                     |                                     | Wdg_Cfg.h                                    |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     | ECUM                                |                                              |
+ |                                     |                                     | ECUM_MEMMAP.OIL          -noil               |
+ |                                     |                                     |                                              |
+ |                                     | EcuM -v P1_1.0.0#02 -dmproj  COTS_01:ACG-6_4_6                                    ||
+ |                                     |                                     | EcuM.c                                       |
+ |                                     |                                     | EcuM.h                                       |
+ |                                     |                                     | EcuM_ASR32_Rte.c                             |
+ |                                     |                                     | EcuM_ASR40_Rte.c                             |
+ |                                     |                                     | EcuM_BootTarget.c                            |
+ |                                     |                                     | EcuM_BootTarget.h                            |
+ |                                     |                                     | EcuM_BSW.h                                   |
+ |                                     |                                     | EcuM_BSW_Types.h                             |
+ |                                     |                                     | EcuM_Cbk.h                                   |
+ |                                     |                                     | EcuM_Int.h                                   |
+ |                                     |                                     | ECUM_MemMap.h            -nget               |
+ |                                     |                                     | EcuM_Rte.c                                   |
+ |                                     |                                     | EcuM_Types.h                                 |
+ |                                     |                                     | EcuM_Version.h                               |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | DEM                                 |                                              |
+ |                                     |                                     | Dem.c                                        |
+ |                                     |                                     | Dem.h                                        |
+ |                                     |                                     | Dem_Core.c                                   |
+ |                                     |                                     | Dem_DcmIfAccess.c                            |
+ |                                     |                                     | Dem_DcmIfFFandED.c                           |
+ |                                     |                                     | Dem_DcmIfOBD.c                               |
+ |                                     |                                     | Dem_DcmIfStatusInfo.c                        |
+ |                                     |                                     | Dem_Int.h                                    |
+ |                                     |                                     | Dem_Int_Stc.h                                |
+ |                                     |                                     | Dem_NvMCbk.h                                 |
+ |                                     |                                     | Dem_Stc.h                                    |
+ |                                     |                                     | Dem_Types.h                                  |
+ |                                     |                                     | Dem_Version.h                                |
+ |                                     |                                     | DEM_MemMap.h             -nget               |
+ |                                     |                                     | DEM_MEMMAP.OIL           -noil               |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | FiM                                 |                                              |
+ |                                     |                                     | FiM.c                                        |
+ |                                     |                                     | FiM.h                                        |
+ |                                     |                                     | FiM_Int.h                                    |
+ |                                     |                                     | FiM_Types.h                                  |
+ |                                     |                                     | FiM_Version.h                                |
+ |                                     |                                     | FiM_MemMap.h             -nget               |
+ |                                     |                                     | FiM_MEMMAP.OIL           -noil               |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | SYS_CFG                             |                                              |
+ |                                     |                                     | EcuM.xdm                                     |
+ |                                     |                                     | EcuM_Cfg.c                                   |
+ |                                     |                                     | EcuM_Cfg.h                                   |
+ |                                     |                                     | EcuM_PBcfg.c                                 |
+ |                                     |                                     | EcuM_Trace.h                                 |
+ |                                     |                                     | EcuM_TS_TxDxM5I4R0.7z                        |
+ |                                     |                                     | Os.xdm                                       |
+ |                                     |                                     | OsEtas_TS_T00D0M0I0R0.7z                     |
+ |                                     |                                     | TSAutosar_Cfg.h                              |
+ |                                     |                                     | Dem.xdm                                      |
+ |                                     |                                     | Dem_Cfg.c                                    |
+ |                                     |                                     | Dem_Cfg.h                                    |
+ |                                     |                                     | Dem_Int_Cfg.h                                |
+ |                                     |                                     | Dem_IntErrId.h                               |
+ |                                     |                                     | Dem_IntEvtId.h                               |
+ |                                     |                                     | Dem_Trace.h                                  |
+ |                                     |                                     | Dem_TS_TxDxM5I9R0.7z                         |
+ |                                     |                                     | FiM.xdm                                      |
+ |                                     |                                     | FiM_Cfg.c                                    |
+ |                                     |                                     | FiM_Cfg.h                                    |
+ |                                     |                                     | FiM_Trace.h                                  |
+ |                                     |                                     | FiM_TS_TxDxM2I1R0.7z                         |
+ |                                     |                                     |                                              |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+

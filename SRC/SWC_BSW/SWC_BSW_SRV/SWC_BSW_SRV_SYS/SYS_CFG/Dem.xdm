@@ -1,0 +1,1505 @@
+<?xml version='1.0'?>
+<datamodel version="3.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/08/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd" >
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="Dem" type="AR-PACKAGE">
+        <d:lst type="ELEMENTS">
+          <d:chc name="Dem" type="AR-ELEMENT" value="MODULE-CONFIGURATION">
+            <d:ctr type="MODULE-CONFIGURATION">
+              <a:a name="DEF" value="ASPath:/TS_TxDxM5I9R0/Dem"/>
+              <a:a name="IMPORTER_INFO" value="@REC"/>
+              <d:ctr name="DemGeneral" type="IDENTIFIABLE">
+                <a:a name="IMPORTER_INFO" value="@REC"/>
+                <d:lst name="DemGroupOfDTC" type="MAP">
+                  <d:ctr name="DEM_DTC_GROUP_EMISSION_REL_DTCS" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                    <d:var name="DemGroupDTCs" type="INTEGER" value="0"/>
+                  </d:ctr>
+                  <d:ctr name="DEM_DTC_GROUP_POWERTRAIN_DTCS" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                    <d:var name="DemGroupDTCs" type="INTEGER" value="4095"/>
+                  </d:ctr>
+                  <d:ctr name="DEM_DTC_GROUP_CHASSIS_DTCS" type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                    <d:var name="DemGroupDTCs" type="INTEGER" value="16383"/>
+                  </d:ctr>
+                  <d:ctr name="DEM_DTC_GROUP_BODY_DTCS" type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                    <d:var name="DemGroupDTCs" type="INTEGER" value="32767"/>
+                  </d:ctr>
+                  <d:ctr name="DEM_DTC_GROUP_NETWORK_COM_DTCS" 
+                         type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                    <d:var name="DemGroupDTCs" type="INTEGER" value="49151"/>
+                  </d:ctr>
+                </d:lst>
+                <d:lst name="DemOperationCycle" type="MAP">
+                  <d:ctr name="DEM_OPCYC_POWER" type="IDENTIFIABLE">
+                    <a:a name="IMPORTER_INFO" value="@REC"/>
+                    <d:var name="DemOperationCycleType" type="ENUMERATION" 
+                           value="DEM_OPCYC_POWER">
+                      <a:a name="IMPORTER_INFO" value="@REC"/>
+                    </d:var>
+                  </d:ctr>
+                </d:lst>
+                <d:var name="DemAgingCycleCounterProcessing" type="ENUMERATION" 
+                       value="DEM_PROCESS_AGINGCTR_INTERN">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="DemBswErrorBufferSize" type="INTEGER" value="10">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="DemCalloutDynamicDTCFnc" type="FUNCTION-NAME" 
+                       value="Appl_GetDynamicDTC">
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="DemEventFailureCycleCounterBufferSize" 
+                       type="INTEGER" value="0"/>
+                <d:var name="DemClearDTCBehavior" type="ENUMERATION" 
+                       value="DEM_CLRRESP_VOLATILE"/>
+                <d:var name="DemDTCSuppressionSupport" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="DemDebounceCounterBasedSupport" type="BOOLEAN" 
+                       value="true"/>
+                <d:var name="DemDebounceTimeBasedSupport" type="BOOLEAN" 
+                       value="true"/>
+                <d:var name="DemDebounceFrequencyBasedSupport" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="DemDevErrorDetect" type="BOOLEAN" value="false"/>
+                <d:var name="DemRteUsage" type="BOOLEAN" value="false"/>
+                <d:var name="DemDcmUsage" type="BOOLEAN" value="true"/>
+                <d:var name="DemGetSizeOfExtendedDataRecordByDTCOptimization" 
+                       type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="DemDtcStatusAvailabilityMask" type="INTEGER" 
+                       value="9"/>
+                <d:var name="DemEnableConditionSupport" type="BOOLEAN" 
+                       value="true"/>
+                <d:var name="DemEventCombinationSupport" type="ENUMERATION" 
+                       value="DEM_EVCOMB_DISABLED">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="DemEventDisplacementSupport" type="BOOLEAN" 
+                       value="true"/>
+                <d:var name="DemExtendedDataCapture" type="ENUMERATION" 
+                       value="DEM_TRIGGER_EVENT_MEMORY_STORAGE">
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="DemFreezeFrameCapture" type="ENUMERATION" 
+                       value="DEM_TRIGGER_EVENT_MEMORY_STORAGE">
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="DemOperationCycleProcessing" type="ENUMERATION" 
+                       value="DEM_PROCESS_OPCYC_STATE">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:lst name="DemHeaderFileInclusion">
+                  <d:var type="STRING" value="MAIN_DemCbk.h"/>
+                </d:lst>
+                <d:var name="DemImmediateNvStorageLimit" type="INTEGER" 
+                       value="254">
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="DemNvStorageEmptyEventMemoryEntries" 
+                       type="BOOLEAN" value="true">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="DemMaxNumberEventEntryMirror" type="INTEGER" 
+                       value="0"/>
+                <d:var name="DemMaxNumberEventEntryPermanent" type="INTEGER" 
+                       value="0"/>
+                <d:var name="DemMaxNumberEventEntryPrimary" type="INTEGER" 
+                       value="4"/>
+                <d:var name="DemMaxNumberEventEntrySecondary" type="INTEGER" 
+                       value="0"/>
+                <d:var name="DemMaxNumberPrestoredFF" type="INTEGER" value="255">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="DemOBDSupport" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="DemOccurrenceCounterProcessing" type="ENUMERATION" 
+                       value="DEM_PROCESS_OCCCTR_CDTC">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="DemOperationCycleStatusStorage" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="DemPTOSupport" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="DemStatusBitHandlingTestFailedSinceLastClear" 
+                       type="ENUMERATION" 
+                       value="DEM_STATUS_BIT_AGING_AND_DISPLACEMENT"/>
+                <d:var name="DemStatusBitStorageTestFailed" type="BOOLEAN" 
+                       value="true"/>
+                <d:var name="DemStorageConditionSupport" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="DemTaskTime" type="FLOAT" value="0.01"/>
+                <d:var name="DemTriggerDcmReports" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="DemTriggerDltReports" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="DemTriggerFiMReports" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="DemTriggerMonitorInitBeforeClearOk" type="BOOLEAN" 
+                       value="true">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="DemTypeOfDTCSupported" type="ENUMERATION" 
+                       value="DEM_DTC_TRANSLATION_ISO15031_6"/>
+                <d:var name="DemTypeOfFreezeFrameRecordNumeration" 
+                       type="ENUMERATION" value="DEM_FF_RECNUM_CALCULATED">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="DemVersionInfoApi" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:ref name="DemMILIndicatorRef" type="REFERENCE" >
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:ref>
+                <d:lst name="DemCallbackDTCStatusChanged" type="MAP"/>
+                <d:lst name="DemDataElementClass" type="MAP">
+                  <d:chc name="ApmElecValU14" type="IDENTIFIABLE" 
+                         value="DemExternalCSDataElementClass">
+                    <d:ctr name="DemExternalCSDataElementClass" 
+                           type="IDENTIFIABLE">
+                      <d:var name="DemDataElementDataSize" type="INTEGER" 
+                             value="2"/>
+                      <d:var name="DemDataElementReadFnc" type="FUNCTION-NAME" 
+                             value="MAIN_DemDidElementReadApmElecValU14">
+                        <a:a name="ENABLE" value="true"/>
+                      </d:var>
+                      <d:var name="DemDataElementUsePort" type="BOOLEAN" 
+                             value="false"/>
+                    </d:ctr>
+                    <d:ctr name="DemExternalSRDataElementClass" 
+                           type="IDENTIFIABLE">
+                      <d:var name="DemDataElementDataSize" type="INTEGER" 
+                             value="1">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:ctr name="DemDataElementInstanceRef" type="INSTANCE">
+                        <d:ref name="TARGET" type="REFERENCE" >
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:ref>
+                        <d:lst name="CONTEXT"/>
+                      </d:ctr>
+                    </d:ctr>
+                    <d:ctr name="DemInternalDataElementClass" 
+                           type="IDENTIFIABLE">
+                      <d:var name="DemDataElementDataSize" type="INTEGER" 
+                             value="1">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="DemInternalDataElement" type="ENUMERATION" 
+                             value="DEM_AGINGCTR">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                  </d:chc>
+                  <d:chc name="ApmElecValI14" type="IDENTIFIABLE" 
+                         value="DemExternalCSDataElementClass">
+                    <d:ctr name="DemExternalCSDataElementClass" 
+                           type="IDENTIFIABLE">
+                      <d:var name="DemDataElementDataSize" type="INTEGER" 
+                             value="2"/>
+                      <d:var name="DemDataElementReadFnc" type="FUNCTION-NAME" 
+                             value="MAIN_DemDidElementReadApmElecValI14">
+                        <a:a name="ENABLE" value="true"/>
+                      </d:var>
+                      <d:var name="DemDataElementUsePort" type="BOOLEAN" 
+                             value="false"/>
+                    </d:ctr>
+                    <d:ctr name="DemExternalSRDataElementClass" 
+                           type="IDENTIFIABLE">
+                      <d:var name="DemDataElementDataSize" type="INTEGER" 
+                             value="1">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:ctr name="DemDataElementInstanceRef" type="INSTANCE">
+                        <d:ref name="TARGET" type="REFERENCE" >
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:ref>
+                        <d:lst name="CONTEXT"/>
+                      </d:ctr>
+                    </d:ctr>
+                    <d:ctr name="DemInternalDataElementClass" 
+                           type="IDENTIFIABLE">
+                      <d:var name="DemDataElementDataSize" type="INTEGER" 
+                             value="1">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="DemInternalDataElement" type="ENUMERATION" 
+                             value="DEM_AGINGCTR">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                  </d:chc>
+                  <d:chc name="ApmElecValUHV" type="IDENTIFIABLE" 
+                         value="DemExternalCSDataElementClass">
+                    <d:ctr name="DemExternalCSDataElementClass" 
+                           type="IDENTIFIABLE">
+                      <d:var name="DemDataElementDataSize" type="INTEGER" 
+                             value="2"/>
+                      <d:var name="DemDataElementReadFnc" type="FUNCTION-NAME" 
+                             value="MAIN_DemDidElementReadApmElecValUHV">
+                        <a:a name="ENABLE" value="true"/>
+                      </d:var>
+                      <d:var name="DemDataElementUsePort" type="BOOLEAN" 
+                             value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                    <d:ctr name="DemExternalSRDataElementClass" 
+                           type="IDENTIFIABLE">
+                      <d:var name="DemDataElementDataSize" type="INTEGER" 
+                             value="1">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:ctr name="DemDataElementInstanceRef" type="INSTANCE">
+                        <d:ref name="TARGET" type="REFERENCE" >
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:ref>
+                        <d:lst name="CONTEXT"/>
+                      </d:ctr>
+                    </d:ctr>
+                    <d:ctr name="DemInternalDataElementClass" 
+                           type="IDENTIFIABLE">
+                      <d:var name="DemDataElementDataSize" type="INTEGER" 
+                             value="1">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="DemInternalDataElement" type="ENUMERATION" 
+                             value="DEM_AGINGCTR">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                  </d:chc>
+                  <d:chc name="ApmElecValIHV" type="IDENTIFIABLE" 
+                         value="DemExternalCSDataElementClass">
+                    <d:ctr name="DemExternalCSDataElementClass" 
+                           type="IDENTIFIABLE">
+                      <d:var name="DemDataElementDataSize" type="INTEGER" 
+                             value="2"/>
+                      <d:var name="DemDataElementReadFnc" type="FUNCTION-NAME" 
+                             value="MAIN_DemDidElementReadApmElecValIHV">
+                        <a:a name="ENABLE" value="true"/>
+                      </d:var>
+                      <d:var name="DemDataElementUsePort" type="BOOLEAN" 
+                             value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                    <d:ctr name="DemExternalSRDataElementClass" 
+                           type="IDENTIFIABLE">
+                      <d:var name="DemDataElementDataSize" type="INTEGER" 
+                             value="1">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:ctr name="DemDataElementInstanceRef" type="INSTANCE">
+                        <d:ref name="TARGET" type="REFERENCE" >
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:ref>
+                        <d:lst name="CONTEXT"/>
+                      </d:ctr>
+                    </d:ctr>
+                    <d:ctr name="DemInternalDataElementClass" 
+                           type="IDENTIFIABLE">
+                      <d:var name="DemDataElementDataSize" type="INTEGER" 
+                             value="1">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="DemInternalDataElement" type="ENUMERATION" 
+                             value="DEM_AGINGCTR">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                  </d:chc>
+                  <d:chc name="ApmElecValTemp" type="IDENTIFIABLE" 
+                         value="DemExternalCSDataElementClass">
+                    <d:ctr name="DemExternalCSDataElementClass" 
+                           type="IDENTIFIABLE">
+                      <d:var name="DemDataElementDataSize" type="INTEGER" 
+                             value="2"/>
+                      <d:var name="DemDataElementReadFnc" type="FUNCTION-NAME" 
+                             value="MAIN_DemDidElementReadApmElecValTemp">
+                        <a:a name="ENABLE" value="true"/>
+                      </d:var>
+                      <d:var name="DemDataElementUsePort" type="BOOLEAN" 
+                             value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                    <d:ctr name="DemExternalSRDataElementClass" 
+                           type="IDENTIFIABLE">
+                      <d:var name="DemDataElementDataSize" type="INTEGER" 
+                             value="1">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:ctr name="DemDataElementInstanceRef" type="INSTANCE">
+                        <d:ref name="TARGET" type="REFERENCE" >
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:ref>
+                        <d:lst name="CONTEXT"/>
+                      </d:ctr>
+                    </d:ctr>
+                    <d:ctr name="DemInternalDataElementClass" 
+                           type="IDENTIFIABLE">
+                      <d:var name="DemDataElementDataSize" type="INTEGER" 
+                             value="1">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="DemInternalDataElement" type="ENUMERATION" 
+                             value="DEM_AGINGCTR">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                  </d:chc>
+                  <d:chc name="AgingCnt" type="IDENTIFIABLE" 
+                         value="DemInternalDataElementClass">
+                    <d:ctr name="DemExternalCSDataElementClass" 
+                           type="IDENTIFIABLE">
+                      <d:var name="DemDataElementDataSize" type="INTEGER" 
+                             value="1">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="DemDataElementReadFnc" type="FUNCTION-NAME" 
+                             value="Module_DataElementRead">
+                        <a:a name="ENABLE" value="true"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="DemDataElementUsePort" type="BOOLEAN" 
+                             value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                    <d:ctr name="DemExternalSRDataElementClass" 
+                           type="IDENTIFIABLE">
+                      <d:var name="DemDataElementDataSize" type="INTEGER" 
+                             value="1">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:ctr name="DemDataElementInstanceRef" type="INSTANCE">
+                        <d:ref name="TARGET" type="REFERENCE" >
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:ref>
+                        <d:lst name="CONTEXT"/>
+                      </d:ctr>
+                    </d:ctr>
+                    <d:ctr name="DemInternalDataElementClass" 
+                           type="IDENTIFIABLE">
+                      <d:var name="DemDataElementDataSize" type="INTEGER" 
+                             value="1">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="DemInternalDataElement" type="ENUMERATION" 
+                             value="DEM_AGINGCTR">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                  </d:chc>
+                  <d:chc name="OccurCnt" type="IDENTIFIABLE" 
+                         value="DemInternalDataElementClass">
+                    <d:ctr name="DemExternalCSDataElementClass" 
+                           type="IDENTIFIABLE">
+                      <d:var name="DemDataElementDataSize" type="INTEGER" 
+                             value="1">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="DemDataElementReadFnc" type="FUNCTION-NAME" 
+                             value="Module_DataElementRead">
+                        <a:a name="ENABLE" value="true"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="DemDataElementUsePort" type="BOOLEAN" 
+                             value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                    </d:ctr>
+                    <d:ctr name="DemExternalSRDataElementClass" 
+                           type="IDENTIFIABLE">
+                      <d:var name="DemDataElementDataSize" type="INTEGER" 
+                             value="1">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:ctr name="DemDataElementInstanceRef" type="INSTANCE">
+                        <d:ref name="TARGET" type="REFERENCE" >
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:ref>
+                        <d:lst name="CONTEXT"/>
+                      </d:ctr>
+                    </d:ctr>
+                    <d:ctr name="DemInternalDataElementClass" 
+                           type="IDENTIFIABLE">
+                      <d:var name="DemDataElementDataSize" type="INTEGER" 
+                             value="1">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="DemInternalDataElement" type="ENUMERATION" 
+                             value="DEM_OCCCTR"/>
+                    </d:ctr>
+                  </d:chc>
+                </d:lst>
+                <d:lst name="DemDidClass" type="MAP">
+                  <d:ctr name="DID_ApmElecValU14" type="IDENTIFIABLE">
+                    <d:var name="DemDidIdentifier" type="INTEGER" value="64768"/>
+                    <d:lst name="DemDidDataElementClassRef">
+                      <d:ref type="REFERENCE" 
+                             value="ASPath:/Dem/Dem/DemGeneral/ApmElecValU14/ApmElecValU14"/>
+                    </d:lst>
+                  </d:ctr>
+                  <d:ctr name="DID_ApmElecValI14" type="IDENTIFIABLE">
+                    <d:var name="DemDidIdentifier" type="INTEGER" value="64769"/>
+                    <d:lst name="DemDidDataElementClassRef">
+                      <d:ref type="REFERENCE" 
+                             value="ASPath:/Dem/Dem/DemGeneral/ApmElecValI14/ApmElecValI14"/>
+                    </d:lst>
+                  </d:ctr>
+                  <d:ctr name="DID_ApmElecValUHV" type="IDENTIFIABLE">
+                    <d:var name="DemDidIdentifier" type="INTEGER" value="64770"/>
+                    <d:lst name="DemDidDataElementClassRef">
+                      <d:ref type="REFERENCE" 
+                             value="ASPath:/Dem/Dem/DemGeneral/ApmElecValUHV/ApmElecValUHV"/>
+                    </d:lst>
+                  </d:ctr>
+                  <d:ctr name="DID_ApmElecValIHV" type="IDENTIFIABLE">
+                    <d:var name="DemDidIdentifier" type="INTEGER" value="64771"/>
+                    <d:lst name="DemDidDataElementClassRef">
+                      <d:ref type="REFERENCE" 
+                             value="ASPath:/Dem/Dem/DemGeneral/ApmElecValIHV/ApmElecValIHV"/>
+                    </d:lst>
+                  </d:ctr>
+                  <d:ctr name="DID_ApmElecValTemp" type="IDENTIFIABLE">
+                    <d:var name="DemDidIdentifier" type="INTEGER" value="64772"/>
+                    <d:lst name="DemDidDataElementClassRef">
+                      <d:ref type="REFERENCE" 
+                             value="ASPath:/Dem/Dem/DemGeneral/ApmElecValTemp/ApmElecValTemp"/>
+                    </d:lst>
+                  </d:ctr>
+                </d:lst>
+                <d:lst name="DemEnableCondition" type="MAP"/>
+                <d:lst name="DemEnableConditionGroup" type="MAP"/>
+                <d:lst name="DemExtendedDataClass" type="MAP">
+                  <d:ctr name="DemExtendedDataClass_0" type="IDENTIFIABLE">
+                    <d:lst name="DemExtendedDataRecordClassRef">
+                      <d:ref type="REFERENCE" 
+                             value="ASPath:/Dem/Dem/DemGeneral/EXTDATAREC_0"/>
+                    </d:lst>
+                  </d:ctr>
+                </d:lst>
+                <d:lst name="DemExtendedDataRecordClass" type="MAP">
+                  <d:ctr name="EXTDATAREC_0" type="IDENTIFIABLE">
+                    <d:var name="DemExtendedDataRecordNumber" type="INTEGER" 
+                           value="1">
+                      <a:a name="IMPORTER_INFO">
+                        <a:v>@DEF</a:v>
+                        <a:v>@CALC</a:v>
+                      </a:a>
+                    </d:var>
+                    <d:var name="DemExtendedDataRecordUpdate" 
+                           type="ENUMERATION" value="DEM_UPDATE_RECORD_YES">
+                      <a:a name="ENABLE" value="true"/>
+                    </d:var>
+                    <d:lst name="DemDataElementClassRef">
+                      <d:ref type="REFERENCE" 
+                             value="ASPath:/Dem/Dem/DemGeneral/AgingCnt/AgingCnt"/>
+                      <d:ref type="REFERENCE" 
+                             value="ASPath:/Dem/Dem/DemGeneral/OccurCnt/OccurCnt"/>
+                    </d:lst>
+                  </d:ctr>
+                </d:lst>
+                <d:lst name="DemFreezeFrameClass" type="MAP">
+                  <d:ctr name="DemFreezeFrameClass_0" type="IDENTIFIABLE">
+                    <d:lst name="DemDidClassRef">
+                      <d:ref type="REFERENCE" 
+                             value="ASPath:/Dem/Dem/DemGeneral/DID_ApmElecValU14"/>
+                      <d:ref type="REFERENCE" 
+                             value="ASPath:/Dem/Dem/DemGeneral/DID_ApmElecValI14"/>
+                      <d:ref type="REFERENCE" 
+                             value="ASPath:/Dem/Dem/DemGeneral/DID_ApmElecValUHV"/>
+                      <d:ref type="REFERENCE" 
+                             value="ASPath:/Dem/Dem/DemGeneral/DID_ApmElecValIHV"/>
+                      <d:ref type="REFERENCE" 
+                             value="ASPath:/Dem/Dem/DemGeneral/DID_ApmElecValTemp"/>
+                    </d:lst>
+                  </d:ctr>
+                </d:lst>
+                <d:lst name="DemFreezeFrameRecNumClass" type="MAP"/>
+                <d:ctr name="DemGeneralOBD" type="IDENTIFIABLE">
+                  <a:a name="ENABLE" value="false"/>
+                  <d:ref name="DemOBDInputAcceleratorPaddleInformation" 
+                         type="REFERENCE" >
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:ref>
+                  <d:ref name="DemOBDInputAmbientPressure" type="REFERENCE" >
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:ref>
+                  <d:ref name="DemOBDInputAmbientTemperature" type="REFERENCE" >
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:ref>
+                  <d:ref name="DemOBDInputDistanceInformation" type="REFERENCE" >
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:ref>
+                  <d:ref name="DemOBDInputEngineSpeed" type="REFERENCE" >
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:ref>
+                  <d:ref name="DemOBDInputEngineTemperature" type="REFERENCE" >
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:ref>
+                  <d:ref name="DemOBDInputProgrammingEvent" type="REFERENCE" >
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:ref>
+                  <d:ref name="DemOBDInputVehicleSpeed" type="REFERENCE" >
+                    <a:a name="IMPORTER_INFO" value="@DEF"/>
+                  </d:ref>
+                </d:ctr>
+                <d:lst name="DemIndicator" type="MAP"/>
+                <d:lst name="DemNvRamBlockId" type="MAP">
+                  <d:ctr name="DemNvRamBlockId_0" type="IDENTIFIABLE">
+                    <d:ref name="DemNvRamBlockIdRef" type="REFERENCE" 
+                           value="ASPath:/NvM/NvM/NvMBlock_DEM"/>
+                  </d:ctr>
+                </d:lst>
+                <d:var name="DemCallbackMemStackMainFuncTrigger" type="STRING" 
+                       value="Appl_TriggerMemoryStack">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:lst name="DemAgingCycle" type="MAP"/>
+                <d:lst name="DemRatioId" type="MAP"/>
+                <d:lst name="DemStorageCondition" type="MAP"/>
+                <d:lst name="DemStorageConditionGroup" type="MAP"/>
+              </d:ctr>
+              <d:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+                <d:var name="ArMajorVersion" type="INTEGER" value="4"/>
+                <d:var name="ArMinorVersion" type="INTEGER" value="2"/>
+                <d:var name="ArPatchVersion" type="INTEGER" value="0"/>
+                <d:var name="SwMajorVersion" type="INTEGER" value="5"/>
+                <d:var name="SwMinorVersion" type="INTEGER" value="9"/>
+                <d:var name="SwPatchVersion" type="INTEGER" value="25"/>
+                <d:var name="ModuleId" type="INTEGER" value="54">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="VendorId" type="INTEGER" value="1">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="VendorApiInfix" type="STRING" value="">
+                  <a:a name="ENABLE" value="false"/>
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="Release" type="STRING" value="">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+              </d:ctr>
+              <d:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION" 
+                     value="VariantPreCompile">
+                <a:a name="IMPORTER_INFO" value="@DEF"/>
+              </d:var>
+              <d:lst name="DemConfigSet" type="MAP">
+                <d:ctr name="DemConfigSet_0" type="IDENTIFIABLE">
+                  <a:a name="IMPORTER_INFO" value="@CALC"/>
+                  <d:lst name="DemDTCClass" type="MAP">
+                    <d:ctr name="DDVFD_HVLowVoltage" type="IDENTIFIABLE">
+                      <d:var name="DemObdDTC" type="INTEGER" value="1">
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                      </d:var>
+                      <d:var name="DemUdsDTC" type="INTEGER" value="6144">
+                        <a:a name="ENABLE" value="true"/>
+                      </d:var>
+                      <d:var name="DemDTCFunctionalUnit" type="INTEGER" 
+                             value="0">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="DemDTCSeverity" type="ENUMERATION" 
+                             value="DEM_DTC_SEV_NO_SEVERITY">
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="DemImmediateNvStorage" type="BOOLEAN" 
+                             value="false"/>
+                      <d:lst name="DemCallbackInitMForF" type="MAP"/>
+                    </d:ctr>
+                    <d:ctr name="DDVFD_HVHighVoltage" type="IDENTIFIABLE">
+                      <d:var name="DemObdDTC" type="INTEGER" value="2">
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                      </d:var>
+                      <d:var name="DemUdsDTC" type="INTEGER" value="6145">
+                        <a:a name="ENABLE" value="true"/>
+                      </d:var>
+                      <d:var name="DemDTCFunctionalUnit" type="INTEGER" 
+                             value="0">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="DemDTCSeverity" type="ENUMERATION" 
+                             value="DEM_DTC_SEV_NO_SEVERITY">
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="DemImmediateNvStorage" type="BOOLEAN" 
+                             value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:lst name="DemCallbackInitMForF" type="MAP"/>
+                    </d:ctr>
+                    <d:ctr name="DDVFD_HiOVPPermanentFauSts" 
+                           type="IDENTIFIABLE">
+                      <d:var name="DemObdDTC" type="INTEGER" value="3">
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                      </d:var>
+                      <d:var name="DemUdsDTC" type="INTEGER" value="6146">
+                        <a:a name="ENABLE" value="true"/>
+                      </d:var>
+                      <d:var name="DemDTCFunctionalUnit" type="INTEGER" 
+                             value="0">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="DemDTCSeverity" type="ENUMERATION" 
+                             value="DEM_DTC_SEV_NO_SEVERITY">
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="DemImmediateNvStorage" type="BOOLEAN" 
+                             value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:lst name="DemCallbackInitMForF" type="MAP"/>
+                    </d:ctr>
+                    <d:ctr name="DDVFD_HiUVPPermanentFauSts" 
+                           type="IDENTIFIABLE">
+                      <d:var name="DemObdDTC" type="INTEGER" value="4">
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                      </d:var>
+                      <d:var name="DemUdsDTC" type="INTEGER" value="6147">
+                        <a:a name="ENABLE" value="true"/>
+                      </d:var>
+                      <d:var name="DemDTCFunctionalUnit" type="INTEGER" 
+                             value="0">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="DemDTCSeverity" type="ENUMERATION" 
+                             value="DEM_DTC_SEV_NO_SEVERITY">
+                        <a:a name="ENABLE" value="false"/>
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:var name="DemImmediateNvStorage" type="BOOLEAN" 
+                             value="false">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:lst name="DemCallbackInitMForF" type="MAP"/>
+                    </d:ctr>
+                  </d:lst>
+                  <d:lst name="DemEventParameter" type="MAP">
+                    <d:ctr name="APPL_E_DDVFD_HVLowVoltage" type="IDENTIFIABLE">
+                      <d:var name="DemEventId" type="INTEGER" value="1">
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                      </d:var>
+                      <d:var name="DemEventKind" type="ENUMERATION" 
+                             value="DEM_EVENT_KIND_SWC"/>
+                      <d:var name="DemMaxNumberFreezeFrameRecords" 
+                             type="INTEGER" value="1">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:ref name="DemDTCClassRef" type="REFERENCE" 
+                             value="ASPath:/Dem/Dem/DemConfigSet_0/DDVFD_HVLowVoltage">
+                        <a:a name="ENABLE" value="true"/>
+                      </d:ref>
+                      <d:ref name="DemExtendedDataClassRef" type="REFERENCE" 
+                             value="ASPath:/Dem/Dem/DemGeneral/DemExtendedDataClass_0">
+                        <a:a name="ENABLE" value="true"/>
+                      </d:ref>
+                      <d:ref name="DemFreezeFrameClassRef" type="REFERENCE" 
+                             value="ASPath:/Dem/Dem/DemGeneral/DemFreezeFrameClass_0">
+                        <a:a name="ENABLE" value="true"/>
+                      </d:ref>
+                      <d:ref name="DemFreezeFrameRecNumClassRef" 
+                             type="REFERENCE" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:ref>
+                      <d:ctr name="DemCallbackClearEventAllowed" 
+                             type="IDENTIFIABLE">
+                        <a:a name="ENABLE" value="false"/>
+                        <d:var name="DemCallbackClearEventAllowedFnc" 
+                               type="FUNCTION-NAME" 
+                               value="Module_DemClearEventAllowed">
+                          <a:a name="ENABLE" value="true"/>
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                      </d:ctr>
+                      <d:ctr name="DemCallbackEventDataChanged" 
+                             type="IDENTIFIABLE">
+                        <a:a name="ENABLE" value="false"/>
+                        <d:var name="DemCallbackEventDataChangedFnc" 
+                               type="FUNCTION-NAME" 
+                               value="Module_DemTriggerOnEventData">
+                          <a:a name="ENABLE" value="true"/>
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                      </d:ctr>
+                      <d:lst name="DemCallbackEventStatusChanged" type="MAP"/>
+                      <d:ctr name="DemCallbackInitMForE" type="IDENTIFIABLE">
+                        <a:a name="ENABLE" value="false"/>
+                        <d:var name="DemCallbackInitMForEFnc" 
+                               type="FUNCTION-NAME" 
+                               value="Module_DemCallbackInitMForEvent">
+                          <a:a name="ENABLE" value="true"/>
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                      </d:ctr>
+                      <d:ctr name="DemEventClass" type="IDENTIFIABLE">
+                        <d:var name="DemAgingAllowed" type="BOOLEAN" 
+                               value="true"/>
+                        <d:var name="DemAgingCycleCounterThreshold" 
+                               type="INTEGER" value="40">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="DemConsiderPtoStatus" type="BOOLEAN" 
+                               value="false">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="DemEventDestination" type="ENUMERATION" 
+                               value="DEM_DTC_ORIGIN_PRIMARY_MEMORY"/>
+                        <d:var name="DemEventFailureCycleCounterThreshold" 
+                               type="INTEGER" value="1">
+                          <a:a name="ENABLE" value="true"/>
+                        </d:var>
+                        <d:var name="DemEventOBDReadinessGroup" 
+                               type="ENUMERATION" value="DEM_OBD_RDY_AC">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="DemEventPriority" type="INTEGER" value="1">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="DemEventSignificance" type="ENUMERATION" 
+                               value="DEM_EVENT_SIGNIFICANCE_FAULT">
+                          <a:a name="ENABLE" value="false"/>
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="DemFFPrestorageSupported" type="BOOLEAN" 
+                               value="false">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:ref name="DemAgingCycleRef" type="REFERENCE" 
+                               value="ASPath:/Dem/Dem/DemGeneral/DEM_OPCYC_POWER">
+                          <a:a name="ENABLE" value="true"/>
+                        </d:ref>
+                        <d:ref name="DemEnableConditionGroupRef" 
+                               type="REFERENCE" value="">
+                          <a:a name="ENABLE" value="false"/>
+                        </d:ref>
+                        <d:ref name="DemEventFailureCycleRef" type="REFERENCE" 
+                               value="ASPath:/Dem/Dem/DemGeneral/DEM_OPCYC_POWER">
+                          <a:a name="ENABLE" value="true"/>
+                        </d:ref>
+                        <d:ref name="DemOperationCycleRef" type="REFERENCE" 
+                               value="ASPath:/Dem/Dem/DemGeneral/DEM_OPCYC_POWER"/>
+                        <d:ref name="DemStorageConditionGroupRef" 
+                               type="REFERENCE" >
+                          <a:a name="ENABLE" value="false"/>
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:ref>
+                        <d:chc name="DemDebounceAlgorithmClass" 
+                               type="IDENTIFIABLE" value="DemDebounceTimeBase">
+                          <d:ctr name="DemDebounceMonitorInternal" 
+                                 type="IDENTIFIABLE">
+                            <d:ctr name="DemCallbackGetFDC" type="IDENTIFIABLE">
+                              <a:a name="ENABLE" value="true"/>
+                              <d:var name="DemCallbackGetFDCFnc" 
+                                     type="FUNCTION-NAME" 
+                                     value="Module_DemGetFaultDetectionCounterForEvent">
+                                <a:a name="ENABLE" value="true"/>
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                            </d:ctr>
+                          </d:ctr>
+                          <d:ctr name="DemDebounceCounterBased" 
+                                 type="IDENTIFIABLE">
+                            <d:var name="DemDebounceCounterDecrementStepSize" 
+                                   type="INTEGER" value="1"/>
+                            <d:var name="DemDebounceCounterFailedThreshold" 
+                                   type="INTEGER" value="255"/>
+                            <d:var name="DemDebounceCounterIncrementStepSize" 
+                                   type="INTEGER" value="1"/>
+                            <d:var name="DemDebounceCounterJumpDown" 
+                                   type="BOOLEAN" value="false">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                            <d:var name="DemDebounceCounterJumpDownValue" 
+                                   type="INTEGER" value="0">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                            <d:var name="DemDebounceCounterJumpUp" 
+                                   type="BOOLEAN" value="false">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                            <d:var name="DemDebounceCounterJumpUpValue" 
+                                   type="INTEGER" value="0">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                            <d:var name="DemDebounceCounterPassedThreshold" 
+                                   type="INTEGER" value="-1"/>
+                            <d:var name="DemDebounceCounterStorage" 
+                                   type="BOOLEAN" value="false">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                          </d:ctr>
+                          <d:ctr name="DemDebounceTimeBase" type="IDENTIFIABLE">
+                            <d:var name="DemDebounceTimeFailedThreshold" 
+                                   type="FLOAT" value="0.06"/>
+                            <d:var name="DemDebounceTimePassedThreshold" 
+                                   type="FLOAT" value="0.06"/>
+                          </d:ctr>
+                          <d:ctr name="DemDebounceFrequencyBased" 
+                                 type="IDENTIFIABLE">
+                            <d:var name="DemDurationOfTimeWindow" type="FLOAT" 
+                                   value="0.01">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                            <d:var name="DemThresholdForEventTestedFailed" 
+                                   type="INTEGER" value="10">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                            <d:var name="DemThresholdForEventTestedPassed" 
+                                   type="INTEGER" value="10">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                          </d:ctr>
+                        </d:chc>
+                        <d:lst name="DemIndicatorAttribute" type="MAP"/>
+                      </d:ctr>
+                    </d:ctr>
+                    <d:ctr name="APPL_E_DDVFD_HVHighVoltage" 
+                           type="IDENTIFIABLE">
+                      <d:var name="DemEventId" type="INTEGER" value="2">
+                        <a:a name="IMPORTER_INFO">
+                          <a:v>@DEF</a:v>
+                          <a:v>@CALC</a:v>
+                        </a:a>
+                      </d:var>
+                      <d:var name="DemEventKind" type="ENUMERATION" 
+                             value="DEM_EVENT_KIND_SWC"/>
+                      <d:var name="DemMaxNumberFreezeFrameRecords" 
+                             type="INTEGER" value="1">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:ref name="DemDTCClassRef" type="REFERENCE" 
+                             value="ASPath:/Dem/Dem/DemConfigSet_0/DDVFD_HVHighVoltage">
+                        <a:a name="ENABLE" value="true"/>
+                      </d:ref>
+                      <d:ref name="DemExtendedDataClassRef" type="REFERENCE" 
+                             value="ASPath:/Dem/Dem/DemGeneral/DemExtendedDataClass_0">
+                        <a:a name="ENABLE" value="true"/>
+                      </d:ref>
+                      <d:ref name="DemFreezeFrameClassRef" type="REFERENCE" 
+                             value="ASPath:/Dem/Dem/DemGeneral/DemFreezeFrameClass_0">
+                        <a:a name="ENABLE" value="true"/>
+                      </d:ref>
+                      <d:ref name="DemFreezeFrameRecNumClassRef" 
+                             type="REFERENCE" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:ref>
+                      <d:ctr name="DemCallbackClearEventAllowed" 
+                             type="IDENTIFIABLE">
+                        <a:a name="ENABLE" value="false"/>
+                        <d:var name="DemCallbackClearEventAllowedFnc" 
+                               type="FUNCTION-NAME" 
+                               value="Module_DemClearEventAllowed">
+                          <a:a name="ENABLE" value="true"/>
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                      </d:ctr>
+                      <d:ctr name="DemCallbackEventDataChanged" 
+                             type="IDENTIFIABLE">
+                        <a:a name="ENABLE" value="false"/>
+                        <d:var name="DemCallbackEventDataChangedFnc" 
+                               type="FUNCTION-NAME" 
+                               value="Module_DemTriggerOnEventData">
+                          <a:a name="ENABLE" value="true"/>
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                      </d:ctr>
+                      <d:lst name="DemCallbackEventStatusChanged" type="MAP"/>
+                      <d:ctr name="DemCallbackInitMForE" type="IDENTIFIABLE">
+                        <a:a name="ENABLE" value="false"/>
+                        <d:var name="DemCallbackInitMForEFnc" 
+                               type="FUNCTION-NAME" 
+                               value="Module_DemCallbackInitMForEvent">
+                          <a:a name="ENABLE" value="true"/>
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                      </d:ctr>
+                      <d:ctr name="DemEventClass" type="IDENTIFIABLE">
+                        <d:var name="DemAgingAllowed" type="BOOLEAN" 
+                               value="true"/>
+                        <d:var name="DemAgingCycleCounterThreshold" 
+                               type="INTEGER" value="40">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="DemConsiderPtoStatus" type="BOOLEAN" 
+                               value="false">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="DemEventDestination" type="ENUMERATION" 
+                               value="DEM_DTC_ORIGIN_PRIMARY_MEMORY">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="DemEventFailureCycleCounterThreshold" 
+                               type="INTEGER" value="1">
+                          <a:a name="ENABLE" value="true"/>
+                        </d:var>
+                        <d:var name="DemEventOBDReadinessGroup" 
+                               type="ENUMERATION" value="DEM_OBD_RDY_AC">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="DemEventPriority" type="INTEGER" value="1">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="DemEventSignificance" type="ENUMERATION" 
+                               value="DEM_EVENT_SIGNIFICANCE_FAULT">
+                          <a:a name="ENABLE" value="false"/>
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="DemFFPrestorageSupported" type="BOOLEAN" 
+                               value="false">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:ref name="DemAgingCycleRef" type="REFERENCE" 
+                               value="ASPath:/Dem/Dem/DemGeneral/DEM_OPCYC_POWER">
+                          <a:a name="ENABLE" value="true"/>
+                        </d:ref>
+                        <d:ref name="DemEnableConditionGroupRef" 
+                               type="REFERENCE" value="">
+                          <a:a name="ENABLE" value="false"/>
+                        </d:ref>
+                        <d:ref name="DemEventFailureCycleRef" type="REFERENCE" 
+                               value="ASPath:/Dem/Dem/DemGeneral/DEM_OPCYC_POWER">
+                          <a:a name="ENABLE" value="true"/>
+                        </d:ref>
+                        <d:ref name="DemOperationCycleRef" type="REFERENCE" 
+                               value="ASPath:/Dem/Dem/DemGeneral/DEM_OPCYC_POWER"/>
+                        <d:ref name="DemStorageConditionGroupRef" 
+                               type="REFERENCE" >
+                          <a:a name="ENABLE" value="false"/>
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:ref>
+                        <d:chc name="DemDebounceAlgorithmClass" 
+                               type="IDENTIFIABLE" value="DemDebounceTimeBase">
+                          <d:ctr name="DemDebounceMonitorInternal" 
+                                 type="IDENTIFIABLE">
+                            <d:ctr name="DemCallbackGetFDC" type="IDENTIFIABLE">
+                              <a:a name="ENABLE" value="true"/>
+                              <d:var name="DemCallbackGetFDCFnc" 
+                                     type="FUNCTION-NAME" 
+                                     value="Module_DemGetFaultDetectionCounterForEvent">
+                                <a:a name="ENABLE" value="true"/>
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                            </d:ctr>
+                          </d:ctr>
+                          <d:ctr name="DemDebounceCounterBased" 
+                                 type="IDENTIFIABLE">
+                            <d:var name="DemDebounceCounterDecrementStepSize" 
+                                   type="INTEGER" value="1">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                            <d:var name="DemDebounceCounterFailedThreshold" 
+                                   type="INTEGER" value="255"/>
+                            <d:var name="DemDebounceCounterIncrementStepSize" 
+                                   type="INTEGER" value="1">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                            <d:var name="DemDebounceCounterJumpDown" 
+                                   type="BOOLEAN" value="false">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                            <d:var name="DemDebounceCounterJumpDownValue" 
+                                   type="INTEGER" value="0">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                            <d:var name="DemDebounceCounterJumpUp" 
+                                   type="BOOLEAN" value="false">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                            <d:var name="DemDebounceCounterJumpUpValue" 
+                                   type="INTEGER" value="0">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                            <d:var name="DemDebounceCounterPassedThreshold" 
+                                   type="INTEGER" value="-1"/>
+                            <d:var name="DemDebounceCounterStorage" 
+                                   type="BOOLEAN" value="false">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                          </d:ctr>
+                          <d:ctr name="DemDebounceTimeBase" type="IDENTIFIABLE">
+                            <d:var name="DemDebounceTimeFailedThreshold" 
+                                   type="FLOAT" value="0.06"/>
+                            <d:var name="DemDebounceTimePassedThreshold" 
+                                   type="FLOAT" value="0.06"/>
+                          </d:ctr>
+                          <d:ctr name="DemDebounceFrequencyBased" 
+                                 type="IDENTIFIABLE">
+                            <d:var name="DemDurationOfTimeWindow" type="FLOAT" 
+                                   value="0.01">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                            <d:var name="DemThresholdForEventTestedFailed" 
+                                   type="INTEGER" value="10">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                            <d:var name="DemThresholdForEventTestedPassed" 
+                                   type="INTEGER" value="10">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                          </d:ctr>
+                        </d:chc>
+                        <d:lst name="DemIndicatorAttribute" type="MAP"/>
+                      </d:ctr>
+                    </d:ctr>
+                    <d:ctr name="APPL_E_DDVFD_HiOVPPermanentFauSts" 
+                           type="IDENTIFIABLE">
+                      <d:var name="DemEventId" type="INTEGER" value="3"/>
+                      <d:var name="DemEventKind" type="ENUMERATION" 
+                             value="DEM_EVENT_KIND_SWC"/>
+                      <d:var name="DemMaxNumberFreezeFrameRecords" 
+                             type="INTEGER" value="1">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:ref name="DemDTCClassRef" type="REFERENCE" 
+                             value="ASPath:/Dem/Dem/DemConfigSet_0/DDVFD_HiOVPPermanentFauSts">
+                        <a:a name="ENABLE" value="true"/>
+                      </d:ref>
+                      <d:ref name="DemExtendedDataClassRef" type="REFERENCE" 
+                             value="ASPath:/Dem/Dem/DemGeneral/DemExtendedDataClass_0">
+                        <a:a name="ENABLE" value="true"/>
+                      </d:ref>
+                      <d:ref name="DemFreezeFrameClassRef" type="REFERENCE" 
+                             value="ASPath:/Dem/Dem/DemGeneral/DemFreezeFrameClass_0">
+                        <a:a name="ENABLE" value="true"/>
+                      </d:ref>
+                      <d:ref name="DemFreezeFrameRecNumClassRef" 
+                             type="REFERENCE" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:ref>
+                      <d:ctr name="DemCallbackClearEventAllowed" 
+                             type="IDENTIFIABLE">
+                        <a:a name="ENABLE" value="false"/>
+                        <d:var name="DemCallbackClearEventAllowedFnc" 
+                               type="FUNCTION-NAME" 
+                               value="Module_DemClearEventAllowed">
+                          <a:a name="ENABLE" value="true"/>
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                      </d:ctr>
+                      <d:ctr name="DemCallbackEventDataChanged" 
+                             type="IDENTIFIABLE">
+                        <a:a name="ENABLE" value="false"/>
+                        <d:var name="DemCallbackEventDataChangedFnc" 
+                               type="FUNCTION-NAME" 
+                               value="Module_DemTriggerOnEventData">
+                          <a:a name="ENABLE" value="true"/>
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                      </d:ctr>
+                      <d:lst name="DemCallbackEventStatusChanged" type="MAP"/>
+                      <d:ctr name="DemCallbackInitMForE" type="IDENTIFIABLE">
+                        <a:a name="ENABLE" value="false"/>
+                        <d:var name="DemCallbackInitMForEFnc" 
+                               type="FUNCTION-NAME" 
+                               value="Module_DemCallbackInitMForEvent">
+                          <a:a name="ENABLE" value="true"/>
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                      </d:ctr>
+                      <d:ctr name="DemEventClass" type="IDENTIFIABLE">
+                        <d:var name="DemAgingAllowed" type="BOOLEAN" 
+                               value="true"/>
+                        <d:var name="DemAgingCycleCounterThreshold" 
+                               type="INTEGER" value="40">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="DemConsiderPtoStatus" type="BOOLEAN" 
+                               value="false">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="DemEventDestination" type="ENUMERATION" 
+                               value="DEM_DTC_ORIGIN_PRIMARY_MEMORY">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="DemEventFailureCycleCounterThreshold" 
+                               type="INTEGER" value="1">
+                          <a:a name="ENABLE" value="true"/>
+                        </d:var>
+                        <d:var name="DemEventOBDReadinessGroup" 
+                               type="ENUMERATION" value="DEM_OBD_RDY_AC">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="DemEventPriority" type="INTEGER" value="1">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="DemEventSignificance" type="ENUMERATION" 
+                               value="DEM_EVENT_SIGNIFICANCE_FAULT">
+                          <a:a name="ENABLE" value="false"/>
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="DemFFPrestorageSupported" type="BOOLEAN" 
+                               value="false">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:ref name="DemAgingCycleRef" type="REFERENCE" 
+                               value="ASPath:/Dem/Dem/DemGeneral/DEM_OPCYC_POWER">
+                          <a:a name="ENABLE" value="true"/>
+                        </d:ref>
+                        <d:ref name="DemEnableConditionGroupRef" 
+                               type="REFERENCE" value="">
+                          <a:a name="ENABLE" value="false"/>
+                        </d:ref>
+                        <d:ref name="DemEventFailureCycleRef" type="REFERENCE" 
+                               value="ASPath:/Dem/Dem/DemGeneral/DEM_OPCYC_POWER">
+                          <a:a name="ENABLE" value="true"/>
+                        </d:ref>
+                        <d:ref name="DemOperationCycleRef" type="REFERENCE" 
+                               value="ASPath:/Dem/Dem/DemGeneral/DEM_OPCYC_POWER"/>
+                        <d:ref name="DemStorageConditionGroupRef" 
+                               type="REFERENCE" >
+                          <a:a name="ENABLE" value="false"/>
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:ref>
+                        <d:chc name="DemDebounceAlgorithmClass" 
+                               type="IDENTIFIABLE" value="DemDebounceTimeBase">
+                          <d:ctr name="DemDebounceMonitorInternal" 
+                                 type="IDENTIFIABLE">
+                            <d:ctr name="DemCallbackGetFDC" type="IDENTIFIABLE">
+                              <a:a name="ENABLE" value="true"/>
+                              <d:var name="DemCallbackGetFDCFnc" 
+                                     type="FUNCTION-NAME" 
+                                     value="Module_DemGetFaultDetectionCounterForEvent">
+                                <a:a name="ENABLE" value="true"/>
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                            </d:ctr>
+                          </d:ctr>
+                          <d:ctr name="DemDebounceCounterBased" 
+                                 type="IDENTIFIABLE">
+                            <d:var name="DemDebounceCounterDecrementStepSize" 
+                                   type="INTEGER" value="1">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                            <d:var name="DemDebounceCounterFailedThreshold" 
+                                   type="INTEGER" value="255"/>
+                            <d:var name="DemDebounceCounterIncrementStepSize" 
+                                   type="INTEGER" value="1">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                            <d:var name="DemDebounceCounterJumpDown" 
+                                   type="BOOLEAN" value="false">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                            <d:var name="DemDebounceCounterJumpDownValue" 
+                                   type="INTEGER" value="0">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                            <d:var name="DemDebounceCounterJumpUp" 
+                                   type="BOOLEAN" value="false">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                            <d:var name="DemDebounceCounterJumpUpValue" 
+                                   type="INTEGER" value="0">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                            <d:var name="DemDebounceCounterPassedThreshold" 
+                                   type="INTEGER" value="-1"/>
+                            <d:var name="DemDebounceCounterStorage" 
+                                   type="BOOLEAN" value="false">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                          </d:ctr>
+                          <d:ctr name="DemDebounceTimeBase" type="IDENTIFIABLE">
+                            <d:var name="DemDebounceTimeFailedThreshold" 
+                                   type="FLOAT" value="0.06"/>
+                            <d:var name="DemDebounceTimePassedThreshold" 
+                                   type="FLOAT" value="0.06"/>
+                          </d:ctr>
+                          <d:ctr name="DemDebounceFrequencyBased" 
+                                 type="IDENTIFIABLE">
+                            <d:var name="DemDurationOfTimeWindow" type="FLOAT" 
+                                   value="0.01">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                            <d:var name="DemThresholdForEventTestedFailed" 
+                                   type="INTEGER" value="10">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                            <d:var name="DemThresholdForEventTestedPassed" 
+                                   type="INTEGER" value="10">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                          </d:ctr>
+                        </d:chc>
+                        <d:lst name="DemIndicatorAttribute" type="MAP"/>
+                      </d:ctr>
+                    </d:ctr>
+                    <d:ctr name="APPL_E_DDVFD_HiUVPPermanentFauSts" 
+                           type="IDENTIFIABLE">
+                      <d:var name="DemEventId" type="INTEGER" value="4"/>
+                      <d:var name="DemEventKind" type="ENUMERATION" 
+                             value="DEM_EVENT_KIND_SWC"/>
+                      <d:var name="DemMaxNumberFreezeFrameRecords" 
+                             type="INTEGER" value="1">
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:var>
+                      <d:ref name="DemDTCClassRef" type="REFERENCE" 
+                             value="ASPath:/Dem/Dem/DemConfigSet_0/DDVFD_HiUVPPermanentFauSts">
+                        <a:a name="ENABLE" value="true"/>
+                      </d:ref>
+                      <d:ref name="DemExtendedDataClassRef" type="REFERENCE" 
+                             value="ASPath:/Dem/Dem/DemGeneral/DemExtendedDataClass_0">
+                        <a:a name="ENABLE" value="true"/>
+                      </d:ref>
+                      <d:ref name="DemFreezeFrameClassRef" type="REFERENCE" 
+                             value="ASPath:/Dem/Dem/DemGeneral/DemFreezeFrameClass_0">
+                        <a:a name="ENABLE" value="true"/>
+                      </d:ref>
+                      <d:ref name="DemFreezeFrameRecNumClassRef" 
+                             type="REFERENCE" >
+                        <a:a name="IMPORTER_INFO" value="@DEF"/>
+                      </d:ref>
+                      <d:ctr name="DemCallbackClearEventAllowed" 
+                             type="IDENTIFIABLE">
+                        <a:a name="ENABLE" value="false"/>
+                        <d:var name="DemCallbackClearEventAllowedFnc" 
+                               type="FUNCTION-NAME" 
+                               value="Module_DemClearEventAllowed">
+                          <a:a name="ENABLE" value="true"/>
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                      </d:ctr>
+                      <d:ctr name="DemCallbackEventDataChanged" 
+                             type="IDENTIFIABLE">
+                        <a:a name="ENABLE" value="false"/>
+                        <d:var name="DemCallbackEventDataChangedFnc" 
+                               type="FUNCTION-NAME" 
+                               value="Module_DemTriggerOnEventData">
+                          <a:a name="ENABLE" value="true"/>
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                      </d:ctr>
+                      <d:lst name="DemCallbackEventStatusChanged" type="MAP"/>
+                      <d:ctr name="DemCallbackInitMForE" type="IDENTIFIABLE">
+                        <a:a name="ENABLE" value="false"/>
+                        <d:var name="DemCallbackInitMForEFnc" 
+                               type="FUNCTION-NAME" 
+                               value="Module_DemCallbackInitMForEvent">
+                          <a:a name="ENABLE" value="true"/>
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                      </d:ctr>
+                      <d:ctr name="DemEventClass" type="IDENTIFIABLE">
+                        <d:var name="DemAgingAllowed" type="BOOLEAN" 
+                               value="true"/>
+                        <d:var name="DemAgingCycleCounterThreshold" 
+                               type="INTEGER" value="40">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="DemConsiderPtoStatus" type="BOOLEAN" 
+                               value="false">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="DemEventDestination" type="ENUMERATION" 
+                               value="DEM_DTC_ORIGIN_PRIMARY_MEMORY">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="DemEventFailureCycleCounterThreshold" 
+                               type="INTEGER" value="1">
+                          <a:a name="ENABLE" value="true"/>
+                        </d:var>
+                        <d:var name="DemEventOBDReadinessGroup" 
+                               type="ENUMERATION" value="DEM_OBD_RDY_AC">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="DemEventPriority" type="INTEGER" value="1">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="DemEventSignificance" type="ENUMERATION" 
+                               value="DEM_EVENT_SIGNIFICANCE_FAULT">
+                          <a:a name="ENABLE" value="false"/>
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="DemFFPrestorageSupported" type="BOOLEAN" 
+                               value="false">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:ref name="DemAgingCycleRef" type="REFERENCE" 
+                               value="ASPath:/Dem/Dem/DemGeneral/DEM_OPCYC_POWER">
+                          <a:a name="ENABLE" value="true"/>
+                        </d:ref>
+                        <d:ref name="DemEnableConditionGroupRef" 
+                               type="REFERENCE" value="">
+                          <a:a name="ENABLE" value="false"/>
+                        </d:ref>
+                        <d:ref name="DemEventFailureCycleRef" type="REFERENCE" 
+                               value="ASPath:/Dem/Dem/DemGeneral/DEM_OPCYC_POWER">
+                          <a:a name="ENABLE" value="true"/>
+                        </d:ref>
+                        <d:ref name="DemOperationCycleRef" type="REFERENCE" 
+                               value="ASPath:/Dem/Dem/DemGeneral/DEM_OPCYC_POWER"/>
+                        <d:ref name="DemStorageConditionGroupRef" 
+                               type="REFERENCE" >
+                          <a:a name="ENABLE" value="false"/>
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:ref>
+                        <d:chc name="DemDebounceAlgorithmClass" 
+                               type="IDENTIFIABLE" value="DemDebounceTimeBase">
+                          <d:ctr name="DemDebounceMonitorInternal" 
+                                 type="IDENTIFIABLE">
+                            <d:ctr name="DemCallbackGetFDC" type="IDENTIFIABLE">
+                              <a:a name="ENABLE" value="true"/>
+                              <d:var name="DemCallbackGetFDCFnc" 
+                                     type="FUNCTION-NAME" 
+                                     value="Module_DemGetFaultDetectionCounterForEvent">
+                                <a:a name="ENABLE" value="true"/>
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                            </d:ctr>
+                          </d:ctr>
+                          <d:ctr name="DemDebounceCounterBased" 
+                                 type="IDENTIFIABLE">
+                            <d:var name="DemDebounceCounterDecrementStepSize" 
+                                   type="INTEGER" value="1">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                            <d:var name="DemDebounceCounterFailedThreshold" 
+                                   type="INTEGER" value="255"/>
+                            <d:var name="DemDebounceCounterIncrementStepSize" 
+                                   type="INTEGER" value="1">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                            <d:var name="DemDebounceCounterJumpDown" 
+                                   type="BOOLEAN" value="false">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                            <d:var name="DemDebounceCounterJumpDownValue" 
+                                   type="INTEGER" value="0">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                            <d:var name="DemDebounceCounterJumpUp" 
+                                   type="BOOLEAN" value="false">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                            <d:var name="DemDebounceCounterJumpUpValue" 
+                                   type="INTEGER" value="0">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                            <d:var name="DemDebounceCounterPassedThreshold" 
+                                   type="INTEGER" value="-1"/>
+                            <d:var name="DemDebounceCounterStorage" 
+                                   type="BOOLEAN" value="false">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                          </d:ctr>
+                          <d:ctr name="DemDebounceTimeBase" type="IDENTIFIABLE">
+                            <d:var name="DemDebounceTimeFailedThreshold" 
+                                   type="FLOAT" value="0.06"/>
+                            <d:var name="DemDebounceTimePassedThreshold" 
+                                   type="FLOAT" value="0.06"/>
+                          </d:ctr>
+                          <d:ctr name="DemDebounceFrequencyBased" 
+                                 type="IDENTIFIABLE">
+                            <d:var name="DemDurationOfTimeWindow" type="FLOAT" 
+                                   value="0.01">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                            <d:var name="DemThresholdForEventTestedFailed" 
+                                   type="INTEGER" value="10">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                            <d:var name="DemThresholdForEventTestedPassed" 
+                                   type="INTEGER" value="10">
+                              <a:a name="IMPORTER_INFO" value="@DEF"/>
+                            </d:var>
+                          </d:ctr>
+                        </d:chc>
+                        <d:lst name="DemIndicatorAttribute" type="MAP"/>
+                      </d:ctr>
+                    </d:ctr>
+                  </d:lst>
+                  <d:lst name="DemPidClass" type="MAP"/>
+                </d:ctr>
+              </d:lst>
+              <d:ctr name="DemDefensiveProgramming" type="IDENTIFIABLE">
+                <d:var name="DemDefProgEnabled" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="DemPrecondAssertEnabled" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="DemPostcondAssertEnabled" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="DemStaticAssertEnabled" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="DemUnreachAssertEnabled" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="DemInvariantAssertEnabled" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+              </d:ctr>
+            </d:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>

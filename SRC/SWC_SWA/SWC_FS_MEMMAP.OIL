@@ -1,0 +1,41 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer          : APPLI                                                    */
+/*                                                                            */
+/* !Module         : MAIN                                                     */
+/* !Description    : Mapping section configuration of the MAIN module         */
+/*                                                                            */
+/* !File           : SWC_FS_MEMMAP.OIL                                        */
+/*                                                                            */
+/* !Scope          : Public                                                   */
+/*                                                                            */
+/* !Target         : Genecode Tool                                            */
+/*                                                                            */
+/* !Vendor         : Valeo                                                    */
+/*                                                                            */
+/* Coding language : OIL                                                      */
+/*                                                                            */
+/* COPYRIGHT 2014 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::                                                                $*/
+/* $Revision::             $$Author::   ogarot        $$Date::               $*/
+/******************************************************************************/
+/* Dimension Informations
+ * %PCMS_HEADER_SUBSTITUTION_START:%
+ * The PID has this format: <Product ID>:<Item ID>.<Variant>-<Item Type>;<Revision>
+ * %PID:%
+ * %PCMS_HEADER_SUBSTITUTION_END:%
+ ******************************************************************************/
+
+MEMMAP_MSN SWC_FS {
+                    SECTION = CODE;
+                    SECTION = CONST_UNSPECIFIED;
+                    SECTION = CALIB_UNSPECIFIED;
+                    SECTION = VAR_UNSPECIFIED;
+                  };
+
+/*------------------------------- end of file --------------------------------*/
+

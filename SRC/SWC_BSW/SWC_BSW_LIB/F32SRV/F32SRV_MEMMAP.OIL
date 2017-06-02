@@ -1,0 +1,31 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer          : MCAL                                                     */
+/*                                                                            */
+/* !Component      : F32SRV                                                   */
+/* !Description    : Mapping section configuration of the F32SRV component    */
+/*                                                                            */
+/* !File           : F32SRV_MEMMAP.OIL                                        */
+/*                                                                            */
+/* !Scope          : Public                                                   */
+/*                                                                            */
+/* !Target         : Genecode Tool                                            */
+/*                                                                            */
+/* !Vendor         : Valeo                                                    */
+/*                                                                            */
+/* Coding language : OIL                                                      */
+/*                                                                            */
+/* COPYRIGHT 2008 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   I:/PROJETS/LIBEMB/LOG/SRV/F32SRV/LOG/F32SRV_MEMMAP.OIv       $*/
+/* $Revision::   1.0      $$Author::   lvoilmy        $$Date::   29 Oct 2008 $*/
+/******************************************************************************/
+
+MEMMAP_MSN F32SRV { 
+                     SECTION = CODE;
+                  };
+
+/*------------------------------- end of file --------------------------------*/

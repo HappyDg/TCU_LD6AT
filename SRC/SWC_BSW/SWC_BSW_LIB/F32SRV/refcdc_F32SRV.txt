@@ -1,0 +1,2 @@
+Référence_spécification|indice_spécification|intitulé
+V01 NT 08 06040|01|f32srv external architecture

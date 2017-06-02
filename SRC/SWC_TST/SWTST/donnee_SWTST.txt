@@ -1,0 +1,142 @@
+Nom_donnée|Type|Nom_module|Public|Nb_lignes|Nb_colonnes|Label_père|Offset|Masque_accès|Affichage|Unité|Fonction_transfert_ades|Coefficient_a|Coefficient_b|Groupe|Groupe_1|Groupe_2|Alias_1|Alias_2|Genre|Variable_indice_ligne|Variable_indice_colonne|Fonction_transfert_ligne|Fonction_transfert_colonne|Table_breakpoint_ligne|Table_breakpoint_colonne|Référence_spécification|Recuperable|Modifiable|Fournisseur|Responsable|Valeurs|Visualisable_ADES|Donnée_a_supprimer|Validation|Commentaires|Volatile|MinDecValue|MaxDecValue|MinPhysValue|MaxPhysValue|Def_Eval|MemSec
+SWTST_aku16Duty|uint16|SWTST|1|4|3|SWTST_aku16Duty|0|0|Phys|%|1|100/16384|0|Application|SWTST|EVP|SWTST_aku16Duty||1|*|*|*|*|*|*|NONE|1|1||||1|0|1||0|0|65535|||0|
+SWTST_aku32Prd|uint32|SWTST|1|1|4|SWTST_aku32Prd|0|0|Phys|µs|1|0.01|0|Application|SWTST|EVP|SWTST_aku32Prd||1||*||*||*|NONE|0|1||||1|0|1||0|0|4294967295|||0|
+SWTST_kbEVPTstEnaC|uint8|SWTST|0|0|0|SWTST_kbEVPTstEnaC|0|0|Phys|bool|2|0||Application|SWTST|EVP|SWTST_kbEVPTstEnaC||1|||||||NONE|1|1|||0|1|0|0|Activate EVP tests|0|||||0|
+SWTST_ku8EVPTstNrC|uint8|SWTST|0|0|0|SWTST_ku8EVPTstNrC|0|0|Déci|-||||Application|SWTST|EVP|SWTST_ku8EVPTstNrC||1|||||||NONE|1|1|||0|1|0|0|Test number|0|||||0|
+SWTST_u32EVPTstErrInfo|uint32|SWTST|0|0|0|SWTST_u32EVPTstErrInfo|0|0|Hexa|-||||Application|SWTST|EVP|SWTST_u32EVPTstErrInfo||1||||||||0|1||||1|0|0|Information on the error that stopped the sequence|0|||||0|
+SWTST_u8EVPResumeTstNr|uint8|SWTST|0|0|0|SWTST_u8EVPResumeTstNr|0|0|Déci|-||||Application|SWTST|EVP|SWTST_u8EVPResumeTstNr||1||||||||0|1||||1|0|0|Test that has to be resumed after the reset|0|||||0|
+SWTST_u8EVPTstDoneNr|uint8|SWTST|0|0|0|SWTST_u8EVPTstDoneNr|0|0|Déci|-||||Application|SWTST|EVP|SWTST_u8EVPTstDoneNr||1||||||||0|1||||1|0|0|Last test done|0|||||0|
+SWTST_u8EVPTstErrId|uint8|SWTST|0|0|0|SWTST_u8EVPTstErrId|0|0|Déci|-||||Application|SWTST|EVP|SWTST_u8EVPTstErrId||1||||||||0|1||||1|0|0|Identifier of the first error in the test sequence|0|||||0|
+SWTST_u8EVPTstNrNm1|uint8|SWTST|0|0|0|SWTST_u8EVPTstNrNm1|0|0|Déci|-||||Application|SWTST|EVP|SWTST_u8EVPTstNrNm1||1||||||||0|1||||1|0|0|Previous value of "SWTST_ku8EVPTstNrC"|0|||||0|
+SWTST_vbEVPTstDone|boolean|SWTST|0|0|0|SWTST_vbEVPTstDone|0|0|Phys|bool|2|0||Application|SWTST|EVP|SWTST_vbEVPTstDone||1||||||||0|1||||1|0|0|Test sequence is done|1|||||0|
+SWTST_vbEVPTstErr|boolean|SWTST|0|0|0|SWTST_vbEVPTstErr|0|0|Phys|bool|2|0||Application|SWTST|EVP|SWTST_vbEVPTstErr||1||||||||0|1||||1|0|0|Result of the test|1|||||0|
+SWTST_vu8EVPRunngTstNr|uint8|SWTST|0|0|0|SWTST_vu8EVPRunngTstNr|0|0|Déci|-||||Application|SWTST|EVP|SWTST_vu8EVPRunngTstNr||1||||||||0|1||||1|0|0|Current test running|1|||||0|
+SWTST_kbDioWrM_SOL_HS_DEN_1|boolean|SWTST|1|0|0|SWTST_kbDioWrM_SOL_HS_DEN_1|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_kbDioWrM_SOL_HS_DEN_1||1||||||||0|1||||1|0|0|State of input|1|||||0|
+SWTST_bDioRdM_FOOT_BRAKE|boolean|SWTST|0|0|0|SWTST_bDioRdM_FOOT_BRAKE|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_bDioRdM_FOOT_BRAKE||1||||||||0|1||||1|0|0|State of input|1|||||0|
+SWTST_bDioRdM_SNOW_MODE|boolean|SWTST|0|0|0|SWTST_bDioRdM_SNOW_MODE|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_bDioRdM_SNOW_MODE||1||||||||0|1||||1|0|0|State of input|1|||||0|
+SWTST_bDioRdM_SPORT_MODE|boolean|SWTST|1|0|0|SWTST_bDioRdM_SPORT_MODE|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_bDioRdM_SPORT_MODE||1||||||||0|1||||1|0|0|State of input|1|||||0|
+SWTST_bDioRdM_HAND_BRAKE|boolean|SWTST|1|0|0|SWTST_bDioRdM_HAND_BRAKE|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_bDioRdM_HAND_BRAKE||1||||||||0|1||||1|0|0|State of input|1|||||0|
+SWTST_bDioRdM_RESERVED_SW_3|boolean|SWTST|1|0|0|SWTST_bDioRdM_RESERVED_SW_3|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_bDioRdM_RESERVED_SW_3||1||||||||0|1||||1|0|0|State of input|1|||||0|
+SWTST_bDioRdM_REV_LAMP_REL_DIAG|boolean|SWTST|1|0|0|SWTST_bDioRdM_REV_LAMP_REL_DIAG|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_bDioRdM_REV_LAMP_REL_DIAG||1||||||||0|1||||1|0|0|State of input|1|||||0|
+SWTST_bDioRdM_STARTER_REL_DIAG|boolean|SWTST|1|0|0|SWTST_bDioRdM_STARTER_REL_DIAG|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_bDioRdM_STARTER_REL_DIAG||1||||||||0|1||||1|0|0|State of input|1|||||0|
+SWTST_bDioRdM_IGN_INPUT|boolean|SWTST|1|0|0|SWTST_bDioRdM_IGN_INPUT|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_bDioRdM_IGN_INPUT||1||||||||0|1||||1|0|0|State of input|1|||||0|
+SWTST_bDioRdM_SUPPLY_SAFE_STATE|boolean|SWTST|1|0|0|SWTST_bDioRdM_SUPPLY_SAFE_STATE|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_bDioRdM_SUPPLY_SAFE_STATE||1||||||||0|1||||1|0|0|State of input|1|||||0|
+SWTST_bDioRdM_SUBROM_R|boolean|SWTST|1|0|0|SWTST_bDioRdM_SUBROM_R|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_bDioRdM_SUBROM_R||1||||||||0|1||||1|0|0|State of input|1|||||0|
+SWTST_bDioRdM_TLE8242_FAULT|boolean|SWTST|1|0|0|SWTST_bDioRdM_TLE8242_FAULT|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_bDioRdM_TLE8242_FAULT||1||||||||0|1||||1|0|0|State of input|1|||||0|
+SWTST_bDioRdM_MANUAL_UP|boolean|SWTST|0|0|0|SWTST_bDioRdM_MANUAL_UP|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_bDioRdM_MANUAL_UP||1||||||||0|1||||1|0|0|State of input|1|||||0|
+SWTST_bDioRdM_MANUAL_MODE|boolean|SWTST|0|0|0|SWTST_bDioRdM_MANUAL_MODE|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_bDioRdM_MANUAL_MODE||1||||||||0|1||||1|0|0|State of input|1|||||0|
+SWTST_bDioRdM_RESERVED_SW_4|boolean|SWTST|1|0|0|SWTST_bDioRdM_RESERVED_SW_4|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_bDioRdM_RESERVED_SW_4||1||||||||0|1||||1|0|0|State of input|1|||||0|
+SWTST_bDioRdM_RESERVED_SW_1|boolean|SWTST|1|0|0|SWTST_bDioRdM_RESERVED_SW_1|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_bDioRdM_RESERVED_SW_1||1||||||||0|1||||1|0|0|State of input|1|||||0|
+SWTST_bDioRdM_RESERVED_SW_2|boolean|SWTST|1|0|0|SWTST_bDioRdM_RESERVED_SW_2|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_bDioRdM_RESERVED_SW_2||1||||||||0|1||||1|0|0|State of input|1|||||0|
+SWTST_bDioRdM_SHIFT_LOCK_DIAG|boolean|SWTST|1|0|0|SWTST_bDioRdM_SHIFT_LOCK_DIAG|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_bDioRdM_SHIFT_LOCK_DIAG||1||||||||0|1||||1|0|0|State of input|1|||||0|
+SWTST_bDioRdM_MANUAL_DOWN|boolean|SWTST|0|0|0|SWTST_bDioRdM_MANUAL_DOWN|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_bDioRdM_MANUAL_DOWN||1||||||||0|1||||1|0|0|State of input|1|||||0|
+SWTST_bDioRdM_KEY_LOCK_DIAG|boolean|SWTST|1|0|0|SWTST_bDioRdM_KEY_LOCK_DIAG|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_bDioRdM_KEY_LOCK_DIAG||1||||||||0|1||||1|0|0|State of input|1|||||0|
+SWTST_bSwcSSRetAccCmd|boolean|SWTST|0|0|0|SWTST_bSwcSSRetAccCmd|0|0|Phys|bool|2|0||Application|SWTST|SWTST|SWTST_bSwcSSRetAccCmd||1||||||||0|1||||1|0|0|state|1|||||0|
+SWTST_bSwcSSLimpHomeSafCmd|boolean|SWTST|0|0|0|SWTST_bSwcSSLimpHomeSafCmd|0|0|Phys|bool|2|0||Application|SWTST|SWTST|SWTST_bSwcSSLimpHomeSafCmd||1||||||||0|1||||1|0|0|state|1|||||0|
+SWTST_bSwcSSAuxOnOFfCmd|boolean|SWTST|0|0|0|SWTST_bSwcSSAuxOnOFfCmd|0|0|Phys|bool|2|0||Application|SWTST|SWTST|SWTST_bSwcSSAuxOnOFfCmd||1||||||||0|1||||1|0|0|state|1|||||0|
+SWTST_bSwcEvpCmdEna|boolean|SWTST|0|0|0|SWTST_bSwcEvpCmdEna|0|0|Phys|bool|2|0||Application|SWTST|SWTST|SWTST_bSwcEvpCmdEna||1||||||||0|1||||1|0|0|state|1|||||0|
+SWTST_bSwcEvoCmdEna|boolean|SWTST|0|0|0|SWTST_bSwcEvoCmdEna|0|0|Phys|bool|2|0||Application|SWTST|SWTST|SWTST_bSwcEvoCmdEna||1||||||||0|1||||1|0|0|state|1|||||0|
+SWTST_bSwcSSSelectCoolCmd|boolean|SWTST|0|0|0|SWTST_bSwcSSSelectCoolCmd|0|0|Phys|bool|2|0||Application|SWTST|SWTST|SWTST_bSwcSSSelectCoolCmd||1||||||||0|1||||1|0|0|state|1|||||0|
+SWTST_bSwcSSDualArPisCmd|boolean|SWTST|0|0|0|SWTST_bSwcSSDualArPisCmd|0|0|Phys|bool|2|0||Application|SWTST|SWTST|SWTST_bSwcSSDualArPisCmd||1||||||||0|1||||1|0|0|state|1|||||0|
+SWTST_kbDioTstEnaC|uint8|SWTST|1|0|0|SWTST_kbDioTstEnaC|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_kbDioTstEnaC||1|||||||NONE|1|1|||0|1|0|0|Activate Dio tests|0|||||0|
+SWTST_kbDioWrM_SOLENOID_HS_CMD_2|uint8|SWTST|1|0|0|SWTST_kbDioWrM_SOLENOID_HS_CMD_2|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_kbDioWrM_SOLENOID_HS_CMD_2||1|||||||NONE|1|1|||0|1|0|0|Change output state|0|||||0|
+SWTST_kbDioWrM_REV_LAMP_REL_CMD|uint8|SWTST|0|0|0|SWTST_kbDioWrM_REV_LAMP_REL_CMD|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_kbDioWrM_REV_LAMP_REL_CMD||1|||||||NONE|1|1|||0|1|0|0|Change output state|0|||||0|
+SWTST_kbDioWrM_SOL_HS_CMD_1|uint8|SWTST|0|0|0|SWTST_kbDioWrM_SOL_HS_CMD_1|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_kbDioWrM_SOL_HS_CMD_1||1|||||||NONE|1|1|||0|1|0|0|Change output state|0|||||0|
+SWTST_kbDioWrM_SUPPLY_WDI|uint8|SWTST|0|0|0|SWTST_kbDioWrM_SUPPLY_WDI|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_kbDioWrM_SUPPLY_WDI||1|||||||NONE|1|1|||0|1|0|0|Change output state|0|||||0|
+SWTST_KbDioWrM_SUPPLY_ERROR|uint8|SWTST|0|0|0|SWTST_KbDioWrM_SUPPLY_ERROR|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_KbDioWrM_SUPPLY_ERROR||1|||||||NONE|1|1|||0|1|0|0|Change output state|0|||||0|
+SWTST_kbDioWrM_SHIFT_LOCK_CMD|uint8|SWTST|0|0|0|SWTST_kbDioWrM_SHIFT_LOCK_CMD|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_kbDioWrM_SHIFT_LOCK_CMD||1|||||||NONE|1|1|||0|1|0|0|Change output state|0|||||0|
+SWTST_kbDioWrM_SOLENOID_HS_DEN_2|uint8|SWTST|1|0|0|SWTST_kbDioWrM_SOLENOID_HS_DEN_2|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_kbDioWrM_SOLENOID_HS_DEN_2||1|||||||NONE|1|1|||0|1|0|0|Change output state|0|||||0|
+SWTST_kbDioWrM_STARTER_REL_CMD|uint8|SWTST|1|0|0|SWTST_kbDioWrM_STARTER_REL_CMD|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_kbDioWrM_STARTER_REL_CMD||1|||||||NONE|1|1|||0|1|0|0|Change output state|0|||||0|
+SWTST_kbDioWrM_KEY_LOCK_CMD|uint8|SWTST|1|0|0|SWTST_kbDioWrM_KEY_LOCK_CMD|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_kbDioWrM_KEY_LOCK_CMD||1|||||||NONE|1|1|||0|1|0|0|Change output state|0|||||0|
+SWTST_kbDioWrM_SBC_WAK|uint8|SWTST|1|0|0|SWTST_kbDioWrM_SBC_WAK|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_kbDioWrM_SBC_WAK||1|||||||NONE|1|1|||0|1|0|0|Change output state|0|||||0|
+SWTST_kbDioWrM_SUBROM_W|uint8|SWTST|1|0|0|SWTST_kbDioWrM_SUBROM_W|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_kbDioWrM_SUBROM_W||1|||||||NONE|1|1|||0|1|0|0|Change output state|0|||||0|
+SWTST_kbDioWrM_SUBROM_CS|uint8|SWTST|1|0|0|SWTST_kbDioWrM_SUBROM_CS|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_kbDioWrM_SUBROM_CS||1|||||||NONE|1|1|||0|1|0|0|Change output state|0|||||0|
+SWTST_kbDioWrM_SUBROM_CLK|uint8|SWTST|1|0|0|SWTST_kbDioWrM_SUBROM_CLK|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_kbDioWrM_SUBROM_CLK||1|||||||NONE|1|1|||0|1|0|0|Change output state|0|||||0|
+SWTST_kbDioWrM_TLE8242_ENA|uint8|SWTST|1|0|0|SWTST_kbDioWrM_TLE8242_ENA|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_kbDioWrM_TLE8242_ENA||1|||||||NONE|1|1|||0|1|0|0|Change output state|0|||||0|
+SWTST_kbDioWrM_TLE8242_PHASE_SYNC|uint8|SWTST|1|0|0|SWTST_kbDioWrM_TLE8242_PHASE_SYNC|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_kbDioWrM_TLE8242_PHASE_SYNC||1|||||||NONE|1|1|||0|1|0|0|Change output state|0|||||0|
+SWTST_ku8DioTstNrC|uint8|SWTST|1|0|0|SWTST_ku8DioTstNrC|0|0|Déci|-||||Application|SWTST|Dio|SWTST_ku8DioTstNrC||1|||||||NONE|1|1|||0|1|0|0|Test number|0|||||0|
+SWTST_u32DioTstErrInfo|uint32|SWTST|0|0|0|SWTST_u32DioTstErrInfo|0|0|Hexa|-||||Application|SWTST|Dio|SWTST_u32DioTstErrInfo||1||||||||0|1||||1|0|0|Information on the error that stopped the sequence|0|||||0|
+SWTST_u8DioResumeTstNr|uint8|SWTST|0|0|0|SWTST_u8DioResumeTstNr|0|0|Déci|-||||Application|SWTST|Dio|SWTST_u8DioResumeTstNr||1||||||||0|1||||1|0|0|Test that has to be resumed after the reset|0|||||0|
+SWTST_u8DioTstDoneNr|uint8|SWTST|0|0|0|SWTST_u8DioTstDoneNr|0|0|Déci|-||||Application|SWTST|Dio|SWTST_u8DioTstDoneNr||1||||||||0|1||||1|0|0|Last test done|0|||||0|
+SWTST_u8DioTstErrId|uint8|SWTST|0|0|0|SWTST_u8DioTstErrId|0|0|Déci|-||||Application|SWTST|Dio|SWTST_u8DioTstErrId||1||||||||0|1||||1|0|0|Identifier of the first error in the test sequence|0|||||0|
+SWTST_u8DioTstNrNm1|uint8|SWTST|1|0|0|SWTST_u8DioTstNrNm1|0|0|Déci|-||||Application|SWTST|Dio|SWTST_u8DioTstNrNm1||1||||||||0|1||||1|0|0|Previous value of "SWTST_ku8DioTstNrC"|0|||||0|
+SWTST_vbDioTstDone|boolean|SWTST|1|0|0|SWTST_vbDioTstDone|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_vbDioTstDone||1||||||||0|1||||1|0|0|Test sequence is done|1|||||0|
+SWTST_vbDioTstErr|boolean|SWTST|0|0|0|SWTST_vbDioTstErr|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_vbDioTstErr||1||||||||0|1||||1|0|0|Result of the test|1|||||0|
+SWTST_vu8DioRunngTstNr|uint8|SWTST|1|0|0|SWTST_vu8DioRunngTstNr|0|0|Déci|-||||Application|SWTST|Dio|SWTST_vu8DioRunngTstNr||1||||||||0|1||||1|0|0|Current test running|1|||||0|
+SWTST_au8Tle6220Diag|uint8|SWTST|1|1|16|SWTST_au8Tle6220Diag|0|0|Hexa|-|1|1|0|Application|SWTST|TLE6220|SWTST_au8Tle6220Diag||1|*|*|*|*|*|*|NONE|1|1||||1|0|1||0|0|255|||0|
+
+TST_bEnableTestPhys|boolean|SWTST|0|0|0|TST_bEnableTestPhys|0|0|HEXA|-||||SWTST|SWTST||TST_bEnableTestPhys||1||||||||0|1||||1|0|0||0|||||0|
+TST_0x211_f32WhlSpdFrntLeRawPhys|float32|SWTST|0|0|0|TST_0x211_f32WhlSpdFrntLeRawPhys|0|0|Phys|kph|1|1|0| |SWTST|SWTST|TST_0x211_f32WhlSpdFrntLeRawPhys||1|||||||NONE|0|1||||1|0|1|Message ABS1 10ms |0||||||
+TST_0x211_f32WhlSpdFrntRiRawPhys|float32|SWTST|0|0|0|TST_0x211_f32WhlSpdFrntRiRawPhys|0|0|Phys|kph|1|1|0| |SWTST|SWTST|TST_0x211_f32WhlSpdFrntRiRawPhys||1|||||||NONE|0|1||||1|0|1|Message ABS1 10ms |0||||||
+TST_0x211_f32WhlSpdReLeRawPhys|float32|SWTST|0|0|0|TST_0x211_f32WhlSpdReLeRawPhys|0|0|Phys|kph|1|1|0| |SWTST|SWTST|TST_0x211_f32WhlSpdReLeRawPhys||1|||||||NONE|0|1||||1|0|1|Message ABS1 10ms |0||||||
+TST_0x211_f32WhlSpdReRiRawPhys|float32|SWTST|0|0|0|TST_0x211_f32WhlSpdReRiRawPhys|0|0|Phys|kph|1|1|0| |SWTST|SWTST|TST_0x211_f32WhlSpdReRiRawPhys||1|||||||NONE|0|1||||1|0|1|Message ABS1 10ms |0||||||
+TST_0x221_bAbsCtrlActv|boolean|SWTST|0|0|0|TST_0x221_bAbsCtrlActv|0|0|Phys|bool|2|0|| |SWTST|SWTST|TST_0x221_bAbsCtrlActv||1|||||||NONE|0|1||||1|0|1|Message ABS2 10ms |0||||||
+TST_0x221_bAbsFlgFlt|boolean|SWTST|0|0|0|TST_0x221_bAbsFlgFlt|0|0|Phys|bool|2|0|| |SWTST|SWTST|TST_0x221_bAbsFlgFlt||1|||||||NONE|0|1||||1|0|1|Message ABS2 10ms |0||||||
+TST_0x221_bEbdFlgFlt|boolean|SWTST|0|0|0|TST_0x221_bEbdFlgFlt|0|0|Phys|bool|2|0|| |SWTST|SWTST|TST_0x221_bEbdFlgFlt||1|||||||NONE|0|1||||1|0|1|Message ABS2 10ms |0||||||
+TST_0x111_f32AccrPedlRatPhys|float32|SWTST|0|0|0|TST_0x111_f32AccrPedlRatPhys|0|0|Phys|%|1|1|0| |SWTST|SWTST|TST_0x111_f32AccrPedlRatPhys||1|||||||NONE|0|1||||1|0|1|Message ECM1 10ms |0||||||
+TST_0x111_u8BrkPedlPsd|uint8|SWTST|0|0|0|TST_0x111_u8BrkPedlPsd|0|0|Hexa|-|||| |SWTST|SWTST|TST_0x111_u8BrkPedlPsd||1|||||||NONE|0|1||||1|0|1|Message ECM1 10ms |0||||||
+TST_0x111_u8ECM1AliveCounter|uint8|SWTST|0|0|0|TST_0x111_u8ECM1AliveCounter|0|0|Hexa|-|||| |SWTST|SWTST|TST_0x111_u8ECM1AliveCounter||1|||||||NONE|0|1||||1|0|1|Message ECM1 10ms |0||||||
+TST_0x111_u8ECM1Checksum|uint8|SWTST|0|0|0|TST_0x111_u8ECM1Checksum|0|0|Hexa|-|||| |SWTST|SWTST|TST_0x111_u8ECM1Checksum||1|||||||NONE|0|1||||1|0|1|Message ECM1 10ms |0||||||
+TST_0x111_u8EngStAct|uint8|SWTST|0|0|0|TST_0x111_u8EngStAct|0|0|Hexa|-|||| |SWTST|SWTST|TST_0x111_u8EngStAct||1|||||||NONE|0|1||||1|0|1|Message ECM1 10ms |0||||||
+TST_0x111_f32EngTqIndActPhys|float32|SWTST|0|0|0|TST_0x111_f32EngTqIndActPhys|0|0|Phys|NM|1|1|0| |SWTST|SWTST|TST_0x111_f32EngTqIndActPhys||1|||||||NONE|0|1||||1|0|1|Message ECM1 10ms |0||||||
+TST_0x111_f32EngTqIndDrvDmdPhys|float32|SWTST|0|0|0|TST_0x111_f32EngTqIndDrvDmdPhys|0|0|Phys|NM|1|1|0| |SWTST|SWTST|TST_0x111_f32EngTqIndDrvDmdPhys||1|||||||NONE|0|1||||1|0|1|Message ECM1 10ms |0||||||
+TST_0x111_f32EngTqLossPhys|float32|SWTST|0|0|0|TST_0x111_f32EngTqLossPhys|0|0|Phys|NM|1|1|0| |SWTST|SWTST|TST_0x111_f32EngTqLossPhys||1|||||||NONE|0|1||||1|0|1|Message ECM1 10ms |0||||||
+TST_0x111_bHvacCluSts|boolean|SWTST|0|0|0|TST_0x111_bHvacCluSts|0|0|Phys|bool|2|0|| |SWTST|SWTST|TST_0x111_bHvacCluSts||1|||||||NONE|0|1||||1|0|1|Message ECM1 10ms |0||||||
+TST_0x111_f32ThrottleCmdPosPhys|float32|SWTST|0|0|0|TST_0x111_f32ThrottleCmdPosPhys|0|0|Phys|%|1|1|0| |SWTST|SWTST|TST_0x111_f32ThrottleCmdPosPhys||1|||||||NONE|0|1||||1|0|1|Message ECM1 10ms |0||||||
+TST_0x121_bCrsCtrlCtrlActv|boolean|SWTST|0|0|0|TST_0x121_bCrsCtrlCtrlActv|0|0|Phys|bool|2|0|| |SWTST|SWTST|TST_0x121_bCrsCtrlCtrlActv||1|||||||NONE|0|1||||1|0|1|Message ECM2 10ms |0||||||
+TST_0x121_u8ECM2AliveCounter|uint8|SWTST|0|0|0|TST_0x121_u8ECM2AliveCounter|0|0|Hexa|-|||| |SWTST|SWTST|TST_0x121_u8ECM2AliveCounter||1|||||||NONE|0|1||||1|0|1|Message ECM2 10ms |0||||||
+TST_0x121_u8ECM2Checksum|uint8|SWTST|0|0|0|TST_0x121_u8ECM2Checksum|0|0|Hexa|-|||| |SWTST|SWTST|TST_0x121_u8ECM2Checksum||1|||||||NONE|0|1||||1|0|1|Message ECM2 10ms |0||||||
+TST_0x121_f32EngNPhys|float32|SWTST|0|0|0|TST_0x121_f32EngNPhys|0|0|Phys|rpm|1|1|0| |SWTST|SWTST|TST_0x121_f32EngNPhys||1|||||||NONE|0|1||||1|0|1|Message ECM2 10ms |0||||||
+TST_0x121_f32EngNTgtIdlePhys|float32|SWTST|0|0|0|TST_0x121_f32EngNTgtIdlePhys|0|0|Phys|rpm|1|1|0| |SWTST|SWTST|TST_0x121_f32EngNTgtIdlePhys||1|||||||NONE|0|1||||1|0|1|Message ECM2 10ms |0||||||
+TST_0x121_u8GearLmtForLightOff|uint8|SWTST|0|0|0|TST_0x121_u8GearLmtForLightOff|0|0|Hexa|-|||| |SWTST|SWTST|TST_0x121_u8GearLmtForLightOff||1|||||||NONE|0|1||||1|0|1|Message ECM2 10ms |0||||||
+TST_0x231_f32AlgtPhys|float32|SWTST|0|0|0|TST_0x231_f32AlgtPhys|0|0|Phys|m/s^2|1|1|0| |SWTST|SWTST|TST_0x231_f32AlgtPhys||1|||||||NONE|0|1||||1|0|1|Message ESC1 10ms |0||||||
+TST_0x231_bEscFlgFlt|boolean|SWTST|0|0|0|TST_0x231_bEscFlgFlt|0|0|Phys|bool|2|0|| |SWTST|SWTST|TST_0x231_bEscFlgFlt||1|||||||NONE|0|1||||1|0|1|Message ESC1 10ms |0||||||
+TST_0x231_u8GearShiftPrevn|uint8|SWTST|0|0|0|TST_0x231_u8GearShiftPrevn|0|0|Hexa|-|||| |SWTST|SWTST|TST_0x231_u8GearShiftPrevn||1|||||||NONE|0|1||||1|0|1|Message ESC1 10ms |0||||||
+TST_0x231_bTcsCtrlActv|boolean|SWTST|0|0|0|TST_0x231_bTcsCtrlActv|0|0|Phys|bool|2|0|| |SWTST|SWTST|TST_0x231_bTcsCtrlActv||1|||||||NONE|0|1||||1|0|1|Message ESC1 10ms |0||||||
+TST_0x231_bTcsFlgFlt|boolean|SWTST|0|0|0|TST_0x231_bTcsFlgFlt|0|0|Phys|bool|2|0|| |SWTST|SWTST|TST_0x231_bTcsFlgFlt||1|||||||NONE|0|1||||1|0|1|Message ESC1 10ms |0||||||
+TST_0x261_u16EngineSoakTime|uint16|SWTST|0|0|0|TST_0x261_u16EngineSoakTime|0|0|Phys|min|1|1|0| |SWTST|SWTST|TST_0x261_u16EngineSoakTime||1|||||||NONE|0|1||||1|0|1|Message ECM3 20ms |0||||||
+TST_0x261_u8EngPAmbAir|uint8|SWTST|0|0|0|TST_0x261_u8EngPAmbAir|0|0|Phys|kPa|1|1|0| |SWTST|SWTST|TST_0x261_u8EngPAmbAir||1|||||||NONE|0|1||||1|0|1|Message ECM3 20ms |0||||||
+TST_0x261_f32EngTPhys|float32|SWTST|0|0|0|TST_0x261_f32EngTPhys|0|0|Phys|deg C|1|1|0| |SWTST|SWTST|TST_0x261_f32EngTPhys||1|||||||NONE|0|1||||1|0|1|Message ECM3 20ms |0||||||
+TST_0x261_bOBDDrivingCycleStatus|boolean|SWTST|0|0|0|TST_0x261_bOBDDrivingCycleStatus|0|0|Phys|bool|2|0|| |SWTST|SWTST|TST_0x261_bOBDDrivingCycleStatus||1|||||||NONE|0|1||||1|0|1|Message ECM3 20ms |0||||||
+TST_0x261_bOBDWarmUpCycleStatus|boolean|SWTST|0|0|0|TST_0x261_bOBDWarmUpCycleStatus|0|0|Phys|bool|2|0|| |SWTST|SWTST|TST_0x261_bOBDWarmUpCycleStatus||1|||||||NONE|0|1||||1|0|1|Message ECM3 20ms |0||||||
+TST_0x281_f32AmbAirTempPhys|float32|SWTST|0|0|0|TST_0x281_f32AmbAirTempPhys|0|0|Phys|deg C|1|1|0| |SWTST|SWTST|TST_0x281_f32AmbAirTempPhys||1|||||||NONE|0|1||||1|0|1|Message IP1 20ms |0||||||
+TST_0x141_f32EngNIdleReqPhys|float32|SWTST|0|0|0|TST_0x141_f32EngNIdleReqPhys|0|0|Phys|rpm|1|1|0| |SWTST|SWTST|TST_0x141_f32EngNIdleReqPhys||1|||||||NONE|0|1||||1|0|1|Message TCU1 10ms |0||||||
+TST_0x141_f32EngTqIndDecReqdByTrsmPhys|float32|SWTST|0|0|0|TST_0x141_f32EngTqIndDecReqdByTrsmPhys|0|0|Phys|Nm|1|1|0| |SWTST|SWTST|TST_0x141_f32EngTqIndDecReqdByTrsmPhys||1|||||||NONE|0|1||||1|0|1|Message TCU1 10ms |0||||||
+TST_0x141_f32EngTqIndLmtdByTrsmPhys|float32|SWTST|0|0|0|TST_0x141_f32EngTqIndLmtdByTrsmPhys|0|0|Phys|Nm|1|1|0| |SWTST|SWTST|TST_0x141_f32EngTqIndLmtdByTrsmPhys||1|||||||NONE|0|1||||1|0|1|Message TCU1 10ms |0||||||
+TST_0x141_u8TrsmCluStAct|uint8|SWTST|0|0|0|TST_0x141_u8TrsmCluStAct|0|0|Hexa|-|||| |SWTST|SWTST|TST_0x141_u8TrsmCluStAct||1|||||||NONE|0|1||||1|0|1|Message TCU1 10ms |0||||||
+TST_0x141_u8TrsmMsgCnt|uint8|SWTST|0|0|0|TST_0x141_u8TrsmMsgCnt|0|0|Phys|count|1|1|0| |SWTST|SWTST|TST_0x141_u8TrsmMsgCnt||1|||||||NONE|0|1||||1|0|1|Message TCU1 10ms |0||||||
+TST_0x141_u16TrsmNInp|uint16|SWTST|0|0|0|TST_0x141_u16TrsmNInp|0|0|Phys|rpm|1|1|0| |SWTST|SWTST|TST_0x141_u16TrsmNInp||1|||||||NONE|0|1||||1|0|1|Message TCU1 10ms |0||||||
+TST_0x151_f32EngTqIndIncReqdByTrsmPhys|float32|SWTST|0|0|0|TST_0x151_f32EngTqIndIncReqdByTrsmPhys|0|0|Phys|Nm|1|1|0| |SWTST|SWTST|TST_0x151_f32EngTqIndIncReqdByTrsmPhys||1|||||||NONE|0|1||||1|0|1|Message TCU2 10ms |0||||||
+TST_0x151_u8TrsmFlgFlt|uint8|SWTST|0|0|0|TST_0x151_u8TrsmFlgFlt|0|0|Hexa|-|||| |SWTST|SWTST|TST_0x151_u8TrsmFlgFlt||1|||||||NONE|0|1||||1|0|1|Message TCU2 10ms |0||||||
+TST_0x151_bTrsmFlgShiftProgs|boolean|SWTST|0|0|0|TST_0x151_bTrsmFlgShiftProgs|0|0|Phys|bool|2|0|| |SWTST|SWTST|TST_0x151_bTrsmFlgShiftProgs||1|||||||NONE|0|1||||1|0|1|Message TCU2 10ms |0||||||
+TST_0x151_u8TrsmGearAct|uint8|SWTST|0|0|0|TST_0x151_u8TrsmGearAct|0|0|Hexa|-|||| |SWTST|SWTST|TST_0x151_u8TrsmGearAct||1|||||||NONE|0|1||||1|0|1|Message TCU2 10ms |0||||||
+TST_0x151_u8TrsmGearTar|uint8|SWTST|0|0|0|TST_0x151_u8TrsmGearTar|0|0|Hexa|-|||| |SWTST|SWTST|TST_0x151_u8TrsmGearTar||1|||||||NONE|0|1||||1|0|1|Message TCU2 10ms |0||||||
+TST_0x151_bTrsmMILReq|boolean|SWTST|0|0|0|TST_0x151_bTrsmMILReq|0|0|Phys|bool|2|0|| |SWTST|SWTST|TST_0x151_bTrsmMILReq||1|||||||NONE|0|1||||1|0|1|Message TCU2 10ms |0||||||
+TST_0x151_u8TrsmStGearLvr|uint8|SWTST|0|0|0|TST_0x151_u8TrsmStGearLvr|0|0|Hexa|-|||| |SWTST|SWTST|TST_0x151_u8TrsmStGearLvr||1|||||||NONE|0|1||||1|0|1|Message TCU2 10ms |0||||||
+TST_0x151_u8TrsmStGearMode|uint8|SWTST|0|0|0|TST_0x151_u8TrsmStGearMode|0|0|Hexa|-|||| |SWTST|SWTST|TST_0x151_u8TrsmStGearMode||1|||||||NONE|0|1||||1|0|1|Message TCU2 10ms |0||||||
+TST_0x151_f32TrsmTOilPhys|float32|SWTST|0|0|0|TST_0x151_f32TrsmTOilPhys|0|0|Phys|deg C|1|1|0| |SWTST|SWTST|TST_0x151_f32TrsmTOilPhys||1|||||||NONE|0|1||||1|0|1|Message TCU2 10ms |0||||||
+TST_0x151_bTrsmTOilWrnLmpReq|boolean|SWTST|0|0|0|TST_0x151_bTrsmTOilWrnLmpReq|0|0|Phys|bool|2|0|| |SWTST|SWTST|TST_0x151_bTrsmTOilWrnLmpReq||1|||||||NONE|0|1||||1|0|1|Message TCU2 10ms |0||||||
+
+SWTST_kbDioRd_SwitchIdx|uint8|SWTST|1|0|0|SWTST_kbDioRd_SwitchIdx|0|0|Phys|count|1|0||Application|SWTST|Dio|SWTST_kbDioRd_SwitchIdx||1|||||||NONE|1|1|||0|1|0|0|Change output state|0|||||0|
+SWTST_kbDioRd_SwitchValue|uint8|SWTST|1|0|0|SWTST_kbDioRd_SwitchValue|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_kbDioRd_SwitchValue||1|||||||NONE|1|1|||0|1|0|0|Change output state|0|||||0|
+
+SWTST_kbDioWr_Set_SolenoidFeedIdx|uint8|SWTST|1|0|0|SWTST_kbDioWr_Set_SolenoidFeedIdx|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_kbDioWr_Set_SolenoidFeedIdx||1|||||||NONE|1|1|||0|1|0|0|Change output state|0|||||0|
+SWTST_kbDioWr_Set_SolenoidFeedOnOff|uint8|SWTST|1|0|0|SWTST_kbDioWr_Set_SolenoidFeedOnOff|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_kbDioWr_Set_SolenoidFeedOnOff||1|||||||NONE|1|1|||0|1|0|0|Change output state|0|||||0|
+
+SWTST_kbDioWr_Set_StartEnableOnOff|uint8|SWTST|1|0|0|SWTST_kbDioWr_Set_StartEnableOnOff|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_kbDioWr_Set_StartEnableOnOff||1|||||||NONE|1|1|||0|1|0|0|Change output state|0|||||0|
+
+SWTST_kbDioWr_Set_RelayOnOff|uint8|SWTST|1|0|0|SWTST_kbDioWr_Set_RelayOnOff|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_kbDioWr_Set_RelayOnOff||1|||||||NONE|1|1|||0|1|0|0|Change output state|0|||||0|
+
+SWTST_kbDioWr_Set_OnOffSolenoidIdx|uint8|SWTST|1|0|0|SWTST_kbDioWr_Set_OnOffSolenoidIdx|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_kbDioWr_Set_OnOffSolenoidIdx||1|||||||NONE|1|1|||0|1|0|0|Change output state|0|||||0|
+SWTST_kbDioWr_Set_OnOffSolenoidOnOff|uint8|SWTST|1|0|0|SWTST_kbDioWr_Set_OnOffSolenoidOnOff|0|0|Phys|bool|2|0||Application|SWTST|Dio|SWTST_kbDioWr_Set_OnOffSolenoidOnOff||1|||||||NONE|1|1|||0|1|0|0|Change output state|0|||||0|
+
+TST_HCUAPI_f32ApmElecValTempPhys|float32|SWTST|0|0|0|TST_HCUAPI_f32ApmElecValTempPhys|0|0|Phys|?|1|1|0||SWTST|SWTST|TST_HCUAPI_f32ApmElecValTempPhys||1|||||||NONE|0|1||||1|0|1||0||||||
+TST_kbFrtEnable|uint8|SWTST|0|0|0|TST_kbFrtEnable|0|0|Phys|bool|2|0||Application|SWTST|SWTST|TST_kbFrtEnable||1|||||||NONE|1|1|||0|1|0|0|Activate FRT tests|0|||||0|
+TST_u32TM1msGlbCnt|uint32|SWTST|0|0|0|TST_u32TM1msGlbCnt|0|0|Déci|-||||SWTST|SWTST||TST_u32TM1msGlbCnt||1||*||*||*|NONE|0|1||||1|0|1||0|0|4294967295|||0|
+TST_u32TM5msGlbCnt|uint32|SWTST|0|0|0|TST_u32TM5msGlbCnt|0|0|Déci|-||||SWTST|SWTST||TST_u32TM5msGlbCnt||1||*||*||*|NONE|0|1||||1|0|1||0|0|4294967295|||0|
+TST_u32TM10msGlbCnt|uint32|SWTST|0|0|0|TST_u32TM10msGlbCnt|0|0|Déci|-||||SWTST|SWTST||TST_u32TM10msGlbCnt||1||*||*||*|NONE|0|1||||1|0|1||0|0|4294967295|||0|
+TST_u32TM30msGlbCnt|uint32|SWTST|0|0|0|TST_u32TM30msGlbCnt|0|0|Déci|-||||SWTST|SWTST||TST_u32TM30msGlbCnt||1||*||*||*|NONE|0|1||||1|0|1||0|0|4294967295|||0|
+TST_u32TM100msGlbCnt|uint32|SWTST|0|0|0|TST_u32TM100msGlbCnt|0|0|Déci|-||||SWTST|SWTST||TST_u32TM100msGlbCnt||1||*||*||*|NONE|0|1||||1|0|1||0|0|4294967295|||0|
+TST_u32TM500msGlbCnt|uint32|SWTST|0|0|0|TST_u32TM500msGlbCnt|0|0|Déci|-||||SWTST|SWTST||TST_u32TM500msGlbCnt||1||*||*||*|NONE|0|1||||1|0|1||0|0|4294967295|||0|
+TST_u32TM1sGlbCnt|uint32|SWTST|0|0|0|TST_u32TM1sGlbCnt|0|0|Déci|-||||SWTST|SWTST||TST_u32TM1sGlbCnt||1||*||*||*|NONE|0|1||||1|0|1||0|0|4294967295|||0|
+SWTST_kbADCTstEnaC|uint8|SWTST|1|0|0|SWTST_kbADCTstEnaC|0|0|Phys|bool|2|0||Application|TST|PWD|SWTST_kbADCTstEnaC||1|||||||NONE|1|1|||0|1|0|0|Activate Dio tests|0|||||0|

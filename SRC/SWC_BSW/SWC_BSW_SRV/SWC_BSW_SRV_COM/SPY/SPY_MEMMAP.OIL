@@ -1,0 +1,38 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer          : BSW                                                      */
+/*                                                                            */
+/* !Component      : SRV                                                      */
+/*                                                                            */
+/* !Module         : SPY                                                      */
+/* !Description    : Definitions for the component                            */
+/*                                                                            */
+/* !File           : SPY_MEMMAP.OIL                                           */
+/*                                                                            */
+/* !Target         : Hitachi                                                  */
+/*                                                                            */
+/* !Vendor         : VEMS                                                     */
+/*                                                                            */
+/* Coding language : OIL                                                      */
+/*                                                                            */
+/* COPYRIGHT 2011 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   P:/VE_Onduleur_Gen1_Michelin/LOG/60_ComponentArchive/Archives$*/
+/* $Revision::   1.1      $$Author::   hlaos          $$Date::   17 Jan 2012 $*/
+/******************************************************************************/
+/* !VnrOff : Names imposed by the customer                                    */
+/******************************************************************************/
+
+MEMMAP_MSN SPY
+{
+   SECTION = SEC_CODE;
+   SECTION = SEC_VAR_UNSPECIFIED;
+   SECTION = SPY_BUFFER;
+};
+
+/*------------------------------- end of file --------------------------------*/
+
+

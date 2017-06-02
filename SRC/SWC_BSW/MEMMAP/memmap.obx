@@ -1,0 +1,30 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : APPLI                                                   */
+/*                                                                            */
+/* !Component       : MEMMAP_CFG                                              */
+/* !Description     : Mapping Section Configuration                           */
+/*                                                                            */
+/* !File            : MEMMAP.OBX                                              */
+/*                                                                            */
+/* !Scope           : Public                                                  */
+/*                                                                            */
+/* !Target          : Genecode Tool                                           */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : C                                                       */
+/*                                                                            */
+/* COPYRIGHT 2005 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   I:/PROJETS/LIBEMB/LOG/DIVERS/MEMMAP/LOG/memmap.obv           $*/
+/* $Revision::   1.2      $$Author::   lvoilmy        $$Date::   24 Jun 2011 $*/
+/******************************************************************************/
+
+
+MEMMAP_CFG, MEMMAP_PARENT, MEMMAP_MSN
+
+/*----------------------------- fin de fichier -------------------------------*/

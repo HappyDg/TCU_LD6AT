@@ -1,0 +1,52 @@
+/**********************************************************************************************************************/
+/*                                                                                                                    */
+/* !Layer           : BSW                                                                                             */
+/*                                                                                                                    */
+/* !Component       : HAL                                                                                             */
+/*                                                                                                                    */
+/* !Module          : IOHAL                                                                                           */       
+/* !Description     : Configuration of I/O(BSL/AUTOSAR) components                                                    */
+/*                                                                                                                    */
+/* !File            : CFG_IOHAL.stx                                                                                   */
+/*                                                                                                                    */
+/* !Scope           : Public                                                                                          */
+/*                                                                                                                    */
+/* !Target          : Genecode Tool                                                                                   */
+/*                                                                                                                    */
+/* !Vendor          : Valeo                                                                                           */
+/*                                                                                                                    */
+/* Coding language  : C                                                                                               */
+/*                                                                                                                    */
+/* COPYRIGHT 2013 VALEO                                                                                               */
+/* all rights reserved                                                                                                */
+/*                                                                                                                    */
+/**********************************************************************************************************************/
+/* PVCS Information                                                                                                   */
+/* $Archive::                                                                                                        $*/
+/* $Revision::   1.0      $$Author::   KELK           $$Date::                                                       $*/
+/**********************************************************************************************************************/
+         
+OIL_VERSION = "2.1";
+IMPLEMENTATION IOHAL_Implementation
+{
+TRADOIL
+    {
+    ENUM
+        [ TPL
+            {
+                STRING PURPOSE;
+                STRING READ;
+                STRING WITH_AUTO WRITE = AUTO;
+            }
+        ] FILE [];
+    ENUM
+        [
+            #include "IOHAL.OBX"
+        ] OBJECT [];
+    STRING ESCAPECHAR = "'";
+    };
+
+#include "IOHAL.STX"
+};
+
+/*--------------------------------------------------- end of file ----------------------------------------------------*/

@@ -1,0 +1,53 @@
+/******************************************************************************/
+/* !Layer           : SRV                                                     */
+/* !Component       : RTMCLD                                                  */
+/* !Description     : Real time measurement of CPU load                       */
+/*                                                                            */
+/* !File            : CFG_RTMCLD.STX                                          */
+/* !Description     : Configuration of the RTMCLD component                   */
+/*                                                                            */
+/* !Reference       :                                                         */
+/*                                                                            */
+/* Coding language  : OIL                                                     */
+/*                                                                            */
+/* COPYRIGHT VALEO all rights reserved                                        */
+/******************************************************************************/
+/* Dimension Informations
+ * %PCMS_HEADER_SUBSTITUTION_START:%
+ * The PID has this format: <Product ID>:<Item ID>.<Variant>-<Item Type>;<Revision>
+ * %PID:%
+ * %PCMS_HEADER_SUBSTITUTION_END:%
+ ******************************************************************************/
+
+OIL_VERSION = "2.1";
+IMPLEMENTATION JCAEImplementation
+{
+   TRADOIL
+   { 
+      ENUM 
+      [
+         TPL 
+         {
+            STRING PURPOSE ="";
+            STRING READ;
+            STRING WITH_AUTO WRITE = AUTO;
+         }
+      ] FILE [];
+
+      ENUM 
+      [
+           #include "RTMCLD.OBX"
+
+      ] OBJECT [];
+
+      STRING ESCAPECHAR = "'";    
+   };
+
+
+#include "RTMCLD.STX"
+
+
+
+};
+
+/*----------------------------- fin de fichier -------------------------------*/

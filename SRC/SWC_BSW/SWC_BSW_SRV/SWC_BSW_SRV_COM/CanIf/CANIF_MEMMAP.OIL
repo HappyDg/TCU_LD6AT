@@ -1,0 +1,45 @@
+/**********************************************************************************************************************/
+/*                                                                                                                    */
+/* !Layer          : Communication Interface                                                                          */
+/*                                                                                                                    */
+/* !Component      : CANIF                                                                                            */
+/* !Description    : Mapping section configuration of the module                                                      */
+/*                                                                                                                    */
+/* !File           : CANIF_MEMMAP.OIL                                                                                 */
+/*                                                                                                                    */
+/* !Scope          : Public                                                                                           */
+/*                                                                                                                    */
+/* !Target         : Genecode Tool                                                                                    */
+/*                                                                                                                    */
+/* !Vendor         : Valeo                                                                                            */
+/*                                                                                                                    */
+/* Coding language : OIL                                                                                              */
+/*                                                                                                                    */
+/* COPYRIGHT VALEO                                                                                                    */
+/* all rights reserved                                                                                                */
+/*                                                                                                                    */
+/**********************************************************************************************************************/
+/* Dimension Informations                                                                                               
+/* %PCMS_HEADER_SUBSTITUTION_START:%                                                                                    
+/* The PID has this format: <Product ID>:<Item ID>.<Variant>-<Item Type>;<Revision>                                     
+/* %PID:%                                                                                                               
+/* %PCMS_HEADER_SUBSTITUTION_END:%                                                                                      
+/**********************************************************************************************************************/
+
+MEMMAP_MSN CANIF
+{
+   SECTION = SEC_CODE;
+   SECTION = SEC_VAR_UNSPECIFIED;
+   SECTION = SEC_VAR_NOINIT_UNSPECIFIED;
+   SECTION = SEC_CONST_UNSPECIFIED;
+   SECTION = CONFIG_DATA_UNSPECIFIED;
+   SECTION = SEC_VAR_NO_INIT_8;
+   SECTION = SEC_VAR_NO_INIT_16;
+   SECTION = SEC_VAR_NO_INIT_32;
+   SECTION = SEC_CONFIG_DATA_UNSPECIFIED;
+   SECTION = SEC_VAR_NO_INIT_UNSPECIFIED;
+   SECTION = SEC_CONST_32;
+   SECTION = SEC_VAR_INIT_8;
+};
+
+/*--------------------------------------------------- end of file ----------------------------------------------------*/

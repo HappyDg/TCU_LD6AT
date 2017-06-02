@@ -1,0 +1,114 @@
+/******************************************************************************/
+/* !Layer           : MCAL                                                    */
+/* !Component       : P2017_GEN_BSW                                           */
+/* !Description     :                                                         */
+/*                                                                            */
+/* !File            : PROJ_GEN_BSW_MEMMAP.OIL                                 */
+/* !Description     : Mapping section configuration of the P2017_GEN_BSW      */
+/*                    component                                               */
+/*                                                                            */
+/* !Reference       :                                                         */
+/*                                                                            */
+/* Coding language  : OIL                                                     */
+/*                                                                            */
+/* COPYRIGHT VALEO all rights reserved                                        */
+/******************************************************************************/
+/* Dimension Informations
+ * %PCMS_HEADER_SUBSTITUTION_START:%
+ * The PID has this format: <Product ID>:<Item ID>.<Variant>-<Item Type>;<Revision>
+ * %PID:%
+ * %PCMS_HEADER_SUBSTITUTION_END:%
+ ******************************************************************************/
+
+/******************************************************************************/
+/* GENERAL CONFIGURATION                                                      */
+/******************************************************************************/
+MEMMAP_MSN PROJ_GEN_BSW
+{
+   SECTION = SEC_CODE;
+   SECTION = SEC_VAR_POWER_ON_CLEARED_8BIT;
+   SECTION = SEC_CONST_8BIT;
+   SECTION = SEC_CONST_16BIT;
+   SECTION = SEC_CONST_UNSPECIFIED;
+};
+
+/******************************************************************************/
+/* COMPONENT SECTION DEF                                                      */
+/******************************************************************************/
+#include "SWC_FS_MEMMAP.OIL"
+#include "SWC_FT_MEMMAP.OIL"
+#include "SWC_RTWSRV_MEMMAP.OIL"
+
+/******************************************************************************/
+#include "BASE_MEMMAP.OIL"
+#include "CANIF_MEMMAP.OIL"
+#include "CANTP_MEMMAP.OIL"
+#include "COM_MEMMAP.OIL"
+#include "COMM_MEMMAP.OIL"
+#include "DCM_MEMMAP.OIL"
+#include "MSG_MEMMAP.OIL"
+#include "PDUR_MEMMAP.OIL"
+
+/******************************************************************************/
+/* BSW MODULE INCLUDED FILE                                                   */
+/******************************************************************************/
+#include "BSW_MEMMAP.OIL"
+#include "CALIB_MEMMAP.OIL"
+#include "CAN_17_MCANP_MEMMAP.OIL"
+#include "CCP_MEMMAP.OIL"
+#include "DEVHAL_MEMMAP.OIL"
+#include "DRV_MEMMAP.OIL"
+#include "CANIF_MEMMAP.OIL"
+#include "DIO_MEMMAP.OIL"
+#include "ECUM_MEMMAP.OIL"
+#include "EMEM_MEMMAP.OIL"
+#include "EVP_MEMMAP.OIL"
+#include "F32SRV_MEMMAP.OIL"
+#include "FBL_INTF_MEMMAP.OIL"
+#include "FLS_17_PMU_MEMMAP.OIL"
+#include "FLSLOADER_MEMMAP.OIL"
+#include "GPT_MEMMAP.OIL"
+#include "GTM_MEMMAP.OIL"
+#include "ICU_17_GTMCCU6_MEMMAP.OIL"
+#include "IDENT_MEMMAP.OIL"
+#include "IFXCPU_MEMMAP.OIL"
+#include "IFXSRC_MEMMAP.OIL"
+#include "IFXSCU_MEMMAP.OIL"
+#include "IFXSTM_MEMMAP.OIL"
+#include "IOHAL_MEMMAP.OIL"
+#include "ISR_MEMMAP.oil"
+#include "MAIN_MEMMAP.OIL"
+#include "MATH_MEMMAP.OIL"
+#include "MATHSRV_MEMMAP.OIL"
+#include "MCAL_DMALIB_MEMMAP.OIL"
+#include "MCAL_MEMMAP.OIL"
+#include "MCAL_TCLIB_MEMMAP.OIL"
+#include "MCAL_WDGLIB_MEMMAP.OIL"
+#include "PWD_MEMMAP.OIL"
+#include "MCU_MEMMAP.OIL"
+#include "MEMSRV_MEMMAP.OIL"
+#include "OS_MEMMAP.OIL"
+#include "OVC_MEMMAP.OIL"
+#include "PWM_17_GTM_MEMMAP.OIL"
+#include "PORT_MEMMAP.OIL"
+#include "RSTSRV_MEMMAP.OIL"
+#include "RTMCLD_MEMMAP.OIL"
+#include "RTMTSK_MEMMAP.OIL"
+#include "SCU_MEMMAP.OIL"
+#include "SPI_MEMMAP.OIL"
+#include "SPY_MEMMAP.OIL"
+#include "STARTUP_MEMMAP.OIL"
+#include "SUPSRV_MEMMAP.OIL"
+#include "SWFAIL_MEMMAP.OIL"
+#include "TLF35584_MEMMAP.OIL"
+#include "VADC_MEMMAP.OIL"
+#include "WDG_17_SCU_MEMMAP.OIL"
+
+#include "Fee_MEMMAP.OIL"
+#include "MemIf_MEMMAP.OIL"
+#include "NVM_MEMMAP.OIL"
+#include "Crc_MEMMAP.OIL"
+#include "UDS_MEMMAP.OIL"
+#include "DEM_MEMMAP.OIL"
+#include "FiM_MEMMAP.OIL"
+/*------------------------------- end of file --------------------------------*/

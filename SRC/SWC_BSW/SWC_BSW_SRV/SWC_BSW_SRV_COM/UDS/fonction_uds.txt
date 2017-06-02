@@ -1,0 +1,6 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+UDS_vidInit|A|();|1|UDS|1|0||||0|0|0|0|Uds Init function|
+UDS_vidReset|A|(uint8 RequestedMode);|3|UDS|1|0||||0|0|0|0|Function called for a reset request|
+UDS_vidSession|A|(uint8 RequestedMode);|2|UDS|1|0||||0|0|0|0|Function called for a session request|
+UDS_vidDtcSettingOn|A|();|2|UDS|1|0||||0|0|0|0|Function called to activate DTC management on request|
+UDS_vidDtcSettingOff|A|();|2|UDS|1|0||||0|0|0|0|Function called to deactivate DTC management on request|

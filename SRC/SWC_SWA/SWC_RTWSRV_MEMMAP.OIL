@@ -1,0 +1,35 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer          : APPLI                                                    */
+/*                                                                            */
+/* !Module         : MAIN                                                     */
+/* !Description    : Mapping section configuration of the MAIN module         */
+/*                                                                            */
+/* !File           : SWC_RTWSRV_MEMMAP.OIL                                    */
+/*                                                                            */
+/* !Scope          : Public                                                   */
+/*                                                                            */
+/* !Target         : Genecode Tool                                            */
+/*                                                                            */
+/* !Vendor         : Valeo                                                    */
+/*                                                                            */
+/* Coding language : OIL                                                      */
+/*                                                                            */
+/* COPYRIGHT 2014 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive:                                                                 $*/
+/* $Revision::   1.0       $$Author::                 $$Date::               $*/
+/******************************************************************************/
+
+MEMMAP_MSN RTWSRV  {
+                      SECTION = CODE;
+                      SECTION = CONST_UNSPECIFIED;
+                      SECTION = CALIB_UNSPECIFIED;
+                      SECTION = VAR_UNSPECIFIED;
+                   };
+
+/*------------------------------- end of file --------------------------------*/
+

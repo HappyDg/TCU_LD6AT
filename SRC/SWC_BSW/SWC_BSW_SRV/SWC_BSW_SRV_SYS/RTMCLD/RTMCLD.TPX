@@ -1,0 +1,49 @@
+/**********************************************************************************************************************/
+/* !Layer           : SRVL                                                                                            */
+/* !Component       : RTMCLD                                                                                          */
+/* !Description     : Real time measurement of CPU load                                                               */
+/*                                                                                                                    */
+/* !File            : RTMCLD.TPX                                                                                      */
+/* !Description     : configurations of the RTMCLD component                                                          */
+/*                                                                                                                    */
+/* !Reference       : PTS_DOC_5385380                                                                                 */
+/*                                                                                                                    */
+/* Coding language  : OIL                                                                                             */
+/*                                                                                                                    */
+/* COPYRIGHT VALEO all rights reserved                                                                                */
+/**********************************************************************************************************************/
+/* Dimension Informations
+ * %PCMS_HEADER_SUBSTITUTION_START:%
+ * The PID has this format: <Product ID>:<Item ID>.<Variant>-<Item Type>;<Revision>
+ * %PID:%
+ * %PCMS_HEADER_SUBSTITUTION_END:%
+ **********************************************************************************************************************/
+
+    FILE = TPL
+    {
+        PURPOSE = "RTMCLD_EndlessLoop_H";
+        READ    = "RTMCLD_EndlessLoop_H.TPL";
+        WRITE   = "RTMCLD_EndlessLoop.h";
+    };
+
+    FILE = TPL
+    {
+        PURPOSE = "RTMCLD_CFG_H";
+        READ    = "rtmcld_cfg_h.tpl";
+        WRITE   = "rtmcld_cfg.h";
+    };
+
+    FILE = TPL
+    {
+        READ    = "rtmcld_donnee_txt.tpl";
+        WRITE   = "Donnee_rtmcld_cfg.txt";
+    };
+
+    FILE = TPL
+    {
+        READ    = "RTMCLD_Co_H.TPL";
+        WRITE   = "RTMCLD_Co.h";
+    };
+
+
+/*-------------------------------------------------- end of file -----------------------------------------------------*/

@@ -1,0 +1,39 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SRVL                                                    */
+/*                                                                            */
+/* !Component       : CCP                                                     */
+/*                                                                            */
+/* !Module          : CCP                                                     */
+/* !Description     : List of CCP Configuration check files                   */
+/*                                                                            */
+/* !File            : CCP.CHX                                                 */
+/*                                                                            */
+/* !Scope           : Private                                                 */
+/*                                                                            */
+/* !Target          : Genecode Tool                                           */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : OIL                                                     */
+/*                                                                            */
+/* COPYRIGHT 2009 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::                                                                $*/
+/* $Revision::                                                               $*/
+/* $Author::                                          $$Date::               $*/
+/******************************************************************************/
+
+FILE = TPL
+{
+   PURPOSE = "CCP_CHECK"; 
+   READ    = "ccp_chk.tpl";
+   WRITE   = "ccp_chk.res";
+};
+
+#include "ccpusr.chx"
+
+/*------------------------------ end of file ---------------------------------*/

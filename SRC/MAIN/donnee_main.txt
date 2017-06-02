@@ -1,0 +1,125 @@
+Nom_donnée|Type|Nom_module|Public|Nb_lignes|Nb_colonnes|Label_père|Offset|Masque_accès|Affichage|Unité|Fonction_transfert_ades|Coefficient_a|Coefficient_b|Groupe|Groupe_1|Groupe_2|Alias_1|Alias_2|Genre|Variable_indice_ligne|Variable_indice_colonne|Fonction_transfert_ligne|Fonction_transfert_colonne|Table_breakpoint_ligne|Table_breakpoint_colonne|Référence_spécification|Recuperable|Modifiable|Fournisseur|Responsable|Valeurs|Visualisable_ADES|Donnée_a_supprimer|Validation|Commentaires|Volatile|MinDecValue|MaxDecValue|MinPhysValue|MaxPhysValue|Def_Eval|MemSec
+Calibration_debut|uint16|MAIN|0|0|0|Calibration_debut|0|0|Déci|-||||Divers|Divers||Calibration_debut||4|||||||NONE|0|1||||1|0|0||0|0|65535|||0|<COMP>_START_SEC_CALIB_BEG
+Calibration_fin|uint16|MAIN|0|0|0|Calibration_fin|0|0|Déci|-||||Divers|Divers||Calibration_fin||4|||||||NONE|0|1||||0|0|0||0|0|65535|||0|<COMP>_START_SEC_CALIB_END
+Identification|uint8|IDENT|0|1|24|Identification|0|0|Phys|-|1|24|17|Divers|Divers||Identification||4||*||*||*||0|0||||1|0|0||0||||||
+MAIN_s8TestVar1|sint8|MAIN|0|0|0|MAIN_s8TestVar1|0|0|Déci|-||||Main|Main||MAIN_s8TestVar1||1||||||||0|1||||1|0|0||0|||||0|
+MAIN_s8TestVar2|sint8|MAIN|0|0|0|MAIN_s8TestVar2|0|0|Déci|-||||Main|Main||MAIN_s8TestVar2||1||||||||0|1||||1|0|0||0|||||0|
+MAIN_s8TestVar3|sint8|MAIN|0|0|0|MAIN_s8TestVar3|0|0|Déci|-||||Main|Main||MAIN_s8TestVar3||1||||||||0|1||||1|0|0||0|||||0|
+MAIN_s8TestVar4|sint8|MAIN|0|0|0|MAIN_s8TestVar4|0|0|Déci|-||||Main|Main||MAIN_s8TestVar4||1||||||||0|1||||1|0|0||0|||||0|
+MAIN_u8TestVar1|uint8|MAIN|0|0|0|MAIN_u8TestVar1|0|0|Déci|-||||Main|Main||MAIN_u8TestVar1||1||||||||0|1||||1|0|0||0|||||0|
+MAIN_u8TestVar2|uint8|MAIN|0|0|0|MAIN_u8TestVar2|0|0|Déci|-||||Main|Main||MAIN_u8TestVar2||1||||||||0|1||||1|0|0||0|||||0|
+MAIN_u8TestVar3|uint8|MAIN|0|0|0|MAIN_u8TestVar3|0|0|Déci|-||||Main|Main||MAIN_u8TestVar3||1||||||||0|1||||1|0|0||0|||||0|
+MAIN_u8TestVar4|uint8|MAIN|0|0|0|MAIN_u8TestVar4|0|0|Déci|-||||Main|Main||MAIN_u8TestVar4||1||||||||0|1||||1|0|0||0|||||0|
+MAIN_s16TestVar1|sint16|MAIN|0|0|0|MAIN_s16TestVar1|0|0|Déci|-||||Main|Main||MAIN_s16TestVar1||1||||||||0|1||||1|0|0||0|||||0|
+MAIN_s16TestVar2|sint16|MAIN|0|0|0|MAIN_s16TestVar2|0|0|Déci|-||||Main|Main||MAIN_s16TestVar2||1||||||||0|1||||1|0|0||0|||||0|
+MAIN_s16TestVar3|sint16|MAIN|0|0|0|MAIN_s16TestVar3|0|0|Déci|-||||Main|Main||MAIN_s16TestVar3||1||||||||0|1||||1|0|0||0|||||0|
+MAIN_s16TestVar4|sint16|MAIN|0|0|0|MAIN_s16TestVar4|0|0|Déci|-||||Main|Main||MAIN_s16TestVar4||1||||||||0|1||||1|0|0||0|||||0|
+MAIN_u16TestVar1|uint16|MAIN|0|0|0|MAIN_u16TestVar1|0|0|Déci|-||||Main|Main||MAIN_u16TestVar1||1||||||||0|1||||1|0|0||0|||||0|
+MAIN_u16TestVar2|uint16|MAIN|0|0|0|MAIN_u16TestVar2|0|0|Déci|-||||Main|Main||MAIN_u16TestVar2||1||||||||0|1||||1|0|0||0|||||0|
+MAIN_u16TestVar3|uint16|MAIN|0|0|0|MAIN_u16TestVar3|0|0|Déci|-||||Main|Main||MAIN_u16TestVar3||1||||||||0|1||||1|0|0||0|||||0|
+MAIN_u16TestVar4|uint16|MAIN|0|0|0|MAIN_u16TestVar4|0|0|Déci|-||||Main|Main||MAIN_u16TestVar4||1||||||||0|1||||1|0|0||0|||||0|
+MAIN_s32TestVar1|sint32|MAIN|0|0|0|MAIN_s32TestVar1|0|0|Déci|-||||Main|Main||MAIN_s32TestVar1||1||||||||0|1||||1|0|0||0|||||0|
+MAIN_s32TestVar2|sint32|MAIN|0|0|0|MAIN_s32TestVar2|0|0|Déci|-||||Main|Main||MAIN_s32TestVar2||1||||||||0|1||||1|0|0||0|||||0|
+MAIN_s32TestVar3|sint32|MAIN|0|0|0|MAIN_s32TestVar3|0|0|Déci|-||||Main|Main||MAIN_s32TestVar3||1||||||||0|1||||1|0|0||0|||||0|
+MAIN_s32TestVar4|sint32|MAIN|0|0|0|MAIN_s32TestVar4|0|0|Déci|-||||Main|Main||MAIN_s32TestVar4||1||||||||0|1||||1|0|0||0|||||0|
+MAIN_u32TestVar1|uint32|MAIN|0|0|0|MAIN_u32TestVar1|0|0|Déci|-||||Main|Main||MAIN_u32TestVar1||1||||||||0|1||||1|0|0||0|||||0|
+MAIN_u32TestVar2|uint32|MAIN|0|0|0|MAIN_u32TestVar2|0|0|Déci|-||||Main|Main||MAIN_u32TestVar2||1||||||||0|1||||1|0|0||0|||||0|
+MAIN_u32TestVar3|uint32|MAIN|0|0|0|MAIN_u32TestVar3|0|0|Déci|-||||Main|Main||MAIN_u32TestVar3||1||||||||0|1||||1|0|0||0|||||0|
+MAIN_u32TestVar4|uint32|MAIN|0|0|0|MAIN_u32TestVar4|0|0|Déci|-||||Main|Main||MAIN_u32TestVar4||1||||||||0|1||||1|0|0||0|||||0|
+MAIN_u32TskCtr1000ms|uint32|MAIN|0|0|0|MAIN_u32TskCtr1000ms|0|0|Déci|-||||Main|Main||MAIN_u32TskCtr1000ms||1||||||||0|1||||1|0|0||0|||||0|
+MAIN_u32TskCtr100ms|uint32|MAIN|0|0|0|MAIN_u32TskCtr100ms|0|0|Déci|-||||Main|Main||MAIN_u32TskCtr100ms||1||||||||0|1||||1|0|0||0|||||0|
+MAIN_u32TskCtr10ms|uint32|MAIN|0|0|0|MAIN_u32TskCtr10ms|0|0|Déci|-||||Main|Main||MAIN_u32TskCtr10ms||1||||||||0|1||||1|0|0||0|||||0|
+MAIN_u32TskCtr1ms|uint32|MAIN|0|0|0|MAIN_u32TskCtr1ms|0|0|Déci|-||||Main|Main||MAIN_u32TskCtr1ms||1||||||||0|1||||1|0|0||0|||||0|
+MAIN_u32TskCtr200ms|uint32|MAIN|0|0|0|MAIN_u32TskCtr200ms|0|0|Déci|-||||Main|Main||MAIN_u32TskCtr200ms||1||||||||0|1||||1|0|0||0|||||0|
+MAIN_u32TskCtr20ms|uint32|MAIN|0|0|0|MAIN_u32TskCtr20ms|0|0|Déci|-||||Main|Main||MAIN_u32TskCtr20ms||1||||||||0|1||||1|0|0||0|||||0|
+MAIN_u32TskCtr2ms|uint32|MAIN|0|0|0|MAIN_u32TskCtr2ms|0|0|Déci|-||||Main|Main||MAIN_u32TskCtr2ms||1||||||||0|1||||1|0|0||0|||||0|
+MAIN_u32TskCtr50ms|uint32|MAIN|0|0|0|MAIN_u32TskCtr50ms|0|0|Déci|-||||Main|Main||MAIN_u32TskCtr50ms||1||||||||0|1||||1|0|0||0|||||0|
+MAIN_u32TskCtr5ms|uint32|MAIN|0|0|0|MAIN_u32TskCtr5ms|0|0|Déci|-||||Main|Main||MAIN_u32TskCtr5ms||1||||||||0|1||||1|0|0||0|||||0|
+MAIN_bMSGRxToutBenchOnC|boolean|MAIN|0|0|0|MAIN_bMSGRxToutBenchOnC|0|0|Phys|bool|2|0||Developpement|Developpement||MAIN_bMSGRxToutBenchOnC||2|||||||NONE|1|1||||1|0|0|COM MSG Rx activation|0||||||
+
+MAIN_MSGRxBenchOnC|boolean|MAIN|0|0|0|MAIN_MSGRxBenchOnC|0|0|Phys|bool|2|0||Communication|Communication||MAIN_MSGRxBenchOnC||2|||||||NONE|1|1||||1|0|0|Rx MSG activation|0||||||
+MAIN_bMSGRxToutBenchOnC|boolean|MAIN|0|0|0|MAIN_bMSGRxToutBenchOnC|0|0|Phys|bool|2|0||Developpement|Developpement||MAIN_bMSGRxToutBenchOnC||2|||||||NONE|1|1||||1|0|0|COM MSG Rx activation|0||||||
+MAIN_MSGTxBenchOnC|boolean|MAIN|0|0|0|MAIN_MSGTxBenchOnC|0|0|Phys|bool|2|0||Communication|Communication||MAIN_MSGTxBenchOnC||2|||||||NONE|1|1||||1|0|0|Tx MSG activation|0||||||
+MAIN_MSGu16WhlSpdFrntLeRaw|uint16|MAIN|0|0|0|MAIN_MSGu16WhlSpdFrntLeRaw|0|0|Hexa|-||||Communication|ABS1|Raw|MAIN_MSGu16WhlSpdFrntLeRaw||1|||||||NONE|0|1||||1|0|0|Message ABS1 10ms |0||||||
+MAIN_MSGf32WhlSpdFrntLeRawPhys|float32|MAIN|0|0|0|MAIN_MSGf32WhlSpdFrntLeRawPhys|0|0|Phys|kph|1|1|0|Communication|ABS1|Physical|MAIN_MSGf32WhlSpdFrntLeRawPhys||1|||||||NONE|0|1||||1|0|0|Message ABS1 10ms |0||||||
+MAIN_MSGu16WhlSpdFrntRiRaw|uint16|MAIN|0|0|0|MAIN_MSGu16WhlSpdFrntRiRaw|0|0|Hexa|-||||Communication|ABS1|Raw|MAIN_MSGu16WhlSpdFrntRiRaw||1|||||||NONE|0|1||||1|0|0|Message ABS1 10ms |0||||||
+MAIN_MSGf32WhlSpdFrntRiRawPhys|float32|MAIN|0|0|0|MAIN_MSGf32WhlSpdFrntRiRawPhys|0|0|Phys|kph|1|1|0|Communication|ABS1|Physical|MAIN_MSGf32WhlSpdFrntRiRawPhys||1|||||||NONE|0|1||||1|0|0|Message ABS1 10ms |0||||||
+MAIN_MSGu16WhlSpdReLeRaw|uint16|MAIN|0|0|0|MAIN_MSGu16WhlSpdReLeRaw|0|0|Hexa|-||||Communication|ABS1|Raw|MAIN_MSGu16WhlSpdReLeRaw||1|||||||NONE|0|1||||1|0|0|Message ABS1 10ms |0||||||
+MAIN_MSGf32WhlSpdReLeRawPhys|float32|MAIN|0|0|0|MAIN_MSGf32WhlSpdReLeRawPhys|0|0|Phys|kph|1|1|0|Communication|ABS1|Physical|MAIN_MSGf32WhlSpdReLeRawPhys||1|||||||NONE|0|1||||1|0|0|Message ABS1 10ms |0||||||
+MAIN_MSGu16WhlSpdReRiRaw|uint16|MAIN|0|0|0|MAIN_MSGu16WhlSpdReRiRaw|0|0|Hexa|-||||Communication|ABS1|Raw|MAIN_MSGu16WhlSpdReRiRaw||1|||||||NONE|0|1||||1|0|0|Message ABS1 10ms |0||||||
+MAIN_MSGf32WhlSpdReRiRawPhys|float32|MAIN|0|0|0|MAIN_MSGf32WhlSpdReRiRawPhys|0|0|Phys|kph|1|1|0|Communication|ABS1|Physical|MAIN_MSGf32WhlSpdReRiRawPhys||1|||||||NONE|0|1||||1|0|0|Message ABS1 10ms |0||||||
+MAIN_MSGbAbsCtrlActv|boolean|MAIN|0|0|0|MAIN_MSGbAbsCtrlActv|0|0|Phys|bool|2|0||Communication|ABS2|Raw|MAIN_MSGbAbsCtrlActv||1|||||||NONE|0|1||||1|0|0|Message ABS2 10ms |0||||||
+MAIN_MSGbAbsFlgFlt|boolean|MAIN|0|0|0|MAIN_MSGbAbsFlgFlt|0|0|Phys|bool|2|0||Communication|ABS2|Raw|MAIN_MSGbAbsFlgFlt||1|||||||NONE|0|1||||1|0|0|Message ABS2 10ms |0||||||
+MAIN_MSGbEbdFlgFlt|boolean|MAIN|0|0|0|MAIN_MSGbEbdFlgFlt|0|0|Phys|bool|2|0||Communication|ABS2|Raw|MAIN_MSGbEbdFlgFlt||1|||||||NONE|0|1||||1|0|0|Message ABS2 10ms |0||||||
+MAIN_MSGu8AccrPedlRat|uint8|MAIN|0|0|0|MAIN_MSGu8AccrPedlRat|0|0|Hexa|-||||Communication|ECM1|Raw|MAIN_MSGu8AccrPedlRat||1|||||||NONE|0|1||||1|0|0|Message ECM1 10ms |0||||||
+MAIN_MSGf32AccrPedlRatPhys|float32|MAIN|0|0|0|MAIN_MSGf32AccrPedlRatPhys|0|0|Phys|%|1|1|0|Communication|ECM1|Physical|MAIN_MSGf32AccrPedlRatPhys||1|||||||NONE|0|1||||1|0|0|Message ECM1 10ms |0||||||
+MAIN_MSGu8BrkPedlPsd|uint8|MAIN|0|0|0|MAIN_MSGu8BrkPedlPsd|0|0|Hexa|-||||Communication|ECM1|Raw|MAIN_MSGu8BrkPedlPsd||1|||||||NONE|0|1||||1|0|0|Message ECM1 10ms |0||||||
+MAIN_MSGu8ECM1AliveCounter|uint8|MAIN|0|0|0|MAIN_MSGu8ECM1AliveCounter|0|0|Hexa|-||||Communication|ECM1|Raw|MAIN_MSGu8ECM1AliveCounter||1|||||||NONE|0|1||||1|0|0|Message ECM1 10ms |0||||||
+MAIN_MSGf32ECM1AliveCounterPhys|float32|MAIN|0|0|0|MAIN_MSGf32ECM1AliveCounterPhys|0|0|Phys|NA|1|1|0|Communication|ECM1|Physical|MAIN_MSGf32ECM1AliveCounterPhys||1|||||||NONE|0|1||||1|0|0|Message ECM1 10ms |0||||||
+MAIN_MSGu8ECM1Checksum|uint8|MAIN|0|0|0|MAIN_MSGu8ECM1Checksum|0|0|Hexa|-||||Communication|ECM1|Raw|MAIN_MSGu8ECM1Checksum||1|||||||NONE|0|1||||1|0|0|Message ECM1 10ms |0||||||
+MAIN_MSGf32ECM1ChecksumPhys|float32|MAIN|0|0|0|MAIN_MSGf32ECM1ChecksumPhys|0|0|Phys|NA|1|1|0|Communication|ECM1|Physical|MAIN_MSGf32ECM1ChecksumPhys||1|||||||NONE|0|1||||1|0|0|Message ECM1 10ms |0||||||
+MAIN_MSGu8EngStAct|uint8|MAIN|0|0|0|MAIN_MSGu8EngStAct|0|0|Hexa|-||||Communication|ECM1|Raw|MAIN_MSGu8EngStAct||1|||||||NONE|0|1||||1|0|0|Message ECM1 10ms |0||||||
+MAIN_MSGu16EngTqIndAct|uint16|MAIN|0|0|0|MAIN_MSGu16EngTqIndAct|0|0|Hexa|-||||Communication|ECM1|Raw|MAIN_MSGu16EngTqIndAct||1|||||||NONE|0|1||||1|0|0|Message ECM1 10ms |0||||||
+MAIN_MSGf32EngTqIndActPhys|float32|MAIN|0|0|0|MAIN_MSGf32EngTqIndActPhys|0|0|Phys|NM|1|1|0|Communication|ECM1|Physical|MAIN_MSGf32EngTqIndActPhys||1|||||||NONE|0|1||||1|0|0|Message ECM1 10ms |0||||||
+MAIN_MSGu16EngTqIndDrvDmd|uint16|MAIN|0|0|0|MAIN_MSGu16EngTqIndDrvDmd|0|0|Hexa|-||||Communication|ECM1|Raw|MAIN_MSGu16EngTqIndDrvDmd||1|||||||NONE|0|1||||1|0|0|Message ECM1 10ms |0||||||
+MAIN_MSGf32EngTqIndDrvDmdPhys|float32|MAIN|0|0|0|MAIN_MSGf32EngTqIndDrvDmdPhys|0|0|Phys|NM|1|1|0|Communication|ECM1|Physical|MAIN_MSGf32EngTqIndDrvDmdPhys||1|||||||NONE|0|1||||1|0|0|Message ECM1 10ms |0||||||
+MAIN_MSGu16EngTqLoss|uint16|MAIN|0|0|0|MAIN_MSGu16EngTqLoss|0|0|Hexa|-||||Communication|ECM1|Raw|MAIN_MSGu16EngTqLoss||1|||||||NONE|0|1||||1|0|0|Message ECM1 10ms |0||||||
+MAIN_MSGf32EngTqLossPhys|float32|MAIN|0|0|0|MAIN_MSGf32EngTqLossPhys|0|0|Phys|NM|1|1|0|Communication|ECM1|Physical|MAIN_MSGf32EngTqLossPhys||1|||||||NONE|0|1||||1|0|0|Message ECM1 10ms |0||||||
+MAIN_MSGbHvacCluSts|boolean|MAIN|0|0|0|MAIN_MSGbHvacCluSts|0|0|Phys|bool|2|0||Communication|ECM1|Raw|MAIN_MSGbHvacCluSts||1|||||||NONE|0|1||||1|0|0|Message ECM1 10ms |0||||||
+MAIN_MSGu8ThrottleCmdPos|uint8|MAIN|0|0|0|MAIN_MSGu8ThrottleCmdPos|0|0|Hexa|-||||Communication|ECM1|Raw|MAIN_MSGu8ThrottleCmdPos||1|||||||NONE|0|1||||1|0|0|Message ECM1 10ms |0||||||
+MAIN_MSGf32ThrottleCmdPosPhys|float32|MAIN|0|0|0|MAIN_MSGf32ThrottleCmdPosPhys|0|0|Phys|%|1|1|0|Communication|ECM1|Physical|MAIN_MSGf32ThrottleCmdPosPhys||1|||||||NONE|0|1||||1|0|0|Message ECM1 10ms |0||||||
+MAIN_MSGbCrsCtrlCtrlActv|boolean|MAIN|0|0|0|MAIN_MSGbCrsCtrlCtrlActv|0|0|Phys|bool|2|0||Communication|ECM2|Raw|MAIN_MSGbCrsCtrlCtrlActv||1|||||||NONE|0|1||||1|0|0|Message ECM2 10ms |0||||||
+MAIN_MSGu8ECM2AliveCounter|uint8|MAIN|0|0|0|MAIN_MSGu8ECM2AliveCounter|0|0|Hexa|-||||Communication|ECM2|Raw|MAIN_MSGu8ECM2AliveCounter||1|||||||NONE|0|1||||1|0|0|Message ECM2 10ms |0||||||
+MAIN_MSGf32ECM2AliveCounterPhys|float32|MAIN|0|0|0|MAIN_MSGf32ECM2AliveCounterPhys|0|0|Phys|NA|1|1|0|Communication|ECM2|Physical|MAIN_MSGf32ECM2AliveCounterPhys||1|||||||NONE|0|1||||1|0|0|Message ECM2 10ms |0||||||
+MAIN_MSGu8ECM2Checksum|uint8|MAIN|0|0|0|MAIN_MSGu8ECM2Checksum|0|0|Hexa|-||||Communication|ECM2|Raw|MAIN_MSGu8ECM2Checksum||1|||||||NONE|0|1||||1|0|0|Message ECM2 10ms |0||||||
+MAIN_MSGf32ECM2ChecksumPhys|float32|MAIN|0|0|0|MAIN_MSGf32ECM2ChecksumPhys|0|0|Phys|NA|1|1|0|Communication|ECM2|Physical|MAIN_MSGf32ECM2ChecksumPhys||1|||||||NONE|0|1||||1|0|0|Message ECM2 10ms |0||||||
+MAIN_MSGu16EngN|uint16|MAIN|0|0|0|MAIN_MSGu16EngN|0|0|Hexa|-||||Communication|ECM2|Raw|MAIN_MSGu16EngN||1|||||||NONE|0|1||||1|0|0|Message ECM2 10ms |0||||||
+MAIN_MSGf32EngNPhys|float32|MAIN|0|0|0|MAIN_MSGf32EngNPhys|0|0|Phys|rpm|1|1|0|Communication|ECM2|Physical|MAIN_MSGf32EngNPhys||1|||||||NONE|0|1||||1|0|0|Message ECM2 10ms |0||||||
+MAIN_MSGu16EngNTgtIdle|uint16|MAIN|0|0|0|MAIN_MSGu16EngNTgtIdle|0|0|Hexa|-||||Communication|ECM2|Raw|MAIN_MSGu16EngNTgtIdle||1|||||||NONE|0|1||||1|0|0|Message ECM2 10ms |0||||||
+MAIN_MSGf32EngNTgtIdlePhys|float32|MAIN|0|0|0|MAIN_MSGf32EngNTgtIdlePhys|0|0|Phys|rpm|1|1|0|Communication|ECM2|Physical|MAIN_MSGf32EngNTgtIdlePhys||1|||||||NONE|0|1||||1|0|0|Message ECM2 10ms |0||||||
+MAIN_MSGu8GearLmtForLightOff|uint8|MAIN|0|0|0|MAIN_MSGu8GearLmtForLightOff|0|0|Hexa|-||||Communication|ECM2|Raw|MAIN_MSGu8GearLmtForLightOff||1|||||||NONE|0|1||||1|0|0|Message ECM2 10ms |0||||||
+MAIN_MSGs16Algt|sint16|MAIN|0|0|0|MAIN_MSGs16Algt|0|0|Hexa|-||||Communication|ESC1|Raw|MAIN_MSGs16Algt||1|||||||NONE|0|1||||1|0|0|Message ESC1 10ms |0||||||
+MAIN_MSGf32AlgtPhys|float32|MAIN|0|0|0|MAIN_MSGf32AlgtPhys|0|0|Phys|m/s^2|1|1|0|Communication|ESC1|Physical|MAIN_MSGf32AlgtPhys||1|||||||NONE|0|1||||1|0|0|Message ESC1 10ms |0||||||
+MAIN_MSGbEscFlgFlt|boolean|MAIN|0|0|0|MAIN_MSGbEscFlgFlt|0|0|Phys|bool|2|0||Communication|ESC1|Raw|MAIN_MSGbEscFlgFlt||1|||||||NONE|0|1||||1|0|0|Message ESC1 10ms |0||||||
+MAIN_MSGu8GearShiftPrevn|uint8|MAIN|0|0|0|MAIN_MSGu8GearShiftPrevn|0|0|Hexa|-||||Communication|ESC1|Raw|MAIN_MSGu8GearShiftPrevn||1|||||||NONE|0|1||||1|0|0|Message ESC1 10ms |0||||||
+MAIN_MSGbTcsCtrlActv|boolean|MAIN|0|0|0|MAIN_MSGbTcsCtrlActv|0|0|Phys|bool|2|0||Communication|ESC1|Raw|MAIN_MSGbTcsCtrlActv||1|||||||NONE|0|1||||1|0|0|Message ESC1 10ms |0||||||
+MAIN_MSGbTcsFlgFlt|boolean|MAIN|0|0|0|MAIN_MSGbTcsFlgFlt|0|0|Phys|bool|2|0||Communication|ESC1|Raw|MAIN_MSGbTcsFlgFlt||1|||||||NONE|0|1||||1|0|0|Message ESC1 10ms |0||||||
+MAIN_MSGu16EngineSoakTime|uint16|MAIN|0|0|0|MAIN_MSGu16EngineSoakTime|0|0|Hexa|-||||Communication|ECM3|Raw|MAIN_MSGu16EngineSoakTime||1|||||||NONE|0|1||||1|0|0|Message ECM3 20ms |0||||||
+MAIN_MSGf32EngineSoakTimePhys|float32|MAIN|0|0|0|MAIN_MSGf32EngineSoakTimePhys|0|0|Phys|min|1|1|0|Communication|ECM3|Physical|MAIN_MSGf32EngineSoakTimePhys||1|||||||NONE|0|1||||1|0|0|Message ECM3 20ms |0||||||
+MAIN_MSGu8EngPAmbAir|uint8|MAIN|0|0|0|MAIN_MSGu8EngPAmbAir|0|0|Hexa|-||||Communication|ECM3|Raw|MAIN_MSGu8EngPAmbAir||1|||||||NONE|0|1||||1|0|0|Message ECM3 20ms |0||||||
+MAIN_MSGf32EngPAmbAirPhys|float32|MAIN|0|0|0|MAIN_MSGf32EngPAmbAirPhys|0|0|Phys|kPa|1|1|0|Communication|ECM3|Physical|MAIN_MSGf32EngPAmbAirPhys||1|||||||NONE|0|1||||1|0|0|Message ECM3 20ms |0||||||
+MAIN_MSGu8EngT|uint8|MAIN|0|0|0|MAIN_MSGu8EngT|0|0|Hexa|-||||Communication|ECM3|Raw|MAIN_MSGu8EngT||1|||||||NONE|0|1||||1|0|0|Message ECM3 20ms |0||||||
+MAIN_MSGf32EngTPhys|float32|MAIN|0|0|0|MAIN_MSGf32EngTPhys|0|0|Phys|deg C|1|1|0|Communication|ECM3|Physical|MAIN_MSGf32EngTPhys||1|||||||NONE|0|1||||1|0|0|Message ECM3 20ms |0||||||
+MAIN_MSGbOBDDrivingCycleStatus|boolean|MAIN|0|0|0|MAIN_MSGbOBDDrivingCycleStatus|0|0|Phys|bool|2|0||Communication|ECM3|Raw|MAIN_MSGbOBDDrivingCycleStatus||1|||||||NONE|0|1||||1|0|0|Message ECM3 20ms |0||||||
+MAIN_MSGbOBDWarmUpCycleStatus|boolean|MAIN|0|0|0|MAIN_MSGbOBDWarmUpCycleStatus|0|0|Phys|bool|2|0||Communication|ECM3|Raw|MAIN_MSGbOBDWarmUpCycleStatus||1|||||||NONE|0|1||||1|0|0|Message ECM3 20ms |0||||||
+MAIN_MSGu8AmbAirTemp|uint8|MAIN|0|0|0|MAIN_MSGu8AmbAirTemp|0|0|Hexa|-||||Communication|IP1|Raw|MAIN_MSGu8AmbAirTemp||1|||||||NONE|0|1||||1|0|0|Message IP1 20ms |0||||||
+MAIN_MSGf32AmbAirTempPhys|float32|MAIN|0|0|0|MAIN_MSGf32AmbAirTempPhys|0|0|Phys|deg C|1|1|0|Communication|IP1|Physical|MAIN_MSGf32AmbAirTempPhys||1|||||||NONE|0|1||||1|0|0|Message IP1 20ms |0||||||
+MAIN_MSGu8EngNIdleReq|uint8|MAIN|0|0|0|MAIN_MSGu8EngNIdleReq|0|0|Hexa|-||||Communication|TCU1|Raw|MAIN_MSGu8EngNIdleReq||1|||||||NONE|0|1||||1|0|0|Message TCU1 10ms |0||||||
+MAIN_MSGf32EngNIdleReqPhys|float32|MAIN|0|0|0|MAIN_MSGf32EngNIdleReqPhys|0|0|Phys|rpm|1|1|0|Communication|TCU1|Physical|MAIN_MSGf32EngNIdleReqPhys||1|||||||NONE|0|1||||1|0|0|Message TCU1 10ms |0||||||
+MAIN_MSGu8EngTqIndDecReqdByTrsm|uint8|MAIN|0|0|0|MAIN_MSGu8EngTqIndDecReqdByTrsm|0|0|Hexa|-||||Communication|TCU1|Raw|MAIN_MSGu8EngTqIndDecReqdByTrsm||1|||||||NONE|0|1||||1|0|0|Message TCU1 10ms |0||||||
+MAIN_MSGf32EngTqIndDecReqdByTrsmPhys|float32|MAIN|0|0|0|MAIN_MSGf32EngTqIndDecReqdByTrsmPhys|0|0|Phys|Nm|1|1|0|Communication|TCU1|Physical|MAIN_MSGf32EngTqIndDecReqdByTrsmPhys||1|||||||NONE|0|1||||1|0|0|Message TCU1 10ms |0||||||
+MAIN_MSGu8EngTqIndLmtdByTrsm|uint8|MAIN|0|0|0|MAIN_MSGu8EngTqIndLmtdByTrsm|0|0|Hexa|-||||Communication|TCU1|Raw|MAIN_MSGu8EngTqIndLmtdByTrsm||1|||||||NONE|0|1||||1|0|0|Message TCU1 10ms |0||||||
+MAIN_MSGf32EngTqIndLmtdByTrsmPhys|float32|MAIN|0|0|0|MAIN_MSGf32EngTqIndLmtdByTrsmPhys|0|0|Phys|Nm|1|1|0|Communication|TCU1|Physical|MAIN_MSGf32EngTqIndLmtdByTrsmPhys||1|||||||NONE|0|1||||1|0|0|Message TCU1 10ms |0||||||
+MAIN_MSGu8TrsmCluStAct|uint8|MAIN|0|0|0|MAIN_MSGu8TrsmCluStAct|0|0|Hexa|-||||Communication|TCU1|Raw|MAIN_MSGu8TrsmCluStAct||1|||||||NONE|0|1||||1|0|0|Message TCU1 10ms |0||||||
+MAIN_MSGu8TrsmMsgCnt|uint8|MAIN|0|0|0|MAIN_MSGu8TrsmMsgCnt|0|0|Hexa|-||||Communication|TCU1|Raw|MAIN_MSGu8TrsmMsgCnt||1|||||||NONE|0|1||||1|0|0|Message TCU1 10ms |0||||||
+MAIN_MSGf32TrsmMsgCntPhys|float32|MAIN|0|0|0|MAIN_MSGf32TrsmMsgCntPhys|0|0|Phys|count|1|1|0|Communication|TCU1|Physical|MAIN_MSGf32TrsmMsgCntPhys||1|||||||NONE|0|1||||1|0|0|Message TCU1 10ms |0||||||
+MAIN_MSGu16TrsmNInp|uint16|MAIN|0|0|0|MAIN_MSGu16TrsmNInp|0|0|Hexa|-||||Communication|TCU1|Raw|MAIN_MSGu16TrsmNInp||1|||||||NONE|0|1||||1|0|0|Message TCU1 10ms |0||||||
+MAIN_MSGf32TrsmNInpPhys|float32|MAIN|0|0|0|MAIN_MSGf32TrsmNInpPhys|0|0|Phys|rpm|1|1|0|Communication|TCU1|Physical|MAIN_MSGf32TrsmNInpPhys||1|||||||NONE|0|1||||1|0|0|Message TCU1 10ms |0||||||
+MAIN_MSGu8EngTqIndIncReqdByTrsm|uint8|MAIN|0|0|0|MAIN_MSGu8EngTqIndIncReqdByTrsm|0|0|Hexa|-||||Communication|TCU2|Raw|MAIN_MSGu8EngTqIndIncReqdByTrsm||1|||||||NONE|0|1||||1|0|0|Message TCU2 10ms |0||||||
+MAIN_MSGf32EngTqIndIncReqdByTrsmPhys|float32|MAIN|0|0|0|MAIN_MSGf32EngTqIndIncReqdByTrsmPhys|0|0|Phys|Nm|1|1|0|Communication|TCU2|Physical|MAIN_MSGf32EngTqIndIncReqdByTrsmPhys||1|||||||NONE|0|1||||1|0|0|Message TCU2 10ms |0||||||
+MAIN_MSGu8TrsmFlgFlt|uint8|MAIN|0|0|0|MAIN_MSGu8TrsmFlgFlt|0|0|Hexa|-||||Communication|TCU2|Raw|MAIN_MSGu8TrsmFlgFlt||1|||||||NONE|0|1||||1|0|0|Message TCU2 10ms |0||||||
+MAIN_MSGbTrsmFlgShiftProgs|boolean|MAIN|0|0|0|MAIN_MSGbTrsmFlgShiftProgs|0|0|Phys|bool|2|0||Communication|TCU2|Raw|MAIN_MSGbTrsmFlgShiftProgs||1|||||||NONE|0|1||||1|0|0|Message TCU2 10ms |0||||||
+MAIN_MSGu8TrsmGearAct|uint8|MAIN|0|0|0|MAIN_MSGu8TrsmGearAct|0|0|Hexa|-||||Communication|TCU2|Raw|MAIN_MSGu8TrsmGearAct||1|||||||NONE|0|1||||1|0|0|Message TCU2 10ms |0||||||
+MAIN_MSGu8TrsmGearTar|uint8|MAIN|0|0|0|MAIN_MSGu8TrsmGearTar|0|0|Hexa|-||||Communication|TCU2|Raw|MAIN_MSGu8TrsmGearTar||1|||||||NONE|0|1||||1|0|0|Message TCU2 10ms |0||||||
+MAIN_MSGbTrsmMILReq|boolean|MAIN|0|0|0|MAIN_MSGbTrsmMILReq|0|0|Phys|bool|2|0||Communication|TCU2|Raw|MAIN_MSGbTrsmMILReq||1|||||||NONE|0|1||||1|0|0|Message TCU2 10ms |0||||||
+MAIN_MSGu8TrsmStGearLvr|uint8|MAIN|0|0|0|MAIN_MSGu8TrsmStGearLvr|0|0|Hexa|-||||Communication|TCU2|Raw|MAIN_MSGu8TrsmStGearLvr||1|||||||NONE|0|1||||1|0|0|Message TCU2 10ms |0||||||
+MAIN_MSGu8TrsmStGearMode|uint8|MAIN|0|0|0|MAIN_MSGu8TrsmStGearMode|0|0|Hexa|-||||Communication|TCU2|Raw|MAIN_MSGu8TrsmStGearMode||1|||||||NONE|0|1||||1|0|0|Message TCU2 10ms |0||||||
+MAIN_MSGu8TrsmTOil|uint8|MAIN|0|0|0|MAIN_MSGu8TrsmTOil|0|0|Hexa|-||||Communication|TCU2|Raw|MAIN_MSGu8TrsmTOil||1|||||||NONE|0|1||||1|0|0|Message TCU2 10ms |0||||||
+MAIN_MSGf32TrsmTOilPhys|float32|MAIN|0|0|0|MAIN_MSGf32TrsmTOilPhys|0|0|Phys|deg C|1|1|0|Communication|TCU2|Physical|MAIN_MSGf32TrsmTOilPhys||1|||||||NONE|0|1||||1|0|0|Message TCU2 10ms |0||||||
+MAIN_MSGbTrsmTOilWrnLmpReq|boolean|MAIN|0|0|0|MAIN_MSGbTrsmTOilWrnLmpReq|0|0|Phys|bool|2|0||Communication|TCU2|Raw|MAIN_MSGbTrsmTOilWrnLmpReq||1|||||||NONE|0|1||||1|0|0|Message TCU2 10ms |0||||||
+
+MAIN_au32GptIsrPeriod|uint32|MAIN|0|0|0|MAIN_au32GptIsrPeriod|0|0|Phys|µs|1|0.01|0|Application|MAIN|MAIN|MAIN_au32GptIsrPeriod||1||*||*||*|NONE|0|1||||1|0|1||0|0|4294967295|||0|
+MAIN_au32GptIsrTimeStamp|uint32|MAIN|0|0|0|MAIN_au32GptIsrTimeStamp|0|0|Phys|µs|1|0.01|0|Application|MAIN|MAIN|MAIN_au32GptIsrTimeStamp||1||*||*||*|NONE|0|1||||1|0|1||0|0|4294967295|||0|
+MAIN_u32StackStartAddr|uint32|MAIN|0|0|0|MAIN_u32StackStartAddr|0|0|Déci|-||||Main|Main||MAIN_u32StackStartAddr||1||||||||0|1||||1|0|0||0|||||0|
+MAIN_u32StackPreValue|uint32|MAIN|0|0|0|MAIN_u32StackPreValue|0|0|Déci|-||||Main|Main||MAIN_u32StackPreValue||1||||||||0|1||||1|0|0||0|||||0|
+MAIN_u32StackCurValue|uint32|MAIN|0|0|0|MAIN_u32StackCurValue|0|0|Déci|-||||Main|Main||MAIN_u32StackCurValue||1||||||||0|1||||1|0|0||0|||||0|

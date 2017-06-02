@@ -1,0 +1,46 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SRVL                                                    */
+/*                                                                            */
+/* !Component       : CCP                                                     */
+/*                                                                            */
+/* !Module          : CCP                                                     */
+/* !Description     : List of template files for CCP Configuration            */
+/*                                                                            */
+/* !File            : CCP.TPX                                                 */
+/*                                                                            */
+/* !Scope           : Public                                                  */
+/*                                                                            */
+/* !Target          : Genecode Tool                                           */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : OIL                                                     */
+/*                                                                            */
+/* COPYRIGHT 2009 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::                                                                $*/
+/* $Revision::                                                               $*/
+/* $Author::                                          $$Date::               $*/
+/******************************************************************************/
+
+FILE = TPL
+{
+   PURPOSE = "CCP_CFG_C";
+   READ    = "ccp_cfg_c.tpl";
+   WRITE   = "CCP_Cfg.c";
+};
+
+FILE = TPL
+{
+   PURPOSE = "CCP_CFG_H";
+   READ    = "ccp_cfg_h.tpl";
+   WRITE   = "CCP_Cfg.h";
+};
+
+#include "ccpusr.tpx"
+
+/*-------------------------------- end of file -------------------------------*/

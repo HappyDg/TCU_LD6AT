@@ -1,0 +1,61 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : APPLI                                                   */
+/*                                                                            */
+/* !Component       : MEMMAP_CFG                                              */
+/* !Description     : Mapping Section Configuration                           */
+/*                                                                            */
+/* !File            : MEMMAP.STX                                              */
+/*                                                                            */
+/* !Scope           : Public                                                  */
+/*                                                                            */
+/* !Target          : Genecode Tool                                           */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : C                                                       */
+/*                                                                            */
+/* COPYRIGHT 2005 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   I:/PROJETS/LIBEMB/LOG/DIVERS/MEMMAP/LOG/memmap.stv           $*/
+/* $Revision::   1.6      $$Author::   lvoilmy        $$Date::   02 Dec 2011 $*/
+/******************************************************************************/
+
+MEMMAP_CFG
+{
+   BOOLEAN GENERATE_MEMMAP_FILE_PER_MSN;
+   ENUM
+   [
+      SPEED_AND_UNSAFE,
+      SAFE,
+      DEBUG
+   ] OPTIMIZATION;
+};
+
+MEMMAP_PARENT
+{
+   STRING          START;
+   STRING          STOP;
+};
+
+MEMMAP_MSN
+{
+   MEMMAP_PARENT_TYPE SECTION[];
+
+   ENUM
+   [
+      ENABLED
+      {
+         MEMMAP_PARENT_TYPE SECTION;
+         MEMMAP_PARENT_TYPE TO_SECTION;
+      }
+   ] REALLOC[];
+};
+
+
+#include "MEMMAP_ADD.STX"
+
+/*----------------------------- fin de fichier -------------------------------*/

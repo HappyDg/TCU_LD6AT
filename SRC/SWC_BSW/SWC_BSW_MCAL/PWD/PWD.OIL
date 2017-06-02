@@ -1,0 +1,93 @@
+/******************************************************************************/
+/* !Layer           : MCAL                                                    */
+/* !Component       : PWD                                                     */
+/* !Description     : Test Code For PWD Component                             */
+/*                                                                            */
+/* !File            : PWD.oil                                                 */
+/* !Description     : PWD Configuration                                       */
+/*                                                                            */
+/* !Reference       :                                                         */
+/*                                                                            */
+/* Coding language  : OIL                                                     */
+/*                                                                            */
+/* COPYRIGHT VALEO all rights reserved                                        */
+/******************************************************************************/
+/* Dimension Informations
+ * %PCMS_HEADER_SUBSTITUTION_START:%
+ * The PID has this format: <Product ID>:<Item ID>.<Variant>-<Item Type>;<Revision>
+ * %PID:%
+ * %PCMS_HEADER_SUBSTITUTION_END:%
+ ******************************************************************************/
+/*SEL_COOLING_DIAG*/
+/*DUAL_AREA_PISTON_SOLENOID_DIAG*/
+/*AUXILIARIES_ON_OFF_VALVE_DIAG*/
+/*RETARDER_ACCUMULATOR_DIAG*/
+/*SPEEDOMETER_DIAG*/
+/*ADXL313_INT1*/
+
+
+PWD_CHANNEL M_GEAR_POS_CHECK
+{
+   PWD_ALIAS               = "MGEARPOSCHECK";
+   SAMPLING_RATE_ATTRIBUT_NS   = 2500000;
+   MAX_PERIOD_DECIMAL_VALUE    = 2500001;
+   ACTIVE_STATE                = HIGH;    /* ACTIVE_STATE is set with the same value of IcuDefaultStartEdge in Tresos "ICU_RISING_EDGE" */
+   TIMEOUT_PARAM_RESOL_IN_NS   = 100.0;
+   DESIRED_PERIOD_RESOL_IN_NS  = 100;
+   DUTY_CYCLE_DECIMAL_VALUE_OF_100_PERCENT = 32768;
+   PERIOD_AT_TIMEOUT           = LAST_MEASURED;
+};
+
+
+PWD_CHANNEL M_GEAR_POS
+{
+   PWD_ALIAS               = "MGEARPOS";
+   SAMPLING_RATE_ATTRIBUT_NS   = 2500000;
+   MAX_PERIOD_DECIMAL_VALUE    = 2500001;
+   ACTIVE_STATE                = HIGH;    /* ACTIVE_STATE is set with the same value of IcuDefaultStartEdge in Tresos "ICU_RISING_EDGE" */
+   TIMEOUT_PARAM_RESOL_IN_NS   = 100.0;
+   DESIRED_PERIOD_RESOL_IN_NS  = 100;
+   DUTY_CYCLE_DECIMAL_VALUE_OF_100_PERCENT = 32768;
+   PERIOD_AT_TIMEOUT           = LAST_MEASURED;
+};
+
+PWD_CHANNEL M_TOSS
+{
+   PWD_ALIAS               = "MTOSS";
+   SAMPLING_RATE_ATTRIBUT_NS   = 2500000;
+   MAX_PERIOD_DECIMAL_VALUE    = 2500001;
+   ACTIVE_STATE                = HIGH;    /* ACTIVE_STATE is set with the same value of IcuDefaultStartEdge in Tresos "ICU_RISING_EDGE" */
+   TIMEOUT_PARAM_RESOL_IN_NS   = 100.0;
+   DESIRED_PERIOD_RESOL_IN_NS  = 100;
+   DUTY_CYCLE_DECIMAL_VALUE_OF_100_PERCENT = 32768;
+   PERIOD_AT_TIMEOUT           = LAST_MEASURED;
+};
+
+
+PWD_CHANNEL M_G4_SPD_SNS
+{
+   PWD_ALIAS               = "MG4SPDSNS";
+   SAMPLING_RATE_ATTRIBUT_NS   = 2500000;
+   MAX_PERIOD_DECIMAL_VALUE    = 2500001;
+   ACTIVE_STATE                = HIGH;    /* ACTIVE_STATE is set with the same value of IcuDefaultStartEdge in Tresos "ICU_RISING_EDGE" */
+   TIMEOUT_PARAM_RESOL_IN_NS   = 100.0;
+   DESIRED_PERIOD_RESOL_IN_NS  = 100;
+   DUTY_CYCLE_DECIMAL_VALUE_OF_100_PERCENT = 32768;
+   PERIOD_AT_TIMEOUT           = LAST_MEASURED;
+};
+
+
+PWD_CHANNEL M_C4_SPD_SNS
+{
+   PWD_ALIAS               = "MC4SPDSNS";
+   SAMPLING_RATE_ATTRIBUT_NS   = 2500000;
+   MAX_PERIOD_DECIMAL_VALUE    = 2500001;
+   ACTIVE_STATE                = HIGH;    /* ACTIVE_STATE is set with the same value of IcuDefaultStartEdge in Tresos "ICU_RISING_EDGE" */
+   TIMEOUT_PARAM_RESOL_IN_NS   = 100.0;
+   DESIRED_PERIOD_RESOL_IN_NS  = 100;
+   DUTY_CYCLE_DECIMAL_VALUE_OF_100_PERCENT = 32768;
+   PERIOD_AT_TIMEOUT           = LAST_MEASURED;
+};
+
+
+/*------------------------------ end of file ---------------------------------*/

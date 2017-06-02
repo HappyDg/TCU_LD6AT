@@ -1,0 +1,5 @@
+Nom_donnée|Type|Nom_module|Public|Nb_lignes|Nb_colonnes|Label_père|Offset|Masque_accès|Affichage|Unité|Fonction_transfert_ades|Coefficient_a|Coefficient_b|Groupe|Groupe_1|Groupe_2|Alias_1|Alias_2|Genre|Variable_indice_ligne|Variable_indice_colonne|Fonction_transfert_ligne|Fonction_transfert_colonne|Table_breakpoint_ligne|Table_breakpoint_colonne|Référence_spécification|Recuperable|Modifiable|Fournisseur|Responsable|Valeurs|Visualisable_ADES|Donnée_a_supprimer|Validation|Commentaires|Volatile|MinDecValue|MaxDecValue|MinPhysValue|MaxPhysValue|Def_Eval|MemSec
+EVP_au16Duty|uint16|EVP|1|4|3|EVP_au16Duty|0|0|Phys|%|1|100/16384|0|Application|EVP|EVP|EVP_au16Duty||1|*|*|*|*|*|*|NONE|1|1||||1|0|1||0|0|65535|||0|
+EVP_abFlt|boolean|EVP|1|1|4|EVP_abFlt|0|0|Phys|bool|2|0||Application|EVP|EVP|EVP_abFlt||1||*||*||*|NONE|0|1||||1|0|1||0|0|1|||0|
+EVP_au16Dur|uint16|EVP|1|1|4|EVP_au16Dur|0|0|Phys|µs|1|0.01|0|Application|EVP|EVP|EVP_au16Dur||1||*||*||*|NONE|0|1||||1|0|1||0|0|65535|||0|
+EVP_au32Prd|uint32|EVP|1|1|4|EVP_au32Prd|0|0|Phys|µs|1|0.01|0|Application|EVP|EVP|EVP_au32Prd||1||*||*||*|NONE|0|1||||1|0|1||0|0|4294967295|||0|

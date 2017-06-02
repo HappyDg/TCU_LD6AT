@@ -1,0 +1,56 @@
+/******************************************************************************/
+/* !Layer           : FBL                                                     */
+/* !Component       : FBL_INTF                                                */
+/* !Description     : Manage exchange area FBL to Appli                       */
+/*                                                                            */
+/* !File            : FBL_INTF_MEMMAP.OIL                                     */
+/* !Description     : MemMap section configuration of the EXCHANGE component  */
+/*                                                                            */
+/* !Reference       :                                                         */
+/*                                                                            */
+/* Coding language  : OIL                                                     */
+/*                                                                            */
+/* COPYRIGHT VALEO all rights reserved                                        */
+/******************************************************************************/
+/* Dimension Informations
+ * %PCMS_HEADER_SUBSTITUTION_START:%
+ * The PID has this format: <Product ID>:<Item ID>.<Variant>-<Item Type>;<Revision>
+ * %PID:%
+ * %PCMS_HEADER_SUBSTITUTION_END:%
+******************************************************************************/
+
+/******************************************************************************/
+/* MEMMAP_PARENT LIST                                                         */
+/******************************************************************************/
+
+MEMMAP_PARENT SEC_APPLVECT
+{
+   START = "#pragma section \"APPLVECT\" ";
+   STOP  = "#pragma section";
+};
+
+/* Following section must be located in the same address for all SW (loader/ASW/ProdTP...) */
+MEMMAP_PARENT SEC_VAR_FBL_INTF
+{
+   START = "#pragma section \".fbl_intf\" aw";
+   STOP  = "#pragma section";
+};
+
+/******************************************************************************/
+/* MEMMAP_MSN LIST                                                         */
+/******************************************************************************/
+
+MEMMAP_MSN FBL_APPLVECT
+{
+   SECTION = SEC_CONST;
+   
+   REALLOC = ENABLED {SECTION = SEC_CONST;         TO_SECTION = SEC_APPLVECT;};
+};
+
+MEMMAP_MSN FBL_INTF 
+{
+   SECTION = SEC_VAR_FBL_INTF;
+};
+
+/*------------------------------- end of file --------------------------------*/
+

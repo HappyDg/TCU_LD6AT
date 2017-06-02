@@ -1,0 +1,7 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+SPY_vidInit|A|(void);|1|SPY|1|NONE||||0|0|0
+SPY_vidDaqListTxInit|A|(uint8 u8ListIdx, uint8 **ppu8DaqListElmAdr, uint16 u16FirstElmIdx, uint8 u8OdtLstIdx);|2|SPY|1|NONE||||0|0|0
+SPY_bWrOdt|A|boolean(uint8 u8ListIdx, uint16 u16FirstElmIdx, uint8 *pu8BufDst);|3|SPY|1|NONE||||0|0|0
+SPY_vidDaqListStopd|A|(uint8 u8ListIdx);|4|SPY|1|NONE||||0|0|0
+SPY_vidWrBuf|B|(void);|5|SPY|1|NONE||||0|0|0
+SPY_vidStopDataAcq|A|(void);|6|SPY|1|NONE||||0|0|0

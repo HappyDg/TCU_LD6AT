@@ -1,0 +1,147 @@
+/* ETAS Colour scheme
+ETASBlue     #1e539e RGB: 30,83,158
+ETASGray     #92a6b9 RGB: 146,166,185
+ETASDarkGray #6b8298 RGB: 107,130,152
+ETASCyan     #009ef4 RGB: 0,158,244
+ETASRed      #bd0551 RGB: 189,5,81
+ETASYellow   #f9b100 RGB: 249,177,0
+ETASGreen    #009966 RGB: 0,153,102
+*/
+body {
+    margin: 10px 10px 10px 10px;
+    padding: 0;
+    background: white;
+    font-size: 10.0pt;
+    font-family: Verdana,Helvetica,sans-serif;
+}
+
+/* Links */
+a[href], a[href]:link, a[href]:active {
+    text-decoration: underline;
+    background-color: inherit;
+    color: #18507C;
+}
+
+/* remove underline on hover and change color */
+a[href]:hover {
+    text-decoration: none;
+    background-color: #C3D4DF;
+    color: #385C72;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-right:0cm;
+    margin-bottom:4.0pt;
+    margin-left:19pt;
+    border:none;
+    padding:0cm;
+    color:#1e539e;
+}
+h1 {
+    margin-top:0cm;
+    font-size:large;
+    margin-left:19pt;
+    margin-right:19pt;
+    text-align: center;
+    margin-top:20pt;
+    margin-bottom:20pt;
+    text-align: center;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-top-width: 2px;
+    border-left-width: 2px;
+    border-bottom-width: 3px;
+    border-right-width: 3px;
+    border-top-color: #9aa;
+    border-left-color: #9aa;
+    border-bottom-color: #355;
+    border-right-color: #355;
+    background:  #1e539e;
+    color: white;
+}
+h2 {
+    margin-top:7.5pt;
+    font-size:130%;
+    margin-top:20pt;
+    border-top: 2px solid #aaa;
+    border-bottom: 2px solid #aaa;
+}
+h3, h4, h5 {
+    margin-top:5.0pt;
+}
+h6 {
+    margin-top:12.0pt;
+    margin-bottom:3.0pt;
+    margin-left:1.0cm;
+    text-indent:0cm;
+    font-size:110%;
+}	
+
+p, li {
+    margin-top:0cm;
+    margin-right:0cm;
+    margin-bottom:4.0pt;
+    margin-left:19pt;
+}
+
+p.CodeBodyText, li.CodeBodyText, div.CodeBodyText	{
+    margin-top:0cm;
+    margin-right:0cm;
+    margin-bottom:6.0pt;
+    margin-left:0cm;
+    margin: 0 0 0 0;
+    font-family:"Courier New";
+}
+
+p.CodeExample, li.CodeExample, div.CodeExample {
+    margin-left:19pt;
+    font-size:10.0pt;
+    padding: 0.5em;
+    overflow: auto; 
+    border: 1px dashed blue;
+    background-color: #f9f9f9;
+    font-size: 90%;
+}
+p.CodeNormal, li.CodeNormal, div.CodeNormal {
+    margin-top:0cm;
+    margin-right:0cm;
+    margin-bottom:6.0pt;
+    margin-left:25pt;
+    font-size: 90%;
+    font-family:"Courier New";
+}
+ol {margin-bottom:0cm;}
+ul {margin-bottom:0cm;}
+
+/* Style Definitions */
+table { 
+    border: 1px solid gray;
+    border-collapse: collapse;
+    font-size:100%;
+    background-color: #ddd;
+}
+th, th a[href], th a[href]:visited, th a[href]:link, th a[href]:active, th a:link {
+    background-color:  #1e539e;
+    font-weight:bold;
+    color:white;
+    text-align: left;
+    padding-left:4pt;
+}
+table.toc {
+    margin-left:-29pt;
+    width: 80%;
+    left: 10%;
+    position: relative;
+}
+td {
+    border: 1px solid gray;
+    padding-left: 3pt;
+    padding-right: 3pt;
+    margin-left:0pt;
+}
+tr.toc2 td {
+    padding-left:10pt;
+    vertical-align: top;
+}

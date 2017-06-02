@@ -1,0 +1,52 @@
+-|--------------------------------------------------------------------------------------------------------------------------|
+-|
+-| FILE NAME      : LIST_SWC_BSW_HAL
+-|
+-| PVCS Informations
+-| $Header:     $
+-| Dimension Informations
+-| %PCMS_HEADER_SUBSTITUTION_START:%
+-| The PID has this format: <Product ID>:<Item ID>.<Variant>-<Item Type>;<Revision>
+-| %PID: XXX:A1137.A-SRC;20 %
+-| %PCMS_HEADER_SUBSTITUTION_END:%
+-|
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+-|                                     |                                     |                                              |
+-|           COMPONENT_LIST            |             MODULE_LIST             |              FILE_LIST                       |
+-|                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | CAN_API                             |                                              |
+ |                                     |                                     | CAN_API.h                                    |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | IOHAL  -db_nexp                     |                                              |
+ |                                     |                                     | cfgbdd_IOHAL.txt                             |
+ |                                     |                                     | CFG_IOHAL.oil                                |
+ |                                     |                                     | CFG_IOHAL.stx                                |
+ |                                     |                                     | donnee_IOHAL_txt.tpl                         |
+ |                                     |                                     | fonction_IOHAL.txt                           |
+ |                                     |                                     | IOHAL.chx                                    |
+ |                                     |                                     | IOHAL.h                                      |
+ |                                     |                                     | IOHAL.obx                                    |
+ |                                     |                                     | IOHAL.stx                                    |
+ |                                     |                                     | IOHAL.tpx                                    |
+ |                                     |                                     | IOHAL_Add.stx                                |
+ |                                     |                                     | IOHAL_Api.c                                  |
+ |                                     |                                     | IOHAL_Api_h.tpl                              |
+ |                                     |                                     | IOHAL_Cfg.c                                  |
+ |                                     |                                     | IOHAL_Cfg.h                                  |
+ |                                     |                                     | IOHAL_Cfg_I_c.tpl                            |
+ |                                     |                                     | IOHAL_Cfg_I_h.tpl                            |
+ |                                     |                                     | IOHAL_Cfg_I.c            -nget               |
+ |                                     |                                     | IOHAL_Cfg_I.h            -nget               |
+ |                                     |                                     | IOHAL_Chk.tpl                                |
+ |                                     |                                     | IOHAL_MemMap.h           -nget               |
+ |                                     |                                     | IOHAL_MemMap.oil         -noil               |
+ |                                     |                                     | refcdc_IOHAL.txt                             |
+ |                                     |                                     | requirements_IOHAL.txt                       |
+ |                                     |                                     | typedef_IOHAL.txt                            |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |

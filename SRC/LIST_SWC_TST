@@ -1,0 +1,171 @@
+-|--------------------------------------------------------------------------------------------------------------------------|
+-|
+-| FILE NAME      : LIST_SWC_TST
+-|
+-| PVCS Informations
+-| $Header:     $
+-| Dimension Informations
+-| %PCMS_HEADER_SUBSTITUTION_START:%
+-| The PID has this format: <Product ID>:<Item ID>.<Variant>-<Item Type>;<Revision>
+-| %PID: XXX:A1137.A-SRC;20 %
+-| %PCMS_HEADER_SUBSTITUTION_END:%
+-|
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+-|                                     |                                     |                                              |
+-|           COMPONENT_LIST            |             MODULE_LIST             |              FILE_LIST                       |
+-|                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | SWTST -db                           |                                              |
+ |                                     |                                     | cfgbdd_SWTST.txt                             |
+ |                                     |                                     | donnee_SWTST.txt                             |
+ |                                     |                                     | fonction_SWTST.txt                           |
+ |                                     |                                     | refcdc_SWTST.txt                             |
+ |                                     |                                     | requirements_SWTST.txt                       |
+ |                                     |                                     | SWTST_MEMMAP.OIL                             |
+ |                                     |                                     | typedef_SWTST.txt                            |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | TST                                 |                                              |
+ |                                     |                                     | TSTCAL.c                                     |
+ |                                     |                                     | TSTCAL.h                                     |
+ |                                     |                                     | TST_MemMap.h                                 |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | TST_CAN                             |                                              |
+ |                                     |                                     | TST_CAN.c                                    |
+ |                                     |                                     | TST_CAN.h                                    |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     |                                     |                                              |
+ |                                     | TST_CANAPI                          |                                              |
+ |                                     |                                     | TST_CANAPI.c                                 |
+ |                                     |                                     | TST_CANAPI.h                                 |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | TST_DET -db_nexp                    |                                              |
+ |                                     |                                     | cfgbdd_TST_DET.txt                           |
+ |                                     |                                     | donnee_TST_DET.txt                           |
+ |                                     |                                     | fonction_TST_DET.txt                         |
+ |                                     |                                     | refcdc_TST_DET.txt                           |
+ |                                     |                                     | requirements_TST_DET.txt                     |
+ |                                     |                                     | TST_DET.c                                    |
+ |                                     |                                     | TST_DET.h                                    |
+ |                                     |                                     | typedef_TST_DET.txt                          |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | TST_DIO -db_nexp                    |                                              |
+ |                                     |                                     | cfgbdd_TST_DIO.txt                           |
+ |                                     |                                     | donnee_TST_DIO.txt                           |
+ |                                     |                                     | fonction_TST_DIO.txt                         |
+ |                                     |                                     | refcdc_TST_DIO.txt                           |
+ |                                     |                                     | requirements_TST_DIO.txt                     |
+ |                                     |                                     | SWTST_Dio.c                                  |
+ |                                     |                                     | typedef_TST_DIO.txt                          |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | TST_EVP -db_nexp                    |                                              |
+ |                                     |                                     | cfgbdd_TST_EVP.txt                           |
+ |                                     |                                     | donnee_TST_EVP.txt                           |
+ |                                     |                                     | fonction_TST_EVP.txt                         |
+ |                                     |                                     | refcdc_TST_EVP.txt                           |
+ |                                     |                                     | requirements_TST_EVP.txt                     |
+ |                                     |                                     | SWTST_EVP.c                                  |
+ |                                     |                                     | typedef_TST_EVP.txt                          |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | TST_GPT                             |                                              |
+ |                                     |                                     |  TST_GPT.c                                   |
+ |                                     |                                     |  TST_GPT.h                                   |
+ |                                     |                                     |  TST_GPT_Cfg.h                               |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | TST_PWD -db_nexp                    |                                              |
+ |                                     |                                     | cfgbdd_TST_PWD.txt                           |
+ |                                     |                                     | donnee_TST_PWD.txt                           |
+ |                                     |                                     | fonction_TST_PWD.txt                         |
+ |                                     |                                     | refcdc_TST_PWD.txt                           |
+ |                                     |                                     | requirements_TST_PWD.txt                     |
+ |                                     |                                     | TST_PWD.c                                    |
+ |                                     |                                     | TST_PWD.h                                    |
+ |                                     |                                     | typedef_TST_PWD.txt                          |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | TST_PWM  -db_nexp                   |                                              |
+ |                                     |                                     | cfgbdd_TST_PWM.txt                           |
+ |                                     |                                     | donnee_TST_PWM.txt                           |
+ |                                     |                                     | fonction_TST_PWM.txt                         |
+ |                                     |                                     | refcdc_TST_PWM.txt                           |
+ |                                     |                                     | requirements_TST_PWM.txt                     |
+ |                                     |                                     | TST_PWM.c                                    |
+ |                                     |                                     | TST_PWM.h                                    |
+ |                                     |                                     | typedef_TST_PWM.txt                          |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | TST_WDG                             |                                              |
+ |                                     |                                     | TST_WDG.c                                    |
+ |                                     |                                     | TST_WDG.h                                    |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | TST_SPI                             |                                              |
+ |                                     |                                     | TST_SPI.c                                    |
+ |                                     |                                     | TST_SPI.h                                    |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+|                                      |                                     |                                              |
+ |                                     | TST_MEM                             | cfgbdd_TST_Fls.txt                           |
+ |                                     |                                     | donnee_TST_Fls.txt                           |
+ |                                     |                                     | fonction_TST_Fls.txt                         |
+ |                                     |                                     | refcdc_TST_Fls.txt                           |
+ |                                     |                                     | requirements_TST_Fls.txt                     |
+ |                                     |                                     | SWTST_Fls.c                                  |
+ |                                     |                                     | SWTST_Fls.h                                  |
+ |                                     |                                     | TST_MEM.OIL                                  |
+ |                                     |                                     | typedef_TST_FLS.txt                          |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     | TST_DEM  -db_nexp                   |                                              |
+ |                                     |                                     | cfgbdd_TST_DEM.txt                           |
+ |                                     |                                     | donnee_TST_DEM.txt                           |
+ |                                     |                                     | fonction_TST_DEM.txt                         |
+ |                                     |                                     | refcdc_TST_DEM.txt                           |
+ |                                     |                                     | requirements_TST_DEM.txt                     |
+ |                                     |                                     | TST_DEM.c                                    |
+ |                                     |                                     | TST_DEM.h                                    |
+ |                                     |                                     | typedef_TST_DEM.txt                          |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     | TST_VADC                            |                                              |
+ |                                     |                                     | cfgbdd_TST_VADC.txt                           |
+ |                                     |                                     | donnee_TST_VADC.txt                           |
+ |                                     |                                     | fonction_TST_VADC.txt                         |
+ |                                     |                                     | refcdc_TST_VADC.txt                           |
+ |                                     |                                     | requirements_TST_VADC.txt                     |
+ |                                     |                                     | TST_VADC.c                                    |
+ |                                     |                                     | TST_VADC.h                                    |
+ |                                     |                                     | typedef_TST_VADC.txt                          |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | TST_TLE8242  -db_nexp               |                                              |
+ |                                     |                                     | cfgbdd_TST_TLE8242.txt                       |
+ |                                     |                                     | donnee_TST_TLE8242.txt                       |
+ |                                     |                                     | fonction_TST_TLE8242.txt                     |
+ |                                     |                                     | refcdc_TST_TLE8242.txt                       |
+ |                                     |                                     | requirements_TST_TLE8242.txt                 |
+ |                                     |                                     | TST_TLE8242.c                                |
+ |                                     |                                     | TST_TLE8242.h                                |
+ |                                     |                                     | typedef_TST_TLE8242.txt                      |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|

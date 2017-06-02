@@ -1,0 +1,93 @@
+-|--------------------------------------------------------------------------------------------------------------------------|
+-|
+-| FILE NAME      : LIST_SWC_BSW_SRV_MEM
+-|
+-| PVCS Informations
+-| $Header:     $
+-| Dimension Informations
+-| %PCMS_HEADER_SUBSTITUTION_START:%
+-| The PID has this format: <Product ID>:<Item ID>.<Variant>-<Item Type>;<Revision>
+-| %PID: XXX:A1137.A-SRC;20 %
+-| %PCMS_HEADER_SUBSTITUTION_END:%
+-|
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+-|                                     |                                     |                                              |
+-|           COMPONENT_LIST            |             MODULE_LIST             |              FILE_LIST                       |
+-|                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | FEE                                 |                                              |
+ |                                     |                                     | Fee.c                                        |
+ |                                     |                                     | Fee.h                                        |
+ |                                     |                                     | Fee_Cbk.h                                    |
+ |                                     |                                     | Fee_Dbg.h                                    |
+ |                                     |                                     | Fee_MemMap.h            -nget                |
+ |                                     |                                     | Fee_MEMMAP.OIL          -noil                |
+ |                                     |                                     | Fee_Ver.c                                    |
+ |                                     |                                     |                                              |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | MEM_CFG                             |                                              |
+ |                                     |                                     | Fee_Cfg.h                                    |
+ |                                     |                                     | Fee_PBCfg.c                                  |
+ |                                     |                                     | MemIf_Cfg.h                                  |
+ |                                     |                                     | MemIf_Trace.h                                |
+ |                                     |                                     | NvM_Cfg.c                                    |
+ |                                     |                                     | NvM_Cfg.h                                    |
+ |                                     |                                     | NvM_Trace.h                                  |
+ |                                     |                                     | NvM_Types.h                                  |
+ |                                     |                                     | NvM_UsrHdr.h                                 |
+ |                                     |                                     | Crc_Cfg.h                                    |
+ |                                     |                                     | Crc_Trace.h                                  |
+ |                                     |                                     | MEM_CFG_MemMap.h           -nget             |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | MEMIF                               |                                              |
+ |                                     |                                     | MemIf.c                                      |
+ |                                     |                                     | MemIf_Version.h                              |
+ |                                     |                                     | MemIf.h  									|
+ |                                     |                                     | MemIf_Types.h								|
+ |                                     |                                     | MemIf_MemMap.h           -nget               |
+ |                                     |                                     | MemIf_MEMMAP.OIL         -noil               |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |                                     |                                              |
+ |                                     | NVM                                 |                                              |
+ |                                     |                                     | NvM.c                                        |
+ |                                     |                                     | NvM.h                                        |
+ |                                     |                                     | NvM_Api_Stc.h    							|
+ |                                     |                                     | NvM_ASR32_Rte.c 								|
+ |                                     |                                     | NvM_ASR40_Rte.c 								|
+ |                                     |                                     | NvM_BSW.h 	     							|
+ |                                     |                                     | NvM_BSW_Types.h 								|
+ |                                     |                                     | NvM_CalcCrc.c 								|
+ |                                     |                                     | NvM_CalcCrc.h 								|
+ |                                     |                                     | NvM_Cbk.h    								|
+ |                                     |                                     | NvM_DataIntern.c 						    |
+ |                                     |                                     | NvM_DataIntern.h 						    |
+ |                                     |                                     | NvM_FunctionIntern.h 					    |
+ |                                     |                                     | NvM_Int_Types.h  						    |
+ |                                     |                                     | NvM_Queue.c      						    |
+ |                                     |                                     | NvM_Queue.h      						    |
+ |                                     |                                     | NvM_ReadAll.c 						        |
+ |                                     |                                     | NvM_ReadBlock.c 			    			    |
+ |                                     |                                     | NvM_RestoreBlockDefaults.c 				    |
+ |                                     |                                     | NvM_Rte.c 	        					    |
+ |                                     |                                     | NvM_StateMachine.c 						    |
+ |                                     |                                     | NvM_StateMachine.h 						    |
+ |                                     |                                     | NvM_Version.h    						    |
+ |                                     |                                     | NvM_WriteAll.c 		    				    |
+ |                                     |                                     | NvM_WriteBlock.c 						    |
+ |                                     |                                     | NVM_MemMap.h           -nget                 |
+ |                                     |                                     | NVM_MEMMAP.OIL         -noil                 |
+ |                                     |                                     |                                              |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ |                                     |  CRC                                | Crc.h                                        |
+ |                                     |                                     | Crc.c                                        |
+ |                                     |                                     | Crc_Version.h                                |
+ |                                     |                                     | Crc_MemMap.h           -nget                 |
+ |                                     |                                     | Crc_MEMMAP.OIL         -noil                 |
+-|-------------------------------------|-------------------------------------|----------------------------------------------|
+ 

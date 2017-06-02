@@ -1,0 +1,28 @@
+/******************************************************************************/
+/* !Layer           : MCAL                                                    */
+/* !Component       : GPT                                                     */
+/* !Description     : GPT                                                     */
+/*                                                                            */
+/* !File            : GPT_INTBSL.OIL                                          */
+/* !Description     : Interrupt configuration of the GPT component            */
+/*                                                                            */
+/* !Reference       :                                                         */
+/*                                                                            */
+/* Coding language  : OIL                                                     */
+/*                                                                            */
+/* COPYRIGHT VALEO all rights reserved                                        */
+/******************************************************************************/
+/* Dimension Informations
+ * %PCMS_HEADER_SUBSTITUTION_START:%
+ * The PID has this format: <Product ID>:<Item ID>.<Variant>-<Item Type>;<Revision>
+ * %PID:%
+ * %PCMS_HEADER_SUBSTITUTION_END:%
+ ******************************************************************************/
+ INT INT_SRC_GTM_GTM0_TOM0_15
+{
+   IT_SRV_PROVIDER = CPU_0;
+   IT_LEVEL = 131;
+   SRC = SRC_GTM_GTM0_TOM0_7;
+};
+
+/*------------------------------- end of file --------------------------------*/

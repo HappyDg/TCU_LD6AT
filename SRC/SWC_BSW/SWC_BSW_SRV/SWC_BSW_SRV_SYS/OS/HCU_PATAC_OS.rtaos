@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RTAOS_Project version="1.0">
+  <Working name="HCU_PATAC_OS.arxml" />
+  <File name="HCU_PATAC_OS.arxml" />
+  <File name="HCU_PATAC_OS.rtaos.arxml" />
+  <File name="HCU_PATAC_OS.TriCoreHighTec.arxml" />
+  <File name="HCU_PATAC_OS.stack.TriCoreHighTec.arxml" />
+  <File name="HCU_PATAC_OS.trace.arxml" />
+  <File name="HCU_PATAC_OS.timing_model.arxml" />
+  <File name="HCU_PATAC_OS.timing_model.TriCoreHighTec.arxml" />
+  <Options>
+    <Option name="BuildGui.IncludePaths">C:\ETAS\RTA-OS\bin;S:\HIGHTEC\toolchains\tricore\v4.6.4.0\bin;S:\HIGHTEC\toolchains\tricore\v4.6.4.0\tricore\include;S:\HIGHTEC\toolchains\tricore\v4.6.4.0\tricore\include\tc23xx</Option>
+    <Option name="BuildGui.AddWorkingDirInc">TRUE</Option>
+    <Option name="BuildGui.OverwriteSampleInc">TRUE</Option>
+    <Option name="BuildGui.Samples">AdditionalHooks;ErrorHook;PostTaskHook;PreTaskHook</Option>
+    <Option name="BuildGui.Reports">OS Size Information;Configuration Summary;Misra Deviations;OS API Reference;Stack Usage</Option>
+    <Option name="BuildGui.GenSampleInc">TRUE</Option>
+    <Option name="BuildGui.AddSampleIncPath">TRUE</Option>
+  </Options>
+</RTAOS_Project>

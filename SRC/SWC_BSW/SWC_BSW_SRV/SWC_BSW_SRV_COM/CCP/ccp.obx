@@ -1,0 +1,36 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SRVL                                                    */
+/*                                                                            */
+/* !Component       : CCP                                                     */
+/*                                                                            */
+/* !Module          : CCP                                                     */
+/* !Description     : List of CCP Configuration objects                       */
+/*                                                                            */
+/* !File            : CCP.OBX                                                 */
+/*                                                                            */
+/* !Scope           : Private                                                 */
+/*                                                                            */
+/* !Target          : Genecode Tool                                           */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : OIL                                                     */
+/*                                                                            */
+/* COPYRIGHT 2009 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::                                                                $*/
+/* $Revision::                                                               $*/
+/* $Author::                                          $$Date::               $*/
+/******************************************************************************/
+
+CCP,
+DAQ_EVENT,
+DAQ_LIST
+/* !Comment: the list of user objects will start with a comma                 */
+#include "CCPUSR.OBX"
+
+/*-------------------------------- end of file -------------------------------*/

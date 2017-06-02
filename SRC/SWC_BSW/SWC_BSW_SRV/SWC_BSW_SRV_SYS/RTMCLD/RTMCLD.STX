@@ -1,0 +1,54 @@
+/**********************************************************************************************************************/
+/* !Layer           : SRVL                                                                                            */
+/* !Component       : RTMCLD                                                                                          */
+/* !Description     : Real time measurement of CPU load                                                               */
+/*                                                                                                                    */
+/* !File            : RTMCLD.STX                                                                                      */
+/* !Description     : configurations of the RTMCLD component                                                          */
+/*                                                                                                                    */
+/* !Reference       : PTS_DOC_5385380                                                                                 */
+/*                                                                                                                    */
+/* Coding language  : OIL                                                                                             */
+/*                                                                                                                    */
+/* COPYRIGHT VALEO all rights reserved                                                                                */
+/**********************************************************************************************************************/
+/* Dimension Informations
+ * %PCMS_HEADER_SUBSTITUTION_START:%
+ * The PID has this format: <Product ID>:<Item ID>.<Variant>-<Item Type>;<Revision>
+ * %PID:%
+ * %PCMS_HEADER_SUBSTITUTION_END:%
+ **********************************************************************************************************************/
+
+RTMCLD_CFG
+{
+    STRING MICRO[];
+
+    ENUM
+    [ 
+       ENABLE,
+       DISABLE
+    ] LOOP_DURATION_MEASURE = DISABLE;
+
+    STRING   INCLUDE_FILE[] = "";
+    
+    UINT32   CPU_LOAD_MEASUREMENT_PERIOD_MS = 0;
+    
+    STRING   CPU_LOAD_MEASUREMENT_PERIOD_NAME="";
+ 
+     
+    ENUM
+    [
+      PREBUILD,
+      POSTBUILD,
+      RUNTIME
+    ] CPU_LOAD_MEASUREMENT_PERIOD_CONFIG_TYPE = PREBUILD;
+
+    UINT32  ENDLESS_LOOP_EXECUTION_TIME_NS ;
+    
+    FLOAT  MAIN_FUNCTION_PERIOD_MS = 0.0;
+};
+
+#include "RTMCLD_ADD.STX"
+
+
+/*-------------------------------------------------- end of file -----------------------------------------------------*/
