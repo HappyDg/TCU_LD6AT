@@ -34,8 +34,8 @@
 #ifndef TLE8242_cfg_h
 #define TLE8242_cfg_h
 
-#include "tle8242_reg.h"
-#include "tle8242_interface.h"
+#include "TLE8242_reg.h"
+#include "TLE8242_interface.h"
 
 
 #define NUMBER_OF_TLE8242       1

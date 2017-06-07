@@ -46,7 +46,7 @@
  |                                     |                                     |                                              |
  |                                     | TLE8242     -db_nexp                |                                              |
  |                                     |                                     | TLE8242.c                                    |
- |                                     |                                     | TLE8242_i.h                                  |
+ |                                     |                                     | TLE8242.h                                    |
  |                                     |                                     | cfgbdd_TLE8242.txt                           |
  |                                     |                                     | donnee_TLE8242.txt                           |
  |                                     |                                     | fonction_TLE8242.txt                         |
@@ -55,8 +55,8 @@
  |                                     |                                     | TLE8242_api.h                                |
  |                                     |                                     | TLE8242_cfg.c                                |
  |                                     |                                     | TLE8242_cfg.h                                |
- |                                     |                                     | tle8242_def_i.c                              |
- |                                     |                                     | tle8242_def_i.h                              |
+ |                                     |                                     | TLE8242_def.c                                |
+ |                                     |                                     | TLE8242_def.h                                |
  |                                     |                                     | TLE8242_interface.c                          |
  |                                     |                                     | TLE8242_interface.h                          |
  |                                     |                                     | TLE8242_reg.h                                |

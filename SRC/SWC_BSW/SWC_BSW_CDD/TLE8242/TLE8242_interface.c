@@ -31,8 +31,8 @@
 /* Revision::   0.1                                                                                                */
 /* Author::   gsun5                               Date::   Jan 10, 2017                               */
 /**********************************************************************************************************************/
-#include "tle8242_interface.h"
-#include "tle8242_def_i.h"
+#include "TLE8242_interface.h"
+#include "TLE8242_def.h"
 #include "MAIN_L.h"
 
 /*

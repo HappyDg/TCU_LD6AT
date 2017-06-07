@@ -536,11 +536,11 @@ TASK(TASK_TIME_5MS)
    }
     if(MAIN_s8TestVar2 == 5)
 	{
-		ShrExp_Set_Solenoid(TST_u8TLE8242CHIndex, TST_u8TLE8242_OpenLoopC, (uint16)TST_f32TLE8242_Target, (uint16)TST_f32TLE8242_DitherAmpl, (uint16)TST_f32TLE8242_DitherFreq);
+		//ShrExp_Set_Solenoid(TST_u8TLE8242CHIndex, TST_u8TLE8242_OpenLoopC, (uint16)TST_f32TLE8242_Target, (uint16)TST_f32TLE8242_DitherAmpl, (uint16)TST_f32TLE8242_DitherFreq);
 	}
 	else
 	{
-		TST_TLE8242_vidMainFunction();
+		//TST_TLE8242_vidMainFunction();
 	}
    //MCU_5msCall();
    //CANAPI_u8Write_DCDC_FAULT_STATUS(DDDSM_FaultStatus);
@@ -549,6 +549,8 @@ TASK(TASK_TIME_5MS)
    //CANAPI_u16Write_DCDC_FAULT(DDDSM_Fault);
    
    //TST_SPI_vidMainFunction();
+
+   TST_TLE8242_vidMainFunction();
 
    BSW_5msPostCall();
    (void)TerminateTask();

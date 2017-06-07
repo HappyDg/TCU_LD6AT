@@ -32,7 +32,7 @@
 /* Author::   gsun5                               Date::   Jan 16, 2017                               */
 /**********************************************************************************************************************/
 
-#include "tle8242_cfg.h"
+#include "TLE8242_cfg.h"
 
 #define TLE8242_START_SEC_VAR_UNSPECIFIED
 #include "MemMap.h"

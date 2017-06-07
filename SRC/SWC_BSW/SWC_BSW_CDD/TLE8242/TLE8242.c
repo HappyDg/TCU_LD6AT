@@ -36,7 +36,7 @@
 
 #include "SPI.h"
 #include "dio.h"
-#include "tle8242_i.h"
+#include "TLE8242.h"
 #include "gtm.h"
 #include "BSW.h"
 #include "MAIN_L.h"

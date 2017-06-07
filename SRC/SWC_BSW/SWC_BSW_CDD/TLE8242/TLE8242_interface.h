@@ -35,8 +35,8 @@
 #define TLE8242_interface_h
 
 #include "Std_Types.h"
-#include "tle8242_reg.h"
-#include "tle8242_cfg.h"
+#include "TLE8242_reg.h"
+#include "TLE8242_cfg.h"
 
 
 #define TLE8242_START_SEC_VAR_UNSPECIFIED

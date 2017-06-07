@@ -35,14 +35,14 @@
 #define TLE8242_wrapper_h
 
 #include "Std_Types.h"
-#include "tle8242_reg.h"
-#include "tle8242_cfg.h"
-#include "tle8242_i.h"
+#include "TLE8242_reg.h"
+#include "TLE8242_cfg.h"
+#include "TLE8242.h"
 
 
 
 
-
+extern void ShrExp_Set_SolCarrierFreq(uint8 idx,uint16 fCarrier);
 extern void ShrExp_Set_Solenoid(uint8 idx, uint8 mode, uint16 iout, uint16 iDth, uint16 fDth);
 extern void ShrExp_Get_Solenoid(uint8 idx, uint16 *iln, uint8 *stDiaRdy, uint8 *stDiaDsbc);
 

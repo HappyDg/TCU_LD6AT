@@ -36,6 +36,80 @@
 #include "Trim_8242.h"
 #include "Trim_8242_App.h"
 
+/**********************************************************************************************************************/
+/* !FuncName    : ShrExp_Set_Solenoid                                                                                    */
+/* !Description :                                                                                                     */
+/* TLE8242 Wrapper function for customer                                                                          */
+/* !LastAuthor  : Liping                                                                                          */
+/**********************************************************************************************************************/
+void ShrExp_Set_SolCarrierFreq(uint8 idx,uint16 fCarrier)
+{
+	uint16 fCarrier_temp = 0;
+	uint8  idx_temp = 0;
+	
+	if (idx < NUMBER_OF_TLE8242_CHANNEL - 1) // idx just for solenoid 
+	{
+
+		if(idx == 0)
+		{
+			idx_temp = 4;
+		}
+		else if(idx == 1)
+		{
+			idx_temp = 3;
+		}
+		else if(idx == 2)
+		{
+			idx_temp = 2;
+		}
+		else if(idx == 3)
+		{
+			idx_temp = 1;
+		}
+		else if(idx == 4)
+		{
+			idx_temp = 0;
+		}
+		else if(idx == 5)
+		{
+			idx_temp = 6;
+		}
+		else if(idx == 6)
+		{
+			idx_temp = 7;
+		}
+		else if(idx == 7)
+		{
+			idx_temp = 5;
+		}
+		else
+		{}
+		
+
+		if((BSW_u8TLE8242CHIndex_Temp != idx)||(BSW_f32TLE8242_PWMFrq_Temp != fCarrier))
+		{
+			BSW_bTle8242Flag = 1;
+		}
+		else
+		{
+			BSW_bTle8242Flag = 0;
+		}
+
+		
+		/*do set PWM frequency function*/
+		TLE8242PWMFrq[idx_temp] = fCarrier;
+		
+		/*backup the data*/
+		BSW_f32TLE8242_PWMFrq_Temp = fCarrier;
+
+	}
+	else
+	{
+		/* do nothing*/
+	}
+
+}
+
 
 /**********************************************************************************************************************/
 /* !FuncName    : ShrExp_Set_Solenoid                                                                                    */
@@ -97,22 +171,32 @@ void ShrExp_Set_Solenoid(uint8 idx, uint8 mode, uint16 iout, uint16 iDth, uint16
 			BSW_bTle8242Flag = 0;
 		}
 
-        iout_temp = iout/10; // resolution 0.1mA/bit
-		iDth_temp = iDth/10;
+		if(0 == mode)
+		{
+	        iout_temp = iout/10; // resolution 0.1mA/bit
+			iDth_temp = iDth/10;
+			
+			/*do trim function*/
+			TLE8242Target[idx_temp] = Trim_CalculateGainAndOffset(idx_temp,iout_temp);
 		
-		/*do trim function*/
-		TLE8242Target[idx_temp] = Trim_CalculateGainAndOffset(idx_temp,iout_temp);
-	
-		TLE8242OpenLoopC[idx_temp] = mode;
-		TLE8242DitherAmpl[idx_temp] = iDth_temp*2;
-		TLE8242DitherFreq[idx_temp] = fDth;
+			TLE8242OpenLoopC[idx_temp] = mode;
+			TLE8242DitherAmpl[idx_temp] = iDth_temp*2;
+			TLE8242DitherFreq[idx_temp] = fDth;
+			
+			/*backup the data*/
+			BSW_u8TLE8242CHIndex_Temp       = idx;
+			BSW_u8TLE8242Mode_Temp          = mode;
+			BSW_f32TLE8242_Target_Temp      = iout;
+			BSW_f32TLE8242_DitherAmpl_Temp  = iDth;
+			BSW_f32TLE8242_DitherFreq_Temp  = fDth;
+		}
+		else
+		{
+			/*do set PWM frequency function*/
+			TLE8242PWMFrq[idx_temp] = fDth;
+			TLE8242DutyCycleC[idx_temp] = iDth;
 		
-		/*backup the data*/
-		BSW_u8TLE8242CHIndex_Temp       = idx;
-		BSW_u8TLE8242Mode_Temp          = mode;
-		BSW_f32TLE8242_Target_Temp      = iout;
-		BSW_f32TLE8242_DitherAmpl_Temp  = iDth;
-		BSW_f32TLE8242_DitherFreq_Temp  = fDth;
+		}
 	}
 	else
 	{

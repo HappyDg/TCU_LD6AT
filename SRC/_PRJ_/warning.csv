@@ -90,16 +90,16 @@ Com_RxIndication.c;413;(41) warning: unused variable 'TS_AtomicSetBitSave' [-Wun
 Com_TriggerIPDUSend.c;114;(35) warning: unused variable 'TS_AtomicSetBitSave' [-Wunused-variable];AUTOSAR;
 Com_TxConfirmation.c;131;(29) warning: unused variable 'TS_AtomicSetBitSave' [-Wunused-variable];AUTOSAR;
 Com_TxConfirmation.c;358;(35) warning: unused variable 'TS_AtomicClearBitSave' [-Wunused-variable];AUTOSAR;
-DIO_WrapAPI.c;196;(8) warning: unused variable 'PWM_Channel' [-Wunused-variable];;new_item
-DIO_WrapAPI.c;351;(9) warning: unused variable 'Temp_Voltage' [-Wunused-variable];;new_item
-DIO_WrapAPI.c;549;(60) warning: unused parameter 'u' [-Wunused-parameter];;new_item
-DIO_WrapAPI.c;587;(38) warning: unused parameter 'stDiaRdy' [-Wunused-parameter];;new_item
-DIO_WrapAPI.c;587;(55) warning: unused parameter 'stDiaDsbc' [-Wunused-parameter];;new_item
-DIO_WrapAPI.c;609;(31) warning: unused parameter 'stDiaRdy' [-Wunused-parameter];;new_item
-DIO_WrapAPI.c;609;(48) warning: unused parameter 'stDiaDsbc' [-Wunused-parameter];;new_item
-DIO_WrapAPI.c;638;(38) warning: unused parameter 'idx' [-Wunused-parameter];;new_item
-DIO_WrapAPI.c;638;(51) warning: unused parameter 'stDiaRdy' [-Wunused-parameter];;new_item
-DIO_WrapAPI.c;638;(68) warning: unused parameter 'stDiaDsbc' [-Wunused-parameter];;new_item
+DIO_WrapAPI.c;196;(8) warning: unused variable 'PWM_Channel' [-Wunused-variable];;
+DIO_WrapAPI.c;351;(9) warning: unused variable 'Temp_Voltage' [-Wunused-variable];;
+DIO_WrapAPI.c;549;(60) warning: unused parameter 'u' [-Wunused-parameter];;
+DIO_WrapAPI.c;587;(38) warning: unused parameter 'stDiaRdy' [-Wunused-parameter];;
+DIO_WrapAPI.c;587;(55) warning: unused parameter 'stDiaDsbc' [-Wunused-parameter];;
+DIO_WrapAPI.c;609;(31) warning: unused parameter 'stDiaRdy' [-Wunused-parameter];;
+DIO_WrapAPI.c;609;(48) warning: unused parameter 'stDiaDsbc' [-Wunused-parameter];;
+DIO_WrapAPI.c;638;(38) warning: unused parameter 'idx' [-Wunused-parameter];;
+DIO_WrapAPI.c;638;(51) warning: unused parameter 'stDiaRdy' [-Wunused-parameter];;
+DIO_WrapAPI.c;638;(68) warning: unused parameter 'stDiaDsbc' [-Wunused-parameter];;
 Dem.c;4037;(32) warning: unused variable 'TS_AtomicSetBitSave' [-Wunused-variable];;
 Dem.c;54;(20) warning: unused parameter 'DTCGroup' [-Wunused-parameter];AUTOSAR;removed_item
 Dem.c;55;(19) warning: unused parameter 'DTCKind' [-Wunused-parameter];AUTOSAR;removed_item
@@ -137,9 +137,9 @@ MAIN_tsk.c;326;(4) warning: implicit declaration of function 'Fls_17_Pmu_Test_In
 MAIN_tsk.c;327;(4) warning: implicit declaration of function 'TST_DEM_vidInit' [-Wimplicit-function-declaration];;
 MAIN_tsk.c;380;(41) warning: unused parameter 'Error' [-Wunused-parameter];;
 MAIN_tsk.c;383;(30) warning: unused parameter 'Error' [-Wunused-parameter];;
-MAIN_tsk.c;615;(7) warning: implicit declaration of function 'Fls_17_Pmu_debug' [-Wimplicit-function-declaration];;new_item
-MAIN_tsk.c;864;(4) warning: implicit declaration of function 'TST_DEM_vidMainFunction' [-Wimplicit-function-declaration];;new_item
-MAIN_tsk.c;921;(12) warning: unused variable 'Loc_bWdgSts' [-Wunused-variable];;new_item
+MAIN_tsk.c;617;(7) warning: implicit declaration of function 'Fls_17_Pmu_debug' [-Wimplicit-function-declaration];;new_item
+MAIN_tsk.c;866;(4) warning: implicit declaration of function 'TST_DEM_vidMainFunction' [-Wimplicit-function-declaration];;new_item
+MAIN_tsk.c;923;(12) warning: unused variable 'Loc_bWdgSts' [-Wunused-variable];;new_item
 MATHSRV_Sub.c;271;(22) warning: integer overflow in expression [-Woverflow];LIBEMB;
 Mcal.c;534;(1) warning: multi-line comment [-Wcomment];AUTOSAR;
 Mcal.c;540;(1) warning: multi-line comment [-Wcomment];AUTOSAR;
@@ -404,6 +404,9 @@ TLE8242_interface.c;116;(52) warning: unused parameter 'sb_retry' [-Wunused-para
 TLE8242_interface.c;238;(13) warning: implicit declaration of function 'fabsf' [-Wimplicit-function-declaration];;
 TLE8242_interface.c;238;(19) warning: incompatible implicit declaration of built-in function 'fabsf' [enabled by default];;
 TLE8242_interface.c;358;(5) warning: comparison is always false due to limited range of data type [-Wtype-limits];;
+TLE8242_wrapper.c;47;(9) warning: unused variable 'fCarrier_temp' [-Wunused-variable];;new_item
+TLE8242_wrapper.h;47;(13) note: expected 'uint16 *' but argument is of type 'uint16';;new_item
+TLE8242_wrapper.h;47;(13) note: expected 'uint8 *' but argument is of type 'uint8';;new_item
 TST_CAN.c;65;(11) warning: variable 'u16LocalBaudrate' set but not used [-Wunused-but-set-variable];;
 TST_CAN.c;66;(19) warning: unused variable 'udtLocalStatus' [-Wunused-variable];;
 TST_PWD.c;100;(3) warning: implicit declaration of function 'ShrExp_Get_Speed' [-Wimplicit-function-declaration];;
@@ -413,6 +416,12 @@ TST_PWD.c;66;(8) warning: unused variable 'idx' [-Wunused-variable];;
 TST_PWD.c;67;(9) warning: unused variable 'n' [-Wunused-variable];;
 TST_PWD.c;68;(8) warning: unused variable 'sDir' [-Wunused-variable];;
 TST_PWD.c;73;(9) warning: unused variable 'Temp' [-Wunused-variable];;
+TST_TLE8242.c;128;(2) warning: implicit declaration of function 'ShrExp_Set_SolenoidFeed' [-Wimplicit-function-declaration];;new_item
+TST_TLE8242.c;133;(83) warning: backslash and newline separated by space [enabled by default];;new_item
+TST_TLE8242.c;135;(2) warning: passing argument 2 of 'ShrExp_Get_Solenoid' makes pointer from integer without a cast [enabled by default];;new_item
+TST_TLE8242.c;135;(2) warning: passing argument 3 of 'ShrExp_Get_Solenoid' makes pointer from integer without a cast [enabled by default];;new_item
+TST_TLE8242.c;135;(2) warning: passing argument 4 of 'ShrExp_Get_Solenoid' makes pointer from integer without a cast [enabled by default];;new_item
+TST_TLE8242.c;59;(8) warning: unused variable 'u8LocTstCase' [-Wunused-variable];;new_item
 TST_VADC.c;71;(4) warning: implicit declaration of function 'ShrExp_Get_ADValue' [-Wimplicit-function-declaration];;
 TST_VADC.c;73;(4) warning: implicit declaration of function 'ShrExp_Get_Battery' [-Wimplicit-function-declaration];;
 TST_VADC.c;75;(4) warning: implicit declaration of function 'ShrExp_Get_Ignition' [-Wimplicit-function-declaration];;

@@ -66,7 +66,7 @@
 #include "Dem.h"
 #include "FiM.h"
 #include "subrom.h"
-#include "tle8242_i.h"
+#include "TLE8242.h"
 #include "DIO_WrapAPI.h"
 #include "RbBaseSw.h"
 /******************************************************************************/

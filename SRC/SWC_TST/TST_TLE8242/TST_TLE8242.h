@@ -35,6 +35,13 @@
 #define TST_START_SEC_TST_CODE
 #include "TST_MemMap.h"
 
+extern uint8 SW_TST_TLE8242_Idx;
+extern uint16 SW_TST_TLE8242_PWMFreq[8];
+extern uint16 SW_TST_TLE8242_Iout[8];
+extern uint8 SW_TST_TLE8242_Mode[8];
+extern uint16 SW_TST_TLE8242_DitherAmp[8];
+extern uint16 SW_TST_TLE8242_DitherFreq[8];
+
 extern void TST_TLE8242_vidInit(void);
 extern void TST_TLE8242_vidMainFunction(void);
 
