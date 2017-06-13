@@ -31,16 +31,86 @@
 /* Revision::   0.1                                                                                                */
 /* Author::   gsun5                               Date::   Jan 18, 2017                               */
 /**********************************************************************************************************************/
-#include "Std_Types.h"
-#include "Std_Limits.h"
 
-#include "SPI.h"
-#include "dio.h"
+
+#include "Spi.h"
+#include "Dio.h"
+#include "Gtm.h"
+
+#include "TLE8242_interface.h"
+#include "TLE8242_def.h"
 #include "TLE8242.h"
-#include "gtm.h"
-#include "BSW.h"
-#include "MAIN_L.h"
 
+#include "Trim_8242.h"
+#include "Trim_8242_App.h"
+#include "TLE8242_cfg.h"
+
+/******************************************************************************/
+/* MACRO DEFINITION CHECK                                                   */
+/******************************************************************************/
+#ifndef TLE8242_u8MAX_CH_NR
+#error "TLE8242_u8MAX_CH_NR should be defined."
+#endif
+#ifndef TLE8242_u8CH_NR
+#error "TLE8242_u8CH_NR should be defined."
+#endif
+#ifndef DioConf_DioChannel_M_TLE8242_ENA
+#error "DioConf_DioChannel_M_TLE8242_ENA should be defined."
+#endif
+
+#if TLE8242_u8CH_NR> 1
+
+#ifndef DioConf_DioChannel_TLE8242_ENA_2
+#error "DioConf_DioChannel_TLE8242_ENA_2 should be defined."
+#endif
+#ifndef SpiConf_SpiChannel_TLE8242_2_DIAG_CH
+#error "TLE8242_u8_MAX_VALID_MSG_ID should be defined."
+#endif
+#ifndef SpiConf_SpiChannel_TLE8242_2_CTRL_CH
+#error "SpiConf_SpiChannel_TLE8242_2_CTRL_CH should be defined."
+#endif
+#ifndef SpiConf_SpiChannel_TLE8242_2_DIAG_CH
+#error "TLE8242_u8_MAX_VALID_MSG_ID should be defined."
+#endif
+
+#endif
+
+#ifndef SpiConf_SpiSequence_TLE8242_INIT_SEQ
+#error "SpiConf_SpiSequence_TLE8242_INIT_SEQ should be defined."
+#endif
+#ifndef TLE8242_u8_READ_GEN_FLG_MSG_OFFS
+#error "TLE8242_u8_READ_GEN_FLG_MSG_OFFS should be defined."
+#endif
+#ifndef TLE8242_u8_MAX_VALID_MSG_ID
+#error "TLE8242_u8_MAX_VALID_MSG_ID should be defined."
+#endif
+#ifndef SpiConf_SpiChannel_TLE8242_1_CTRL_CH
+#error "SpiConf_SpiChannel_TLE8242_1_CTRL_CH should be defined."
+#endif
+#ifndef SpiConf_SpiChannel_TLE8242_1_DIAG_CH
+#error "TLE8242_u8_MAX_VALID_MSG_ID should be defined."
+#endif
+#ifndef SpiConf_SpiChannel_TLE8242_1_DIAG_CH
+#error "TLE8242_u8_MAX_VALID_MSG_ID should be defined."
+#endif
+
+#ifndef SpiConf_SpiSequence_TLE8242_CTRL_SEQ
+#error "SpiConf_SpiSequence_TLE8242_INIT_SEQ should be defined."
+#endif
+#ifndef SpiConf_SpiSequence_TLE8242_DIAG_SEQ
+#error "SpiConf_SpiSequence_TLE8242_INIT_SEQ should be defined."
+#endif
+
+
+#ifndef TLE8242_u8MAX_NR_FLT
+#error "TLE8242_u8MAX_NR_FLT should be defined."
+#endif
+
+
+
+
+#define TLE8242_START_SEC_VAR_UNSPECIFIED
+#include "MemMap.h"
 
 /************************************************************************************************************************
  *
@@ -48,53 +118,78 @@
  *
  *
  * ************************************************************************************************************************/
-#define TLE8242_START_SEC_VAR_UNSPECIFIED
-#include "MemMap.h"
 
-static uint8 TLE8242CurReadChanNum[NUMBER_OF_TLE8242];
-uint16 TLE8242CurReadCnt[NUMBER_OF_TLE8242][8];
+static float32 TLE8242_saf32CnrtTarOld[TLE8242_u8MAX_CH_NR];
+static float32 TLE8242_saf32PwmFrqOld[TLE8242_u8MAX_CH_NR];
+static uint16 TLE8242_sau16KPOld[TLE8242_u8MAX_CH_NR];
+static uint16 TLE8242_sau16KIOld[TLE8242_u8MAX_CH_NR];
+static float32 TLE8242_saf32DitherAmplOld[TLE8242_u8MAX_CH_NR];
+static float32 TLE8242_saf32DitherFrqOld[TLE8242_u8MAX_CH_NR];
+static float32 TLE8242_saf32DutyCycleOld[TLE8242_u8MAX_CH_NR];
+static uint8 TLE8242_su8CtrlModOld[TLE8242_u8MAX_CH_NR];
+
+static uint8 TLE8242_su8CurReadChNr[TLE8242_u8CH_NR];
+static uint16 TLE8242_su8CurReadCnt[TLE8242_u8CH_NR][8];
+
+static uint8 TLE8242_su8CurVld[TLE8242_u8CH_NR][2];
+uint16 TLE8242_su16FltSts[TLE8242_u8MAX_CH_NR][6];
+// for ctrl message.
+static uint8 TLE8242_su8MsgSndCnt[TLE8242_u8CH_NR];
 
 #define TLE8242_STOP_SEC_VAR_UNSPECIFIED
 #include "MemMap.h"
+#define TLE8242_START_SEC_CODE
+#include "MemMap.h"
 /**********************************************************************************************************************/
-/* !FuncName    : TLE8242_VidInit                                                                                    */
+/* !FuncName    : TLE8242_vidInit                                                                                    */
 /* !Description :                                  */
 /*                                                                                                                    */
 /* !LastAuthor  : gsun5                                                                                          */
 /**********************************************************************************************************************/
-#define TLE8242_START_SEC_CODE
-#include "MemMap.h"
-void TLE8242_VidInit(void)
+void TLE8242_vidInit(void)
 {
-    /*Trim function ini*/
+  	/*Trim function ini*/
 	Trim_InitGainAndOffset();
-	
-	TLE8242_au32InitTxBuff[0][0].data = (uint32)TLE8242_au32SpiTx[0].ControlMethodandFaultMaskConfiguration.data;
-    TLE8242_au32InitTxBuff[0][1].data = (uint32)TLE8242_au32SpiTx[0].DiagnosticConfigurationchannel[0].data;
-    TLE8242_au32InitTxBuff[0][2].data = (uint32)TLE8242_au32SpiTx[0].DiagnosticConfigurationchannel[1].data;
-    TLE8242_au32InitTxBuff[0][3].data= (uint32)TLE8242_au32SpiTx[0].PWMOffsetchannel0_3.data;
-    TLE8242_au32InitTxBuff[0][4].data = (uint32)TLE8242_au32SpiTx[0].PWMOffsetchannel4_7.data;
+  
+    TLE8242_astInitTxBuf[0][0].u32Data = (uint32)TLE8242_astSpiTx[0].ControlMethodandFaultMaskConfiguration.u32Data;
+    TLE8242_astInitTxBuf[0][1].u32Data = (uint32)TLE8242_astSpiTx[0].DiagnosticConfigurationchannel[0].u32Data;
+    TLE8242_astInitTxBuf[0][2].u32Data = (uint32)TLE8242_astSpiTx[0].DiagnosticConfigurationchannel[1].u32Data;
+    TLE8242_astInitTxBuf[0][3].u32Data= (uint32)TLE8242_astSpiTx[0].PWMOffsetchannel0_3.u32Data;
+    TLE8242_astInitTxBuf[0][4].u32Data = (uint32)TLE8242_astSpiTx[0].PWMOffsetchannel4_7.u32Data;
 
-#if NUMBER_OF_TLE8242> 1
-/*     Spi_WriteIB(SpiConf_SpiChannel_TLE8242_2_INIT_CH, (const uint8 *) &TLE8242_au32SpiTx[1].ControlMethodandFaultMaskConfiguration);
-    Spi_WriteIB(SpiConf_SpiChannel_TLE8242_2_INIT_CH, (const uint8 *) &TLE8242_au32SpiTx[1].DiagnosticConfigurationchannel[0]);
-    Spi_WriteIB(SpiConf_SpiChannel_TLE8242_2_INIT_CH, (const uint8 *) &TLE8242_au32SpiTx[1].DiagnosticConfigurationchannel[1]);
-    Spi_WriteIB(SpiConf_SpiChannel_TLE8242_2_INIT_CH, (const uint8 *) &TLE8242_au32SpiTx[1].PWMOffsetchannel0_3);
-    Spi_WriteIB(SpiConf_SpiChannel_TLE8242_2_INIT_CH, (const uint8 *) &TLE8242_au32SpiTx[1].PWMOffsetchannel4_7);
-    Spi_WriteIB(SpiConf_SpiChannel_TLE8242_2_INIT_CH, (const uint8 *) &dummy); */
+#if TLE8242_u8CH_NR> 1
+    //TLE8242_astInitTxBuf[1][0].u32Data = (uint32)TLE8242_astSpiTx[0].ControlMethodandFaultMaskConfiguration.u32Data;
+    //TLE8242_astInitTxBuf[1][1].u32Data = (uint32)TLE8242_astSpiTx[0].DiagnosticConfigurationchannel[0].u32Data;
+    //TLE8242_astInitTxBuf[1][2].u32Data = (uint32)TLE8242_astSpiTx[0].DiagnosticConfigurationchannel[1].u32Data;
+    //TLE8242_astInitTxBuf[1][3].u32Data = (uint32)TLE8242_astSpiTx[0].PWMOffsetchannel0_3.u32Data;
+    //TLE8242_astInitTxBuf[1][4].u32Data = (uint32)TLE8242_astSpiTx[0].PWMOffsetchannel4_7.u32Data;
 #endif
 
     Dio_WriteChannel(DioConf_DioChannel_M_TLE8242_ENA, STD_ON);
-#if NUMBER_OF_TLE8242> 1
+#if TLE8242_u8CH_NR> 1
     //Dio_WriteChannel(DioConf_DioChannel_TLE8242_ENA_2, STD_ON);
 #endif
 
-    Gtm_SetTomCounterCn0(0, 1, 0);//Phase_sync1
-#if NUMBER_OF_TLE8242> 1
-    //Gtm_SetAtomCounterCn0(0, 0, 0);//Phase_sync2
+#if TLE8242_bUSE_INT_BUF == 1
+
+    Spi_WriteIB(SpiConf_SpiChannel_TLE8242_1_INIT_CH, (const uint8 *) TLE8242_astInitTxBuf[0]);
+#if TLE8242_u8CH_NR> 1
+    //Spi_WriteIB(SpiConf_SpiChannel_TLE8242_2_INIT_CH, (const uint8 *) TLE8242_kastInitTxBuf[1]);
 #endif
-    Spi_WriteIB(SpiConf_SpiChannel_TLE8242_1_INIT_CH, (const uint8 *) TLE8242_au32InitTxBuff[0]);
+
+#else
+    Spi_SetupEB(SpiConf_SpiChannel_TLE8242_1_INIT_CH, (const Spi_DataType*) &TLE8242_astInitTxBuf[0][0],(const Spi_DataType*) & TLE8242_astInitRxBuf[0][0], TLE8242_u8MAX_FRM_INIT_CH_1);
+#if TLE8242_u8CH_NR> 1
+    //Spi_SetupEB(SpiConf_SpiChannel_TLE8242_2_INIT_CH, (const Spi_DataType*) &TLE8242_kastInitTxBuf[1][0], (const Spi_DataType*) & TLE8242_kastInitRxBuf[1][0], TLE8242_u8MAX_FRM_INIT_CH_2);
+#endif
+#endif
     Spi_AsyncTransmit(SpiConf_SpiSequence_TLE8242_INIT_SEQ);
+
+    //set the register then output phase sync signal.
+    Gtm_SetTomCounterCn0(0, 1, 0);//Phase_sync1
+#if TLE8242_u8CH_NR> 1
+    //Gtm_SetAtomCounterCn0(0, 0, 0); //Phase_sync2
+#endif
 }
 
 /**********************************************************************************************************************/
@@ -103,78 +198,103 @@ void TLE8242_VidInit(void)
 /*                                                                                                                    */
 /* !LastAuthor  : gsun5                                                                                          */
 /**********************************************************************************************************************/
-void TLE8242_VidConvMsgInfo(Tle8242DummyMsgID* data, const uint8 length, const uint8 chip_index)
+void TLE8242_vidConvMsgInfo(TLE8242_DummyMsgID* pLocAddrSrc, const uint8 u8Loclen, const uint8 u8LocChipIdx)
 {
-    uint8 i, channel;
-    uint32 * addr, addr1;
+    uint8 u8LocIdx, u8LocChIdx;
+    uint32 * pLocAddr = 0;
+    uint32 * pLocAddr1 = 0;
 
-    addr1 = ((uint32*) (&(TLE8242_au32SpiRx[chip_index])));
-    for (i = 0; i < length; i++)
+    pLocAddr1 = ((uint32*) (&(TLE8242_astSpiRx[u8LocChipIdx])));
+    for (u8LocIdx = 0; u8LocIdx < u8Loclen; u8LocIdx++)
     {
-        if (ReadGenericFlagMsgID == data[i].bits.MsgID)
-    {
-            //Todo, here should not multiply by 4, because for a uint32 type pinter, the pointer add by one, the address should add by 4, this should be done by compiler.
-            // but could not find the root cause, will be solved later.
-            addr = addr1 + ReadGenericFlagMSgOFFSET * 4;
-        }
-        else if (data[i].bits.MsgID < MAX_VALID_MSG_ID)
+        if (TLE8242_u8_READ_GEN_FLG_MSG_ID_7BIT == pLocAddrSrc[u8LocIdx].bits.udtMsgID)
         {
-            addr = addr1 + data[i].bits.MsgID * 4;
+            pLocAddr = pLocAddr1 + TLE8242_u8_READ_GEN_FLG_MSG_OFFS;
+        }
+        else if (pLocAddrSrc[u8LocIdx].bits.udtMsgID < TLE8242_u8_MAX_VALID_MSG_ID)
+        {
+            pLocAddr = pLocAddr1 + pLocAddrSrc[u8LocIdx].bits.udtMsgID;
         }
         else
         {
         }
-        memcpy(addr, &data[i], 4);
+		if (0 != pLocAddr)
+		{
+			memcpy(pLocAddr, &pLocAddrSrc[u8LocIdx], 4);
+		}
     }
 }
 
 
 /**********************************************************************************************************************/
-/* !FuncName    : TLE8242_VidCtrlPreManagement                                                                                    */
+/* !FuncName    : TLE8242_vidCtrlPreManagement                                                                                    */
 /* !Description :                                  */
 /*  This function will parse the reponse spi message back, and put it to the right place.                               */
 /* !LastAuthor  : gsun5                                                                                          */
 /**********************************************************************************************************************/
-void TLE8242_VidParseResponse(void)
+void TLE8242_vidParseResponse(void)
 {
-    uint8 i , channel, index, spi_cha = SpiConf_SpiChannel_TLE8242_1_CTRL_CH;
-    Std_ReturnType udtLocalRxStatus;
-    static init_channel_read = 0;
-    uint8 valid, valid1;
+    uint8 u8LocIdx , u8LocChIdx;
+    //Std_ReturnType udtLocalRxStatus;
+    static uint8 su8LocInitChRed = 0;
 
 
-    for ( i = 0; i < NUMBER_OF_TLE8242; ++i)
+    for ( u8LocIdx = 0; u8LocIdx < TLE8242_u8CH_NR; ++u8LocIdx)
     {
-        Spi_ReadIB(SpiConf_SpiChannel_TLE8242_1_INIT_CH+i, (uint8 *) TLE8242_au32InitRxBuff[i]);
-        Spi_ReadIB(SpiConf_SpiChannel_TLE8242_1_CTRL_CH+i, (uint8 *) TLE8242_au32CtrlRxBuff[i]);
-        Spi_ReadIB(SpiConf_SpiChannel_TLE8242_1_DIAG_CH+i, (uint8 *) TLE8242_au32DiagRxBuff[i]);
-        TLE8242_VidConvMsgInfo(TLE8242_au32InitRxBuff[i], TLE8242_au8_channel_buff_deepth_cfg[i], i);
-        TLE8242_VidConvMsgInfo(TLE8242_au32CtrlRxBuff[i], TLE8242_au8_channel_buff_deepth_cfg[i+1], i);
-        TLE8242_VidConvMsgInfo(TLE8242_au32DiagRxBuff[i], TLE8242_au8_channel_buff_deepth_cfg[i+2], i);
-   
+
+        if(0 == su8LocInitChRed)
+        {
+#if TLE8242_bUSE_INT_BUF == 1
+            Spi_ReadIB(SpiConf_SpiChannel_TLE8242_1_INIT_CH+u8LocIdx, (uint8 *) TLE8242_astInitRxBuf[u8LocIdx]);
+#endif
+            TLE8242_vidConvMsgInfo(TLE8242_astInitRxBuf[u8LocIdx], TLE8242_kau8ChBufSizeCfg[u8LocIdx], u8LocIdx);
+            su8LocInitChRed = 1;
+        }
+
+#if TLE8242_bUSE_INT_BUF == 1
+        Spi_ReadIB(SpiConf_SpiChannel_TLE8242_1_CTRL_CH+u8LocIdx, (uint8 *) TLE8242_astCtrlRxBuf[u8LocIdx]);
+        Spi_ReadIB(SpiConf_SpiChannel_TLE8242_1_DIAG_CH+u8LocIdx, (uint8 *) TLE8242_astDiagRxBuf[u8LocIdx]);
+#endif
+
+        TLE8242_vidConvMsgInfo(TLE8242_astCtrlRxBuf[u8LocIdx], TLE8242_su8MsgSndCnt[u8LocIdx], u8LocIdx);
+        //TLE8242_vidConvMsgInfo(TLE8242_astDiagRxBuf[u8LocIdx], TLE8242_kau8ChBufSizeCfg[u8LocIdx+4], u8LocIdx);
+        TLE8242_vidConvMsgInfo(TLE8242_astDiagRxBuf[u8LocIdx], TLE8242_kau8ChBufSizeCfg[2], u8LocIdx);
+
+
         // As for TLE8242, only can read one channel one time, can not send 8 frames to get all the current feedback, you will get nothing.
         //
-        valid = TLE8242GetCurValid(TLE8242CurReadChanNum[i], AvgCurrent);
-        valid1 = TLE8242GetCurValid(TLE8242CurReadChanNum[i], MaxCurrent);
 
-        if (valid)
-        {
-            TLE8242AvgCurma[TLE8242CurReadChanNum[i]] = TLE8242GetCurrentFeedback(TLE8242CurReadChanNum[i], AvgCurrent);
-        }
-        if (valid1)
-        {
-            TLE8242MaxCurma[TLE8242CurReadChanNum[i]] = TLE8242GetCurrentFeedback(TLE8242CurReadChanNum[i], MaxCurrent);
-            TLE8242MinCurma[TLE8242CurReadChanNum[i]] = TLE8242GetCurrentFeedback(TLE8242CurReadChanNum[i], MinCurrent);
-        }
-        //Todo this should be a calbration.
-        if (valid1 || valid || TLE8242CurReadCnt[i][TLE8242CurReadChanNum[i]] > 100)
-        {
-            TLE8242CurReadCnt[i][TLE8242CurReadChanNum[i]] = 0;
-            TLE8242CurReadChanNum[i]++;
+        u8LocChIdx = TLE8242_su8CurReadChNr[u8LocIdx] + u8LocIdx*8;
+        TLE8242_su8CurVld[u8LocIdx][0] = TLE8242_bGetCrntVld(u8LocChIdx, TLE8242_AVG_CRNT);
+        TLE8242_su8CurVld[u8LocIdx][1] = TLE8242_bGetCrntVld(u8LocChIdx, TLE8242_MAX_CRNT);
 
-            if (TLE8242CurReadChanNum[i] > (TLE8242_au8ChanNumPerChip[i]-1))
+
+
+        if (TLE8242_su8CurVld[u8LocIdx][0])
+        {
+            //TLE8242_af32AvgCrntMa[u8LocChIdx] = TLE8242_f32RvsTrimTar(u8LocChIdx, TLE8242_f32GetCrntFb(u8LocChIdx, AvgCurrent), TEMP_s16PhysTempPcb>>4);
+			//TLE8242_af32AvgCrntMa[u8LocChIdx] = Trim_Feedback_CalculateGainAndOffset(u8LocChIdx,TLE8242_f32GetCrntFb(u8LocChIdx, AvgCurrent));
+			TLE8242_af32AvgCrntMa[u8LocChIdx] =  TLE8242_f32GetCrntFb(u8LocChIdx, TLE8242_AVG_CRNT);
+        }
+        if (TLE8242_su8CurVld[u8LocIdx][1])
+        {
+            //TLE8242_af32MaxCnrtMa[u8LocChIdx] = TLE8242_f32RvsTrimTar(u8LocChIdx, TLE8242_f32GetCrntFb(u8LocChIdx, MaxCurrent), TEMP_s16PhysTempPcb>>4);
+            //TLE8242_af32MinCnrtMa[u8LocChIdx] = TLE8242_f32RvsTrimTar(u8LocChIdx, TLE8242_f32GetCrntFb(u8LocChIdx, MinCurrent), TEMP_s16PhysTempPcb>>4);
+			TLE8242_af32MaxCnrtMa[u8LocChIdx] = TLE8242_f32GetCrntFb(u8LocChIdx, TLE8242_MAX_CRNT); //Trim_Feedback_CalculateGainAndOffset(u8LocChIdx,TLE8242_f32GetCrntFb(u8LocChIdx, MaxCurrent));
+			TLE8242_af32MinCnrtMa[u8LocChIdx] = TLE8242_f32GetCrntFb(u8LocChIdx, TLE8242_MIN_CRNT); //Trim_Feedback_CalculateGainAndOffset(u8LocChIdx,TLE8242_f32GetCrntFb(u8LocChIdx, MinCurrent));
+        }
+        //Todo this should be a calibration.
+
+		TLE8242_af32PwmDutyFb[u8LocChIdx] = TLE8242_f32GetPwmDutyCycle(u8LocChIdx);
+		
+        if (TLE8242_su8CurVld[u8LocIdx][0] || TLE8242_su8CurVld[u8LocIdx][1] || TLE8242_su8CurReadCnt[u8LocIdx][TLE8242_su8CurReadChNr[u8LocIdx]] > TLE8242_kau8ReadCrntRetMax)
+        {
+            TLE8242_su8CurReadCnt[u8LocIdx][TLE8242_su8CurReadChNr[u8LocIdx]] = 0;
+            TLE8242_su8CurReadChNr[u8LocIdx]++;
+
+            if (TLE8242_su8CurReadChNr[u8LocIdx] >= (TLE8242_kau8ChNrPerChip[u8LocIdx]))
             {
-                TLE8242CurReadChanNum[i] = 0;
+                TLE8242_su8CurReadChNr[u8LocIdx] = 0;
             }
         }
    }
@@ -191,8 +311,25 @@ void TLE8242_VidParseResponse(void)
 /**********************************************************************************************************************/
 void TLE8242_vidFaultDet(void)
 {
+    uint8 u8LocChIdx = 0, u8LocFltIdx = 0, u8LocRes;
+    Dem_EventIdType u8LocEveIdx ;
+
+
+    for ( u8LocChIdx = 0; u8LocChIdx < TLE8242_u8MAX_CH_NR; u8LocChIdx++)
+    {
+        for(u8LocFltIdx = 0; u8LocFltIdx < TLE8242_u8MAX_NR_FLT; u8LocFltIdx++)
+        {
+        	 u8LocEveIdx = TLE8242_tstFltDev.astChDemID[u8LocChIdx].audtIdxType[u8LocFltIdx];
+        	 u8LocRes = TLE8242_tstFltDev.astFltFct[u8LocFltIdx](u8LocChIdx);
+        	 TLE8242_su16FltSts[u8LocChIdx][u8LocFltIdx] = u8LocRes;
+
+        	//Dem_SetEventStatus(u8LocEveIdx , (u8LocRes)?DEM_EVENT_STATUS_PREFAILED:DEM_EVENT_STATUS_PREPASSED);
+        }
+    }
 
 }
+
+
 
 /**********************************************************************************************************************/
 /* !FuncName    : TLE8242_vidCtrlManagement                                                                                    */
@@ -205,87 +342,143 @@ void TLE8242_vidFaultDet(void)
 /**********************************************************************************************************************/
 void TLE8242_vidCtrlManagement(void)
 {
-    uint8 i,j, message_index[2] = { 0, 0 };
-    uint8 chip_index, channel_index;
-    uint8 conf_changed[NUMBER_OF_TLE8242] = { 0
-#if NUMBER_OF_TLE8242 > 1
+    uint8 u8LocIdx,u8LocIdx1;
+    uint8 u8LocChipIdx, u8LocChIdx;
+    static uint16 su16LocDitherFrqChg = 0;
+    boolean bLocFltSts, bLocFltSts1;
+    uint8 au8LocCfgChg[TLE8242_u8CH_NR] = { 0
+#if TLE8242_u8CH_NR > 1
             , 0
 #endif
 };
+    TLE8242_su8MsgSndCnt[0] = 0;
+    /* TLE8242_su8MsgSndCnt[1] = 0; */
 
-    if(BSW_bTle8242Flag)
-	{
-		for (i = 0; i < NUMBER_OF_TLE8242_CHANNEL; ++i)
-		{
-			chip_index = i / 8;
-			channel_index = i % 8;
-			TLE8242SetPWMFrq(i, TLE8242PWMFrq[i]);
-			TLE8242_au32CtrlTxBuff[chip_index][message_index[chip_index]++].data = (uint32)TLE8242_au32SpiTx[chip_index].MainPeriodSet[channel_index].data;
-
-			TLE8242SetKP(i, TLE8242KP[i]);
-			TLE8242SetKI(i, TLE8242KI[i]);
-			TLE8242_au32CtrlTxBuff[chip_index][message_index[chip_index]++].data = (uint32)TLE8242_au32SpiTx[chip_index].ControlVariableSetKPandKI[channel_index].data;
-
-			TLE8242SetDitherFrq(i, TLE8242DitherFreq[i]);
-			TLE8242_au32CtrlTxBuff[chip_index][message_index[chip_index]++].data = (uint32)TLE8242_au32SpiTx[chip_index].DitherPeriodSet[channel_index].data;
-
-			if (DirectPWMMode == TLE8242OpenLoopC[i])
-			{
-				TLE8242SetControlMode(i, DirectPWM);
-				TLE8242SetPWMDutyCycle(i, TLE8242DutyCycleC[i]);
-				TLE8242_au32CtrlTxBuff[chip_index][message_index[chip_index]++].data = (uint32)TLE8242_au32SpiTx[chip_index].PWMDutyCycle[channel_index].data;
-			}
-			else
-			{
-				TLE8242SetControlMode(i, CurrentControl);
-
-				TLE8242SetCurrentTarget(i, TLE8242Target[i]);
-				TLE8242SetDitherAMPL(i, TLE8242DitherAmpl[i]);
-				TLE8242_au32CtrlTxBuff[chip_index][message_index[chip_index]++].data = (uint32)TLE8242_au32SpiTx[chip_index].CurrentandDitherAmplitudeSet[channel_index].data;
-			}
-
-		
-		}
-	}
-	else
-	{
-		
-	}
-
-
-    for (i = 0; i < NUMBER_OF_TLE8242; ++i)
+    for (u8LocIdx = 0; u8LocIdx < TLE8242_u8MAX_CH_NR; ++u8LocIdx)
     {
-        TLE8242_au32CtrlTxBuff[i][message_index[i]++].data = (uint32)TLE8242_au32SpiTx[i].MaxMinCurrentRead[TLE8242CurReadChanNum[i]].data;
-        TLE8242_au32CtrlTxBuff[i][message_index[i]++].data = (uint32)TLE8242_au32SpiTx[i].AverageCurrentReadOverDitherPeriod[TLE8242CurReadChanNum[i]].data;
-        if (1 == conf_changed[i])
+        u8LocChipIdx = u8LocIdx / 8;
+        u8LocChIdx = u8LocIdx % 8;
+        if (TLE8242_saf32PwmFrqOld[u8LocIdx] != TLE8242_au16PwmFrq[u8LocIdx])
         {
-            TLE8242_au32CtrlTxBuff[i][message_index[i]++].data = (uint32) TLE8242_au32SpiTx[i].ControlMethodandFaultMaskConfiguration.data;
+            TLE8242_saf32PwmFrqOld[u8LocIdx] = TLE8242_au16PwmFrq[u8LocIdx];
+            TLE8242_vidSetPWMFrq(u8LocIdx, TLE8242_au16PwmFrq[u8LocIdx]);
+            TLE8242_astCtrlTxBuf[u8LocChipIdx][TLE8242_su8MsgSndCnt[u8LocChipIdx]++].u32Data = (uint32) TLE8242_astSpiTx[u8LocChipIdx].MainPeriodSet[u8LocChIdx].u32Data;
         }
-        TLE8242CurReadCnt[i][TLE8242CurReadChanNum[i]]++;
+        if ((TLE8242_sau16KPOld[u8LocIdx] != TLE8242_kau16KP[u8LocIdx]) || (TLE8242_sau16KIOld[u8LocIdx] != TLE8242_kau16KI[u8LocIdx]))
+        {
+            TLE8242_sau16KPOld[u8LocIdx] = TLE8242_kau16KP[u8LocIdx];
+            TLE8242_sau16KIOld[u8LocIdx] = TLE8242_kau16KI[u8LocIdx];
+            TLE8242_vidSetKP(u8LocIdx, TLE8242_kau16KP[u8LocIdx]);
+            TLE8242_vidSetKI(u8LocIdx, TLE8242_kau16KI[u8LocIdx]);
+            TLE8242_astCtrlTxBuf[u8LocChipIdx][TLE8242_su8MsgSndCnt[u8LocChipIdx]++].u32Data =
+                            (uint32) TLE8242_astSpiTx[u8LocChipIdx].ControlVariableSetKPandKI[u8LocChIdx].u32Data;
+        }
+        if(TLE8242_stGetCtrlMod(u8LocIdx) != TLE8242_au8OpenLoop[u8LocIdx])
+        {
+            TLE8242_vidSetCtrlMod(u8LocIdx, TLE8242_au8OpenLoop[u8LocIdx]);
+ 			TLE8242_su8CtrlModOld[u8LocIdx] = TLE8242_au8OpenLoop[u8LocIdx];
+            au8LocCfgChg[u8LocChipIdx]= 1;
+        }
+        if ((TLE8242_u8_DIRECT_MOD == TLE8242_stGetCtrlMod(u8LocIdx)) &&
+               TLE8242_saf32DutyCycleOld[u8LocIdx] != TLE8242_af32DutyCycle[u8LocIdx]) //(TLE8242_au16DutyCycleChg& (1 << u8LocIdx))  )
+        {
+            //TLE8242_au16DutyCycleChg &= ~(1 << u8LocIdx);
+            TLE8242_saf32DutyCycleOld[u8LocIdx] = TLE8242_af32DutyCycle[u8LocIdx];
+            TLE8242_vidSetPwmDutyCycle(u8LocIdx, TLE8242_af32DutyCycle[u8LocIdx]);
+            TLE8242_astCtrlTxBuf[u8LocChipIdx][TLE8242_su8MsgSndCnt[u8LocChipIdx]++].u32Data = (uint32) TLE8242_astSpiTx[u8LocChipIdx].PWMDutyCycle[u8LocChIdx].u32Data;
+        }
+        else
+        {
+            // when seting the dither ampl, we need to know the dither frequency, for now we prefer to use the value in the rx buff, which is the tle8242 real number of steps
+            // but for the TLE8242_astSpiRx, it will be updated the next cycle, so we use this static variable "su16LocDitherFrqChg" to update the dither ampl next cycle.
 
+            // If there is a scgnd/scbat fault, we need to set the target to 0ma, to switch off the lsd.
+            //Dem_GetEventFailed(TLE8242_tstFltDev.astChDemID[u8LocIdx].audtIdxType[TLE8242_SHORT_TO_GND], &bLocFltSts);
+            //Dem_GetEventFailed(TLE8242_tstFltDev.astChDemID[u8LocIdx].audtIdxType[TLE8242_SHORT_TO_BATT], &bLocFltSts1);
+            if(bLocFltSts || bLocFltSts1)
+            {
+              TLE8242_af32TarCnrtMa[u8LocIdx] = 0;
+            }
+            /*if ((su16LocDitherFrqChg&(1<<u8LocIdx)) ||
+                    (TLE8242_au16CrntChg & (1<<u8LocIdx) ) ||
+                    (TLE8242_au16DitherAmpChg & (1<<u8LocIdx) ) )*/
+            if((TLE8242_saf32CnrtTarOld[u8LocIdx] != TLE8242_af32TarCnrtMa[u8LocIdx]) || \
+				(TLE8242_saf32DitherAmplOld[u8LocIdx] != TLE8242_af32DitherAmplMa[u8LocIdx]))
+            {
+                //TLE8242_au16CrntChg &= ~(1 << u8LocIdx);
+                //TLE8242_au16DitherAmpChg &= ~(1 << u8LocIdx);
+                TLE8242_saf32CnrtTarOld[u8LocIdx] = TLE8242_af32TarCnrtMa[u8LocIdx];
+				TLE8242_saf32DitherAmplOld[u8LocIdx] = TLE8242_af32DitherAmplMa[u8LocIdx];
+					
+            	if(0 != TLE8242GetDitherFrq(u8LocIdx))
+            	{
+                    TLE8242_vidSetDitherAmpBuf(u8LocIdx, TLE8242_af32DitherAmplMa[u8LocIdx]);
+                    su16LocDitherFrqChg &= ~(1<<u8LocIdx);
+            	}
+                //TLE8242_af32TarCnrtAftTrimMa[u8LocIdx] = TLE8242_f32CalcTrimTar(u8LocIdx, TLE8242_af32TarCnrtMa[u8LocIdx], TEMP_s16PhysTempPcb>>4);
+                TLE8242_af32TarCnrtAftTrimMa[u8LocIdx] = TLE8242_af32TarCnrtMa[u8LocIdx];//Trim_CalculateGainAndOffset(u8LocIdx, TLE8242_af32TarCnrtMa[u8LocIdx]);
+                TLE8242_vidSetCrntTarBuf(u8LocIdx, TLE8242_af32TarCnrtAftTrimMa[u8LocIdx]);
+                TLE8242_astCtrlTxBuf[u8LocChipIdx][TLE8242_su8MsgSndCnt[u8LocChipIdx]++].u32Data = (uint32) TLE8242_astSpiTx[u8LocChipIdx].CurrentandDitherAmplitudeSet[u8LocChIdx].u32Data;
+            }
+        }
+        //if (TLE8242_au16DitherFrqChg & (1<<u8LocIdx))
+        if(TLE8242_saf32DitherFrqOld[u8LocIdx] != TLE8242_af32DitherFrq[u8LocIdx])
+        {
+            //TLE8242_au16DitherFrqChg &= ~(1 << u8LocIdx);
+            TLE8242_saf32DitherFrqOld[u8LocIdx] = TLE8242_af32DitherFrq[u8LocIdx];
+            TLE8242_vidSetDitherFrqBuf(u8LocIdx, TLE8242_af32DitherFrq[u8LocIdx]);
+            TLE8242_astCtrlTxBuf[u8LocChipIdx][TLE8242_su8MsgSndCnt[u8LocChipIdx]++].u32Data = (uint32) TLE8242_astSpiTx[u8LocChipIdx].DitherPeriodSet[u8LocChIdx].u32Data;
+            /*
+             * If the channel's dither frequency had changed, the ampl should be calc ref to the new dither frequency.
+             * */
+            su16LocDitherFrqChg |= (1<<u8LocIdx);
+        }
     }
-    for (j = message_index[0]; j < MAX_FRAME_NUM_OF_CTRL_CHANNEL_1; j++)
+
+    for (u8LocIdx = 0; u8LocIdx < TLE8242_u8CH_NR; ++u8LocIdx)
     {
-        TLE8242_au32CtrlTxBuff[0][j].data = 0;
+        TLE8242_astCtrlTxBuf[u8LocIdx][TLE8242_su8MsgSndCnt[u8LocIdx]++].u32Data = (uint32)TLE8242_astSpiTx[u8LocIdx].MaxMinCurrentRead[TLE8242_su8CurReadChNr[u8LocIdx]].u32Data;
+        TLE8242_astCtrlTxBuf[u8LocIdx][TLE8242_su8MsgSndCnt[u8LocIdx]++].u32Data = (uint32)TLE8242_astSpiTx[u8LocIdx].AverageCurrentReadOverDitherPeriod[TLE8242_su8CurReadChNr[u8LocIdx]].u32Data;
+        if (1 == au8LocCfgChg[u8LocIdx])
+        {
+            au8LocCfgChg[u8LocIdx] = 0;
+            TLE8242_astCtrlTxBuf[u8LocIdx][TLE8242_su8MsgSndCnt[u8LocIdx]++].u32Data = (uint32) TLE8242_astSpiTx[u8LocIdx].ControlMethodandFaultMaskConfiguration.u32Data;
+        }
+        for (u8LocChIdx = 0; u8LocChIdx < TLE8242_kau8ChNrPerChip[u8LocIdx]; u8LocChIdx++)
+        {
+            TLE8242_astSpiTx[u8LocIdx].PWMDutyCycle[u8LocChIdx].bits.bRW = 0;
+            TLE8242_astCtrlTxBuf[u8LocIdx][TLE8242_su8MsgSndCnt[u8LocIdx]++].u32Data = (uint32)TLE8242_astSpiTx[u8LocIdx].PWMDutyCycle[u8LocChIdx].u32Data;
+        }
+        TLE8242_su8CurReadCnt[u8LocIdx][TLE8242_su8CurReadChNr[u8LocIdx]]++;
     }
-/*     for (j = message_index[1]; j < MAX_FRAME_NUM_OF_CTRL_CHANNEL_2; j++)
+#if TLE8242_bUSE_INT_BUF == 1
+    for (u8LocIdx1 = TLE8242_su8MsgSndCnt[0]; u8LocIdx1 < TLE8242_u8MAX_FRM_CTRL_CH_1; u8LocIdx1++)
     {
-        TLE8242_au32CtrlTxBuff[1][j].data = 0;
-    } */
-
-
-    // TODO need one more buffer for setting the control mode
-    Spi_WriteIB(SpiConf_SpiChannel_TLE8242_1_CTRL_CH, (const uint8 *) TLE8242_au32CtrlTxBuff[0]);
-
-#if NUMBER_OF_TLE8242> 1
-    //TLE8242_au32CtrlTxBuff[1][message_index[1]++].data = (uint32)TLE8242_au32SpiTx[1].ControlMethodandFaultMaskConfiguration.data;
-    //Spi_WriteIB(SpiConf_SpiChannel_TLE8242_2_CTRL_CH, (const uint8 *) TLE8242_au32CtrlTxBuff[1]);
+        TLE8242_astCtrlTxBuf[0][u8LocIdx1].u32Data = 0;
+    }
+	Spi_WriteIB(SpiConf_SpiChannel_TLE8242_1_CTRL_CH, (const uint8 *) TLE8242_astCtrlTxBuf[0]);
+	
+#if TLE8242_u8CH_NR> 1
+    for (u8LocIdx1 = TLE8242_su8MsgSndCnt[1]; u8LocIdx1 < TLE8242_u8MAX_FRM_CTRL_CH_2; u8LocIdx1++)
+    {
+        TLE8242_astCtrlTxBuf[1][u8LocIdx1].u32Data = 0;
+    }
+    
+    Spi_WriteIB(SpiConf_SpiChannel_TLE8242_2_CTRL_CH, (const uint8 *) TLE8242_astCtrlTxBuf[1]);
 #endif
-
-    if(TLE8242_au32CtrlTxBuff[0][0].bits.MsgID != 0)
-   {
+    if((TLE8242_astCtrlTxBuf[0][0].bits.udtMsgID != 0) || (TLE8242_astCtrlTxBuf[1][0].bits.udtMsgID != 0))
+    {
         Spi_AsyncTransmit(SpiConf_SpiSequence_TLE8242_CTRL_SEQ);
-   }
+    }
+#else
+    TLE8242_astCtrlTxBuf[0][TLE8242_su8MsgSndCnt[0]++].u32Data = 0;
+    Spi_SetupEB(SpiConf_SpiChannel_TLE8242_1_CTRL_CH, (const Spi_DataType*) &TLE8242_astCtrlTxBuf[0][0], (Spi_DataType *) &TLE8242_astCtrlRxBuf[0][0], TLE8242_su8MsgSndCnt[0]);
+#if TLE8242_u8CH_NR> 1
+    TLE8242_astCtrlTxBuf[1][TLE8242_su8MsgSndCnt[1]++].u32Data = 0;
+    //Spi_SetupEB(SpiConf_SpiChannel_TLE8242_2_CTRL_CH, (const Spi_DataType*) &TLE8242_astCtrlTxBuf[1][0], (Spi_DataType *) &TLE8242_astCtrlRxBuf[1][0], TLE8242_su8MsgSndCnt[1]);
+#endif
+    Spi_AsyncTransmit(SpiConf_SpiSequence_TLE8242_CTRL_SEQ);
+#endif
 }
 /**********************************************************************************************************************/
 /* !FuncName    : TLE8242_vidDiagManagement                                                                                    */
@@ -295,13 +488,19 @@ void TLE8242_vidCtrlManagement(void)
 /**********************************************************************************************************************/
 void TLE8242_vidDiagManagement(void)
 {
+#if TLE8242_bUSE_INT_BUF == 1
+    Spi_WriteIB(SpiConf_SpiChannel_TLE8242_1_DIAG_CH, (const uint8 *) &TLE8242_kastDiagTxBuf[0]);
 
-    Spi_WriteIB(SpiConf_SpiChannel_TLE8242_1_DIAG_CH, (const uint8 *) &TLE8242_au32DiagTxBuff[0]);
-
-#if NUMBER_OF_TLE8242> 1
-    //Spi_WriteIB(SpiConf_SpiChannel_TLE8242_1_DIAG_CH, (const uint8 *) &TLE8242_au32DiagTxBuff[1]);
+#if TLE8242_u8CH_NR> 1
+    Spi_WriteIB(SpiConf_SpiChannel_TLE8242_1_DIAG_CH, (const uint8 *) &TLE8242_kastDiagTxBuf[1]);
 #endif
+#else
+    Spi_SetupEB(SpiConf_SpiChannel_TLE8242_1_DIAG_CH, (const Spi_DataType*) &TLE8242_kastDiagTxBuf[0][0], (Spi_DataType *) &TLE8242_astDiagRxBuf[0][0], TLE8242_u8MAX_FRM_DIAG_CH_1);
 
+#if TLE8242_u8CH_NR> 1
+    Spi_SetupEB(SpiConf_SpiChannel_TLE8242_2_DIAG_CH, (const Spi_DataType*) &TLE8242_kastDiagTxBuf[1][0], (Spi_DataType *) &TLE8242_astDiagRxBuf[1][0], TLE8242_u8MAX_FRM_DIAG_CH_2);
+#endif
+#endif
     Spi_AsyncTransmit(SpiConf_SpiSequence_TLE8242_DIAG_SEQ);
 }
 

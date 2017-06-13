@@ -35,6 +35,9 @@
 #include "BSW.h"
 #include "Trim_8242.h"
 #include "Trim_8242_App.h"
+#include "TLE8242_cfg.h"
+#include "TLE8242_def.h"
+#include "TLE8242.h"
 
 /**********************************************************************************************************************/
 /* !FuncName    : ShrExp_Set_Solenoid                                                                                    */
@@ -47,60 +50,51 @@ void ShrExp_Set_SolCarrierFreq(uint8 idx,uint16 fCarrier)
 	uint16 fCarrier_temp = 0;
 	uint8  idx_temp = 0;
 	
-	if (idx < NUMBER_OF_TLE8242_CHANNEL - 1) // idx just for solenoid 
+	if (idx < TLE8242_u8MAX_CH_NR) // idx just for solenoid 
 	{
-
-		if(idx == 0)
+		if(idx == Idx_B1_SOL)
 		{
-			idx_temp = 4;
+			idx_temp = Idx_OUT4_8242;
 		}
-		else if(idx == 1)
+		else if(idx == Idx_C1_SOL)
 		{
-			idx_temp = 3;
+			idx_temp = Idx_OUT3_8242;
 		}
-		else if(idx == 2)
+		else if(idx == Idx_C2_SOL)
 		{
-			idx_temp = 2;
+			idx_temp = Idx_OUT2_8242;
 		}
-		else if(idx == 3)
+		else if(idx == Idx_C3_SOL)
 		{
-			idx_temp = 1;
+			idx_temp = Idx_OUT1_8242;
 		}
-		else if(idx == 4)
+		else if(idx == Idx_C4_SOL)
 		{
-			idx_temp = 0;
+			idx_temp = Idx_OUT0_8242;
 		}
-		else if(idx == 5)
+		else if(idx == Idx_LP_SOL)
 		{
-			idx_temp = 6;
+			idx_temp = Idx_OUT6_8242;
 		}
-		else if(idx == 6)
+		else if(idx == Idx_TC_SOL)
 		{
-			idx_temp = 7;
+			idx_temp = Idx_OUT7_8242;
 		}
-		else if(idx == 7)
+		else if(idx == Idx_RES_SOL)
 		{
-			idx_temp = 5;
+			idx_temp = Idx_OUT5_8242;
 		}
 		else
 		{}
 		
-
-		if((BSW_u8TLE8242CHIndex_Temp != idx)||(BSW_f32TLE8242_PWMFrq_Temp != fCarrier))
+		if(Idx_OUT3_8242 != idx_temp) // current solenoid mode
 		{
-			BSW_bTle8242Flag = 1;
-		}
-		else
-		{
-			BSW_bTle8242Flag = 0;
-		}
-
+			/*do set PWM frequency function*/
+			TLE8242_au16PwmFrq[idx_temp] = fCarrier;
 		
-		/*do set PWM frequency function*/
-		TLE8242PWMFrq[idx_temp] = fCarrier;
-		
-		/*backup the data*/
-		BSW_f32TLE8242_PWMFrq_Temp = fCarrier;
+			/*backup the data*/
+			BSW_f32TLE8242_PWMFrq_Temp = fCarrier;
+		}
 
 	}
 	else
@@ -123,65 +117,55 @@ void ShrExp_Set_Solenoid(uint8 idx, uint8 mode, uint16 iout, uint16 iDth, uint16
 	uint16 iDth_temp = 0;
 	uint8  idx_temp = 0;
 	
-	if (idx < NUMBER_OF_TLE8242_CHANNEL)
+	if (idx < TLE8242_u8MAX_CH_NR)
 	{
-
-		if(idx == 0)
+		if(idx == Idx_B1_SOL)
 		{
-			idx_temp = 4;
+			idx_temp = Idx_OUT4_8242;
 		}
-		else if(idx == 1)
+		else if(idx == Idx_C1_SOL)
 		{
-			idx_temp = 3;
+			idx_temp = Idx_OUT3_8242;
 		}
-		else if(idx == 2)
+		else if(idx == Idx_C2_SOL)
 		{
-			idx_temp = 2;
+			idx_temp = Idx_OUT2_8242;
 		}
-		else if(idx == 3)
+		else if(idx == Idx_C3_SOL)
 		{
-			idx_temp = 1;
+			idx_temp = Idx_OUT1_8242;
 		}
-		else if(idx == 4)
+		else if(idx == Idx_C4_SOL)
 		{
-			idx_temp = 0;
+			idx_temp = Idx_OUT0_8242;
 		}
-		else if(idx == 5)
+		else if(idx == Idx_LP_SOL)
 		{
-			idx_temp = 6;
+			idx_temp = Idx_OUT6_8242;
 		}
-		else if(idx == 6)
+		else if(idx == Idx_TC_SOL)
 		{
-			idx_temp = 7;
+			idx_temp = Idx_OUT7_8242;
 		}
-		else if(idx == 7)
+		else if(idx == Idx_RES_SOL)
 		{
-			idx_temp = 5;
+			idx_temp = Idx_OUT5_8242;
 		}
 		else
 		{}
-		
 
-		if((BSW_u8TLE8242CHIndex_Temp != idx)||(BSW_u8TLE8242Mode_Temp != mode)||(BSW_f32TLE8242_Target_Temp != iout)||(BSW_f32TLE8242_DitherAmpl_Temp != iDth)||(BSW_f32TLE8242_DitherFreq_Temp != fDth))
-		{
-			BSW_bTle8242Flag = 1;
-		}
-		else
-		{
-			BSW_bTle8242Flag = 0;
-		}
 
-		if(0 == mode)
+		if(0 == mode) //current solenoid mode
 		{
 	        iout_temp = iout/10; // resolution 0.1mA/bit
 			iDth_temp = iDth/10;
 			
 			/*do trim function*/
-			TLE8242Target[idx_temp] = Trim_CalculateGainAndOffset(idx_temp,iout_temp);
+			TLE8242_af32TarCnrtMa[idx_temp] = Trim_CalculateGainAndOffset(idx_temp,iout_temp);
 		
-			TLE8242OpenLoopC[idx_temp] = mode;
-			TLE8242DitherAmpl[idx_temp] = iDth_temp*2;
-			TLE8242DitherFreq[idx_temp] = fDth;
+			TLE8242_au8OpenLoop[idx_temp] = mode;
+			TLE8242_af32DitherAmplMa[idx_temp] = iDth_temp*2;
+			TLE8242_af32DitherFrq[idx_temp] = fDth;
 			
 			/*backup the data*/
 			BSW_u8TLE8242CHIndex_Temp       = idx;
@@ -193,8 +177,9 @@ void ShrExp_Set_Solenoid(uint8 idx, uint8 mode, uint16 iout, uint16 iDth, uint16
 		else
 		{
 			/*do set PWM frequency function*/
-			TLE8242PWMFrq[idx_temp] = fDth;
-			TLE8242DutyCycleC[idx_temp] = iDth;
+			TLE8242_au8OpenLoop[idx_temp] = mode;
+			TLE8242_au16PwmFrq[idx_temp] = fDth;
+			TLE8242_af32DutyCycle[idx_temp] = (float32)iDth/100.0;
 		
 		}
 	}
@@ -214,73 +199,71 @@ void ShrExp_Set_Solenoid(uint8 idx, uint8 mode, uint16 iout, uint16 iDth, uint16
 
 void ShrExp_Get_Solenoid(uint8 idx, uint16 *iln, uint8 *stDiaRdy, uint8 *stDiaDsbc)
 {
-    uint16 feedback_current_temp = 0;
+    static uint16 feedback_current_temp = 0;
 	uint16 iln_temp = 0;
-	uint16 avg_iln_temp = 0;
 	uint8  idx_temp = 0;
-	static uint16 feedback_iln_table[8][10] = {{0}};
-	uint8 i;
 
-	if ((idx >= NUMBER_OF_TLE8242_CHANNEL)|| (stDiaRdy == NULL_PTR) || (stDiaDsbc == NULL_PTR))
+	if ((idx >= TLE8242_u8MAX_CH_NR)|| (stDiaRdy == NULL_PTR) || (stDiaDsbc == NULL_PTR))
 	{
 		return;
 	}
 	else
 	{
-		if(idx == 0)
+		if(idx == Idx_B1_SOL)
 		{
-			idx_temp = 4;
+			idx_temp = Idx_OUT4_8242;
 		}
-		else if(idx == 1)
+		else if(idx == Idx_C1_SOL)
 		{
-			idx_temp = 3;
+			idx_temp = Idx_OUT3_8242;
 		}
-		else if(idx == 2)
+		else if(idx == Idx_C2_SOL)
 		{
-			idx_temp = 2;
+			idx_temp = Idx_OUT2_8242;
 		}
-		else if(idx == 3)
+		else if(idx == Idx_C3_SOL)
 		{
-			idx_temp = 1;
+			idx_temp = Idx_OUT1_8242;
 		}
-		else if(idx == 4)
+		else if(idx == Idx_C4_SOL)
 		{
-			idx_temp = 0;
+			idx_temp = Idx_OUT0_8242;
 		}
-		else if(idx == 5)
+		else if(idx == Idx_LP_SOL)
 		{
-			idx_temp = 6;
+			idx_temp = Idx_OUT6_8242;
 		}
-		else if(idx == 6)
+		else if(idx == Idx_TC_SOL)
 		{
-			idx_temp = 7;
+			idx_temp = Idx_OUT7_8242;
 		}
-		else if(idx == 7)
+		else if(idx == Idx_RES_SOL)
 		{
-			idx_temp = 5;
+			idx_temp = Idx_OUT5_8242;
 		}
 		else
 		{}
 
-		//*iln = TLE8242AvgCurma[idx];
-		feedback_current_temp = (uint16)(TLE8242AvgCurma[idx_temp]);
-		iln_temp = Trim_Feedback_CalculateGainAndOffset(idx_temp,feedback_current_temp);
-
-		for(i = 9 ;i>0;i--)
+		if(Idx_OUT3_8242 != idx_temp)
 		{
-			feedback_iln_table[idx_temp][i] = feedback_iln_table[idx_temp][i-1];
-	}
-		feedback_iln_table[idx_temp][0] = iln_temp;
-
-		for(i = 0;i<10;i++)
+			//*iln = TLE8242AvgCurma[idx];
+			feedback_current_temp = (uint16)(TLE8242_af32AvgCrntMa[idx_temp]);
+			iln_temp = Trim_Feedback_CalculateGainAndOffset(idx_temp,feedback_current_temp);
+			
+			*iln = iln_temp*10;   // resolution 0.1mA/bit
+		}
+		else
 		{
-			avg_iln_temp +=	feedback_iln_table[idx_temp][i];
+			*iln = (uint16)(TLE8242_af32PwmDutyFb[idx_temp] * 1000); // resolution 0.1%/bit	
 		}
 
-		
-		*iln = (avg_iln_temp/10)*10;   // resolution 0.1mA/bit
-}
+		*stDiaRdy = (uint8)((1 << TLE8242_SG_FAULT) + (1 << TLE8242_SB_FAULT) + (1 << TLE8242_OP_FAULT));
 
+		*stDiaDsbc = (uint8)((TLE8242_su16FltSts[idx_temp][4] << TLE8242_SG_FAULT) + \
+			                 (TLE8242_su16FltSts[idx_temp][5] << TLE8242_SB_FAULT) + \
+			                 (TLE8242_su16FltSts[idx_temp][1] << TLE8242_OP_FAULT));
+		 
+	}
 }
 
 

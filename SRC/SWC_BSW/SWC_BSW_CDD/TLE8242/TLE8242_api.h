@@ -36,6 +36,32 @@
 
 
 
+ #define TLE8242_vidSetCrntTar(snChannel, snValue) \
+   TLE8242_au16CrntChg |= (1<<snChannel);\
+   TLE8242_af32TarCnrtMa[snChannel] = (f32Value)
+
+ #define TLE8242_vidSetDitherFrq(snChannel, snValue) \
+   TLE8242_au16DitherFrqChg |= (1<<snChannel);\
+   TLE8242_af32DitherFrq[snChannel] = (f32Value)
+
+ #define TLE8242_vidSetDitherAmp(snChannel, snValue) \
+   TLE8242_au16DitherAmpChg |= (1<<snChannel);\
+   TLE8242_af32DitherAmplMa[snChannel] = (f32Value)
+
+#define TLE8242_vidSetPwmDuty(snChannel, snValue) \
+   TLE8242_au16DutyCycleChg |= (1<<snChannel);\
+   TLE8242_af32DutyCycle[snChannel] = (f32Value)
 
 
+#define TLE8242_f32GetAvgCrnt(snChannel) \
+		TLE8242_af32AvgCrntMa[snChannel]
+
+#define TLE8242_f32GetMaxCrnt(snChannel) \
+	TLE8242_af32MaxCnrtMa[snChannel]
+
+#define TLE8242_f32GetMinCrnt(snChannel) \
+	TLE8242_af32MinCnrtMa[snChannel]
+
+#define TLE8242_f32GetPwmDutyFb(snChannel) \
+    TLE8242_af32PwmDutyFb[snChannel]
 #endif /* TLE8242_api_h */

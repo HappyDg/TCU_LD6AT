@@ -1,4 +1,5 @@
 Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
-TLF8242_vidInit|A|();|0|TLF8242|1|NONE||||0|0|0|0|Initialize TLF8242.|<COMP>_START_SEC_CODE
-TLE8242_VidCtrlPreManagement|A|();|0|TLF8242|1|NONE||||0|0|0|0|management of TLE8242_VidCtrlPreManagement|<COMP>_START_SEC_CODE
-TLF8242_vidCtrlManagement|A|();|0|TLF8242|1|NONE||||0|0|0|0|management of TLE8242_VidCtrlPreManagement|<COMP>_START_SEC_CODE
+TLE8242_vidInit|A|();|0|TLE8242|1|NONE||||0|0|0|0|Initialize TLE8242.|<COMP>_START_SEC_CODE
+TLE8242_VidParseResponse|A|();|0|TLE8242|1|NONE||||0|0|0|0|management of TLE8242_VidCtrlPreManagement|<COMP>_START_SEC_CODE
+TLE8242_vidCtrlManagement|A|();|0|TLE8242|1|NONE||||0|0|0|0|management of TLE8242_VidCtrlPreManagement|<COMP>_START_SEC_CODE
+TLE8242_vidDiagManagement|A|();|0|TLE8242|1|NONE||||0|0|0|0|management of TLE8242_vidDiagManagement|<COMP>_START_SEC_CODE

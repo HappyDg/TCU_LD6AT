@@ -34,117 +34,101 @@
 #ifndef TLE8242_cfg_h
 #define TLE8242_cfg_h
 
+#include "Std_Types.h"
+
 #include "TLE8242_reg.h"
 #include "TLE8242_interface.h"
+#include "Dem.h"
 
 
-#define NUMBER_OF_TLE8242       1
-#define NUMBER_OF_TLE8242_CHANNEL   8
+// maybe those configs need to move out the tle8242 cdd folder to cdd cfg.
+#define TLE8242_u8CH_NR       1
+#define TLE8242_u8MAX_CH_NR   8
 #define RSENSE                  (0.16)
-#define TLE8242FCLK             (20000000)
+#define TLE8242_u32FCLKIPT             (20000000)
 
+#define TLE8242_bUSE_INT_BUF         1
 
-#define MAX_FRAME_NUM_OF_INIT_CHANNEL_1     6
-#define MAX_FRAME_NUM_OF_CTRL_CHANNEL_1     57
-#define MAX_FRAME_NUM_OF_DIAG_CHANNEL_1     4
-#if NUMBER_OF_TLE8242 > 1
-#define MAX_FRAME_NUM_OF_INIT_CHANNEL_2     6
-#define MAX_FRAME_NUM_OF_CTRL_CHANNEL_2     50
-#define MAX_FRAME_NUM_OF_DIAG_CHANNEL_2     4
+#define TLE8242_u8MAX_FRM_INIT_CH_1     6
+#define TLE8242_u8MAX_FRM_CTRL_CH_1     57
+#define TLE8242_u8MAX_FRM_DIAG_CH_1     12
+#if TLE8242_u8CH_NR > 1
+#define TLE8242_u8MAX_FRM_INIT_CH_2     6
+#define TLE8242_u8MAX_FRM_CTRL_CH_2     50
+#define TLE8242_u8MAX_FRM_DIAG_CH_2     4
 #endif
 
-
-
-#define ConvertCurTatToSetPoint(target)             (uint32)((target*2048*RSENSE)/320)
-#define ConvertSetPointToCurTar(setpoint)           ((setpoint*320)/(2048*RSENSE))
-
-#define ConvertCurTatToSetPointAvgDitherEN(target)             (uint32)((target*32768*RSENSE)/320)
-#define ConvertSetPointToCurTarAvgDitherEN(setpoint)           ((setpoint*320)/(32768*RSENSE))
-
-#define ConvertCurTatToSetPointAvgDitherDis(target)             (uint32)((target*8192*RSENSE)/320)
-#define ConvertSetPointToCurTarAvgDitherDis(setpoint)           ((setpoint*320)/(8192*RSENSE))
-
-#define ConvertCurTatToSetPoint_DPWM(target)             (uint32)((target*8192*RSENSE)/320)
-#define ConvertSetPointToCurTar_DPWM(setpoint)           ((setpoint*320)/(8192*RSENSE))
-
-#define ConvertCurTatToSetPointAvgDitherEN_DPWM(target)             (uint32)((target*131072*RSENSE)/320)
-#define ConvertSetPointToCurTarAvgDitherEN_DPWM(setpoint)           ((setpoint*320)/(131072*RSENSE))
-
-#define ConvertCurTatToSetPointAvgDitherDis_DPWM(target)             (uint32)((target*32768*RSENSE)/320)
-#define ConvertSetPointToCurTarAvgDitherDis_DPWM(setpoint)           ((setpoint*320)/(32768*RSENSE))
-
-#define ConvertCurTatToSetPoint2(target)             (uint32)((target*8192*RSENSE)/(320*2))
-#define ConvertSetPointToCurTar2(setpoint)           ((setpoint*320*2)/(8192*RSENSE))
-
-#define DitherStepRatioToCurrentStepPoint           (4)
+#define TLE8242_u8MAX_NR_FLT			6
 
 
 
-#define CurrentMode     0
-#define DirectPWMMode   1
-#define FaultNotTriPIN  0
-#define FaultTriPIN     1
+#define TLE8242_u8DITHER_SETPOINT_TO_CURRENT_POINT           (4)
 
 
-#define Channel0CMINIT CurrentMode
-#define Channel1CMINIT CurrentMode
-#define Channel2CMINIT CurrentMode
-#define Channel3CMINIT CurrentMode
-#define Channel4CMINIT CurrentMode
-#define Channel5CMINIT CurrentMode
-#define Channel6CMINIT CurrentMode
-#define Channel7CMINIT CurrentMode
-#if NUMBER_OF_TLE8242> 1
-#define Channel8CMINIT CurrentMode
-#define Channel9CMINIT CurrentMode
-#define Channel10CMINIT CurrentMode
-#define Channel11CMINIT CurrentMode
-#define Channel12CMINIT CurrentMode
-#define Channel13CMINIT CurrentMode
-#define Channel14CMINIT CurrentMode
-#define Channel15CMINIT CurrentMode
+
+#define TLE8242_u8CRNT_MOD     0
+#define TLE8242_u8_DIRECT_MOD   1
+#define TLE8242_u8_FLT_NOT_TRIG_PIN  0
+#define TLE8242_u8_FLT_TRIG_PIN     1
+
+
+#define TLE8242_u8_CH_0CMINIT TLE8242_u8CRNT_MOD
+#define TLE8242_u8_CH_1CMINIT TLE8242_u8CRNT_MOD
+#define TLE8242_u8_CH_2CMINIT TLE8242_u8CRNT_MOD
+#define TLE8242_u8_CH_3CMINIT TLE8242_u8CRNT_MOD
+#define TLE8242_u8_CH_4CMINIT TLE8242_u8CRNT_MOD
+#define TLE8242_u8_CH_5CMINIT TLE8242_u8CRNT_MOD
+#define TLE8242_u8_CH_6CMINIT TLE8242_u8CRNT_MOD
+#define TLE8242_u8_CH_7CMINIT TLE8242_u8CRNT_MOD
+#if TLE8242_u8CH_NR> 1
+#define TLE8242_u8_CH_8CMINIT TLE8242_u8CRNT_MOD
+#define TLE8242_u8_CH_9CMINIT TLE8242_u8CRNT_MOD
+#define TLE8242_u8_CH_10CMINIT TLE8242_u8CRNT_MOD
+#define TLE8242_u8_CH_11CMINIT TLE8242_u8CRNT_MOD
+#define TLE8242_u8_CH_12CMINIT TLE8242_u8CRNT_MOD
+#define TLE8242_u8_CH_13CMINIT TLE8242_u8CRNT_MOD
+#define TLE8242_u8_CH_14CMINIT TLE8242_u8CRNT_MOD
+#define TLE8242_u8_CH_15CMINIT TLE8242_u8CRNT_MOD
 #endif
 
-#define ControlModeData Channel0CMINIT | \
-                        Channel1CMINIT | \
-                        Channel2CMINIT | \
-                        Channel3CMINIT | \
-                        Channel4CMINIT | \
-                        Channel5CMINIT | \
-                        Channel6CMINIT | \
-                        Channel7CMINIT
-#if NUMBER_OF_TLE8242> 1
-#define ControlModeData1 Channel8CMINIT | \
-                        Channel9CMINIT | \
-                        Channel10CMINIT | \
-                        Channel11CMINIT | \
-                        Channel12CMINIT | \
-                        Channel13CMINIT | \
-                        Channel14CMINIT | \
-                        Channel15CMINIT
+#define ControlModeData TLE8242_u8_CH_0CMINIT | \
+                        TLE8242_u8_CH_1CMINIT | \
+                        TLE8242_u8_CH_2CMINIT | \
+                        TLE8242_u8_CH_3CMINIT | \
+                        TLE8242_u8_CH_4CMINIT | \
+                        TLE8242_u8_CH_5CMINIT | \
+                        TLE8242_u8_CH_6CMINIT | \
+                        TLE8242_u8_CH_7CMINIT
+#if TLE8242_u8CH_NR> 1
+#define ControlModeData1 TLE8242_u8_CH_8CMINIT | \
+                        TLE8242_u8_CH_9CMINIT | \
+                        TLE8242_u8_CH_10CMINIT | \
+                        TLE8242_u8_CH_11CMINIT | \
+                        TLE8242_u8_CH_12CMINIT | \
+                        TLE8242_u8_CH_13CMINIT | \
+                        TLE8242_u8_CH_14CMINIT | \
+                        TLE8242_u8_CH_15CMINIT
 #endif
 
-#define Channel0FMINIT FaultTriPIN
-#define Channel1FMINIT FaultTriPIN
-#define Channel2FMINIT FaultTriPIN
-#define Channel3FMINIT FaultTriPIN
-#define Channel4FMINIT FaultTriPIN
-#define Channel5FMINIT FaultTriPIN
-#define Channel6FMINIT FaultTriPIN
-#define Channel7FMINIT FaultTriPIN
-#if NUMBER_OF_TLE8242> 1
-#define Channel8FMINIT FaultTriPIN
-#define Channel9FMINIT FaultTriPIN
-#define Channel10FMINIT FaultTriPIN
-#define Channel11FMINIT FaultTriPIN
-#define Channel12FMINIT FaultTriPIN
-#define Channel13FMINIT FaultTriPIN
-#define Channel14FMINIT FaultTriPIN
-#define Channel15FMINIT FaultTriPIN
+#define TLE8242_u8_CH_0FMINIT TLE8242_u8_FLT_TRIG_PIN
+#define TLE8242_u8_CH_1FMINIT TLE8242_u8_FLT_TRIG_PIN
+#define TLE8242_u8_CH_2FMINIT TLE8242_u8_FLT_TRIG_PIN
+#define TLE8242_u8_CH_3FMINIT TLE8242_u8_FLT_TRIG_PIN
+#define TLE8242_u8_CH_4FMINIT TLE8242_u8_FLT_TRIG_PIN
+#define TLE8242_u8_CH_5FMINIT TLE8242_u8_FLT_TRIG_PIN
+#define TLE8242_u8_CH_6FMINIT TLE8242_u8_FLT_TRIG_PIN
+#define TLE8242_u8_CH_7FMINIT TLE8242_u8_FLT_TRIG_PIN
+#if TLE8242_u8CH_NR> 1
+#define TLE8242_u8_CH_8FMINIT TLE8242_u8_FLT_TRIG_PIN
+#define TLE8242_u8_CH_9FMINIT TLE8242_u8_FLT_TRIG_PIN
+#define TLE8242_u8_CH_10FMINIT TLE8242_u8_FLT_TRIG_PIN
+#define TLE8242_u8_CH_11FMINIT TLE8242_u8_FLT_TRIG_PIN
+#define TLE8242_u8_CH_12FMINIT TLE8242_u8_FLT_TRIG_PIN
+#define TLE8242_u8_CH_13FMINIT TLE8242_u8_FLT_TRIG_PIN
+#define TLE8242_u8_CH_14FMINIT TLE8242_u8_FLT_TRIG_PIN
+#define TLE8242_u8_CH_15FMINIT TLE8242_u8_FLT_TRIG_PIN
 #endif
 
-#define TLE8242_START_SEC_VAR_UNSPECIFIED
-#include "MemMap.h"
 typedef struct
 {
         ICVersionManufacturerTx ICVersionManufacturer;
@@ -191,69 +175,194 @@ typedef struct
 
 
 
+#define TLE8242_u8_FLT_SC_BIT      (5)
+#define TLE8242_u8_FLT_OFF_TST_BIT           (4)
+#define TLE8242_u8_FLT_SCS_BIT         (3)
+#define TLE8242_u8_FLT_SCS_TST_BIT      (2)
+#define TLE8242_u8_FLT_OL_OFF_BIT            (1)
+#define TLE8242_u8_FLT_OL_ON_BIT             (0)
 
 
-extern TLE8242_Tx TLE8242_au32SpiTx[NUMBER_OF_TLE8242];
-extern TLE8242_Rx TLE8242_au32SpiRx[NUMBER_OF_TLE8242];
-extern Tle8242DummyMsgID TLE8242_au32CtrlTxBuff[NUMBER_OF_TLE8242][MAX_FRAME_NUM_OF_CTRL_CHANNEL_1];
-extern Tle8242DummyMsgID TLE8242_au32InitTxBuff[NUMBER_OF_TLE8242][MAX_FRAME_NUM_OF_INIT_CHANNEL_1];
-extern Tle8242DummyMsgID TLE8242_au32DiagRxBuff[NUMBER_OF_TLE8242][MAX_FRAME_NUM_OF_DIAG_CHANNEL_1];
-extern Tle8242DummyMsgID TLE8242_au32CtrlRxBuff[NUMBER_OF_TLE8242][MAX_FRAME_NUM_OF_CTRL_CHANNEL_1];
-extern Tle8242DummyMsgID TLE8242_au32InitRxBuff[NUMBER_OF_TLE8242][MAX_FRAME_NUM_OF_INIT_CHANNEL_1];
-#define TLE8242_STOP_SEC_VAR_UNSPECIFIED
-#include "MemMap.h"
+#define TLE8242_u8_IC_VERS_MSG_ID 0
+#define TLE8242_u8_CTRL_MOD_FLT_MASK_MSG_ID 1
+#define TLE8242_u8_DIAGC_CFG_03_MSG_ID 2
+#define TLE8242_u8_DIAGC_CFG_47_MSG_ID 3
+#define TLE8242_u8_DIAGC_READ_CH_03_MSG_ID 4
+#define TLE8242_u8_DIAGC_READ_CH_47_MSG_ID 5
+#define TLE8242_u8_PWM_OFFS_03_MSG_ID 6
+#define TLE8242_u8_PWM_OFFS_47_MSG_ID 7
+#define TLE8242_u8_MAI_PERD_MSG_ID 1
+#define TLE8242_u8_KP_KI_MSG_ID 2
+#define TLE8242_u8_CRNT_DITHER_MSG_ID 3
+#define TLE8242_u8_DITHER_PERD_MSG_ID 4
+#define TLE8242_u8_MAX_MIN_CRNT_READ_MSG_ID 5
+#define TLE8242_u8_AVRG_CRNT_READ_MSG_ID 6
+#define TLE8242_u8_ATUO_ZERO_MSG_ID 7
+#define TLE8242_u8_PWM_DUTY_CYCLE_MSG_ID 8
+#define TLE8242_u8_CRNT_PROF_DETN_MSG_ID 9
+#define TLE8242_u8_CRNT_PROF_DETN_1_MSG_ID 10
+#define TLE8242_u8_CRNT_PROF_DETN_FB_MSG_ID 11
+#define TLE8242_u8_READ_GEN_FLG_MSG_ID 15
+
+
+
+#define TLE8242_u8_READ_GEN_FLG_MSG_ID_7BIT        0x78
+#define TLE8242_u8_READ_GEN_FLG_MSG_OFFS    0x60
+#define TLE8242_u8_MAX_VALID_MSG_ID            (95)//0b1011111
+
+#define TLE8242_u32_MAX_VALID_KP                4095
+#define TLE8242_u32_MAX_VALID_KI                4095
+#define TLE8242_u8_MAX_VALID_DITHER_STEPS      31
+#define TLE8242_u32_MAX_VALID_CRNT_SETPOINT  2047
+#define TLE8242_u8_MAX_VALID_DIV_N             16383
+#define TLE8242_u8_MAX_VALID_DIV_M             3
+
+typedef struct
+{
+   Dem_EventIdType    audtIdxType[TLE8242_u8MAX_NR_FLT];
+} TLE8242_tstFlt;
+
+typedef bool (*TLE9242_tstFltFct) (uint8);
+
+typedef struct
+{
+
+	TLE9242_tstFltFct astFltFct[TLE8242_u8MAX_NR_FLT];
+	TLE8242_tstFlt astChDemID[TLE8242_u8MAX_CH_NR];
+
+}TLE8242_tstFltCfg_s;
+
+
+
+/*#define TLE8242_stDECL_FLT(func, typ0, typ1, typ2, typ3, typ4, typ5) \
+   { \
+         DemConf_DemEventParameter_##func##_##typ0, \
+         DemConf_DemEventParameter_##func##_##typ1, \
+         DemConf_DemEventParameter_##func##_##typ2,  \
+         DemConf_DemEventParameter_##func##_##typ3, \
+         DemConf_DemEventParameter_##func##_##typ4, \
+         DemConf_DemEventParameter_##func##_##typ5  \
+   }
+
+
+typedef enum
+{
+  TLE8242_GENERAL_FAULT,
+  TLE8242_OPEN,
+  TLE8242_OVERLOAD,
+  TLE8242_UNDERLOAD,
+  TLE8242_SHORT_TO_GND,
+  TLE8242_SHORT_TO_BATT
+}TLE8242_Flt_type;*/
+	
+#define TLE8242_stDECL_FLT(func, typ0, typ1, typ2, typ3, typ4, typ5) \
+   { \
+         TLE8242_CHANNEL_##func##_##typ0, \
+         TLE8242_CHANNEL_##func##_##typ1, \
+         TLE8242_CHANNEL_##func##_##typ2,  \
+         TLE8242_CHANNEL_##func##_##typ3, \
+         TLE8242_CHANNEL_##func##_##typ4, \
+         TLE8242_CHANNEL_##func##_##typ5  \
+   }
+
+   /*just define for test, need delete later*/
+#define TLE8242_CHANNEL_C4_SOL_GENERAL_FAULT     112
+#define TLE8242_CHANNEL_C4_SOL_OPEN              113
+#define TLE8242_CHANNEL_C4_SOL_OVERLOAD          114
+#define TLE8242_CHANNEL_C4_SOL_SHORT_TO_BATT     115
+#define TLE8242_CHANNEL_C4_SOL_SHORT_TO_GND      116
+#define TLE8242_CHANNEL_C4_SOL_STUCK_OFF         117
+#define TLE8242_CHANNEL_C4_SOL_STUCK_ON          118
+#define TLE8242_CHANNEL_C4_SOL_UNDERLOAD         119
+#define TLE8242_CHANNEL_C3_SOL_GENERAL_FAULT     120
+#define TLE8242_CHANNEL_C3_SOL_OPEN              121
+#define TLE8242_CHANNEL_C3_SOL_OVERLOAD          122
+#define TLE8242_CHANNEL_C3_SOL_SHORT_TO_BATT     123
+#define TLE8242_CHANNEL_C3_SOL_SHORT_TO_GND      124
+#define TLE8242_CHANNEL_C3_SOL_UNDERLOAD         125
+#define TLE8242_CHANNEL_C2_SOL_GENERAL_FAULT     126
+#define TLE8242_CHANNEL_C2_SOL_OPEN              127
+#define TLE8242_CHANNEL_C2_SOL_OVERLOAD          128
+#define TLE8242_CHANNEL_C2_SOL_SHORT_TO_BATT     129
+#define TLE8242_CHANNEL_C2_SOL_SHORT_TO_GND      130
+#define TLE8242_CHANNEL_C2_SOL_STUCK_OFF         131
+#define TLE8242_CHANNEL_C2_SOL_STUCK_ON          132
+#define TLE8242_CHANNEL_C2_SOL_UNDERLOAD         133
+#define TLE8242_CHANNEL_C1_SOL_GENERAL_FAULT     134
+#define TLE8242_CHANNEL_C1_SOL_OPEN              135
+#define TLE8242_CHANNEL_C1_SOL_OVERLOAD          136
+#define TLE8242_CHANNEL_C1_SOL_SHORT_TO_BATT     137
+#define TLE8242_CHANNEL_C1_SOL_SHORT_TO_GND      138
+#define TLE8242_CHANNEL_C1_SOL_STUCK_OFF         139
+#define TLE8242_CHANNEL_C1_SOL_STUCK_ON          140
+#define TLE8242_CHANNEL_C1_SOL_UNDERLOAD         141
+#define TLE8242_CHANNEL_B1_SOL_GENERAL_FAULT     142
+#define TLE8242_CHANNEL_B1_SOL_OPEN              143
+#define TLE8242_CHANNEL_B1_SOL_OVERLOAD          144
+#define TLE8242_CHANNEL_B1_SOL_SHORT_TO_BATT     145
+#define TLE8242_CHANNEL_B1_SOL_SHORT_TO_GND      146
+#define TLE8242_CHANNEL_B1_SOL_STUCK_OFF         147
+#define TLE8242_CHANNEL_B1_SOL_STUCK_ON          148
+#define TLE8242_CHANNEL_B1_SOL_UNDERLOAD         149
+#define TLE8242_CHANNEL_RES_SOL_GENERAL_FAULT     150
+#define TLE8242_CHANNEL_RES_SOL_OPEN              151
+#define TLE8242_CHANNEL_RES_SOL_OVERLOAD          152
+#define TLE8242_CHANNEL_RES_SOL_SHORT_TO_BATT     153
+#define TLE8242_CHANNEL_RES_SOL_SHORT_TO_GND      154
+#define TLE8242_CHANNEL_RES_SOL_STUCK_OFF         155
+#define TLE8242_CHANNEL_RES_SOL_STUCK_ON          156
+#define TLE8242_CHANNEL_RES_SOL_UNDERLOAD         157
+#define TLE8242_CHANNEL_PRI_OIL_GENERAL_FAULT     158
+#define TLE8242_CHANNEL_PRI_OIL_OPEN              159
+#define TLE8242_CHANNEL_PRI_OIL_OVERLOAD          160
+#define TLE8242_CHANNEL_PRI_OIL_SHORT_TO_BATT     161
+#define TLE8242_CHANNEL_PRI_OIL_SHORT_TO_GND      162
+#define TLE8242_CHANNEL_PRI_OIL_STUCK_OFF         163
+#define TLE8242_CHANNEL_PRI_OIL_STUCK_ON          164
+#define TLE8242_CHANNEL_PRI_OIL_UNDERLOAD         165
+#define TLE8242_CHANNEL_TC_LOCK_GENERAL_FAULT     166
+#define TLE8242_CHANNEL_TC_LOCK_OPEN              167
+#define TLE8242_CHANNEL_TC_LOCK_OVERLOAD          168
+#define TLE8242_CHANNEL_TC_LOCK_SHORT_TO_BATT     169
+#define TLE8242_CHANNEL_TC_LOCK_SHORT_TO_GND      170
+#define TLE8242_CHANNEL_TC_LOCK_STUCK_OFF         171
+#define TLE8242_CHANNEL_TC_LOCK_STUCK_ON          172
+#define TLE8242_CHANNEL_TC_LOCK_UNDERLOAD         173
+
+#define TLE8242_SG_FAULT                           0
+#define TLE8242_SGOP_FAULT                         1
+#define TLE8242_SB_FAULT                           2
+#define TLE8242_SBOP_FAULT                         3
+#define TLE8242_OP_FAULT                           4
+#define TLE8242_LOW_FAULT                          5
+#define TLE8242_HIGH_FAULT                         6
+#define TLE8242_GEN_FAULT                          7
+
+
+
+
 
 #define TLE8242_START_SEC_CONST_UNSPECIFIED
 #include "MemMap.h"
-extern const uint8 TLE8242_au8_channel_buff_deepth_cfg[NUMBER_OF_TLE8242*3];
-extern const uint8 TLE8242_au8ChanNumPerChip[NUMBER_OF_TLE8242];
-extern const Tle8242DummyMsgID TLE8242_au32DiagTxBuff[NUMBER_OF_TLE8242][MAX_FRAME_NUM_OF_DIAG_CHANNEL_1];
+extern const uint8 TLE8242_kau8ChBufSizeCfg[TLE8242_u8CH_NR*3];
+extern const uint8 TLE8242_kau8ChNrPerChip[TLE8242_u8CH_NR];
+extern const TLE8242_DummyMsgID TLE8242_kastDiagTxBuf[TLE8242_u8CH_NR][TLE8242_u8MAX_FRM_DIAG_CH_1];
+extern const TLE8242_tstFltCfg_s TLE8242_tstFltDev;
 #define TLE8242_STOP_SEC_CONST_UNSPECIFIED
 #include "MemMap.h"
 
 
-
-#define ShortGroundBit      (1<<5)
-#define OFFTSTBit           (1<<4)
-#define ShortBatBit         (1<<3)
-#define ShortBatTstBit      (1<<2)
-#define OLOFFBit            (1<<1)
-#define OLONBit             (1<<0)
-
-
-#define ICVersionManufacturer_MSG_ID 0
-#define ControlMethodandFaultMaskConfiguration_MSG_ID 1
-#define DiagnosticConfigurationchannel0_3_MSG_ID 2
-#define DiagnosticConfigurationchannel4_7_MSG_ID 3
-#define DiagnosticReadchannel0_3_MSG_ID 4
-#define DiagnosticReadchannel4_7_MSG_ID 5
-#define PWMOffsetchannel0_3_MSG_ID 6
-#define PWMOffsetchannel4_7_MSG_ID 7
-#define MainPeriodSet_MSG_ID 1
-#define ControlVariableSetKPandKI_MSG_ID 2
-#define CurrentandDitherAmplitudeSet_MSG_ID 3
-#define DitherPeriodSet_MSG_ID 4
-#define MaxMinCurrentRead_MSG_ID 5
-#define AverageCurrentReadOverDitherPeriod_MSG_ID 6
-#define AutozeroTriggerRead_MSG_ID 7
-#define PWMDutyCycle_MSG_ID 8
-#define CurrentProfileDetectionSetup1_MSG_ID 9
-#define CurrentProfileDetectionSetup2_MSG_ID 10
-#define CurrentProfileDetectionFeedback_MSG_ID 11
-#define ReadGenericFlagBits_MSG_ID 15
-
-
-
-#define ReadGenericFlagMsgID        0x78
-#define ReadGenericFlagMSgOFFSET    0x60
-#define MAX_VALID_MSG_ID            (95)//0b1011111
-
-#define MAX_VALID_KP                4095
-#define MAX_VALID_KI                4095
-#define MAX_VALID_DITHER_STEPS      31
-#define MAX_VALID_CURRENT_SETPOINT  4095
-#define MAX_VALID_DIV_N             16383
-#define MAX_VALID_DIV_M             3
+#define TLE8242_START_SEC_VAR_UNSPECIFIED
+#include "MemMap.h"
+extern TLE8242_Tx TLE8242_astSpiTx[TLE8242_u8CH_NR];
+extern TLE8242_Rx TLE8242_astSpiRx[TLE8242_u8CH_NR];
+extern TLE8242_DummyMsgID TLE8242_astCtrlTxBuf[TLE8242_u8CH_NR][TLE8242_u8MAX_FRM_CTRL_CH_1];
+extern TLE8242_DummyMsgID TLE8242_astInitTxBuf[TLE8242_u8CH_NR][TLE8242_u8MAX_FRM_INIT_CH_1];
+extern TLE8242_DummyMsgID TLE8242_astDiagRxBuf[TLE8242_u8CH_NR][TLE8242_u8MAX_FRM_DIAG_CH_1];
+extern TLE8242_DummyMsgID TLE8242_astCtrlRxBuf[TLE8242_u8CH_NR][TLE8242_u8MAX_FRM_CTRL_CH_1];
+extern TLE8242_DummyMsgID TLE8242_astInitRxBuf[TLE8242_u8CH_NR][TLE8242_u8MAX_FRM_INIT_CH_1];
+#define TLE8242_STOP_SEC_VAR_UNSPECIFIED
+#include "MemMap.h"
 
 
 

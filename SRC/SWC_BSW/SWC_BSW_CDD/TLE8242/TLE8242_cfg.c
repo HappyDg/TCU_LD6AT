@@ -33,324 +33,325 @@
 /**********************************************************************************************************************/
 
 #include "TLE8242_cfg.h"
+#include "TLE8242_interface.h"
+
 
 #define TLE8242_START_SEC_VAR_UNSPECIFIED
 #include "MemMap.h"
-TLE8242_Tx TLE8242_au32SpiTx[NUMBER_OF_TLE8242] = {
+TLE8242_Tx TLE8242_astSpiTx[TLE8242_u8CH_NR]  = {
 //TLE8242_Tx
         {
-                { .bits.MsgID = ICVersionManufacturer_MSG_ID, .bits.r_w = 1, },
-                { .bits.MsgID = ControlMethodandFaultMaskConfiguration_MSG_ID, .bits.r_w = 1, .bits.CM=ControlModeData, .bits.DIAG_TMR=DiagTimerDiv128_1},
+                { .bits.udtMsgID = TLE8242_u8_IC_VERS_MSG_ID, .bits.bRW = 1, },
+                { .bits.udtMsgID = TLE8242_u8_CTRL_MOD_FLT_MASK_MSG_ID, .bits.bRW = 1, .bits.udtCM=ControlModeData, .bits.udtDIAG_TMR=TLE8242_DIAG_TMR_DIV_128_1},
                 {
-                    { .bits.MsgID = DiagnosticConfigurationchannel0_3_MSG_ID, .bits.r_w = 1, },
-                    { .bits.MsgID = DiagnosticConfigurationchannel4_7_MSG_ID, .bits.r_w = 1, }
+                    { .bits.udtMsgID = TLE8242_u8_DIAGC_CFG_03_MSG_ID, .bits.bRW = 1, },
+                    { .bits.udtMsgID = TLE8242_u8_DIAGC_CFG_47_MSG_ID, .bits.bRW = 1, }
                 },
                 {
-                    { .bits.MsgID = DiagnosticReadchannel0_3_MSG_ID, .bits.r_w = 1, },
-                    { .bits.MsgID = DiagnosticReadchannel4_7_MSG_ID, .bits.r_w = 1, }
+                    { .bits.udtMsgID = TLE8242_u8_DIAGC_READ_CH_03_MSG_ID, .bits.bRW = 1, },
+                    { .bits.udtMsgID = TLE8242_u8_DIAGC_READ_CH_47_MSG_ID, .bits.bRW = 1, }
                 },
 
-                    { .bits.MsgID = PWMOffsetchannel0_3_MSG_ID, .bits.r_w = 1, .bits.OFFSET0 = 0, .bits.OFFSET1=4, .bits.OFFSET2=9, .bits.OFFSET3=13},
-                    { .bits.MsgID = PWMOffsetchannel4_7_MSG_ID, .bits.r_w = 1, .bits.OFFSET4 = 17, .bits.OFFSET5=21, .bits.OFFSET6=25, .bits.OFFSET7=29},
+                    { .bits.udtMsgID = TLE8242_u8_PWM_OFFS_03_MSG_ID, .bits.bRW = 1, .bits.OFFSET0 = 0, .bits.OFFSET1=4, .bits.OFFSET2=9, .bits.OFFSET3=13},
+                    { .bits.udtMsgID = TLE8242_u8_PWM_OFFS_47_MSG_ID, .bits.bRW = 1, .bits.OFFSET4 = 17, .bits.OFFSET5=21, .bits.OFFSET6=25, .bits.OFFSET7=29},
 
                 {
-                    { .bits.MsgID = MainPeriodSet_MSG_ID, .bits.r_w = 1, .bits.Chan=0},
-                    { .bits.MsgID = MainPeriodSet_MSG_ID, .bits.r_w = 1, .bits.Chan=1},
-                    { .bits.MsgID = MainPeriodSet_MSG_ID, .bits.r_w = 1, .bits.Chan=2},
-                    { .bits.MsgID = MainPeriodSet_MSG_ID, .bits.r_w = 1, .bits.Chan=3},
-                    { .bits.MsgID = MainPeriodSet_MSG_ID, .bits.r_w = 1, .bits.Chan=4},
-                    { .bits.MsgID = MainPeriodSet_MSG_ID, .bits.r_w = 1, .bits.Chan=5},
-                    { .bits.MsgID = MainPeriodSet_MSG_ID, .bits.r_w = 1, .bits.Chan=6},
-                    { .bits.MsgID = MainPeriodSet_MSG_ID, .bits.r_w = 1, .bits.Chan=7}
+                    { .bits.udtMsgID = TLE8242_u8_MAI_PERD_MSG_ID, .bits.bRW = 1, .bits.udtChan=0},
+                    { .bits.udtMsgID = TLE8242_u8_MAI_PERD_MSG_ID, .bits.bRW = 1, .bits.udtChan=1},
+                    { .bits.udtMsgID = TLE8242_u8_MAI_PERD_MSG_ID, .bits.bRW = 1, .bits.udtChan=2},
+                    { .bits.udtMsgID = TLE8242_u8_MAI_PERD_MSG_ID, .bits.bRW = 1, .bits.udtChan=3},
+                    { .bits.udtMsgID = TLE8242_u8_MAI_PERD_MSG_ID, .bits.bRW = 1, .bits.udtChan=4},
+                    { .bits.udtMsgID = TLE8242_u8_MAI_PERD_MSG_ID, .bits.bRW = 1, .bits.udtChan=5},
+                    { .bits.udtMsgID = TLE8242_u8_MAI_PERD_MSG_ID, .bits.bRW = 1, .bits.udtChan=6},
+                    { .bits.udtMsgID = TLE8242_u8_MAI_PERD_MSG_ID, .bits.bRW = 1, .bits.udtChan=7}
                 },
                 {
-                    { .bits.MsgID = ControlVariableSetKPandKI_MSG_ID, .bits.r_w = 1,  .bits.Chan=0},
-                    { .bits.MsgID = ControlVariableSetKPandKI_MSG_ID, .bits.r_w = 1,  .bits.Chan=1},
-                    { .bits.MsgID = ControlVariableSetKPandKI_MSG_ID, .bits.r_w = 1,  .bits.Chan=2},
-                    { .bits.MsgID = ControlVariableSetKPandKI_MSG_ID, .bits.r_w = 1,  .bits.Chan=3},
-                    { .bits.MsgID = ControlVariableSetKPandKI_MSG_ID, .bits.r_w = 1,  .bits.Chan=4},
-                    { .bits.MsgID = ControlVariableSetKPandKI_MSG_ID, .bits.r_w = 1,  .bits.Chan=5},
-                    { .bits.MsgID = ControlVariableSetKPandKI_MSG_ID, .bits.r_w = 1,  .bits.Chan=6},
-                    { .bits.MsgID = ControlVariableSetKPandKI_MSG_ID, .bits.r_w = 1,  .bits.Chan=7}
+                    { .bits.udtMsgID = TLE8242_u8_KP_KI_MSG_ID, .bits.bRW = 1,  .bits.udtChan=0},
+                    { .bits.udtMsgID = TLE8242_u8_KP_KI_MSG_ID, .bits.bRW = 1,  .bits.udtChan=1},
+                    { .bits.udtMsgID = TLE8242_u8_KP_KI_MSG_ID, .bits.bRW = 1,  .bits.udtChan=2},
+                    { .bits.udtMsgID = TLE8242_u8_KP_KI_MSG_ID, .bits.bRW = 1,  .bits.udtChan=3},
+                    { .bits.udtMsgID = TLE8242_u8_KP_KI_MSG_ID, .bits.bRW = 1,  .bits.udtChan=4},
+                    { .bits.udtMsgID = TLE8242_u8_KP_KI_MSG_ID, .bits.bRW = 1,  .bits.udtChan=5},
+                    { .bits.udtMsgID = TLE8242_u8_KP_KI_MSG_ID, .bits.bRW = 1,  .bits.udtChan=6},
+                    { .bits.udtMsgID = TLE8242_u8_KP_KI_MSG_ID, .bits.bRW = 1,  .bits.udtChan=7}
                 },
                 {
 
-                    { .bits.MsgID = CurrentandDitherAmplitudeSet_MSG_ID, .bits.r_w = 1, .bits.Chan=0},
-                    { .bits.MsgID = CurrentandDitherAmplitudeSet_MSG_ID, .bits.r_w = 1, .bits.Chan=1},
-                    { .bits.MsgID = CurrentandDitherAmplitudeSet_MSG_ID, .bits.r_w = 1, .bits.Chan=2},
-                    { .bits.MsgID = CurrentandDitherAmplitudeSet_MSG_ID, .bits.r_w = 1, .bits.Chan=3},
-                    { .bits.MsgID = CurrentandDitherAmplitudeSet_MSG_ID, .bits.r_w = 1, .bits.Chan=4},
-                    { .bits.MsgID = CurrentandDitherAmplitudeSet_MSG_ID, .bits.r_w = 1, .bits.Chan=5},
-                    { .bits.MsgID = CurrentandDitherAmplitudeSet_MSG_ID, .bits.r_w = 1, .bits.Chan=6},
-                    { .bits.MsgID = CurrentandDitherAmplitudeSet_MSG_ID, .bits.r_w = 1, .bits.Chan=7}
+                    { .bits.udtMsgID = TLE8242_u8_CRNT_DITHER_MSG_ID, .bits.bRW = 1, .bits.udtChan=0},
+                    { .bits.udtMsgID = TLE8242_u8_CRNT_DITHER_MSG_ID, .bits.bRW = 1, .bits.udtChan=1},
+                    { .bits.udtMsgID = TLE8242_u8_CRNT_DITHER_MSG_ID, .bits.bRW = 1, .bits.udtChan=2},
+                    { .bits.udtMsgID = TLE8242_u8_CRNT_DITHER_MSG_ID, .bits.bRW = 1, .bits.udtChan=3},
+                    { .bits.udtMsgID = TLE8242_u8_CRNT_DITHER_MSG_ID, .bits.bRW = 1, .bits.udtChan=4},
+                    { .bits.udtMsgID = TLE8242_u8_CRNT_DITHER_MSG_ID, .bits.bRW = 1, .bits.udtChan=5},
+                    { .bits.udtMsgID = TLE8242_u8_CRNT_DITHER_MSG_ID, .bits.bRW = 1, .bits.udtChan=6},
+                    { .bits.udtMsgID = TLE8242_u8_CRNT_DITHER_MSG_ID, .bits.bRW = 1, .bits.udtChan=7}
                 },
                 {
-                    { .bits.MsgID = DitherPeriodSet_MSG_ID, .bits.r_w = 1, .bits.Chan=0},
-                    { .bits.MsgID = DitherPeriodSet_MSG_ID, .bits.r_w = 1, .bits.Chan=1},
-                    { .bits.MsgID = DitherPeriodSet_MSG_ID, .bits.r_w = 1, .bits.Chan=2},
-                    { .bits.MsgID = DitherPeriodSet_MSG_ID, .bits.r_w = 1, .bits.Chan=3},
-                    { .bits.MsgID = DitherPeriodSet_MSG_ID, .bits.r_w = 1, .bits.Chan=4},
-                    { .bits.MsgID = DitherPeriodSet_MSG_ID, .bits.r_w = 1, .bits.Chan=5},
-                    { .bits.MsgID = DitherPeriodSet_MSG_ID, .bits.r_w = 1, .bits.Chan=6},
-                    { .bits.MsgID = DitherPeriodSet_MSG_ID, .bits.r_w = 1, .bits.Chan=7}
+                    { .bits.udtMsgID = TLE8242_u8_DITHER_PERD_MSG_ID, .bits.bRW = 1, .bits.udtChan=0},
+                    { .bits.udtMsgID = TLE8242_u8_DITHER_PERD_MSG_ID, .bits.bRW = 1, .bits.udtChan=1},
+                    { .bits.udtMsgID = TLE8242_u8_DITHER_PERD_MSG_ID, .bits.bRW = 1, .bits.udtChan=2},
+                    { .bits.udtMsgID = TLE8242_u8_DITHER_PERD_MSG_ID, .bits.bRW = 1, .bits.udtChan=3},
+                    { .bits.udtMsgID = TLE8242_u8_DITHER_PERD_MSG_ID, .bits.bRW = 1, .bits.udtChan=4},
+                    { .bits.udtMsgID = TLE8242_u8_DITHER_PERD_MSG_ID, .bits.bRW = 1, .bits.udtChan=5},
+                    { .bits.udtMsgID = TLE8242_u8_DITHER_PERD_MSG_ID, .bits.bRW = 1, .bits.udtChan=6},
+                    { .bits.udtMsgID = TLE8242_u8_DITHER_PERD_MSG_ID, .bits.bRW = 1, .bits.udtChan=7}
                 },
                 {
-                    { .bits.MsgID = MaxMinCurrentRead_MSG_ID, .bits.r_w = 0, .bits.Chan=0},
-                    { .bits.MsgID = MaxMinCurrentRead_MSG_ID, .bits.r_w = 0, .bits.Chan=1},
-                    { .bits.MsgID = MaxMinCurrentRead_MSG_ID, .bits.r_w = 0, .bits.Chan=2},
-                    { .bits.MsgID = MaxMinCurrentRead_MSG_ID, .bits.r_w = 0, .bits.Chan=3},
-                    { .bits.MsgID = MaxMinCurrentRead_MSG_ID, .bits.r_w = 0, .bits.Chan=4},
-                    { .bits.MsgID = MaxMinCurrentRead_MSG_ID, .bits.r_w = 0, .bits.Chan=5},
-                    { .bits.MsgID = MaxMinCurrentRead_MSG_ID, .bits.r_w = 0, .bits.Chan=6},
-                    { .bits.MsgID = MaxMinCurrentRead_MSG_ID, .bits.r_w = 0, .bits.Chan=7}
+                    { .bits.udtMsgID = TLE8242_u8_MAX_MIN_CRNT_READ_MSG_ID, .bits.bRW = 0, .bits.udtChan=0},
+                    { .bits.udtMsgID = TLE8242_u8_MAX_MIN_CRNT_READ_MSG_ID, .bits.bRW = 0, .bits.udtChan=1},
+                    { .bits.udtMsgID = TLE8242_u8_MAX_MIN_CRNT_READ_MSG_ID, .bits.bRW = 0, .bits.udtChan=2},
+                    { .bits.udtMsgID = TLE8242_u8_MAX_MIN_CRNT_READ_MSG_ID, .bits.bRW = 0, .bits.udtChan=3},
+                    { .bits.udtMsgID = TLE8242_u8_MAX_MIN_CRNT_READ_MSG_ID, .bits.bRW = 0, .bits.udtChan=4},
+                    { .bits.udtMsgID = TLE8242_u8_MAX_MIN_CRNT_READ_MSG_ID, .bits.bRW = 0, .bits.udtChan=5},
+                    { .bits.udtMsgID = TLE8242_u8_MAX_MIN_CRNT_READ_MSG_ID, .bits.bRW = 0, .bits.udtChan=6},
+                    { .bits.udtMsgID = TLE8242_u8_MAX_MIN_CRNT_READ_MSG_ID, .bits.bRW = 0, .bits.udtChan=7}
                 },
                 {
-                    { .bits.MsgID = AverageCurrentReadOverDitherPeriod_MSG_ID, .bits.r_w = 0, .bits.Chan=0},
-                    { .bits.MsgID = AverageCurrentReadOverDitherPeriod_MSG_ID, .bits.r_w = 0, .bits.Chan=1},
-                    { .bits.MsgID = AverageCurrentReadOverDitherPeriod_MSG_ID, .bits.r_w = 0, .bits.Chan=2},
-                    { .bits.MsgID = AverageCurrentReadOverDitherPeriod_MSG_ID, .bits.r_w = 0, .bits.Chan=3},
-                    { .bits.MsgID = AverageCurrentReadOverDitherPeriod_MSG_ID, .bits.r_w = 0, .bits.Chan=4},
-                    { .bits.MsgID = AverageCurrentReadOverDitherPeriod_MSG_ID, .bits.r_w = 0, .bits.Chan=5},
-                    { .bits.MsgID = AverageCurrentReadOverDitherPeriod_MSG_ID, .bits.r_w = 0, .bits.Chan=6},
-                    { .bits.MsgID = AverageCurrentReadOverDitherPeriod_MSG_ID, .bits.r_w = 0, .bits.Chan=7}
+                    { .bits.udtMsgID = TLE8242_u8_AVRG_CRNT_READ_MSG_ID, .bits.bRW = 0, .bits.udtChan=0},
+                    { .bits.udtMsgID = TLE8242_u8_AVRG_CRNT_READ_MSG_ID, .bits.bRW = 0, .bits.udtChan=1},
+                    { .bits.udtMsgID = TLE8242_u8_AVRG_CRNT_READ_MSG_ID, .bits.bRW = 0, .bits.udtChan=2},
+                    { .bits.udtMsgID = TLE8242_u8_AVRG_CRNT_READ_MSG_ID, .bits.bRW = 0, .bits.udtChan=3},
+                    { .bits.udtMsgID = TLE8242_u8_AVRG_CRNT_READ_MSG_ID, .bits.bRW = 0, .bits.udtChan=4},
+                    { .bits.udtMsgID = TLE8242_u8_AVRG_CRNT_READ_MSG_ID, .bits.bRW = 0, .bits.udtChan=5},
+                    { .bits.udtMsgID = TLE8242_u8_AVRG_CRNT_READ_MSG_ID, .bits.bRW = 0, .bits.udtChan=6},
+                    { .bits.udtMsgID = TLE8242_u8_AVRG_CRNT_READ_MSG_ID, .bits.bRW = 0, .bits.udtChan=7}
                 },
                 {
-                    { .bits.MsgID = AutozeroTriggerRead_MSG_ID, .bits.r_w = 0, .bits.Chan=0},
-                    { .bits.MsgID = AutozeroTriggerRead_MSG_ID, .bits.r_w = 0, .bits.Chan=1},
-                    { .bits.MsgID = AutozeroTriggerRead_MSG_ID, .bits.r_w = 0, .bits.Chan=2},
-                    { .bits.MsgID = AutozeroTriggerRead_MSG_ID, .bits.r_w = 0, .bits.Chan=3},
-                    { .bits.MsgID = AutozeroTriggerRead_MSG_ID, .bits.r_w = 0, .bits.Chan=4},
-                    { .bits.MsgID = AutozeroTriggerRead_MSG_ID, .bits.r_w = 0, .bits.Chan=5},
-                    { .bits.MsgID = AutozeroTriggerRead_MSG_ID, .bits.r_w = 0, .bits.Chan=6},
-                    { .bits.MsgID = AutozeroTriggerRead_MSG_ID, .bits.r_w = 0, .bits.Chan=7}
+                    { .bits.udtMsgID = TLE8242_u8_ATUO_ZERO_MSG_ID, .bits.bRW = 0, .bits.udtChan=0},
+                    { .bits.udtMsgID = TLE8242_u8_ATUO_ZERO_MSG_ID, .bits.bRW = 0, .bits.udtChan=1},
+                    { .bits.udtMsgID = TLE8242_u8_ATUO_ZERO_MSG_ID, .bits.bRW = 0, .bits.udtChan=2},
+                    { .bits.udtMsgID = TLE8242_u8_ATUO_ZERO_MSG_ID, .bits.bRW = 0, .bits.udtChan=3},
+                    { .bits.udtMsgID = TLE8242_u8_ATUO_ZERO_MSG_ID, .bits.bRW = 0, .bits.udtChan=4},
+                    { .bits.udtMsgID = TLE8242_u8_ATUO_ZERO_MSG_ID, .bits.bRW = 0, .bits.udtChan=5},
+                    { .bits.udtMsgID = TLE8242_u8_ATUO_ZERO_MSG_ID, .bits.bRW = 0, .bits.udtChan=6},
+                    { .bits.udtMsgID = TLE8242_u8_ATUO_ZERO_MSG_ID, .bits.bRW = 0, .bits.udtChan=7}
                 },
                 {
-                    { .bits.MsgID = PWMDutyCycle_MSG_ID, .bits.r_w = 0, .bits.Chan=0},
-                    { .bits.MsgID = PWMDutyCycle_MSG_ID, .bits.r_w = 0, .bits.Chan=1},
-                    { .bits.MsgID = PWMDutyCycle_MSG_ID, .bits.r_w = 0, .bits.Chan=2},
-                    { .bits.MsgID = PWMDutyCycle_MSG_ID, .bits.r_w = 0, .bits.Chan=3},
-                    { .bits.MsgID = PWMDutyCycle_MSG_ID, .bits.r_w = 0, .bits.Chan=4},
-                    { .bits.MsgID = PWMDutyCycle_MSG_ID, .bits.r_w = 0, .bits.Chan=5},
-                    { .bits.MsgID = PWMDutyCycle_MSG_ID, .bits.r_w = 0, .bits.Chan=6},
-                    { .bits.MsgID = PWMDutyCycle_MSG_ID, .bits.r_w = 0, .bits.Chan=7}
+                    { .bits.udtMsgID = TLE8242_u8_PWM_DUTY_CYCLE_MSG_ID, .bits.bRW = 0, .bits.udtChan=0},
+                    { .bits.udtMsgID = TLE8242_u8_PWM_DUTY_CYCLE_MSG_ID, .bits.bRW = 0, .bits.udtChan=1},
+                    { .bits.udtMsgID = TLE8242_u8_PWM_DUTY_CYCLE_MSG_ID, .bits.bRW = 0, .bits.udtChan=2},
+                    { .bits.udtMsgID = TLE8242_u8_PWM_DUTY_CYCLE_MSG_ID, .bits.bRW = 0, .bits.udtChan=3},
+                    { .bits.udtMsgID = TLE8242_u8_PWM_DUTY_CYCLE_MSG_ID, .bits.bRW = 0, .bits.udtChan=4},
+                    { .bits.udtMsgID = TLE8242_u8_PWM_DUTY_CYCLE_MSG_ID, .bits.bRW = 0, .bits.udtChan=5},
+                    { .bits.udtMsgID = TLE8242_u8_PWM_DUTY_CYCLE_MSG_ID, .bits.bRW = 0, .bits.udtChan=6},
+                    { .bits.udtMsgID = TLE8242_u8_PWM_DUTY_CYCLE_MSG_ID, .bits.bRW = 0, .bits.udtChan=7}
                 },
                 {
-                    { .bits.MsgID = CurrentProfileDetectionSetup1_MSG_ID, .bits.r_w = 1,.bits.Chan=0 },
-					{ .bits.MsgID = CurrentProfileDetectionSetup1_MSG_ID, .bits.r_w = 1,.bits.Chan=1 },
-					{ .bits.MsgID = CurrentProfileDetectionSetup1_MSG_ID, .bits.r_w = 1,.bits.Chan=2 },
-					{ .bits.MsgID = CurrentProfileDetectionSetup1_MSG_ID, .bits.r_w = 1,.bits.Chan=3 },
-					{ .bits.MsgID = CurrentProfileDetectionSetup1_MSG_ID, .bits.r_w = 1,.bits.Chan=4 },
-					{ .bits.MsgID = CurrentProfileDetectionSetup1_MSG_ID, .bits.r_w = 1,.bits.Chan=5 },
-					{ .bits.MsgID = CurrentProfileDetectionSetup1_MSG_ID, .bits.r_w = 1,.bits.Chan=6 },
-					{ .bits.MsgID = CurrentProfileDetectionSetup1_MSG_ID, .bits.r_w = 1,.bits.Chan=7 }
+                { .bits.udtMsgID = TLE8242_u8_CRNT_PROF_DETN_MSG_ID, .bits.bRW = 0, }
                 },
                 {
-                    { .bits.MsgID = CurrentProfileDetectionSetup2_MSG_ID, .bits.r_w = 1, .bits.Chan=0 },
-					{ .bits.MsgID = CurrentProfileDetectionSetup2_MSG_ID, .bits.r_w = 1, .bits.Chan=1 },
-					{ .bits.MsgID = CurrentProfileDetectionSetup2_MSG_ID, .bits.r_w = 1, .bits.Chan=2 },
-					{ .bits.MsgID = CurrentProfileDetectionSetup2_MSG_ID, .bits.r_w = 1, .bits.Chan=3 },
-					{ .bits.MsgID = CurrentProfileDetectionSetup2_MSG_ID, .bits.r_w = 1, .bits.Chan=4 },
-					{ .bits.MsgID = CurrentProfileDetectionSetup2_MSG_ID, .bits.r_w = 1, .bits.Chan=5 },
-					{ .bits.MsgID = CurrentProfileDetectionSetup2_MSG_ID, .bits.r_w = 1, .bits.Chan=6 },
-					{ .bits.MsgID = CurrentProfileDetectionSetup2_MSG_ID, .bits.r_w = 1, .bits.Chan=7 }
+                { .bits.udtMsgID = TLE8242_u8_CRNT_PROF_DETN_1_MSG_ID, .bits.bRW = 0, },
                 },
                 {
-                    { .bits.MsgID = CurrentProfileDetectionFeedback_MSG_ID, .bits.r_w = 0, .bits.Chan=0 },
-					{ .bits.MsgID = CurrentProfileDetectionFeedback_MSG_ID, .bits.r_w = 0, .bits.Chan=1 },
-					{ .bits.MsgID = CurrentProfileDetectionFeedback_MSG_ID, .bits.r_w = 0, .bits.Chan=2 },
-					{ .bits.MsgID = CurrentProfileDetectionFeedback_MSG_ID, .bits.r_w = 0, .bits.Chan=3 },
-					{ .bits.MsgID = CurrentProfileDetectionFeedback_MSG_ID, .bits.r_w = 0, .bits.Chan=4 },
-					{ .bits.MsgID = CurrentProfileDetectionFeedback_MSG_ID, .bits.r_w = 0, .bits.Chan=5 },
-					{ .bits.MsgID = CurrentProfileDetectionFeedback_MSG_ID, .bits.r_w = 0, .bits.Chan=6 },
-					{ .bits.MsgID = CurrentProfileDetectionFeedback_MSG_ID, .bits.r_w = 0, .bits.Chan=7 }
+                { .bits.udtMsgID = TLE8242_u8_CRNT_PROF_DETN_FB_MSG_ID, .bits.bRW = 0, },
                 },
-                { .bits.MsgID = ReadGenericFlagBits_MSG_ID, .bits.r_w = 0,}
+                { .bits.udtMsgID = TLE8242_u8_READ_GEN_FLG_MSG_ID, .bits.bRW = 0,}
         }
-#if NUMBER_OF_TLE8242 > 1
+#if TLE8242_u8CH_NR > 1
         ,          {
-                        { .bits.MsgID = ICVersionManufacturer_MSG_ID, .bits.r_w = 1, },
-                        { .bits.MsgID = ControlMethodandFaultMaskConfiguration_MSG_ID, .bits.r_w = 1, .bits.CM=ControlModeData, .bits.DIAG_TMR=DiagTimerDiv128_1},
+                        { .bits.udtMsgID = TLE8242_u8_IC_VERS_MSG_ID, .bits.bRW = 1, },
+                        { .bits.udtMsgID = TLE8242_u8_CTRL_MOD_FLT_MASK_MSG_ID, .bits.bRW = 1, .bits.udtCM=ControlModeData, .bits.udtDIAG_TMR=TLE8242_DIAG_TMR_DIV_128_1},
                         {
-                            { .bits.MsgID = DiagnosticConfigurationchannel0_3_MSG_ID, .bits.r_w = 1, },
-                            { .bits.MsgID = DiagnosticConfigurationchannel4_7_MSG_ID, .bits.r_w = 1, }
+                            { .bits.udtMsgID = TLE8242_u8_DIAGC_CFG_03_MSG_ID, .bits.bRW = 1, },
+                            { .bits.udtMsgID = TLE8242_u8_DIAGC_CFG_47_MSG_ID, .bits.bRW = 1, }
                         },
                         {
-                            { .bits.MsgID = DiagnosticReadchannel0_3_MSG_ID, .bits.r_w = 1, },
-                            { .bits.MsgID = DiagnosticReadchannel4_7_MSG_ID, .bits.r_w = 1, }
+                            { .bits.udtMsgID = TLE8242_u8_DIAGC_READ_CH_03_MSG_ID, .bits.bRW = 1, },
+                            { .bits.udtMsgID = TLE8242_u8_DIAGC_READ_CH_47_MSG_ID, .bits.bRW = 1, }
                         },
 
-                            { .bits.MsgID = PWMOffsetchannel0_3_MSG_ID, .bits.r_w = 1, .bits.OFFSET0 = 0, .bits.OFFSET1=4, .bits.OFFSET2=9, .bits.OFFSET3=13},
-                            { .bits.MsgID = PWMOffsetchannel4_7_MSG_ID, .bits.r_w = 1, .bits.OFFSET4 = 17, .bits.OFFSET5=21, .bits.OFFSET6=25, .bits.OFFSET7=29},
+                            { .bits.udtMsgID = TLE8242_u8_PWM_OFFS_03_MSG_ID, .bits.bRW = 1, .bits.OFFSET0 = 0, .bits.OFFSET1=4, .bits.OFFSET2=9, .bits.OFFSET3=13},
+                            { .bits.udtMsgID = TLE8242_u8_PWM_OFFS_47_MSG_ID, .bits.bRW = 1, .bits.OFFSET4 = 17, .bits.OFFSET5=21, .bits.OFFSET6=25, .bits.OFFSET7=29},
 
                         {
-                            { .bits.MsgID = MainPeriodSet_MSG_ID, .bits.r_w = 1, .bits.Chan=0},
-                            { .bits.MsgID = MainPeriodSet_MSG_ID, .bits.r_w = 1, .bits.Chan=1},
-                            { .bits.MsgID = MainPeriodSet_MSG_ID, .bits.r_w = 1, .bits.Chan=2},
-                            { .bits.MsgID = MainPeriodSet_MSG_ID, .bits.r_w = 1, .bits.Chan=3},
-                            { .bits.MsgID = MainPeriodSet_MSG_ID, .bits.r_w = 1, .bits.Chan=4},
-                            { .bits.MsgID = MainPeriodSet_MSG_ID, .bits.r_w = 1, .bits.Chan=5},
-                            { .bits.MsgID = MainPeriodSet_MSG_ID, .bits.r_w = 1, .bits.Chan=6},
-                            { .bits.MsgID = MainPeriodSet_MSG_ID, .bits.r_w = 1, .bits.Chan=7}
+                            { .bits.udtMsgID = TLE8242_u8_MAI_PERD_MSG_ID, .bits.bRW = 1, .bits.udtChan=0},
+                            { .bits.udtMsgID = TLE8242_u8_MAI_PERD_MSG_ID, .bits.bRW = 1, .bits.udtChan=1},
+                            { .bits.udtMsgID = TLE8242_u8_MAI_PERD_MSG_ID, .bits.bRW = 1, .bits.udtChan=2},
+                            { .bits.udtMsgID = TLE8242_u8_MAI_PERD_MSG_ID, .bits.bRW = 1, .bits.udtChan=3},
+                            { .bits.udtMsgID = TLE8242_u8_MAI_PERD_MSG_ID, .bits.bRW = 1, .bits.udtChan=4},
+                            { .bits.udtMsgID = TLE8242_u8_MAI_PERD_MSG_ID, .bits.bRW = 1, .bits.udtChan=5},
+                            { .bits.udtMsgID = TLE8242_u8_MAI_PERD_MSG_ID, .bits.bRW = 1, .bits.udtChan=6},
+                            { .bits.udtMsgID = TLE8242_u8_MAI_PERD_MSG_ID, .bits.bRW = 1, .bits.udtChan=7}
                         },
                         {
-                            { .bits.MsgID = ControlVariableSetKPandKI_MSG_ID, .bits.r_w = 1,  .bits.Chan=0},
-                            { .bits.MsgID = ControlVariableSetKPandKI_MSG_ID, .bits.r_w = 1,  .bits.Chan=1},
-                            { .bits.MsgID = ControlVariableSetKPandKI_MSG_ID, .bits.r_w = 1,  .bits.Chan=2},
-                            { .bits.MsgID = ControlVariableSetKPandKI_MSG_ID, .bits.r_w = 1,  .bits.Chan=3},
-                            { .bits.MsgID = ControlVariableSetKPandKI_MSG_ID, .bits.r_w = 1,  .bits.Chan=4},
-                            { .bits.MsgID = ControlVariableSetKPandKI_MSG_ID, .bits.r_w = 1,  .bits.Chan=5},
-                            { .bits.MsgID = ControlVariableSetKPandKI_MSG_ID, .bits.r_w = 1,  .bits.Chan=6},
-                            { .bits.MsgID = ControlVariableSetKPandKI_MSG_ID, .bits.r_w = 1,  .bits.Chan=7}
+                            { .bits.udtMsgID = TLE8242_u8_KP_KI_MSG_ID, .bits.bRW = 1,  .bits.udtChan=0},
+                            { .bits.udtMsgID = TLE8242_u8_KP_KI_MSG_ID, .bits.bRW = 1,  .bits.udtChan=1},
+                            { .bits.udtMsgID = TLE8242_u8_KP_KI_MSG_ID, .bits.bRW = 1,  .bits.udtChan=2},
+                            { .bits.udtMsgID = TLE8242_u8_KP_KI_MSG_ID, .bits.bRW = 1,  .bits.udtChan=3},
+                            { .bits.udtMsgID = TLE8242_u8_KP_KI_MSG_ID, .bits.bRW = 1,  .bits.udtChan=4},
+                            { .bits.udtMsgID = TLE8242_u8_KP_KI_MSG_ID, .bits.bRW = 1,  .bits.udtChan=5},
+                            { .bits.udtMsgID = TLE8242_u8_KP_KI_MSG_ID, .bits.bRW = 1,  .bits.udtChan=6},
+                            { .bits.udtMsgID = TLE8242_u8_KP_KI_MSG_ID, .bits.bRW = 1,  .bits.udtChan=7}
                         },
                         {
 
-                            { .bits.MsgID = CurrentandDitherAmplitudeSet_MSG_ID, .bits.r_w = 1, .bits.Chan=0},
-                            { .bits.MsgID = CurrentandDitherAmplitudeSet_MSG_ID, .bits.r_w = 1, .bits.Chan=1},
-                            { .bits.MsgID = CurrentandDitherAmplitudeSet_MSG_ID, .bits.r_w = 1, .bits.Chan=2},
-                            { .bits.MsgID = CurrentandDitherAmplitudeSet_MSG_ID, .bits.r_w = 1, .bits.Chan=3},
-                            { .bits.MsgID = CurrentandDitherAmplitudeSet_MSG_ID, .bits.r_w = 1, .bits.Chan=4},
-                            { .bits.MsgID = CurrentandDitherAmplitudeSet_MSG_ID, .bits.r_w = 1, .bits.Chan=5},
-                            { .bits.MsgID = CurrentandDitherAmplitudeSet_MSG_ID, .bits.r_w = 1, .bits.Chan=6},
-                            { .bits.MsgID = CurrentandDitherAmplitudeSet_MSG_ID, .bits.r_w = 1, .bits.Chan=7}
+                            { .bits.udtMsgID = TLE8242_u8_CRNT_DITHER_MSG_ID, .bits.bRW = 1, .bits.udtChan=0},
+                            { .bits.udtMsgID = TLE8242_u8_CRNT_DITHER_MSG_ID, .bits.bRW = 1, .bits.udtChan=1},
+                            { .bits.udtMsgID = TLE8242_u8_CRNT_DITHER_MSG_ID, .bits.bRW = 1, .bits.udtChan=2},
+                            { .bits.udtMsgID = TLE8242_u8_CRNT_DITHER_MSG_ID, .bits.bRW = 1, .bits.udtChan=3},
+                            { .bits.udtMsgID = TLE8242_u8_CRNT_DITHER_MSG_ID, .bits.bRW = 1, .bits.udtChan=4},
+                            { .bits.udtMsgID = TLE8242_u8_CRNT_DITHER_MSG_ID, .bits.bRW = 1, .bits.udtChan=5},
+                            { .bits.udtMsgID = TLE8242_u8_CRNT_DITHER_MSG_ID, .bits.bRW = 1, .bits.udtChan=6},
+                            { .bits.udtMsgID = TLE8242_u8_CRNT_DITHER_MSG_ID, .bits.bRW = 1, .bits.udtChan=7}
                         },
                         {
-                            { .bits.MsgID = DitherPeriodSet_MSG_ID, .bits.r_w = 1, .bits.Chan=0},
-                            { .bits.MsgID = DitherPeriodSet_MSG_ID, .bits.r_w = 1, .bits.Chan=1},
-                            { .bits.MsgID = DitherPeriodSet_MSG_ID, .bits.r_w = 1, .bits.Chan=2},
-                            { .bits.MsgID = DitherPeriodSet_MSG_ID, .bits.r_w = 1, .bits.Chan=3},
-                            { .bits.MsgID = DitherPeriodSet_MSG_ID, .bits.r_w = 1, .bits.Chan=4},
-                            { .bits.MsgID = DitherPeriodSet_MSG_ID, .bits.r_w = 1, .bits.Chan=5},
-                            { .bits.MsgID = DitherPeriodSet_MSG_ID, .bits.r_w = 1, .bits.Chan=6},
-                            { .bits.MsgID = DitherPeriodSet_MSG_ID, .bits.r_w = 1, .bits.Chan=7}
+                            { .bits.udtMsgID = TLE8242_u8_DITHER_PERD_MSG_ID, .bits.bRW = 1, .bits.udtChan=0},
+                            { .bits.udtMsgID = TLE8242_u8_DITHER_PERD_MSG_ID, .bits.bRW = 1, .bits.udtChan=1},
+                            { .bits.udtMsgID = TLE8242_u8_DITHER_PERD_MSG_ID, .bits.bRW = 1, .bits.udtChan=2},
+                            { .bits.udtMsgID = TLE8242_u8_DITHER_PERD_MSG_ID, .bits.bRW = 1, .bits.udtChan=3},
+                            { .bits.udtMsgID = TLE8242_u8_DITHER_PERD_MSG_ID, .bits.bRW = 1, .bits.udtChan=4},
+                            { .bits.udtMsgID = TLE8242_u8_DITHER_PERD_MSG_ID, .bits.bRW = 1, .bits.udtChan=5},
+                            { .bits.udtMsgID = TLE8242_u8_DITHER_PERD_MSG_ID, .bits.bRW = 1, .bits.udtChan=6},
+                            { .bits.udtMsgID = TLE8242_u8_DITHER_PERD_MSG_ID, .bits.bRW = 1, .bits.udtChan=7}
                         },
                         {
-                            { .bits.MsgID = MaxMinCurrentRead_MSG_ID, .bits.r_w = 0, .bits.Chan=0},
-                            { .bits.MsgID = MaxMinCurrentRead_MSG_ID, .bits.r_w = 0, .bits.Chan=1},
-                            { .bits.MsgID = MaxMinCurrentRead_MSG_ID, .bits.r_w = 0, .bits.Chan=2},
-                            { .bits.MsgID = MaxMinCurrentRead_MSG_ID, .bits.r_w = 0, .bits.Chan=3},
-                            { .bits.MsgID = MaxMinCurrentRead_MSG_ID, .bits.r_w = 0, .bits.Chan=4},
-                            { .bits.MsgID = MaxMinCurrentRead_MSG_ID, .bits.r_w = 0, .bits.Chan=5},
-                            { .bits.MsgID = MaxMinCurrentRead_MSG_ID, .bits.r_w = 0, .bits.Chan=6},
-                            { .bits.MsgID = MaxMinCurrentRead_MSG_ID, .bits.r_w = 0, .bits.Chan=7}
+                            { .bits.udtMsgID = TLE8242_u8_MAX_MIN_CRNT_READ_MSG_ID, .bits.bRW = 0, .bits.udtChan=0},
+                            { .bits.udtMsgID = TLE8242_u8_MAX_MIN_CRNT_READ_MSG_ID, .bits.bRW = 0, .bits.udtChan=1},
+                            { .bits.udtMsgID = TLE8242_u8_MAX_MIN_CRNT_READ_MSG_ID, .bits.bRW = 0, .bits.udtChan=2},
+                            { .bits.udtMsgID = TLE8242_u8_MAX_MIN_CRNT_READ_MSG_ID, .bits.bRW = 0, .bits.udtChan=3},
+                            { .bits.udtMsgID = TLE8242_u8_MAX_MIN_CRNT_READ_MSG_ID, .bits.bRW = 0, .bits.udtChan=4},
+                            { .bits.udtMsgID = TLE8242_u8_MAX_MIN_CRNT_READ_MSG_ID, .bits.bRW = 0, .bits.udtChan=5},
+                            { .bits.udtMsgID = TLE8242_u8_MAX_MIN_CRNT_READ_MSG_ID, .bits.bRW = 0, .bits.udtChan=6},
+                            { .bits.udtMsgID = TLE8242_u8_MAX_MIN_CRNT_READ_MSG_ID, .bits.bRW = 0, .bits.udtChan=7}
                         },
                         {
-                            { .bits.MsgID = AverageCurrentReadOverDitherPeriod_MSG_ID, .bits.r_w = 0, .bits.Chan=0},
-                            { .bits.MsgID = AverageCurrentReadOverDitherPeriod_MSG_ID, .bits.r_w = 0, .bits.Chan=1},
-                            { .bits.MsgID = AverageCurrentReadOverDitherPeriod_MSG_ID, .bits.r_w = 0, .bits.Chan=2},
-                            { .bits.MsgID = AverageCurrentReadOverDitherPeriod_MSG_ID, .bits.r_w = 0, .bits.Chan=3},
-                            { .bits.MsgID = AverageCurrentReadOverDitherPeriod_MSG_ID, .bits.r_w = 0, .bits.Chan=4},
-                            { .bits.MsgID = AverageCurrentReadOverDitherPeriod_MSG_ID, .bits.r_w = 0, .bits.Chan=5},
-                            { .bits.MsgID = AverageCurrentReadOverDitherPeriod_MSG_ID, .bits.r_w = 0, .bits.Chan=6},
-                            { .bits.MsgID = AverageCurrentReadOverDitherPeriod_MSG_ID, .bits.r_w = 0, .bits.Chan=7}
+                            { .bits.udtMsgID = TLE8242_u8_AVRG_CRNT_READ_MSG_ID, .bits.bRW = 0, .bits.udtChan=0},
+                            { .bits.udtMsgID = TLE8242_u8_AVRG_CRNT_READ_MSG_ID, .bits.bRW = 0, .bits.udtChan=1},
+                            { .bits.udtMsgID = TLE8242_u8_AVRG_CRNT_READ_MSG_ID, .bits.bRW = 0, .bits.udtChan=2},
+                            { .bits.udtMsgID = TLE8242_u8_AVRG_CRNT_READ_MSG_ID, .bits.bRW = 0, .bits.udtChan=3},
+                            { .bits.udtMsgID = TLE8242_u8_AVRG_CRNT_READ_MSG_ID, .bits.bRW = 0, .bits.udtChan=4},
+                            { .bits.udtMsgID = TLE8242_u8_AVRG_CRNT_READ_MSG_ID, .bits.bRW = 0, .bits.udtChan=5},
+                            { .bits.udtMsgID = TLE8242_u8_AVRG_CRNT_READ_MSG_ID, .bits.bRW = 0, .bits.udtChan=6},
+                            { .bits.udtMsgID = TLE8242_u8_AVRG_CRNT_READ_MSG_ID, .bits.bRW = 0, .bits.udtChan=7}
                         },
                         {
-                            { .bits.MsgID = AutozeroTriggerRead_MSG_ID, .bits.r_w = 0, .bits.Chan=0},
-                            { .bits.MsgID = AutozeroTriggerRead_MSG_ID, .bits.r_w = 0, .bits.Chan=1},
-                            { .bits.MsgID = AutozeroTriggerRead_MSG_ID, .bits.r_w = 0, .bits.Chan=2},
-                            { .bits.MsgID = AutozeroTriggerRead_MSG_ID, .bits.r_w = 0, .bits.Chan=3},
-                            { .bits.MsgID = AutozeroTriggerRead_MSG_ID, .bits.r_w = 0, .bits.Chan=4},
-                            { .bits.MsgID = AutozeroTriggerRead_MSG_ID, .bits.r_w = 0, .bits.Chan=5},
-                            { .bits.MsgID = AutozeroTriggerRead_MSG_ID, .bits.r_w = 0, .bits.Chan=6},
-                            { .bits.MsgID = AutozeroTriggerRead_MSG_ID, .bits.r_w = 0, .bits.Chan=7}
+                            { .bits.udtMsgID = TLE8242_u8_ATUO_ZERO_MSG_ID, .bits.bRW = 0, .bits.udtChan=0},
+                            { .bits.udtMsgID = TLE8242_u8_ATUO_ZERO_MSG_ID, .bits.bRW = 0, .bits.udtChan=1},
+                            { .bits.udtMsgID = TLE8242_u8_ATUO_ZERO_MSG_ID, .bits.bRW = 0, .bits.udtChan=2},
+                            { .bits.udtMsgID = TLE8242_u8_ATUO_ZERO_MSG_ID, .bits.bRW = 0, .bits.udtChan=3},
+                            { .bits.udtMsgID = TLE8242_u8_ATUO_ZERO_MSG_ID, .bits.bRW = 0, .bits.udtChan=4},
+                            { .bits.udtMsgID = TLE8242_u8_ATUO_ZERO_MSG_ID, .bits.bRW = 0, .bits.udtChan=5},
+                            { .bits.udtMsgID = TLE8242_u8_ATUO_ZERO_MSG_ID, .bits.bRW = 0, .bits.udtChan=6},
+                            { .bits.udtMsgID = TLE8242_u8_ATUO_ZERO_MSG_ID, .bits.bRW = 0, .bits.udtChan=7}
                         },
                         {
-                            { .bits.MsgID = PWMDutyCycle_MSG_ID, .bits.r_w = 0, .bits.Chan=0},
-                            { .bits.MsgID = PWMDutyCycle_MSG_ID, .bits.r_w = 0, .bits.Chan=1},
-                            { .bits.MsgID = PWMDutyCycle_MSG_ID, .bits.r_w = 0, .bits.Chan=2},
-                            { .bits.MsgID = PWMDutyCycle_MSG_ID, .bits.r_w = 0, .bits.Chan=3},
-                            { .bits.MsgID = PWMDutyCycle_MSG_ID, .bits.r_w = 0, .bits.Chan=4},
-                            { .bits.MsgID = PWMDutyCycle_MSG_ID, .bits.r_w = 0, .bits.Chan=5},
-                            { .bits.MsgID = PWMDutyCycle_MSG_ID, .bits.r_w = 0, .bits.Chan=6},
-                            { .bits.MsgID = PWMDutyCycle_MSG_ID, .bits.r_w = 0, .bits.Chan=7}
+                            { .bits.udtMsgID = TLE8242_u8_PWM_DUTY_CYCLE_MSG_ID, .bits.bRW = 0, .bits.udtChan=0},
+                            { .bits.udtMsgID = TLE8242_u8_PWM_DUTY_CYCLE_MSG_ID, .bits.bRW = 0, .bits.udtChan=1},
+                            { .bits.udtMsgID = TLE8242_u8_PWM_DUTY_CYCLE_MSG_ID, .bits.bRW = 0, .bits.udtChan=2},
+                            { .bits.udtMsgID = TLE8242_u8_PWM_DUTY_CYCLE_MSG_ID, .bits.bRW = 0, .bits.udtChan=3},
+                            { .bits.udtMsgID = TLE8242_u8_PWM_DUTY_CYCLE_MSG_ID, .bits.bRW = 0, .bits.udtChan=4},
+                            { .bits.udtMsgID = TLE8242_u8_PWM_DUTY_CYCLE_MSG_ID, .bits.bRW = 0, .bits.udtChan=5},
+                            { .bits.udtMsgID = TLE8242_u8_PWM_DUTY_CYCLE_MSG_ID, .bits.bRW = 0, .bits.udtChan=6},
+                            { .bits.udtMsgID = TLE8242_u8_PWM_DUTY_CYCLE_MSG_ID, .bits.bRW = 0, .bits.udtChan=7}
                         },
                         {
-                        { .bits.MsgID = CurrentProfileDetectionSetup1_MSG_ID, .bits.r_w = 0, }
+                        { .bits.udtMsgID = TLE8242_u8_CRNT_PROF_DETN_MSG_ID, .bits.bRW = 0, }
                         },
                         {
-                        { .bits.MsgID = CurrentProfileDetectionSetup2_MSG_ID, .bits.r_w = 0, },
+                        { .bits.udtMsgID = TLE8242_u8_CRNT_PROF_DETN_1_MSG_ID, .bits.bRW = 0, },
                         },
                         {
-                        { .bits.MsgID = CurrentProfileDetectionFeedback_MSG_ID, .bits.r_w = 0, },
+                        { .bits.udtMsgID = TLE8242_u8_CRNT_PROF_DETN_FB_MSG_ID, .bits.bRW = 0, },
                         },
-                        { .bits.MsgID = ReadGenericFlagBits_MSG_ID, .bits.r_w = 0,}
+                        { .bits.udtMsgID = TLE8242_u8_READ_GEN_FLG_MSG_ID, .bits.bRW = 0,}
                 }
 #endif
 }
 ;
 
-TLE8242_Rx TLE8242_au32SpiRx[NUMBER_OF_TLE8242] ;
+TLE8242_Rx TLE8242_astSpiRx[TLE8242_u8CH_NR] ;
+
+
+
+TLE8242_DummyMsgID TLE8242_astCtrlTxBuf[TLE8242_u8CH_NR][TLE8242_u8MAX_FRM_CTRL_CH_1];
+TLE8242_DummyMsgID TLE8242_astInitTxBuf[TLE8242_u8CH_NR][TLE8242_u8MAX_FRM_INIT_CH_1];
+
+TLE8242_DummyMsgID TLE8242_astDiagRxBuf[TLE8242_u8CH_NR][TLE8242_u8MAX_FRM_DIAG_CH_1];
+TLE8242_DummyMsgID TLE8242_astCtrlRxBuf[TLE8242_u8CH_NR][TLE8242_u8MAX_FRM_CTRL_CH_1];
+TLE8242_DummyMsgID TLE8242_astInitRxBuf[TLE8242_u8CH_NR][TLE8242_u8MAX_FRM_INIT_CH_1];
+
 #define TLE8242_STOP_SEC_VAR_UNSPECIFIED
 #include "MemMap.h"
 
 #define TLE8242_START_SEC_CONST_UNSPECIFIED
 #include "MemMap.h"
-const Tle8242DummyMsgID TLE8242_au32DiagTxBuff[NUMBER_OF_TLE8242][MAX_FRAME_NUM_OF_DIAG_CHANNEL_1] =
+
+const TLE8242_DummyMsgID TLE8242_kastDiagTxBuf[TLE8242_u8CH_NR][TLE8242_u8MAX_FRM_DIAG_CH_1] =
                 {
 
                                 {
                                                 //
-                                                {.bits.MsgID = DiagnosticReadchannel0_3_MSG_ID, .bits.r_w = 0},
-                                                {.bits.MsgID = DiagnosticReadchannel4_7_MSG_ID, .bits.r_w = 0},
-                                                {.bits.MsgID = ReadGenericFlagBits_MSG_ID<<3, .bits.r_w = 0}
+                                                {.bits.udtMsgID = TLE8242_u8_DIAGC_READ_CH_03_MSG_ID, .bits.bRW = 0},
+                                                {.bits.udtMsgID = TLE8242_u8_DIAGC_READ_CH_47_MSG_ID, .bits.bRW = 0},
+                                                {.bits.udtMsgID = TLE8242_u8_READ_GEN_FLG_MSG_ID<<3, .bits.bRW = 0}
 
                                 },
-#if NUMBER_OF_TLE8242 > 1
+#if TLE8242_u8CH_NR > 1
                                 {
                                                 //
-                                                {.bits.MsgID = DiagnosticReadchannel0_3_MSG_ID, .bits.r_w = 0},
-                                                {.bits.MsgID = DiagnosticReadchannel4_7_MSG_ID, .bits.r_w = 0},
-                                                {.bits.MsgID = ReadGenericFlagBits_MSG_ID<<3, .bits.r_w = 0}
+                                                {.bits.udtMsgID = TLE8242_u8_DIAGC_READ_CH_03_MSG_ID, .bits.bRW = 0},
+                                                {.bits.udtMsgID = TLE8242_u8_DIAGC_READ_CH_47_MSG_ID, .bits.bRW = 0},
+                                                {.bits.udtMsgID = TLE8242_u8_READ_GEN_FLG_MSG_ID<<3, .bits.bRW = 0}
 
                                 }
 #endif
                 };
 
-#define TLE8242_STOP_SEC_CONST_UNSPECIFIED
-#include "MemMap.h"
 
-#define TLE8242_START_SEC_VAR_UNSPECIFIED
-#include "MemMap.h"
-Tle8242DummyMsgID TLE8242_au32CtrlTxBuff[NUMBER_OF_TLE8242][MAX_FRAME_NUM_OF_CTRL_CHANNEL_1];
-Tle8242DummyMsgID TLE8242_au32InitTxBuff[NUMBER_OF_TLE8242][MAX_FRAME_NUM_OF_INIT_CHANNEL_1];
-
-Tle8242DummyMsgID TLE8242_au32DiagRxBuff[NUMBER_OF_TLE8242][MAX_FRAME_NUM_OF_DIAG_CHANNEL_1];
-Tle8242DummyMsgID TLE8242_au32CtrlRxBuff[NUMBER_OF_TLE8242][MAX_FRAME_NUM_OF_CTRL_CHANNEL_1];
-Tle8242DummyMsgID TLE8242_au32InitRxBuff[NUMBER_OF_TLE8242][MAX_FRAME_NUM_OF_INIT_CHANNEL_1];
-#define TLE8242_STOP_SEC_VAR_UNSPECIFIED
-#include "MemMap.h"
-
-#define TLE8242_START_SEC_CONST_UNSPECIFIED
-#include "MemMap.h"
-const uint8 TLE8242_au8_channel_buff_deepth_cfg[NUMBER_OF_TLE8242*3]=
+const uint8 TLE8242_kau8ChBufSizeCfg[TLE8242_u8CH_NR*3]=
 {
                 //TLE8242_1_INIT_CH
-                MAX_FRAME_NUM_OF_INIT_CHANNEL_1,
-#if NUMBER_OF_TLE8242 > 1
+                TLE8242_u8MAX_FRM_INIT_CH_1,
+#if TLE8242_u8CH_NR > 1
                 //TLE8242_2_INIT_CH
-                MAX_FRAME_NUM_OF_INIT_CHANNEL_2,
+                TLE8242_u8MAX_FRM_INIT_CH_2,
 #endif
 //TLE8242_1_CTRL_CH
-                MAX_FRAME_NUM_OF_CTRL_CHANNEL_1,
-#if NUMBER_OF_TLE8242 > 1
+                TLE8242_u8MAX_FRM_CTRL_CH_1,
+#if TLE8242_u8CH_NR > 1
                 //TLE8242_2_CTRL_CH
-                MAX_FRAME_NUM_OF_CTRL_CHANNEL_2,
+                TLE8242_u8MAX_FRM_CTRL_CH_2,
 #endif
                 //TLE8242_1_DIAG_CH
-                MAX_FRAME_NUM_OF_DIAG_CHANNEL_1,
-#if NUMBER_OF_TLE8242 > 1
+                TLE8242_u8MAX_FRM_DIAG_CH_1,
+#if TLE8242_u8CH_NR > 1
                 //TLE8242_2_DIAG_CH
-                MAX_FRAME_NUM_OF_DIAG_CHANNEL_2
+                TLE8242_u8MAX_FRM_DIAG_CH_2
 
 #endif
 };
 
 
-const uint8 TLE8242_au8ChanNumPerChip[NUMBER_OF_TLE8242] = {
+const uint8 TLE8242_kau8ChNrPerChip[TLE8242_u8CH_NR] = {
                 8,
-#if NUMBER_OF_TLE8242 > 1
+#if TLE8242_u8CH_NR > 1
         7
 #endif
                 };
+const TLE8242_tstFltCfg_s TLE8242_tstFltDev=
+{
+		{
+				TLE8242_bGetChGenFlt,
+				TLE8242_bGetChOpenLoadFlt,
+				TLE8242_bGetChOverLoadFlt,
+				TLE8242_bGetChUnderLoadFlt,
+				TLE8242_bGetScFlt,
+				TLE8242_bGetScsFlt
+		},
+		{
+				TLE8242_stDECL_FLT(C4_SOL, GENERAL_FAULT, OPEN, OVERLOAD, UNDERLOAD, SHORT_TO_GND, SHORT_TO_BATT),
+				TLE8242_stDECL_FLT(C3_SOL, GENERAL_FAULT, OPEN, OVERLOAD, UNDERLOAD, SHORT_TO_GND, SHORT_TO_BATT),
+				TLE8242_stDECL_FLT(C2_SOL, GENERAL_FAULT, OPEN, OVERLOAD, UNDERLOAD, SHORT_TO_GND, SHORT_TO_BATT),
+				TLE8242_stDECL_FLT(C1_SOL, GENERAL_FAULT, OPEN, OVERLOAD, UNDERLOAD, SHORT_TO_GND, SHORT_TO_BATT),
+				TLE8242_stDECL_FLT(B1_SOL, GENERAL_FAULT, OPEN, OVERLOAD, UNDERLOAD, SHORT_TO_GND, SHORT_TO_BATT),
+				TLE8242_stDECL_FLT(RES_SOL, GENERAL_FAULT, OPEN, OVERLOAD, UNDERLOAD, SHORT_TO_GND, SHORT_TO_BATT),
+				TLE8242_stDECL_FLT(PRI_OIL, GENERAL_FAULT, OPEN, OVERLOAD, UNDERLOAD, SHORT_TO_GND, SHORT_TO_BATT),
+				TLE8242_stDECL_FLT(TC_LOCK, GENERAL_FAULT, OPEN, OVERLOAD, UNDERLOAD, SHORT_TO_GND, SHORT_TO_BATT)
+
+		}
+
+}; 
+
 
 #define TLE8242_STOP_SEC_CONST_UNSPECIFIED
 #include "MemMap.h"

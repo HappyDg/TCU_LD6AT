@@ -34,6 +34,10 @@ uint16 SW_TST_TLE8242_Iout[8] = {0};
 uint8 SW_TST_TLE8242_Mode[8] = {0};
 uint16 SW_TST_TLE8242_DitherAmp[8] = {0};
 uint16 SW_TST_TLE8242_DitherFreq[8] = {0};
+uint16 SW_TST_TLE8242_ilnFb[8] = {0};
+uint8 SW_TST_TLE8242_stDiaRdy[8] = {0};
+uint8 SW_TST_TLE8242_stDiaDsbc[8] = {0};
+
 
 /**********************************************************************************************************************/
 /* !Runnable    : TST_TLE8242_vidInit                                                                                     */
@@ -57,9 +61,6 @@ void TST_TLE8242_vidInit(void)
 void TST_TLE8242_vidMainFunction(void)
 {
 	uint8 u8LocTstCase;
-	static uint16 fb_ilin = 0;
-	static uint8 stDiaRdy = 0;
-	static uint8 stDiaDsbc = 0;
 
 	#if 0
 	if(SWTST_kbTle8242TstEnaC == TRUE)
@@ -132,7 +133,9 @@ void TST_TLE8242_vidMainFunction(void)
 		                                   SW_TST_TLE8242_Iout[SW_TST_TLE8242_Idx], \
 		                                   SW_TST_TLE8242_DitherAmp[SW_TST_TLE8242_Idx],\ 
 		                                   SW_TST_TLE8242_DitherFreq[SW_TST_TLE8242_Idx]);
-	ShrExp_Get_Solenoid(SW_TST_TLE8242_Idx,fb_ilin,stDiaRdy,stDiaDsbc);
+	ShrExp_Get_Solenoid(SW_TST_TLE8242_Idx,&SW_TST_TLE8242_ilnFb[SW_TST_TLE8242_Idx], \
+		                                   &SW_TST_TLE8242_stDiaRdy[SW_TST_TLE8242_Idx], \
+		                                   &SW_TST_TLE8242_stDiaDsbc[SW_TST_TLE8242_Idx]);
 
 }
 

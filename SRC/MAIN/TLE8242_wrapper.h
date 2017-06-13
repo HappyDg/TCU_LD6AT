@@ -39,6 +39,24 @@
 #include "TLE8242_cfg.h"
 #include "TLE8242.h"
 
+#define Idx_B1_SOL   0
+#define Idx_C1_SOL   1
+#define Idx_C2_SOL   2
+#define Idx_C3_SOL   3
+#define Idx_C4_SOL   4
+#define Idx_LP_SOL   5
+#define Idx_TC_SOL   6
+#define Idx_RES_SOL  7
+
+#define Idx_OUT0_8242   0
+#define Idx_OUT1_8242   1
+#define Idx_OUT2_8242   2
+#define Idx_OUT3_8242   3
+#define Idx_OUT4_8242   4
+#define Idx_OUT5_8242   5
+#define Idx_OUT6_8242   6
+#define Idx_OUT7_8242   7
+
 
 
 

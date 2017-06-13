@@ -1,3 +1,27 @@
 Nom_donnée|Type|Nom_module|Public|Nb_lignes|Nb_colonnes|Label_père|Offset|Masque_accès|Affichage|Unité|Fonction_transfert_ades|Coefficient_a|Coefficient_b|Groupe|Groupe_1|Groupe_2|Alias_1|Alias_2|Genre|Variable_indice_ligne|Variable_indice_colonne|Fonction_transfert_ligne|Fonction_transfert_colonne|Table_breakpoint_ligne|Table_breakpoint_colonne|Référence_spécification|Recuperable|Modifiable|Fournisseur|Responsable|Valeurs|Visualisable_ADES|Donnée_a_supprimer|Validation|Commentaires|Volatile|MinDecValue|MaxDecValue|MinPhysValue|MaxPhysValue|Def_Eval|MemSec
 
 Flash_trimDataBuf|sint32|TLE8242|1|8|4|Flash_trimDataBuf|0|0|Déci|-||||Application|TLE8242|TLE8242|Flash_trimDataBuf||2|||||||NONE|1|1||||1|0|0|Trim calib Data|0||||||
+TLE8242_af32TarCnrtMa|float32|TLE8242|1|1|8|TLE8242_af32TarCnrtMa|0|0|Phys|mA|1|1|0| |TLE8242|TLE8242|TLE8242_af32TarCnrtMa||1|||||||NONE|0|1||||1|0|1|Target current |0||||||
+TLE8242_af32TarCnrtAftTrimMa|float32|TLE8242|1|1|8|TLE8242_af32TarCnrtAftTrimMa|0|0|Phys|mA|1|1|0| |TLE8242|TLE8242|TLE8242_af32TarCnrtAftTrimMa||1|||||||NONE|0|1||||1|0|1|Target current |0||||||
+TLE8242_af32DitherAmplMa|float32|TLE8242|1|1|8|TLE8242_af32DitherAmplMa|0|0|Phys|mA|1|1|0| |TLE8242|TLE8242|TLE8242_af32DitherAmplMa||1|||||||NONE|0|1||||1|0|1|dither ampl |0||||||
+TLE8242_af32DitherFrq|float32|TLE8242|1|1|8|TLE8242_af32DitherFrq|0|0|Phys|mA|1|1|0| |TLE8242|TLE8242|TLE8242_af32DitherFrq||1|||||||NONE|0|1||||1|0|1|dither frequency|0||||||
+TLE8242_af32DutyCycle|float32|TLE8242|1|1|8|TLE8242_af32DutyCycle|0|0|Deci|-|1|1|0| |TLE8242|TLE8242|TLE8242_af32DutyCycle||1|||||||NONE|0|1||||1|0|1|duty cycle |0||||||
+TLE8242_af32AvgCrntMa|float32|TLE8242|1|1|8|TLE8242_af32AvgCrntMa|0|0|Phys|mA|1|1|0| |TLE8242|TLE8242|TLE8242_af32AvgCrntMa||1|||||||NONE|0|1||||1|0|1|average current |0||||||
+TLE8242_af32MaxCnrtMa|float32|TLE8242|1|1|8|TLE8242_af32MaxCnrtMa|0|0|Phys|mA|1|1|0| |TLE8242|TLE8242|TLE8242_af32MaxCnrtMa||1|||||||NONE|0|1||||1|0|1|mAximum current |0||||||
+TLE8242_af32MinCnrtMa|float32|TLE8242|1|1|8|TLE8242_af32MinCnrtMa|0|0|Phys|mA|1|1|0| |TLE8242|TLE8242|TLE8242_af32MinCnrtMa||1|||||||NONE|0|1||||1|0|1|minimum current |0||||||
+TLE8242_kaf32PwmFrq|float32|TLE8242|1|1|8|TLE8242_kaf32PwmFrq|0|0|Deci|-|1|Hz|0|TLE8242|TLE8242||TLE8242_kaf32PwmFrq||2|||||||NONE|1|1||||1|0|0|||||0|||
+TLE8242_kf32OverUnderLoadThd|float32|TLE8242|1|0|0|TLE8242_kf32OverUnderLoadThd|0|0|Deci|-|1|%|0|TLE8242|TLE8242||TLE8242_kf32OverUnderLoadThd||2|||||||NONE|1|1||||1|0|0|||||0|||
+TLE8242_kf32ChopperFrqMinThd|float32|TLE8242|1|0|0|TLE8242_kf32ChopperFrqMinThd|0|0|Deci|-|1|1|0|TLE8242|TLE8242||TLE8242_kf32ChopperFrqMinThd||2|||||||NONE|1|1||||1|0|0|||||0|||
+TLE8242_kf32ChopperFrqMaxThd|float32|TLE8242|1|0|0|TLE8242_kf32ChopperFrqMaxThd|0|0|Deci|-|1|1|0|TLE8242|TLE8242||TLE8242_kf32ChopperFrqMaxThd||2|||||||NONE|1|1||||1|0|0|||||0|||
+TLE8242_kaf32DutyCycle|float32|TLE8242|1|1|8|TLE8242_kaf32DutyCycle|0|0|Deci|-|1|1|0|TLE8242|TLE8242||TLE8242_kaf32DutyCycle||2|||||||NONE|1|1||||1|0|0|||||0|||
+TLE8242_kau16KP|uint16|TLE8242|1|1|8|TLE8242_kau16KP|0|0|Deci|-|1|1|0|TLE8242|TLE8242||TLE8242_kau16KP||2|||||||NONE|1|1||||1|0|0|||||0|||
+TLE8242_kau16KI|uint16|TLE8242|1|1|8|TLE8242_kau16KI|0|0|Deci|-|1|1|0|TLE8242|TLE8242||TLE8242_kau16KI||2|||||||NONE|1|1||||1|0|0|||||0|||
+TLE8242_au8OpenLoop|uint8|TLE8242|1|1|8|TLE8242_au8OpenLoop|0|0|Deci|-|1|1|0|TLE8242|TLE8242||TLE8242_au8OpenLoop||1|||||||NONE|1|1||||1|0|0|||||0|||
+TLE8242_su8CurReadChNr|uint8|TLE8242|1|1|8|TLE8242_su8CurReadChNr|0|0|Deci|-|1|1|0|TLE8242|TLE8242||TLE8242_su8CurReadChNr||1|||||||NONE|1|1||||1|0|0|||||0|||
+TLE8242_su8CurReadCnt|uint16|TLE8242|1|2|8|TLE8242_su8CurReadCnt|0|0|Deci|-|1|1|0|TLE8242|TLE8242||TLE8242_su8CurReadCnt||1|||||||NONE|1|1||||1|0|0|||||0|||
+TLE8242_su8CurVld|uint8|TLE8242|1|2|2|TLE8242_su8CurVld|0|0|Deci|-|1|1|0|TLE8242|TLE8242||TLE8242_su8CurVld||1|||||||NONE|1|1||||1|0|0|||||0|||
+TLE8242_su16FltSts|uint16|TLE8242|1|1|6|TLE8242_su16FltSts|0|0|Deci|-|1|1|0|TLE8242|TLE8242||TLE8242_su16FltSts||1|||||||NONE|1|1||||1|0|0|||||0|||
+TLE8242_kf32R_Shunt|float32|TLE8242|1|0|0|TLE8242_kf32R_Shunt|0|0|Deci|-|1|1|0|TLE8242|TLE8242||TLE8242_kf32R_Shunt||2|||||||NONE|1|1||||1|0|0|||||0|||
+TLE8242_kau8ReadCrntRetMax|uint8|TLE8242|1|0|0|TLE8242_kau8ReadCrntRetMax|0|0|Deci|-|1|Cnt|0|TLE8242|TLE8242||TLE8242_kau8ReadCrntRetMax||2|||||||NONE|1|1||||1|0|0|||||0|||
+OutMCrntMon_iOfsHi_C|uint16|TLE8242|1|1|8|OutMCrntMon_iOfsHi_C|0|0|Phys|mA|1|1|0| |TLE8242|TLE8242|OutMCrntMon_iOfsHi_C||2|||||||NONE|0|1||||1|0|1|Feedback current high threshold|0||||||
+OutMCrntMon_iOfsLo_C|uint16|TLE8242|1|1|8|OutMCrntMon_iOfsLo_C|0|0|Phys|mA|1|1|0| |TLE8242|TLE8242|OutMCrntMon_iOfsLo_C||2|||||||NONE|0|1||||1|0|1|Feedback current low threshold|0||||||

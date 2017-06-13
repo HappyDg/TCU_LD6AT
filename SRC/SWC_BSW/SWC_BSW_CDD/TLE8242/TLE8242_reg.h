@@ -41,53 +41,53 @@ typedef union
 {
         struct
         {
-                uint32 unused :24;
-                const uint32 MsgID :7;
-                const uint32 r_w :1;
+                uint32 udtUnused :24;
+                const uint32 udtMsgID :7;
+                const uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } ICVersionManufacturerTx;
 typedef union
 {
         struct
         {
-                uint32 unused :8;
-                uint32 VersionNumber :8;
-                uint32 ICManufID :8;
-                uint32 MsgID :7;
-                uint32 r_w :1;
+                uint32 udtUnused :8;
+                uint32 udtVersionNumber :8;
+                uint32 udtICManufID :8;
+                uint32 udtMsgID :7;
+                uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } ICVersionManufacturerRx;
 typedef union
 {
         struct
         {
-                uint32 unused :4;
-                uint32 DIAG_TMR :2;
-                uint32 FME :1;
-                uint32 FMR :1;
-                uint32 FM :8;
-                uint32 CM :8;
-                const uint32 MsgID :7;
-                const uint32 r_w :1;
+                uint32 udtUnused :4;
+                uint32 udtDIAG_TMR :2;
+                uint32 bFME :1;
+                uint32 bFMR :1;
+                uint32 udtFM :8;
+                uint32 udtCM :8;
+                const uint32 udtMsgID :7;
+                const uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } ControlMethodandFaultMaskConfigurationTx;
 typedef union
 {
         struct
         {
-                uint32 unused :4;
-                uint32 DIAG_TMR :2;
-                uint32 FME :1;
-                uint32 FMR :1;
-                uint32 FM :8;
-                uint32 CM :8;
-                uint32 MsgID :7;
-                uint32 r_w :1;
+                uint32 udtUnused :4;
+                uint32 udtDIAG_TMR :2;
+                uint32 bFME :1;
+                uint32 bFMR :1;
+                uint32 udtFM :8;
+                uint32 udtCM :8;
+                uint32 udtMsgID :7;
+                uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } ControlMethodandFaultMaskConfigurationRx;
 typedef union
 {
@@ -101,10 +101,10 @@ typedef union
                 uint32 SB1 :2;
                 uint32 SB_RETRY0 :4;
                 uint32 SB0 :2;
-                const uint32 MsgID :7;
-                const uint32 r_w :1;
+                const uint32 udtMsgID :7;
+                const uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } DiagnosticConfigurationchannelTx;
 typedef union
 {
@@ -118,10 +118,10 @@ typedef union
                 uint32 SB1 :2;
                 uint32 SB_RETRY0 :4;
                 uint32 SB0 :2;
-                uint32 MsgID :7;
-                uint32 r_w :1;
+                uint32 udtMsgID :7;
+                uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } DiagnosticConfigurationchannelRx;
 typedef union
 {
@@ -135,10 +135,10 @@ typedef union
                 uint32 SB5 :2;
                 uint32 SB_RETRY4 :4;
                 uint32 SB4 :2;
-                const uint32 MsgID :7;
-                const uint32 r_w :1;
+                const uint32 udtMsgID :7;
+                const uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } DiagnosticConfigurationchannel4_7Tx;
 typedef union
 {
@@ -152,20 +152,20 @@ typedef union
                 uint32 SB5 :2;
                 uint32 SB_RETRY4 :4;
                 uint32 SB4 :2;
-                uint32 MsgID :7;
-                uint32 r_w :1;
+                uint32 udtMsgID :7;
+                uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } DiagnosticConfigurationchannel4_7Rx;
 typedef union
 {
         struct
         {
-                uint32 unused :24;
-                const uint32 MsgID :7;
-                const uint32 r_w :1;
+                uint32 udtUnused :24;
+                const uint32 udtMsgID :7;
+                const uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } DiagnosticReadchannelTx;
 typedef union
 {
@@ -196,10 +196,10 @@ typedef union
                 uint32 SB0 :1;
                 uint32 OFF_TST0 :1;
                 uint32 SG0 :1;
-                uint32 MsgID :7;
-                uint32 r_w :1;
+                uint32 udtMsgID :7;
+                uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 }DiagnosticReadchannelRx;
 
 typedef union
@@ -210,11 +210,11 @@ typedef union
                 uint32 OFFSET2 :5;
                 uint32 OFFSET1 :5;
                 uint32 OFFSET0 :5;
-                uint32 unused :4;
-                const uint32 MsgID :7;
-                const uint32 r_w :1;
+                uint32 udtUnused :4;
+                const uint32 udtMsgID :7;
+                const uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } PWMOffsetchannel0_3Tx;
 typedef union
 {
@@ -224,11 +224,11 @@ typedef union
                 uint32 OFFSET2 :5;
                 uint32 OFFSET1 :5;
                 uint32 OFFSET0 :5;
-                uint32 unused :4;
-                uint32 MsgID :7;
-                uint32 r_w :1;
+                uint32 udtUnused :4;
+                uint32 udtMsgID :7;
+                uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } PWMOffsetchannel0_3Rx;
 typedef union
 {
@@ -238,11 +238,11 @@ typedef union
                 uint32 OFFSET6 :5;
                 uint32 OFFSET5 :5;
                 uint32 OFFSET4 :5;
-                uint32 unused :4;
-                const uint32 MsgID :7;
-                const uint32 r_w :1;
+                uint32 udtUnused :4;
+                const uint32 udtMsgID :7;
+                const uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } PWMOffsetchannel4_7Tx;
 typedef union
 {
@@ -252,11 +252,11 @@ typedef union
                 uint32 OFFSET6 :5;
                 uint32 OFFSET5 :5;
                 uint32 OFFSET4 :5;
-                uint32 unused :4;
-                uint32 MsgID :7;
-                uint32 r_w :1;
+                uint32 udtUnused :4;
+                uint32 udtMsgID :7;
+                uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } PWMOffsetchannel4_7Rx;
 typedef union
 {
@@ -265,12 +265,12 @@ typedef union
                 uint32 DividerN :14;
                 uint32 DividerM :2;
                 uint32 SAM :1;
-                uint32 unused :7;
-                uint32 Chan :3;
-                const uint32 MsgID :4;
-                const uint32 r_w :1;
+                uint32 udtUnused :7;
+                uint32 udtChan :3;
+                const uint32 udtMsgID :4;
+                const uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } MainPeriodSetTx;
 typedef union
 {
@@ -279,12 +279,12 @@ typedef union
                 uint32 DividerN :14;
                 uint32 DividerM :2;
                 uint32 SAM :1;
-                uint32 unused :7;
-                uint32 Chan :3;
-                uint32 MsgID :4;
-                uint32 r_w :1;
+                uint32 udtUnused :7;
+                uint32 udtChan :3;
+                uint32 udtMsgID :4;
+                uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } MainPeriodSetRx;
 typedef union
 {
@@ -292,11 +292,11 @@ typedef union
         {
                 uint32 ki :12;
                 uint32 kp :12;
-                uint32 Chan :3;
-                const uint32 MsgID :4;
-                const uint32 r_w :1;
+                uint32 udtChan :3;
+                const uint32 udtMsgID :4;
+                const uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } ControlVariableSetKPandKITx;
 typedef union
 {
@@ -304,11 +304,11 @@ typedef union
         {
                 uint32 ki :12;
                 uint32 kp :12;
-                uint32 Chan :3;
-                uint32 MsgID :4;
-                uint32 r_w :1;
+                uint32 udtChan :3;
+                uint32 udtMsgID :4;
+                uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } ControlVariableSetKPandKIRx;
 typedef union
 {
@@ -317,13 +317,13 @@ typedef union
                 uint32 Currentsetpoint :11;
 
                 uint32 Ditherstepsize :11;
-                uint32 unused :1;
+                uint32 udtUnused :1;
                 uint32 EN :1;
-                uint32 Chan :3;
-                const uint32 MsgID :4;
-                const uint32 r_w :1;
+                uint32 udtChan :3;
+                const uint32 udtMsgID :4;
+                const uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } CurrentandDitherAmplitudeSetTx;
 typedef union
 {
@@ -332,48 +332,48 @@ typedef union
                 uint32 Currentsetpoint :11;
 
                 uint32 Ditherstepsize :11;
-                uint32 unused :1;
+                uint32 udtUnused :1;
                 uint32 EN :1;
-                uint32 Chan :3;
-                uint32 MsgID :4;
-                uint32 r_w :1;
+                uint32 udtChan :3;
+                uint32 udtMsgID :4;
+                uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } CurrentandDitherAmplitudeSetRx;
 typedef union
 {
         struct
         {
                 uint32 Numberofsteps :5;
-                uint32 unused :19;
-                uint32 Chan :3;
-                const uint32 MsgID :4;
-                const uint32 r_w :1;
+                uint32 udtUnused :19;
+                uint32 udtChan :3;
+                const uint32 udtMsgID :4;
+                const uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } DitherPeriodSetTx;
 typedef union
 {
         struct
         {
                 uint32 Numberofsteps :5;
-                uint32 unused :19;
-                uint32 Chan :3;
-                uint32 MsgID :4;
-                uint32 r_w :1;
+                uint32 udtUnused :19;
+                uint32 udtChan :3;
+                uint32 udtMsgID :4;
+                uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } DitherPeriodSetRx;
 typedef union
 {
         struct
         {
-                uint32 unused :24;
-                uint32 Chan :3;
-                const uint32 MsgID :4;
-                const uint32 r_w :1;
+                uint32 udtUnused :24;
+                uint32 udtChan :3;
+                const uint32 udtMsgID :4;
+                const uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } MaxMinCurrentReadTx;
 typedef union
 {
@@ -382,23 +382,23 @@ typedef union
                 uint32 Min :11;
                 uint32 Max :11;
                 uint32 Valid :1;
-                uint32 unused :1;
-                uint32 Chan :3;
-                uint32 MsgID :4;
-                uint32 r_w :1;
+                uint32 udtUnused :1;
+                uint32 udtChan :3;
+                uint32 udtMsgID :4;
+                uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } MaxMinCurrentReadRx;
 typedef union
 {
         struct
         {
-                uint32 unused :24;
-                uint32 Chan :3;
-                const uint32 MsgID :4;
-                const uint32 r_w :1;
+                uint32 udtUnused :24;
+                uint32 udtChan :3;
+                const uint32 udtMsgID :4;
+                const uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } AverageCurrentReadOverDitherPeriodTx;
 typedef union
 {
@@ -406,23 +406,23 @@ typedef union
         {
                 uint32 AverageDitherCurrent :20;
                 uint32 Valid :1;
-                uint32 unused :3;
-                uint32 Chan :3;
-                uint32 MsgID :4;
-                uint32 r_w :1;
+                uint32 udtUnused :3;
+                uint32 udtChan :3;
+                uint32 udtMsgID :4;
+                uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } AverageCurrentReadOverDitherPeriodRx;
 typedef union
 {
         struct
         {
-                uint32 unused :24;
-                uint32 Chan :3;
-                const uint32 MsgID :4;
-                const uint32 r_w :1;
+                uint32 udtUnused :24;
+                uint32 udtChan :3;
+                const uint32 udtMsgID :4;
+                const uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } AutozeroTriggerReadTx;
 typedef union
 {
@@ -432,36 +432,36 @@ typedef union
                 uint32 AZonvalue :8;
                 uint32 AZoff :1;
                 uint32 AZon :1;
-                uint32 unused :6;
-                uint32 Chan :3;
-                uint32 MsgID :4;
-                uint32 r_w :1;
+                uint32 udtUnused :6;
+                uint32 udtChan :3;
+                uint32 udtMsgID :4;
+                uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } AutozeroTriggerReadRx;
 typedef union
 {
         struct
         {
                 uint32 Pwmdutycycle :19;
-                uint32 unused :5;
-                uint32 Chan :3;
-                const uint32 MsgID :4;
-                const uint32 r_w :1;
+                uint32 udtUnused :5;
+                uint32 udtChan :3;
+                const uint32 udtMsgID :4;
+                uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } PWMDutyCycleTx;
 typedef union
 {
         struct
         {
                 uint32 Pwmdutycycle :21;
-                uint32 unused :3;
-                uint32 Chan :3;
-                uint32 MsgID :4;
-                uint32 r_w :1;
+                uint32 udtUnused :3;
+                uint32 udtChan :3;
+                uint32 udtMsgID :4;
+                uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } PWMDutyCycleRx;
 typedef union
 {
@@ -473,11 +473,11 @@ typedef union
                 uint32 Threshold1 :4;
                 uint32 Threshold2 :4;
                 uint32 Threshold3 :4;
-                uint32 Chan :3;
-                const uint32 MsgID :4;
-                const uint32 r_w :1;
+                uint32 udtChan :3;
+                const uint32 udtMsgID :4;
+                const uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } CurrentProfileDetectionSetup1Tx;
 typedef union
 {
@@ -489,75 +489,75 @@ typedef union
                 uint32 Threshold1 :4;
                 uint32 Threshold2 :4;
                 uint32 Threshold3 :4;
-                uint32 Chan :3;
-                uint32 MsgID :4;
-                uint32 r_w :1;
+                uint32 udtChan :3;
+                uint32 udtMsgID :4;
+                uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } CurrentProfileDetectionSetup1Rx;
 typedef union
 {
         struct
         {
                 uint32 ZONE3SET :2;
-                uint32 unused :2;
+                uint32 udtUnused :2;
                 uint32 Timeout :6;
                 uint32 unused1 :14;
-                uint32 Chan :3;
-                const uint32 MsgID :4;
-                const uint32 r_w :1;
+                uint32 udtChan :3;
+                const uint32 udtMsgID :4;
+                const uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } CurrentProfileDetectionSetup2Tx;
 typedef union
 {
         struct
         {
                 uint32 ZONE3SET :2;
-                uint32 unused :2;
+                uint32 udtUnused :2;
                 uint32 Timeout :6;
                 uint32 unused1 :14;
-                uint32 Chan :3;
-                uint32 MsgID :4;
-                uint32 r_w :1;
+                uint32 udtChan :3;
+                uint32 udtMsgID :4;
+                uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } CurrentProfileDetectionSetup2Rx;
 typedef union
 {
         struct
         {
-                uint32 unused :24;
-                uint32 Chan :3;
-                const uint32 MsgID :4;
-                const uint32 r_w :1;
+                uint32 udtUnused :24;
+                uint32 udtChan :3;
+                const uint32 udtMsgID :4;
+                const uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } CurrentProfileDetectionFeedbackTx;
 typedef union
 {
         struct
         {
-                uint32 PASS :1;
-                uint32 Time_out :1;
-                uint32 DetectIntrpt :1;
-                uint32 unused :21;
-                uint32 Chan :3;
-                uint32 MsgID :4;
-                uint32 r_w :1;
+                uint32 bPASS :1;
+                uint32 bTimeOut :1;
+                uint32 bDetectIntrpt :1;
+                uint32 udtUnused :21;
+                uint32 udtChan :3;
+                uint32 udtMsgID :4;
+                uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } CurrentProfileDetectionFeedbackRx;
 typedef union
 {
         struct
         {
-                uint32 unused :24;
-                uint32 Chan :3;
-                const uint32 MsgID :4;
-                const uint32 r_w :1;
+                uint32 udtUnused :24;
+                uint32 udtChan :3;
+                const uint32 udtMsgID :4;
+                const uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } ReadGenericFlagBitsTx;
 typedef union
 {
@@ -567,23 +567,23 @@ typedef union
                 uint32 EN_L :1;
                 uint32 PS :1;
                 uint32 OV :1;
-                uint32 unused :23;
-                uint32 MsgID :4;
-                uint32 r_w :1;
+                uint32 udtUnused :23;
+                uint32 udtMsgID :4;
+                uint32 bRW :1;
         } bits;
-        uint32 data;
+        uint32 u32Data;
 } ReadGenericFlagBitsRx;
 
 typedef union
 {
         struct
         {
-                uint32 unused :24;
-                uint32 MsgID :7;
-                uint32 r_w :1;
+                uint32 udtUnused :24;
+                uint32 udtMsgID :7;
+                uint32 bRW :1;
         } bits;
-        uint32 data;
-} Tle8242DummyMsgID;
+        uint32 u32Data;
+} TLE8242_DummyMsgID;
 #define TLE8242_STOP_SEC_VAR_UNSPECIFIED
 #include "MemMap.h"
 

@@ -201,7 +201,7 @@ void BSW_vidInit(void)
    DEVHAL_vidInit();
    OVC_vidInit();
    TLF35584_vidInit(TLF35584_u8CHIP_STEP_B);
-   TLE8242_VidInit();
+   TLE8242_vidInit();
    Dio_WrapAPI_Init();
    ShrExp_SubRom_Init();
 
@@ -420,7 +420,7 @@ void BSW_5msPreCall(void)
 
    TLF35584_vidManagement();
    
-   TLE8242_VidParseResponse();
+   TLE8242_vidParseResponse();
 }
 
 /******************************************************************************/
@@ -437,7 +437,8 @@ void BSW_5msPreCall(void)
 void BSW_5msPostCall(void)
 {
 	TLE8242_vidCtrlManagement();
-	//TLE8242_vidDiagManagement();
+	TLE8242_vidDiagManagement();
+	TLE8242_vidFaultDet();
 }
 
 /******************************************************************************/

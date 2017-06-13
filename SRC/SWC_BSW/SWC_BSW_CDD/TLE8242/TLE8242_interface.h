@@ -43,125 +43,132 @@
 #include "MemMap.h"
  typedef enum
 {
-    CurrentControl = 0,
-    DirectPWM
-} Tle8242ControlModeType;
+    TLE8242_CRNT_CTRL_MOD = 0,
+    TLE8242_DIRECT_PWM_MOD
+} Tle8242CtrlModTyp;
 
 typedef enum
 {
-    FaultNotTriggerFault = 0,
-    FaultTriggerFault
+    TLE8242_FLT_NOT_TRIG_FLT_PIN = 0,
+    TLE8242_FLT_TRIG_FLT_PIN
 }Tle8242FaultMaskType;
 
 
 typedef enum
 {
-    DiagTimerDiv128 = 0,
-    DiagTimerDiv192,
-    DiagTimerDiv128_1,
-    DiagTimerDiv256
-}Tle8242DiagTimerDivType;
+    TLE8242_DIAG_TMR_DIV_128 = 0,
+    TLE8242_DIAG_TMR_DIV_192,
+    TLE8242_DIAG_TMR_DIV_128_1,
+    TLE8242_DIAG_TMR_DIV_256
+}Tle8242DiagTmrDivTyp;
 
 
 
 typedef enum{
-AllValueOfSample = 0,
-ThrowOutFirstOne
+TLE8242_CRNT_ALL_VAL_SAMPLE = 0,
+TLE8242_CRNT_THROW_OUT_FIRST_ONE
 }
 Tle8242SampleSummMethodType;
 typedef uint32 DividerMType;
 typedef uint32 DividerNType;
 
 typedef enum{
-    Disable=0,
-    RemainLastSetPoint
+    TLE8242_DEACTIVE_DISABLE=0,
+    TLE8242_DEACTIVE_REMAIN_LAST_SETPOINT
 }
 Tle8242OptEnableDeactiveType;
-typedef uint8 DitherstepsizeType;
-typedef float CurrentsetpointType;
+typedef uint16 DitherstepsizeType;
+typedef float32 CurrentsetpointType;
 typedef uint32 KIType;
 typedef uint32 KPType;
 typedef enum{
-    GenericOverVol=0,
-    GenericPhaseSync,
-    GenericEnable,
-    GenericReset
+    TLE8242_GENERIC_OVER_VOL=0,
+    TLE8242_GENERIC_PHASE_SYNC,
+    TLE8242_GENERIC_ENABLE,
+    TLE8242_GENERIC_RESET
 }
 Tle8242GenericFlagType;
 
 typedef enum{
-    Invalid=0,
-    Valid
+    TLE8242_CRNT_FB_INVALID=0,
+    TLE8242_CRNT_FB_VALID
 }
 Tle8242ValidType;
 
 typedef enum{
-    MinCurrent=0,
-    MaxCurrent,
-    AvgCurrent
+    TLE8242_MIN_CRNT=0,
+    TLE8242_MAX_CRNT,
+    TLE8242_AVG_CRNT
 }
 Tle8242CurrentType;
 
 typedef enum{
-    IFX=193,
+    TLE8242_IC_MANUF_IFX=193,
 }
-Tle8242ICManufIDType;
+Tle8242ICManufIDTyp;
 typedef enum{
-    B21=2,
+    TLE8242_VERS_B21=2,
 }
-Tle8242VersionNumberType;
+Tle8242VersNrTyp;
 
 
 
-extern Tle8242ICManufIDType TLE8242GetICManufID (uint8 channel);
-extern Tle8242VersionNumberType TLE8242GetVersionNumber (uint8 channel);
-extern bool TLE8242GetFaultMaskEnable (uint8 channel);
-extern void TLE8242SetFaultMaskEnable (uint8 channel, bool fme);
-extern void TLE8242SetFaultMask (uint8 channel, Tle8242FaultMaskType fm);
-extern Tle8242FaultMaskType TLE8242GetFaultMask (uint8 channel);
-extern bool TLE8242GetFaultMaskResetb (uint8 channel);
-extern void TLE8242SetFaultMaskResetb (uint8 channel, bool fmr);
-extern void TLE8242SetControlMode (uint8 channel, Tle8242ControlModeType cm);
-extern Tle8242ControlModeType TLE8242GetControlMode (uint8 channel);
-extern void TLE8242SetDIAG_TMR(uint8 channel, Tle8242DiagTimerDivType diag_tmr);
-extern Tle8242DiagTimerDivType TLE8242GetDIAG_TMR(uint8 channel );
-extern void TLE8242SetShortBatRetry (uint8 channel, uint8 sb_retry);
-extern bool TLE8242GetShortGround (uint8 channel);
-extern bool TLE8242GetShortBat (uint8 channel);
-extern bool TLE8242GetOFF_TST (uint8 channel);
-extern bool TLE8242GetSB_TST (uint8 channel);
-extern bool TLE8242GetOpenLoadGateOn (uint8 channel);
-extern bool TLE8242GetOL_OFF (uint8 channel);
-extern Tle8242SampleSummMethodType TLE8242GetSampleSummMethod (uint8 channel);
-extern void TLE8242SetSampleSummMethod (uint8 channel, Tle8242SampleSummMethodType sam);
-extern void TLE8242SetPWMFrq(uint8 channel, float frq);
-extern float TLE8242GetPWMFrq(uint8 channel);
-extern void TLE8242SetDividerN (uint8 channel, DividerNType dividern);
-extern DividerNType TLE8242GetDividerN (uint8 channel);
-extern void TLE8242SetDividerM (uint8 channel, DividerMType dividerm);
-extern DividerMType TLE8242GetDividerM (uint8 channel);
-extern KPType TLE8242GetKP (uint8 channel);
-extern void TLE8242SetKP (uint8 channel, KPType kp);
-extern KIType TLE8242GetKI (uint8 channel);
-extern void TLE8242SetKI (uint8 channel, KIType ki);
-extern void TLE8242SetDitherstepsize (uint8 channel, DitherstepsizeType ditherstepsize);
-extern void TLE8242SetOptEnableDeactive (uint8 channel, Tle8242OptEnableDeactiveType en);
-extern void TLE8242SetCurrentTarget (uint8 channel, CurrentsetpointType targetCurrent);
-extern CurrentsetpointType TLE8242GetCurrentTarget (uint8 channel);
-extern void TLE8242SetDitherAMPL(uint8 channel, float target);
-extern float TLE8242GetDitherAMPL(uint8 channel);
-extern DitherstepsizeType TLE8242GetDitherstepsize (uint8 channel);
-extern Tle8242OptEnableDeactiveType TLE8242GetOptEnableDeactive (uint8 channel);
-extern void TLE8242SetDitherFrq(uint8 channel, float frq);
-extern float TLE8242GetDitherFrq(uint8 channel);
-extern uint8 TLE8242GetNumberOfSteps(uint8 channel);
-extern void TLE8242SetNumberOfSteps(uint8 channel, uint8 numberofsteps);
-extern bool TLE8242GetDitherEnabled(uint8 channel);
-extern float TLE8242GetCurrentFeedback(uint8 channel, Tle8242CurrentType type);
-extern Tle8242ValidType TLE8242GetCurValid(uint8 channel, Tle8242CurrentType type);
-extern bool TLE8242GetGenericFalg(uint8 channel, Tle8242GenericFlagType type);
-extern void TLE8242SetPWMDutyCycle(uint8 channel, float duty);
-extern float TLE8242GetPWMDutyCycle(uint8 channel);
+extern Tle8242ICManufIDTyp TLE8242_stGetIcManufID (uint8 u8LocChIdx);
+extern Tle8242VersNrTyp TLE8242_stGetVersNr (uint8 u8LocChIdx);
+extern boolean TLE8242_bGetFltMaskEna (uint8 u8LocChIdx);
+extern void TLE8242_vidSetFltMaskEna (uint8 u8LocChIdx, boolean bLocfme);
+extern void TLE8242_vidSetFltMask (uint8 u8LocChIdx, Tle8242FaultMaskType enuLocfm);
+extern Tle8242FaultMaskType TLE8242_bGetFltMask (uint8 u8LocChIdx);
+extern boolean TLE8242_bGetFltMaskRstB (uint8 u8LocChIdx);
+extern void TLE8242_vidSetFltMaskRstB (uint8 u8LocChIdx, boolean bLocfmr);
+extern void TLE8242_vidSetCtrlMod (uint8 u8LocChIdx, Tle8242CtrlModTyp enuLocCm);
+extern Tle8242CtrlModTyp TLE8242_stGetCtrlMod (uint8 u8LocChIdx);
+extern void TLE8242_vidSetDisgTmr(uint8 u8LocChIdx, Tle8242DiagTmrDivTyp enuLocTmr);
+extern Tle8242DiagTmrDivTyp TLE8242_stGetDisgTmr(uint8 u8LocChIdx );
+extern void TLE8242SetScsRetry (uint8 u8LocChIdx, uint8 u8LocScsRetry);
+extern boolean TLE8242_bGetScFlt (uint8 u8LocChIdx);
+extern boolean TLE8242_bGetScsFlt (uint8 u8LocChIdx);
+extern boolean TLE8242_bGetOffTst (uint8 u8LocChIdx);
+extern boolean TLE8242_bGetScsTst (uint8 u8LocChIdx);
+extern boolean TLE8242_bGetOpenLoadGateOn (uint8 u8LocChIdx);
+extern boolean TLE8242_bGetOpenLoadGateOff (uint8 u8LocChIdx);
+extern Tle8242SampleSummMethodType TLE8242_stGetSampleSummaryMethod (uint8 u8LocChIdx);
+extern void TLE8242_vidSetSampleSummMethod (uint8 u8LocChIdx, Tle8242SampleSummMethodType enuLocSAM);
+extern void TLE8242_vidSetPWMFrq(uint8 u8LocChIdx, float32 f32LocFrq);
+extern float32 TLE8242_f32GetPwmFrq(uint8 u8LocChIdx);
+extern void TLE8242_vidSetDivN (uint8 u8LocChIdx, DividerNType u32LocDivN);
+extern DividerNType TLE8242_u32GetDivN (uint8 u8LocChIdx);
+extern void TLE8242_vidSetDivM (uint8 u8LocChIdx, DividerMType u32LocDivM);
+extern DividerMType TLE8242_u32GetDivM (uint8 u8LocChIdx);
+extern KPType TLE8242_u32GetKP (uint8 u8LocChIdx);
+extern void TLE8242_vidSetKP (uint8 u8LocChIdx, KPType u32Lockp);
+extern KIType TLE8242_u32GetKI (uint8 u8LocChIdx);
+extern void TLE8242_vidSetKI (uint8 u8LocChIdx, KIType u32Locki);
+extern void TLE8242_vidSetDitherStepSize (uint8 u8LocChIdx, DitherstepsizeType u16LocSize);
+extern void TLE8242_vidSetOptEnaDeactive (uint8 u8LocChIdx, Tle8242OptEnableDeactiveType enuLocen);
+extern void TLE8242_vidSetCrntTarBuf (uint8 u8LocChIdx, CurrentsetpointType f32LocCnrt);
+extern CurrentsetpointType TLE8242_f32GetCrntTar (uint8 u8LocChIdx);
+extern void TLE8242_vidSetDitherAmpBuf(uint8 u8LocChIdx, float32 f32LocCnrt);
+extern float32 TLE8242_f32GetDitherAmp(uint8 u8LocChIdx);
+extern DitherstepsizeType TLE8242_u16GetDitherStepSize (uint8 u8LocChIdx);
+extern Tle8242OptEnableDeactiveType TLE8242GetOptEnableDeactive (uint8 u8LocChIdx);
+extern void TLE8242_vidSetDitherFrqBuf(uint8 u8LocChIdx, float32 f32LocFrq);
+extern float32 TLE8242GetDitherFrq(uint8 u8LocChIdx);
+extern uint8 TLE8242_u16GetStepsNr(uint8 u8LocChIdx);
+extern void TLE8242SetNumberOfSteps(uint8 u8LocChIdx, uint8 numberofsteps);
+extern boolean TLE8242GetDitherEnabled(uint8 u8LocChIdx);
+extern float32 TLE8242_f32GetCrntFb(uint8 u8LocChIdx, Tle8242CurrentType enuLocType);
+extern Tle8242ValidType TLE8242_bGetCrntVld(uint8 u8LocChIdx, Tle8242CurrentType enuLocType);
+extern boolean TLE8242_bGetGenericFalg(uint8 u8LocChIdx, Tle8242GenericFlagType enuLocType);
+extern float32 TLE8242_f32GetPwmDutyCycle(uint8 u8LocChIdx);
+extern void TLE8242_vidSetPwmDutyCycle(uint8 u8LocChIdx, float32 f32LocDuty);
+extern uint32 TLE8242_u32CnvCrntToSetPoint(float32 f32LocCnrt);
+extern float32 TLE8242_f32CnvpointToCrnt(uint32 u32LocSetPoint);
+
+extern boolean TLE8242_bGetChOpenLoadFlt(uint8 u8LocChIdx);
+extern boolean TLE8242_bGetChOverLoadFlt(uint8 u8LocChIdx);
+extern boolean TLE8242_bGetChUnderLoadFlt(uint8 u8LocChIdx);
+extern boolean TLE8242_bGetChGenFlt(uint8 u8LocChIdx);
 
 #define TLE8242_STOP_SEC_VAR_UNSPECIFIED
 #include "MemMap.h"
