@@ -189,8 +189,6 @@ TLE8242.c;203;(21) warning: unused variable 'u8LocChIdx' [-Wunused-variable];;
 TLE8242.c;223;(4) warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration];;
 TLE8242.c;223;(4) warning: incompatible implicit declaration of built-in function 'memcpy' [enabled by default];;
 TLE8242.c;315;(21) warning: variable 'u8LocEveIdx' set but not used [-Wunused-but-set-variable];;
-TLE8242.c;398;(27) warning: 'bLocFltSts' is used uninitialized in this function [-Wuninitialized];;
-TLE8242.c;398;(27) warning: 'bLocFltSts1' is used uninitialized in this function [-Wuninitialized];;
 TLE8242_cfg.c;100;(21) warning: (near initialization for 'TLE8242_astSpiTx[0].MaxMinCurrentRead[0].bits.bRW') [-Wmissing-field-initializers];;
 TLE8242_cfg.c;100;(21) warning: missing initializer [-Wmissing-field-initializers];;
 TLE8242_cfg.c;101;(21) warning: (near initialization for 'TLE8242_astSpiTx[0].MaxMinCurrentRead[1].bits.bRW') [-Wmissing-field-initializers];;

@@ -212,8 +212,8 @@ void TLE8242SetScsRetry (uint8 u8LocChIdx, uint8 u8LocScsRetry)
 
 boolean TLE8242_bGetScFlt (uint8 u8LocChIdx)  // short ground
 {
-	static uint8 u8LocChipIdx, u8LocMsgIdx, u8ChIdx, u8FltBitIdx, u8FltTstBitIdx;
-	static boolean bLocFlt;
+	 uint8 u8LocChipIdx, u8LocMsgIdx, u8ChIdx, u8FltBitIdx, u8FltTstBitIdx;
+	 boolean bLocFlt;
 
 	u8LocChipIdx = u8LocChIdx / 8;
 	u8ChIdx = (u8LocChIdx % 8);
@@ -239,8 +239,8 @@ boolean TLE8242_bGetScFlt (uint8 u8LocChIdx)  // short ground
 }
 boolean TLE8242_bGetScsFlt (uint8 u8LocChIdx) // short battary
 {
-    static uint8 u8LocChipIdx, u8LocMsgIdx,u8ChIdx, u8FltBitIdx, u8FltTstBitIdx;
-    static boolean bLocFlt;
+     uint8 u8LocChipIdx, u8LocMsgIdx,u8ChIdx, u8FltBitIdx, u8FltTstBitIdx;
+     boolean bLocFlt;
 
     u8LocChipIdx = u8LocChIdx/8;
     u8ChIdx = (u8LocChIdx%8);

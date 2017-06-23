@@ -379,14 +379,15 @@ void TLE8242_vidCtrlManagement(void)
  			TLE8242_su8CtrlModOld[u8LocIdx] = TLE8242_au8OpenLoop[u8LocIdx];
             au8LocCfgChg[u8LocChipIdx]= 1;
         }
-        if ((TLE8242_u8_DIRECT_MOD == TLE8242_stGetCtrlMod(u8LocIdx)) &&
-               TLE8242_saf32DutyCycleOld[u8LocIdx] != TLE8242_af32DutyCycle[u8LocIdx]) //(TLE8242_au16DutyCycleChg& (1 << u8LocIdx))  )
+        if (TLE8242_u8_DIRECT_MOD == TLE8242_stGetCtrlMod(u8LocIdx))
         {
-            //TLE8242_au16DutyCycleChg &= ~(1 << u8LocIdx);
-            TLE8242_saf32DutyCycleOld[u8LocIdx] = TLE8242_af32DutyCycle[u8LocIdx];
-            TLE8242_vidSetPwmDutyCycle(u8LocIdx, TLE8242_af32DutyCycle[u8LocIdx]);
-            TLE8242_astCtrlTxBuf[u8LocChipIdx][TLE8242_su8MsgSndCnt[u8LocChipIdx]++].u32Data = (uint32) TLE8242_astSpiTx[u8LocChipIdx].PWMDutyCycle[u8LocChIdx].u32Data;
-        }
+			if(TLE8242_saf32DutyCycleOld[u8LocIdx] != TLE8242_af32DutyCycle[u8LocIdx])
+			{
+			    TLE8242_saf32DutyCycleOld[u8LocIdx] = TLE8242_af32DutyCycle[u8LocIdx];
+            	TLE8242_vidSetPwmDutyCycle(u8LocIdx, TLE8242_af32DutyCycle[u8LocIdx]);
+            	TLE8242_astCtrlTxBuf[u8LocChipIdx][TLE8242_su8MsgSndCnt[u8LocChipIdx]++].u32Data = (uint32) TLE8242_astSpiTx[u8LocChipIdx].PWMDutyCycle[u8LocChIdx].u32Data;        
+			}
+		}
         else
         {
             // when seting the dither ampl, we need to know the dither frequency, for now we prefer to use the value in the rx buff, which is the tle8242 real number of steps
@@ -395,36 +396,34 @@ void TLE8242_vidCtrlManagement(void)
             // If there is a scgnd/scbat fault, we need to set the target to 0ma, to switch off the lsd.
             //Dem_GetEventFailed(TLE8242_tstFltDev.astChDemID[u8LocIdx].audtIdxType[TLE8242_SHORT_TO_GND], &bLocFltSts);
             //Dem_GetEventFailed(TLE8242_tstFltDev.astChDemID[u8LocIdx].audtIdxType[TLE8242_SHORT_TO_BATT], &bLocFltSts1);
-            if(bLocFltSts || bLocFltSts1)
+			bLocFltSts  = TLE8242_su16FltSts[u8LocIdx][TLE8242_SHORT_TO_GND];
+			bLocFltSts1 = TLE8242_su16FltSts[u8LocIdx][TLE8242_SHORT_TO_BATT];
+			
+			if(bLocFltSts || bLocFltSts1)
             {
               TLE8242_af32TarCnrtMa[u8LocIdx] = 0;
             }
-            /*if ((su16LocDitherFrqChg&(1<<u8LocIdx)) ||
-                    (TLE8242_au16CrntChg & (1<<u8LocIdx) ) ||
-                    (TLE8242_au16DitherAmpChg & (1<<u8LocIdx) ) )*/
-            if((TLE8242_saf32CnrtTarOld[u8LocIdx] != TLE8242_af32TarCnrtMa[u8LocIdx]) || \
+
+            if((su16LocDitherFrqChg&(1<<u8LocIdx))||(TLE8242_saf32CnrtTarOld[u8LocIdx] != TLE8242_af32TarCnrtMa[u8LocIdx]) || \
 				(TLE8242_saf32DitherAmplOld[u8LocIdx] != TLE8242_af32DitherAmplMa[u8LocIdx]))
-            {
-                //TLE8242_au16CrntChg &= ~(1 << u8LocIdx);
-                //TLE8242_au16DitherAmpChg &= ~(1 << u8LocIdx);
-                TLE8242_saf32CnrtTarOld[u8LocIdx] = TLE8242_af32TarCnrtMa[u8LocIdx];
-				TLE8242_saf32DitherAmplOld[u8LocIdx] = TLE8242_af32DitherAmplMa[u8LocIdx];
-					
+            {	
             	if(0 != TLE8242GetDitherFrq(u8LocIdx))
             	{
-                    TLE8242_vidSetDitherAmpBuf(u8LocIdx, TLE8242_af32DitherAmplMa[u8LocIdx]);
+					TLE8242_saf32DitherAmplOld[u8LocIdx] = TLE8242_af32DitherAmplMa[u8LocIdx];
+					TLE8242_vidSetDitherAmpBuf(u8LocIdx, TLE8242_af32DitherAmplMa[u8LocIdx]);
                     su16LocDitherFrqChg &= ~(1<<u8LocIdx);
             	}
+
+				TLE8242_saf32CnrtTarOld[u8LocIdx] = TLE8242_af32TarCnrtMa[u8LocIdx];
                 //TLE8242_af32TarCnrtAftTrimMa[u8LocIdx] = TLE8242_f32CalcTrimTar(u8LocIdx, TLE8242_af32TarCnrtMa[u8LocIdx], TEMP_s16PhysTempPcb>>4);
                 TLE8242_af32TarCnrtAftTrimMa[u8LocIdx] = TLE8242_af32TarCnrtMa[u8LocIdx];//Trim_CalculateGainAndOffset(u8LocIdx, TLE8242_af32TarCnrtMa[u8LocIdx]);
                 TLE8242_vidSetCrntTarBuf(u8LocIdx, TLE8242_af32TarCnrtAftTrimMa[u8LocIdx]);
                 TLE8242_astCtrlTxBuf[u8LocChipIdx][TLE8242_su8MsgSndCnt[u8LocChipIdx]++].u32Data = (uint32) TLE8242_astSpiTx[u8LocChipIdx].CurrentandDitherAmplitudeSet[u8LocChIdx].u32Data;
             }
         }
-        //if (TLE8242_au16DitherFrqChg & (1<<u8LocIdx))
+
         if(TLE8242_saf32DitherFrqOld[u8LocIdx] != TLE8242_af32DitherFrq[u8LocIdx])
         {
-            //TLE8242_au16DitherFrqChg &= ~(1 << u8LocIdx);
             TLE8242_saf32DitherFrqOld[u8LocIdx] = TLE8242_af32DitherFrq[u8LocIdx];
             TLE8242_vidSetDitherFrqBuf(u8LocIdx, TLE8242_af32DitherFrq[u8LocIdx]);
             TLE8242_astCtrlTxBuf[u8LocChipIdx][TLE8242_su8MsgSndCnt[u8LocChipIdx]++].u32Data = (uint32) TLE8242_astSpiTx[u8LocChipIdx].DitherPeriodSet[u8LocChIdx].u32Data;

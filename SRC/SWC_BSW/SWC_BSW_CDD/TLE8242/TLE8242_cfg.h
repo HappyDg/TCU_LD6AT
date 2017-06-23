@@ -329,6 +329,14 @@ typedef enum
 #define TLE8242_CHANNEL_TC_LOCK_STUCK_ON          172
 #define TLE8242_CHANNEL_TC_LOCK_UNDERLOAD         173
 
+#define TLE8242_GENERAL_FAULT                      0
+#define TLE8242_OPEN                               1
+#define TLE8242_OVERLOAD                           2
+#define TLE8242_UNDERLOAD                          3
+#define TLE8242_SHORT_TO_GND                       4
+#define TLE8242_SHORT_TO_BATT                      5
+
+
 #define TLE8242_SG_FAULT                           0
 #define TLE8242_SGOP_FAULT                         1
 #define TLE8242_SB_FAULT                           2
